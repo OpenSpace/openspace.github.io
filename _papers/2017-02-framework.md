@@ -1,0 +1,7 @@
+---
+title: "OpenSpace: An open-source astrovisualization framework"
+authors: "Bock, Alexander and Axelsson, Emil and Bladin, Karl and Costa, Jonathas and Payne, Gene and Territo, Matthew and Kilby, Joakim and Kuznetsova, Masha and Emmart, Carter and Ynnerman, Anders"
+journal: "The Journal of Open Source Software"
+year: "2017"
+doi: "https://doi.org/10.21105/joss.00281"
+---
