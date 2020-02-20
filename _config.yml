@@ -8,7 +8,6 @@ search_tokenizer_separator: /[\s/]+/
 #heading_anchors: true
 footer_content: "Copyright &copy; 2014-2020. Distributed by an <a href=\"https://github.com/OpenSpace/OpenSpace/tree/master/LICENSE.md\">MIT license.</a>"
 #color_scheme: "dark"
-baseurl: /doc-tests
 
 aux_links:
   "OpenSpace on GitHub":
