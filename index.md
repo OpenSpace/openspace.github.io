@@ -27,5 +27,5 @@ Regarding any issues, whether it is building the application, creating new conte
 ## [Components](docs/components/index)
 Description of different components of OpenSpace that don't fit the other categories.
 
-## [Academics](docs/academics/index)
+## [Academics](docs/academics)
 Academic works that are related to OpenSpace.
