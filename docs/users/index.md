@@ -16,4 +16,4 @@ nav_order: 4
 - [Using the commandline](commandline)
 - [OpenSpace Kiosk Touch-Screen Version](kiosk)
 - Tutorials
-  - [OpenSpace as a Flexible Presentation Tool](flexible-presentation)
+  - [OpenSpace as a Flexible Presentation Tool](tutorials/flexible-presentation)
