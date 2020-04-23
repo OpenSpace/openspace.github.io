@@ -17,4 +17,4 @@ A list of all satellite groups can be viewed by selecting in the GUI: Scene -> S
 It is possible to modify the length of the orbital trail by adjusting the "Line fade" value in Renderable -> Appearance in the satellite group. A higher fade value shows more of the periodic orbital trails of the satellites.
 
 ## Additional Features
-See this satellites [page](../../components/satellites) for more detailed information and advanced usage of satellites in OpenSpace.
+See the Components/Satellites page for more detailed information and advanced usage of satellites in OpenSpace.
