@@ -14,6 +14,11 @@ nav_order: 4
     - [Interface](getting-started/interface)
     - [Navigation](getting-started/navigation)
 - [Using the commandline](commandline)
-- [OpenSpace Kiosk Touch-Screen Version](kiosk)
+- Content
+  - [Satellites](content/satellites)
+  - [Globebrowsing](content/globebrowsing)
+  - [Gaia](content/gaia)
+  - [Asteroids/Comets](content/asteroids)
 - Tutorials
   - [OpenSpace as a Flexible Presentation Tool](tutorials/flexible-presentation)
+- [OpenSpace Kiosk Touch-Screen Version](kiosk)
