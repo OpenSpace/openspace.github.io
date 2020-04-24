@@ -14,7 +14,7 @@ nav_order: 4
     - [Interface](getting-started/interface)
     - [Navigation](getting-started/navigation)
 - [Using the commandline](commandline)
-- Content
+- [Content](content)
   - [Satellites](content/satellites)
   - [Globebrowsing](content/globebrowsing)
   - [Gaia](content/gaia)
