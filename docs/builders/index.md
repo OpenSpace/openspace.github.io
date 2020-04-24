@@ -15,7 +15,8 @@ nav_order: 3
   - [Import data](wms/server-import)
   - [Convert data](wms/server-conversion)
 - [Asset structure](assets)
-- [Using JPL Horizons Ephemeris for Solar System Objects](ephemeris/horizons)
-- [Using JPL Small SolarSystem Body Database (SBDB) for Orbital Data](ephemeris/sbdb)
-- [Using a KeplerTranslation](ephemeris/kepler)
+- Ephemeris
+  - [Using JPL Horizons Ephemeris for Solar System Objects](ephemeris/horizons)
+  - [Using JPL Small SolarSystem Body Database (SBDB) for Orbital Data](ephemeris/sbdb)
+  - [Using a KeplerTranslation](ephemeris/kepler)
 - [Socket API](network/socket-api)
