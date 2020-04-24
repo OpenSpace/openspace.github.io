@@ -24,7 +24,7 @@ When OpenSpace starts the satellites module, it tries to download `.tle` files t
 
 ## Adding new Satellite Data to OpenSpace
 OpenSpace can render satellites that have a periodic orbit that is defined in the TLE format. To add a new data TLE source, a new .asset file can be created by using other similar files as inspiration. Setting the `url` field mentioned above to the online source for the data will prompt OpenSpace to download the file each time it starts.
-For other types of solar system objects, such as asteroids, comets, or small solar system bodies, see some of the other wiki pages in the Content category.
+For other types of solar system objects, such as asteroids, comets, or small solar system bodies, see some of the other [Ephemeris](../builders/ephemeris/index.md) wiki pages.
 
 ## Selectively Rendering Individual Satellites in a Group
 The satellite rendering software groups satellites together by category, and any change to that category (e.g. visibility, trail color, trail length) affects all of them simultaneously.
