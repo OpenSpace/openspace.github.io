@@ -2,7 +2,7 @@
 title: Satellites
 layout: default
 
-parent: Components
+parent: Content
 nav_order: 2
 ---
 
