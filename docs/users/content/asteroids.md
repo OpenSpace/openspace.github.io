@@ -1,5 +1,5 @@
 ---
-title: Satellites
+title: Asteroids
 layout: default
 
 parent: Content
@@ -7,16 +7,18 @@ nav_order: 2
 ---
 
 ## How to add Asteroids/Comets to OpenSpace
-OpenSpace uses the `openspace.cfg` file for general configuration. The un-commented Asset line in the file (which is usually `Asset = "default"`) determines which .scene file in data/assets that OpenSpace will run with. Change this line to read `Asset = "asteroids"`.
+OpenSpace uses the `openspace.cfg` file for general configuration. The un-commented Asset line in the file (which is usually `Asset = "default"`) determines which .scene file in data/assets that OpenSpace will run. Change this line to read `Asset = "asteroids"`.
 The asteroids.scene file is similar to the default, but with 16 separate asset files that contain asteroid or comet orbits.
 
 ## Running OpenSpace with Asteroids/Comets
-To start, double-click (or run from terminal) `bin/Release/OpenSpace.exe`. Once loaded, Earth will be the camera's focus. None of the asteroid/comet groups are visible by default. To enable one of these, expand the GUI's menus from Scene -> Solar System -> Small Solar System Bodies. A list of all asteroid groups is visible. Check one of the boxes to enable.
+To start, double-click (or run from terminal) `bin/Release/OpenSpace.exe`. The camera will be initially focused on Earth, so it is recommended to zoom out to a point where the solar system is visible. None of the asteroid/comet groups are visible by default. To enable one of these, expand the GUI's menus by selecting Scene -> Solar System -> Small Bodies. A list of all asteroid groups will be visible. Check one of the boxes to enable.
 
-It is possible to modify the length of the orbital trail by adjusting the "Line fade" value in Renderable -> Appearance in the asteroid/comet group. A higher fade value shows more of the periodic orbital trails. In this menu, the line color, transparency, and size can also be modified.
+It is possible to modify the length of the orbital trail by adjusting the "Line fade" value in Renderable -> Appearance in the asteroid/comet group. A higher fade value shows more of the periodic orbital trails. The line color and width can also be changed here (transparancy is accessible underneath 'Renderable').
+
+Some of the asteroid categories contain a very high number of objects, which will affect frame rate and program responsiveness. If performance slows too much, then un-click the offending category to prevent it from being rendered.
 
 ## Additional Features
-See the Components/Satellites [page](../../components/asteroids.md) for more detailed information and advanced usage of this content.
+See the Components/Asteroids [page](../../components/asteroids.md) for more detailed information and advanced usage of this content.
 
 ## Asteroid Content Categories
 All trajectory data were obtained from the JPL Small-body Database. The following categories are defined on this site and were used to group the orbital data.
