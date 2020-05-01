@@ -12,6 +12,8 @@ nav_order: 4
 Basic instructions for how users can enable and visualize content categories. These do not discuss how to modify data or add new content.
 
 - [Satellites](satellites)
-- [Globebrowsing](globebrowsing)
+- Globebrowsing
+  - [Navigation](../globebrowsing/navigation)
+  - [Working With Layers](../globebrowsing/working-with-layers)
 - [Gaia](gaia)
 - [Asteroids/Comets](asteroids)
