@@ -47,12 +47,7 @@ Install the following libraries:
   * `libxrandr-dev`
   * `libxinerama-dev`
   * `xorg-dev`
-  * `libcurl4-ssl-dev` (use `libcurl4-openssl-dev` if Ubuntu)
-  * `libboost-dev`
-  * `libboost-chrono-dev`
-  * `libboost-system-dev`
-  * `libboost-date-time-dev`
-  * `libboost-thread-dev`
+  * `libcurl4-openssl-dev` (use `libcurl4-ssl-dev` for other linux distros)
   * `libgdal-dev`
   * `libxcursor-dev`
 
@@ -85,3 +80,5 @@ Error: libstdc++.so.6: could not read symbols: Missing DSO from command line
 Error: GLSL 3.00 is not supported.  Supported versions are: 1.10, 1.20, 1.30, 1.00 ES, and 3.00 ES  
  - Enter the following line in the terminal before running, or add this to `~/.bashrc` or `~/.profile`:
  `export MESA_GL_VERSION_OVERRIDE=4.3`
+ 
+It may be necessary to install boost if trying to build some of the older branches.
