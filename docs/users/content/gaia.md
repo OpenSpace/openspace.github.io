@@ -46,7 +46,7 @@ Used to scale the brightness of the stars.  Good to use when traveling further o
 Turn this up to use LOD data.  Not necessary for small datasets (as the RV dataset) but a must for larger ones.
 
 ### Max GPU Memory
-This determines how much memory we can use on the GPUs for our buffers.  If nothing is visible and the framerate drops to below 5 fps then try to decrease this value.  When rendering large datasets and the _GPU Stream Budget_ is down to 0 is may also be a good idea to try to increase this value.  Every GPU can allocate different max sizes so it is a matter of trial and error for every new hardware.  When you have found the maximum for you computer you can store that value in `gaiamission.asset` so it will be used on startup the next time.
+This determines how much memory we can use on the GPUs for our buffers.  If nothing is visible and the framerate drops to below 5 fps then try to decrease this value.  When rendering large datasets and the _GPU Stream Budget_ is down to 0 is may also be a good idea to try to increase this value.  Every GPU can allocate different max sizes so it is a matter of trial and error for every new hardware.  When you have found the maximum for you computer you can store that value in `gaia.asset` so it will be used on startup the next time.
 
 ### Filter Size & Normal Distribution Sigma (for _Points_ Shader Option)
 These determine the size and form of the stars when one of the _Points_ shader options is selected.  A bigger filter size will decrease the performance.
