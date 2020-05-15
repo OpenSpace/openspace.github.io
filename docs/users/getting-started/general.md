@@ -8,7 +8,8 @@ has_toc: false
 nav_order: 1
 ---
 
-Once you get OpenSpace to build, or have installed it from a .zip file, it's time to run it.  Here is a brief overview of what you need to know to get started.
+Once you get OpenSpace to build, or have installed it from a .zip file, it's time to run it. The OpenSpace executable can be found in the `bin/` directory (or in `bin/Release` or `bin/RelWithDebInfo` if compiled on windows).
+Here is a brief overview of what you need to know to get started.
 
 ## Initial Sync
 The data used by OpenSpace includes a number of very large data files, which cannot be stored on GitHub.  The first time you fire up a fresh build or a new install of OpenSpace you need to "Sync" it to download some or all of these data files.  The first time you run either executable it will also create several additional subdirectories, including subdirectories called `cache` and `documentation`.
