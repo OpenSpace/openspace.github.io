@@ -41,27 +41,26 @@ see [Git](../software/git) for information about a Git client
 OpenSpace is written in C++17 and thus requires modern compiler versions that support a large portion of the new standard.  Thus we require the following versions of the compiler:
   - Windows:  MSVC Visual Studio 15.7 (Visual Studio 2017)
   - macOS:    clang (`clang-802.0.42`) (shipped with Xcode on Sierra)
-  - Linux     gcc (7.1) (installed via `apt-get` [link](https://askubuntu.com/questions/863517/how-do-i-install-g-7-on-ubuntu)
+  - Linux     gcc 8
 
 # 2. Required libraries
   - [SGCT](https://github.com/sgct/sgct) is the Simple Graphics Cluster Toolkit, which was developed at C-Research, Linköping University.  SGCT is included as a submodule in OpenSpace, so it will automatically be updated and built.
   - [GDAL](http://www.gdal.org/) is the Geospatial Data Abstraction Library.  For **Windows**, this library is contained in the repository, otherwise you it is available via `apt-get` or `homebrew` or MacPorts.  Suggested version: 2.1.2 or above
 
 # 3. Compiling
-Roughly speaking, here are the steps required to compile OpenSpace:
-
-1. Clone the Git repository including all submodules.  If you use the commandline for this, a standard command would be: `git clone --recursive https://github.com/OpenSpace/OpenSpace`
-1. Check-out the `master` branch (read [Branching Model](http://nvie.com/posts/a-successful-git-branching-model) for more information about git branches).
-1. Start CMake and "Configure" using the `CMakeLists.txt` file in the OpenSpace directory
-1. Once you have the configuration set with no errors, use CMake to "generate" a project file
-1. Compile
-
-### Platform-specific Instructions
-More complete details specific to a given platform are given here:
+Follow one of the linked instruction pages for your specific platform:
   - [Windows](windows)
   - [macOS](macos)
   - [Ubuntu](ubuntu)
   - [FreeBSD](freebsd)
+
+Roughly speaking, the following steps are taken on any platform:
+
+1. Clone the Git repository including all submodules.  If you use the commandline for this, a standard command would be: `git clone --recursive --branch master https://github.com/OpenSpace/OpenSpace`. This example specifies the master branch, but another branch name can be substituted (read [Branching Model](http://nvie.com/posts/a-successful-git-branching-model) for more information about git branches).
+1. Start CMake and "Configure" using the `CMakeLists.txt` file in the OpenSpace directory
+1. Once you have the configuration set with no errors, use CMake to "generate" a project file
+1. Compile
+
 
 # 4. After compiling
 - See the [Getting Started Guide: Using OpenSpace]({{ site.url }}/users/gettingstarted-general) page for how to get started with running and using OpenSpace.  The first time you run OpenSpace you should run the Launcher and sync at least one Scene to be able to view something.
