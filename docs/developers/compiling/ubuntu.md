@@ -8,6 +8,7 @@ nav_order: 3
 ---
 
 OpenSpace has been tested on version 18.04 of ubuntu.
+## Please note that as of May 2020, the current version of OpenSpace runs but is not rendering correctly on Ubuntu (see github issues for more information).
 
 # Developer Tools
 Install the following tools:
@@ -32,11 +33,14 @@ sudo update-alternatives --config gcc
 If you don't want to install GCC 8 globally (e.g. leave gcc 7 as the default for ubuntu), you can overwrite the CMake options instead:
 ```
 CMAKE_CXX_COMPILER:FILEPATH=/usr/bin/g++-8
-CMAKE_CXX_FLAGS:STRING=-std=gnu++17
 CMAKE_C_COMPILER:FILEPATH=/usr/bin/gcc-8
 ```
 
 If you do want to change the defaults: [here](https://stackoverflow.com/questions/7832892/how-to-change-the-default-gcc-compiler-in-ubuntu)
+
+The CMake CXX flags variable should be set to:
+`CMAKE_CXX_FLAGS:STRING=-std=gnu++17 -DGLM_ENABLE_EXPERIMENTAL`
+It is recommended to create a new CMake string variable `OPENGL_GL_PREFERENCE` and set its value to `GLVND`.
 
 # Libraries
 Install the following libraries:
