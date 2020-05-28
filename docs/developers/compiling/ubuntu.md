@@ -58,22 +58,23 @@ Install the following libraries:
 
 # OpenSpace
 Obtain the source code (develop branch in this case)
-* `git clone --recursive https://github.com/OpenSpace/OpenSpace`
+* `git clone --recursive --branch linux https://github.com/OpenSpace/OpenSpace`
 * `cd OpenSpace`
 
 # Set up the build and run CMake
 Basic steps:
 * `mkdir build`
 * `cd build`
-* `cmake ..`
+* CMake step (see section below)
 * `make`
 
-If the CMake process does not complete because of issues that need to be resolved, or if build options need to be changed, then use the curses version of CMake (run `sudo apt install cmake-curses-gui` if not installed):
-* `cd build`
-* `ccmake ..`
-* Select (c)onfigure and resolve any issues that are listed, or change CMake variables for the build.
-* Select (g)enerate Makefile
-* `make`
+## CMake step
+This can be one of the following:
+* `cmake ..` The simplest way if there are no CMake issues to resolve or build options to set.
+* `ccmake ..` A curses pseudo-gui version of CMake (run `sudo apt install cmake-curses-gui` if not installed).
+* `cmake-gui ..` A Qt GUI version of CMake.
+
+With any of these methods, CMake is first configured, then (if no errors) the generate step creates the build files.
 
 # Troubleshooting
 Make sure that you are using the correct version of gcc/g++  
