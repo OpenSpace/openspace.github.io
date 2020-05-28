@@ -40,6 +40,7 @@ If you do want to change the defaults: [here](https://stackoverflow.com/question
 
 The CMake CXX flags variable should be set to:
 `CMAKE_CXX_FLAGS:STRING=-std=gnu++17 -DGLM_ENABLE_EXPERIMENTAL`
+
 It is recommended to create a new CMake string variable `OPENGL_GL_PREFERENCE` and set its value to `GLVND`.
 
 # Libraries
