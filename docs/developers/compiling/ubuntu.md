@@ -18,10 +18,13 @@ Install the following tools:
 
 ## GCC
 You can install gcc-8 using the following commands.  At the time of this writing, gcc-8 is not the default version in ubuntu, so this involves some additional steps.  The final commands configure ubuntu's "update-alternatives", which allows a user to select among multiple installations of gcc: 
+```shell script
+sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade && sudo apt-get autoclean && sudo apt-get autoremove
 ```
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get dist-upgrade
+
+reboot in case there are kernel changes
+
+```shell script
 sudo apt-get install build-essential software-properties-common
 sudo add-apt-repository ppa:ubuntu-toolchain-r/test
 sudo apt-get update
@@ -43,38 +46,75 @@ The CMake CXX flags variable should be set to:
 
 It is recommended to create a new CMake string variable `OPENGL_GL_PREFERENCE` and set its value to `GLVND`.
 
-# Libraries
+# Dependencies
 Install the following libraries:
-- GLEW (`sudo apt-get install glew-utils`)
-- freeglut (`sudo apt-get install freeglut3-dev`)
-- SOIL is the recommended image library for Linux (`sudo apt-get install libsoil1`).  While FreeImage seems to work well with OpenSpace on other platforms, problems have been encountered while using this on Linux
-- Install other libraries using `sudo apt-get install <libname>`:
-  * `libxrandr-dev`
-  * `libxinerama-dev`
-  * `xorg-dev`
-  * `libcurl4-openssl-dev` (use `libcurl4-ssl-dev` for other linux distros)
-  * `libgdal-dev`
-  * `libxcursor-dev`
 
-# OpenSpace
-Obtain the source code (develop branch in this case)
-* `git clone --recursive --branch linux https://github.com/OpenSpace/OpenSpace`
-* `cd OpenSpace`
 
-# Set up the build and run CMake
-Basic steps:
-* `mkdir build`
-* `cd build`
-* CMake step (see section below)
-* `make`
+|    Package    |    Library    |
+| ------------- | ------------- |
+| [`glew-utils`](https://packages.ubuntu.com/bionic/glew-utils) | [OpenGL Extension Wrangler Library (GLEW)](http://glew.sourceforge.net/) |
+|[`freeglut3-dev`](https://packages.ubuntu.com/bionic/freeglut3-dev)|[Free OpenGL Utility Toolkit (GLUT)](http://freeglut.sourceforge.net/)|
+|[`libsoil1`](https://packages.ubuntu.com/bionic/libsoil1)*|[Simple OpenGL Image Library (SOIL)](http://www.lonesock.net/soil.html)|
+|[`libxrandr-dev`](https://packages.ubuntu.com/bionic/libxrandr-dev)|[X Window System Protocol 11 (X11) Resize, Rotate and Reflection (XRandR) extension library (development headers)](https://salsa.debian.org/xorg-team/lib/libxrandr)|
+|[`libxinerama-dev`](https://packages.ubuntu.com/bionic/libxinerama-dev)|[X Window System Protocol 11 (X11) Xinerama extension library (development headers)](https://salsa.debian.org/xorg-team/lib/libxinerama)|
+|[`xorg-dev`](https://packages.ubuntu.com/bionic/xorg-dev)|[X.Org X Window System development libraries](http://www.x.org/)|
+|[`libcurl4-openssl-dev`](https://packages.ubuntu.com/bionic/libcurl4-openssl-dev)|[Library for Client URL (cURL)(libcurl) - OpenSSL flavour](https://curl.haxx.se/)|
+|[`libgdal-dev`](https://packages.ubuntu.com/bionic/libgdal-dev)|[Geospatial Data Abstraction Library (GDAL) - Development files](http://www.gdal.org/)|
+|[`libxcursor-dev`](https://packages.ubuntu.com/bionic/libxcursor-dev)|[X cursor management library (development files)](https://www.x.org/)|
+|[`git`](https://packages.ubuntu.com/bionic/git)|[git](https://git-scm.com/)|
 
-## CMake step
+
+\* The recommended image library for Linux.  While [FreeImage](https://freeimage.sourceforge.io/) seems to work well with OpenSpace on other platforms, problems have been encountered while using this on Linux
+  
+```shell script
+sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
+sudo apt-get update
+sudo apt-get install -y \
+build-essential software-properties-common \
+gcc-8 g++-8 cmake \
+glew-utils freeglut3-dev libsoil1 \
+libxrandr-dev libxinerama-dev xorg-dev libcurl4-openssl-dev libgdal-dev libxcursor-dev \
+git
+```
+
+# Compile OpenSpace
+
+1) Checkout
+1) Configure
+1) Make
+
+```shell script
+openSpaceHome="$HOME/source/OpenSpace"
+
+git clone --recursive --branch linux https://github.com/OpenSpace/OpenSpace "$openSpaceHome"
+
+mkdir -p "$openSpaceHome/build"
+cd "$openSpaceHome/build" || exit
+
+cmake \
+-DCMAKE_CXX_COMPILER:FILEPATH=/usr/bin/g++-8 \
+-DCMAKE_C_COMPILER:FILEPATH=/usr/bin/gcc-8 \
+-DCMAKE_CXX_FLAGS:STRING="-std=gnu++17 -DGLM_ENABLE_EXPERIMENTAL" \
+-DOpenGL_GL_PREFERENCE:STRING=GLVND "$openSpaceHome"
+
+make
+```
+
+### CMake step
 This can be one of the following:
 * `cmake ..` The simplest way if there are no CMake issues to resolve or build options to set.
 * `ccmake ..` A curses pseudo-gui version of CMake (run `sudo apt install cmake-curses-gui` if not installed).
 * `cmake-gui ..` A Qt GUI version of CMake.
 
 With any of these methods, CMake is first configured, then (if no errors) the generate step creates the build files.
+
+# Run OpenSpace
+
+Execute:
+
+```shell script
+"$openSpaceHome"/bin/OpenSpace
+```
 
 # Troubleshooting
 Make sure that you are using the correct version of gcc/g++  
