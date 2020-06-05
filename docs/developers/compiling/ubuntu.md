@@ -18,13 +18,13 @@ Install the following tools:
 
 ## GCC
 You can install gcc-8 using the following commands.  At the time of this writing, gcc-8 is not the default version in ubuntu, so this involves some additional steps.  The final commands configure ubuntu's "update-alternatives", which allows a user to select among multiple installations of gcc: 
-```shell script
+```
 sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade && sudo apt-get autoclean && sudo apt-get autoremove
 ```
 
 reboot in case there are kernel changes
 
-```shell script
+```
 sudo apt-get install build-essential software-properties-common
 sudo add-apt-repository ppa:ubuntu-toolchain-r/test
 sudo apt-get update
@@ -66,7 +66,7 @@ Install the following libraries:
 
 \* The recommended image library for Linux.  While [FreeImage](https://freeimage.sourceforge.io/) seems to work well with OpenSpace on other platforms, problems have been encountered while using this on Linux
   
-```shell script
+```
 sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
 sudo apt-get update
 sudo apt-get install -y \
@@ -83,7 +83,7 @@ git
 1) Configure
 1) Make
 
-```shell script
+```
 openSpaceHome="$HOME/source/OpenSpace"
 
 git clone --recursive --branch linux https://github.com/OpenSpace/OpenSpace "$openSpaceHome"
@@ -112,7 +112,7 @@ With any of these methods, CMake is first configured, then (if no errors) the ge
 
 Execute:
 
-```shell script
+```
 "$openSpaceHome"/bin/OpenSpace
 ```
 
