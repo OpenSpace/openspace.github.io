@@ -26,8 +26,8 @@ The source code for OpenSpace is distributed via [GitHub](https://github.com/Ope
    1. SmartGit
    1. Git GUI (a part of the basic git [download](http://git-scm.com/download) or Visual Studio)
  
-### Visual Studio 2017
-[Visual Studio 2017](http://www.visualstudio.com) is the standard Interactive Development Environment (IDE) for Windows.  Version 15.8.9 or higher is required. The "community" version is a free download.  When you install it, be sure to select "Custom" configuration and select the C++ compiler -- it is not included by default.  You can also select a git client here ("Git GUI").  Installation could take a while (like an hour or so, depending on the machine).  Currently OpenSpace does *not* compile on Visual Studio 2019 due to a dependency not being able to be compiled on that platform.
+### Visual Studio 2019
+[Visual Studio 2019](http://www.visualstudio.com) is the standard Interactive Development Environment (IDE) for Windows.  The "community" version is a free download.  When you install it, be sure to select "Custom" configuration and select the C++ compiler -- it is not included by default.  You can also select a git client here ("Git GUI").  Installation could take a while (like an hour or so, depending on the machine).  We are following the development of the C++ language quite closely, so there are more and more features that are no longer supported in Visual Studio 2017
 
 ### CMake
 - Download and run the [CMake installer](https://cmake.org/download/)
