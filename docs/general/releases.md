@@ -17,6 +17,7 @@ As development procedes, some versions get tagged with names.  This table indica
 
 | Version | _Name_ | _Date_ | _Description_ |
 | ------- | ------ | ------ | - |
+| 0.15.2 | Beta-7 | 2020-06-13 | This is the seventh beta release for OpenSpace for the summer of 2020 |
 | 0.15.1 | Beta-6 | 2020-02-17 | This is the sixth beta release for OpenSpace in conjunction with the 4th annual developer's meeting |
 | 0.15.0 | Beta-5 | 2019-09-17 | This is the fifth beta release for OpenSpace released on September, 17th, 2019 for the ASTC conference |
 | 0.14.1 | Beta-4 | 2019-06-04 | This is the first patch release for the fourth beta |
@@ -33,9 +34,54 @@ As development procedes, some versions get tagged with names.  This table indica
 
 ***
 
+# Beta-7
+ - Version: 0.15.2
+ - Date: 2020-06-22
+ - Finished:  Not yet
+ 
+## Changelog
+### Features
+ - Added new meta information to the assets that is automatically collected into the documentation/index.html to provide direct information about the license state of the current scene
+ - Added a new version of SGCT that should improve performance and future extensibility
+   - Added support for cylindrical and equirectangular output methods
+ - Added a feature to enable a continous pinch gesture to continue to zoom in without the need to repeat the pinch gesture over and over
+ - Added the ability to change the line width of wire-type meshes (#1153)
+ - Added the ability to invert mouse buttons (#697)
+
+### Content
+ - Added a model and the trajectory of the Mars 2020 rover Perseverance
+ - Added a new, full textured model for the International Space Station
+ - Added a lot of new asteroids datasets from JPL horizons (#1123)
+ - Added new constellation images (thanks to James Hedberg)
+ - Added the C 2019 Y4 (thanks to Dan Tell)
+ - Added time range to voyager rotations to make that scene more useful
+
+### Content Creation
+ - Added suport for non-uniform static scaling of objects (#1151)
+ - Added a new renderable that shows customizable distance labels between scene graph nodes
+
+### API
+ - The `openspace.sessionRecording.enableTakeScreenShotDuringPlayback` function now has a default framerate of 60 (#1134)
+ - Added support for the Tracy profiling library to debug performance issues
+
+### Bugfixes
+ - Fixed issue with time quantization for temporal globe browsing layers that could cause the displayed image to be off by 1 day (#1092)
+ - Added fixes to enforce a 0-360 angle range on incoming data from JPL horizons
+ - Various fixes to make the touch interface more reliable on Windows
+ - Removed the highlight created by the operating system when using touch on Windows
+ - Better handling of touch interaction for the native ImGUI user interface
+ - Removed warnings that occurred when disabling all night layers on Earth (#1136)
+ - Added fix for leap year in the calculation of the satellite orbits
+ - Fixed issue that made it difficult to view the cosmic microwave background radiation image from Earth
+ - Improved the performance of the Borisov trajectory rendering
+ - Fixed the positioning of the Apollo 8 trail around the moon
+ - Fixed an error with the orientation of the digital universe deep sky objects
+ - Fixed a rendering issue that made the grids flicker
+
+
 # Beta-6
  - Version: 0.15.1
- - Date: 2020-01-27
+ - Date: 2020-02-17
  - Finished: [9c34a55e50d7039c4408d2d0f8f9b0e73fc93bdc](https://github.com/OpenSpace/OpenSpace/commit/9c34a55e50d7039c4408d2d0f8f9b0e73fc93bdc)
 
 ## Changelog
