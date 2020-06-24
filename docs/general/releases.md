@@ -47,22 +47,28 @@ As development procedes, some versions get tagged with names.  This table indica
  - Added a feature to enable a continous pinch gesture to continue to zoom in without the need to repeat the pinch gesture over and over
  - Added the ability to change the line width of wire-type meshes (#1153)
  - Added the ability to invert mouse buttons (#697)
+ - Added the ability for a vertical offset for a screen log
+ - Added a property for line width to the constellation bounds (#1214)
 
 ### Content
  - Added a model and the trajectory of the Mars 2020 rover Perseverance
  - Added a new, full textured model for the International Space Station
  - Added a lot of new asteroids datasets from JPL horizons (#1123)
+ - Replaced the L4 G1SST sea surface temperature with the GHRSST L4 MUR as it is a wider coverage (#1204)
  - Added new constellation images (thanks to James Hedberg)
  - Added the C 2019 Y4 (thanks to Dan Tell)
  - Added time range to voyager rotations to make that scene more useful
-
+ - Fixed spelling errors with Uranus label and the CTX surface layer
+ 
 ### Content Creation
+ - Added the ability to load images for planes lazily
  - Added suport for non-uniform static scaling of objects (#1151)
  - Added a new renderable that shows customizable distance labels between scene graph nodes
 
 ### API
  - The `openspace.sessionRecording.enableTakeScreenShotDuringPlayback` function now has a default framerate of 60 (#1134)
  - Added support for the Tracy profiling library to debug performance issues
+ - Added more meaningful error messages to the `openspace.globebrowsing.addBlendingLayersFromDirectory` if the parameters are missing (#1101)
 
 ### Bugfixes
  - Fixed issue with time quantization for temporal globe browsing layers that could cause the displayed image to be off by 1 day (#1092)
@@ -72,6 +78,8 @@ As development procedes, some versions get tagged with names.  This table indica
  - Better handling of touch interaction for the native ImGUI user interface
  - Removed warnings that occurred when disabling all night layers on Earth (#1136)
  - Added fix for leap year in the calculation of the satellite orbits
+ - Fixed a bug where the static rotation was not updated when changing the Euler rotation angles
+ - Fixed an issue with rendering the renderable grid
  - Fixed issue that made it difficult to view the cosmic microwave background radiation image from Earth
  - Improved the performance of the Borisov trajectory rendering
  - Fixed the positioning of the Apollo 8 trail around the moon
