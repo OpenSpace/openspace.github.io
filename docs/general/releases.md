@@ -17,7 +17,7 @@ As development procedes, some versions get tagged with names.  This table indica
 
 | Version | _Name_ | _Date_ | _Description_ |
 | ------- | ------ | ------ | - |
-| 0.15.2 | Beta-7 | 2020-06-13 | This is the seventh beta release for OpenSpace for the summer of 2020 |
+| 0.15.2 | Beta-7 | 2020-06-26 | This is the seventh beta release for OpenSpace for the summer of 2020 |
 | 0.15.1 | Beta-6 | 2020-02-17 | This is the sixth beta release for OpenSpace in conjunction with the 4th annual developer's meeting |
 | 0.15.0 | Beta-5 | 2019-09-17 | This is the fifth beta release for OpenSpace released on September, 17th, 2019 for the ASTC conference |
 | 0.14.1 | Beta-4 | 2019-06-04 | This is the first patch release for the fourth beta |
@@ -37,7 +37,7 @@ As development procedes, some versions get tagged with names.  This table indica
 # Beta-7
  - Version: 0.15.2
  - Date: 2020-06-22
- - Finished:  Not yet
+ - Finished: [076a96e651a59cc9f330ef94c09259db2dbd41de](https://github.com/OpenSpace/OpenSpace/commit/076a96e651a59cc9f330ef94c09259db2dbd41de)
  
 ## Changelog
 ### Features
@@ -74,6 +74,7 @@ As development procedes, some versions get tagged with names.  This table indica
  - Fixed issue with time quantization for temporal globe browsing layers that could cause the displayed image to be off by 1 day (#1092)
  - Added fixes to enforce a 0-360 angle range on incoming data from JPL horizons
  - Various fixes to make the touch interface more reliable on Windows
+ - Compilation fixes for Clang on Linux
  - Removed the highlight created by the operating system when using touch on Windows
  - Better handling of touch interaction for the native ImGUI user interface
  - Removed warnings that occurred when disabling all night layers on Earth (#1136)
