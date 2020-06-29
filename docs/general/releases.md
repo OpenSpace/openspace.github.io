@@ -44,20 +44,20 @@ As development procedes, some versions get tagged with names.  This table indica
  - Added new meta information to the assets that is automatically collected into the documentation/index.html to provide direct information about the license state of the current scene
  - Added a new version of SGCT that should improve performance and future extensibility
    - Added support for cylindrical and equirectangular output methods
- - Added a feature to enable a continous pinch gesture to continue to zoom in without the need to repeat the pinch gesture over and over
+ - Added a feature for touch interface to enable a continous pinch gesture to continue to zoom in without the need to repeat the pinch gesture 
  - Added the ability to change the line width of wire-type meshes (#1153)
  - Added the ability to invert mouse buttons (#697)
  - Added the ability for a vertical offset for a screen log
  - Added a property for line width to the constellation bounds (#1214)
 
 ### Content
- - Added a model and the trajectory of the Mars 2020 rover Perseverance
- - Added a new, full textured model for the International Space Station
- - Added a lot of new asteroids datasets from JPL horizons (#1123)
+ - Added a model and the trajectory of the Mars 2020 Perseverance rover
+ - Added a new, fully-textured model of the International Space Station
+ - Added new asteroids datasets from JPL Horizons (#1123)
  - Replaced the L4 G1SST sea surface temperature with the GHRSST L4 MUR as it is a wider coverage (#1204)
  - Added new constellation images (thanks to James Hedberg)
- - Added the C 2019 Y4 (thanks to Dan Tell)
- - Added time range to voyager rotations to make that scene more useful
+ - Added the C/2019 Y4 (ATLAS) comet (thanks to Dan Tell)
+ - Added time range to Voyager rotations to make that scene more useful
  - Fixed spelling errors with Uranus label and the CTX surface layer
  
 ### Content Creation
@@ -72,7 +72,7 @@ As development procedes, some versions get tagged with names.  This table indica
 
 ### Bugfixes
  - Fixed issue with time quantization for temporal globe browsing layers that could cause the displayed image to be off by 1 day (#1092)
- - Added fixes to enforce a 0-360 angle range on incoming data from JPL horizons
+ - Added fixes to enforce a 0-360 angle range on incoming data from JPL Horizons
  - Various fixes to make the touch interface more reliable on Windows
  - Compilation fixes for Clang on Linux
  - Removed the highlight created by the operating system when using touch on Windows
@@ -84,7 +84,7 @@ As development procedes, some versions get tagged with names.  This table indica
  - Fixed issue that made it difficult to view the cosmic microwave background radiation image from Earth
  - Improved the performance of the Borisov trajectory rendering
  - Fixed the positioning of the Apollo 8 trail around the moon
- - Fixed an error with the orientation of the digital universe deep sky objects
+ - Fixed an error with the orientation of the Digital Universe deep-sky objects
  - Fixed a rendering issue that made the grids flicker
 
 
@@ -113,6 +113,7 @@ As development procedes, some versions get tagged with names.  This table indica
 ### Content
  - Added ISS asset to the default scene
  - Added asset for C2019 Q4 "Borisov" interstellar object
+ - Added over 2,000 identified Potentially Hazardous Asteroids (PHAs) from JPL Horizons
  - Added a WMS server for the Venus Magellan dataset
  - Added alpha channel to Kaguya layer
  - Added an atmosphere to Venus
