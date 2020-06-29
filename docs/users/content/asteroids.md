@@ -21,7 +21,7 @@ Some of the asteroid categories contain a very high number of objects, which wil
 See the Components/Satellites [page](../../components/satellites.md) for more detailed information and advanced usage of this content.
 
 ## Asteroid Content Categories
-All trajectory data were obtained from the JPL Small-body Database. The following categories are defined on this site and were used to group the orbital data.
+All trajectory data were obtained from the [JPL Small-Body Database (SBDB)](https://ssd.jpl.nasa.gov/sbdb.cgi). The following categories are defined on this site and were used to group the orbital data.
 
 ### Amor Asteroids
 Earth-approaching Near-Earth-Asteroids with orbits exterior to Earth's but interior to Mars'.
