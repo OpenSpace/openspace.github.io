@@ -53,7 +53,7 @@ As development procedes, some versions get tagged with names.  This table indica
 ### Content
  - Added a model and the trajectory of the Mars 2020 Perseverance rover
  - Added a new, fully-textured model of the International Space Station
- - Added new asteroids datasets from JPL Horizons (#1123)
+ - Added new asteroids datasets from JPL Horizons (#1123) -- see [asteroids content page](http://wiki.openspaceproject.com/docs/users/content/asteroids#asteroid-content-categories) for categories included
  - Replaced the L4 G1SST sea surface temperature with the GHRSST L4 MUR as it is a wider coverage (#1204)
  - Added new constellation images (thanks to James Hedberg)
  - Added the C/2019 Y4 (ATLAS) comet (thanks to Dan Tell)
