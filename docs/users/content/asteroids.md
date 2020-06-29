@@ -24,16 +24,16 @@ See the Components/Satellites [page](../../components/satellites.md) for more de
 All trajectory data were obtained from the [JPL Small-Body Database (SBDB)](https://ssd.jpl.nasa.gov/sbdb.cgi). The following categories are defined on this site and were used to group the orbital data.
 
 ### Amor Asteroids
-Earth-approaching Near-Earth-Asteroids with orbits exterior to Earth's but interior to Mars'.
+Earth-approaching Near-Earth Asteroids with orbits exterior to Earth's but interior to Mars'.
 
 ### Apollo Asteroids
-Earth-crossing Near-Earth-Asteroids with semi-major axes larger than Earth's.
+Earth-crossing Near-Earth Asteroids with semi-major axes larger than Earth's.
 
 ### Aten Asteroids
-Earth-crossing Near-Earth-Asteroids with semi-major axes smaller than Earth's.
+Earth-crossing Near-Earth Asteroids with semi-major axes smaller than Earth's.
 
 ### Atira Asteroids
-Near-Earth-Asteroids whose orbits are contained entirely within the orbit of the Earth.
+Near-Earth Asteroids whose orbits are contained entirely within the orbit of the Earth.
 
 ### Centaur Asteroids
 Asteroids with either a perihelion or a semi-major axis between those of the four outer planets.
@@ -65,7 +65,7 @@ Asteroids that cross the orbit of Mars, with a semi-major axis of less than 3.2 
 ### Outer Main Asteroid Belt
 Asteroids with a semi-major axis of between 3.2 and 4.6 au.
 
-### Potentially-Hazardous Asteroids (PHA)
+### Potentially Hazardous Asteroids (PHAs)
 Asteroids that are deemed potentially hazardous to Earth based on their close approaches. All asteroids with an Earth Minimum Orbit Intersection Distance (MOID) of 0.05 au or less, and with an absolute magnitude (H) of 22.0 or less.
 
 ### Trans-Neptunian Asteroids
