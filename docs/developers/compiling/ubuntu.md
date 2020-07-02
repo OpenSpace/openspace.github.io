@@ -91,6 +91,7 @@ mkdir -p "$openSpaceHome/build"
 cd "$openSpaceHome/build" || exit
 
 cmake \
+-DCMAKE_BUILD_TYPE:STRING="Release" \
 -DCMAKE_CXX_COMPILER:FILEPATH=/usr/bin/g++-9 \
 -DCMAKE_C_COMPILER:FILEPATH=/usr/bin/gcc-9 \
 -DCMAKE_CXX_FLAGS:STRING="-DGLM_ENABLE_EXPERIMENTAL" \
