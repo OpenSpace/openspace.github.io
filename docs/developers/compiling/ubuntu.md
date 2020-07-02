@@ -7,17 +7,16 @@ parent: Compiling OpenSpace
 nav_order: 3
 ---
 
-OpenSpace has been tested on version 18.04 of ubuntu.
-## Please note that as of May 2020, the current version of OpenSpace runs but is not rendering correctly on Ubuntu (see github issues for more information).
+OpenSpace has been tested on Ubuntu versions 18.04 and 20.04.
 
 # Developer Tools
 Install the following tools:
  - Git 2.7+
- - GCC 8+
+ - GCC 9+
  - CMake 3.12+
 
 ## GCC
-You can install gcc-8 using the following commands.  At the time of this writing, gcc-8 is not the default version in ubuntu, so this involves some additional steps.  The final commands configure ubuntu's "update-alternatives", which allows a user to select among multiple installations of gcc: 
+You can install gcc-9 using the following commands.  At the time of this writing, gcc-9 is not the default version in ubuntu 18.04 (but is default in 20.04), so this involves some additional steps.  The final commands configure ubuntu's "update-alternatives", which allows a user to select among multiple installations of gcc:
 ```
 sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade && sudo apt-get autoclean && sudo apt-get autoremove
 ```
@@ -28,21 +27,21 @@ reboot in case there are kernel changes
 sudo apt-get install build-essential software-properties-common
 sudo add-apt-repository ppa:ubuntu-toolchain-r/test
 sudo apt-get update
-sudo apt-get install gcc-8 g++-8
-sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 60 --slave /usr/bin/g++ g++ /usr/bin/g++-8
+sudo apt-get install gcc-9 g++-9
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 60 --slave /usr/bin/g++ g++ /usr/bin/g++-9
 sudo update-alternatives --config gcc
 ```
 
-If you don't want to install GCC 8 globally (e.g. leave gcc 7 as the default for ubuntu), you can overwrite the CMake options instead:
+If you don't want to install GCC 9 globally, you can overwrite the CMake options instead:
 ```
-CMAKE_CXX_COMPILER:FILEPATH=/usr/bin/g++-8
-CMAKE_C_COMPILER:FILEPATH=/usr/bin/gcc-8
+CMAKE_CXX_COMPILER:FILEPATH=/usr/bin/g++-9
+CMAKE_C_COMPILER:FILEPATH=/usr/bin/gcc-9
 ```
 
 If you do want to change the defaults: [here](https://stackoverflow.com/questions/7832892/how-to-change-the-default-gcc-compiler-in-ubuntu)
 
 The CMake CXX flags variable should be set to:
-`CMAKE_CXX_FLAGS:STRING=-std=gnu++17 -DGLM_ENABLE_EXPERIMENTAL`
+`-DGLM_ENABLE_EXPERIMENTAL`
 
 It is recommended to create a new CMake string variable `OPENGL_GL_PREFERENCE` and set its value to `GLVND`.
 
@@ -71,7 +70,7 @@ sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
 sudo apt-get update
 sudo apt-get install -y \
 build-essential software-properties-common \
-gcc-8 g++-8 cmake \
+gcc-9 g++-9 cmake \
 glew-utils freeglut3-dev libsoil1 \
 libxrandr-dev libxinerama-dev xorg-dev libcurl4-openssl-dev libgdal-dev libxcursor-dev \
 git
@@ -92,9 +91,9 @@ mkdir -p "$openSpaceHome/build"
 cd "$openSpaceHome/build" || exit
 
 cmake \
--DCMAKE_CXX_COMPILER:FILEPATH=/usr/bin/g++-8 \
--DCMAKE_C_COMPILER:FILEPATH=/usr/bin/gcc-8 \
--DCMAKE_CXX_FLAGS:STRING="-std=gnu++17 -DGLM_ENABLE_EXPERIMENTAL" \
+-DCMAKE_CXX_COMPILER:FILEPATH=/usr/bin/g++-9 \
+-DCMAKE_C_COMPILER:FILEPATH=/usr/bin/gcc-9 \
+-DCMAKE_CXX_FLAGS:STRING="-DGLM_ENABLE_EXPERIMENTAL" \
 -DOpenGL_GL_PREFERENCE:STRING=GLVND "$openSpaceHome"
 
 make
