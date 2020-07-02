@@ -85,7 +85,7 @@ git
 ```
 openSpaceHome="$HOME/source/OpenSpace"
 
-git clone --recursive --branch linux https://github.com/OpenSpace/OpenSpace "$openSpaceHome"
+git clone --recursive https://github.com/OpenSpace/OpenSpace "$openSpaceHome"
 
 mkdir -p "$openSpaceHome/build"
 cd "$openSpaceHome/build" || exit
