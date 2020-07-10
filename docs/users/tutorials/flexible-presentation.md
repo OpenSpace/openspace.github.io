@@ -26,22 +26,22 @@ Open **mars_flight.profile** in a text editor, and replace the contents with the
 1.0
 
 #Asset
-base   
-scene/solarsystem/planets/earth/earth    earthAsset
-addons/testflight
+base \t 
+scene/solarsystem/planets/earth/earth \t earthAsset
+addons/testflight \t 
 
 #Property
-setPropertyValue    "NavigationHandler.OrbitalNavigator.RetargetAnchorInterpolationTime"    2.000000
-setPropertyValue    "Scene.Mars.Renderable.Layers.ColorLayers.CTX_belended_01.Enabled"    true
-setPropertyValue    "Scene.Mars.Renderable.Layers.ColorLayers.CTX_belended_01.Settings.Opacity" 0.0
-setPropertyValue    "Scene.Mars.Renderable.Layers.ColorLayers.Southwest_Candor_Chasma.Enabled"    true
-setPropertyValue    "Scene.Mars.Renderable.Layers.HeightLayers.Southwest_Candor_Chasma.Enabled"    true
+setPropertyValue \t NavigationHandler.OrbitalNavigator.RetargetAnchorInterpolationTime \t 2.000000
+setPropertyValue \t Scene.Mars.Renderable.Layers.ColorLayers.CTX_belended_01.Enabled \t true
+setPropertyValue \t Scene.Mars.Renderable.Layers.ColorLayers.CTX_belended_01.Settings.Opacity \t 0.0
+setPropertyValue \t Scene.Mars.Renderable.Layers.ColorLayers.Southwest_Candor_Chasma.Enabled \t true
+setPropertyValue \t Scene.Mars.Renderable.Layers.HeightLayers.Southwest_Candor_Chasma.Enabled \t true
 
 #Time
-relative    -1d
+absolute \t 2020 JUN 11 11:00:00
 
 #Camera
-goToGeo    earthAsset.Earth.Identifier    58.5877    16.1924    40000000
+goToGeo \t earthAsset.Earth.Identifier \t 58.5877 \t 16.1924 \t 40000000
 
 #MarkNodes
 Earth
@@ -53,6 +53,7 @@ Sun
 openspace.globebrowsing.addFocusNodeFromLatLong("Olympus Mons", "Mars", 18.65, 226.2, 1000)
 openspace.globebrowsing.addFocusNodeFromLatLong("Western Candor", "Mars", -6.48, -76.92, 1000)
 ```
+*Please note that the '** \t **' characters above represent spaces. This is done because they might not be preserved when copy&pasting.*
 
 ## Add Asset File That Contains the Individual Navigation Steps
 First create a new **addons/** directory in the **data/assets/** OpenSpace file path, and then add a new **testflight.asset** file there (the full path will be **data/assets/addons/testflight.asset**). Add the following contents to the file, and save it.
