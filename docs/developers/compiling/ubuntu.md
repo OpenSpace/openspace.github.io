@@ -108,6 +108,8 @@ This can be one of the following:
 
 With any of these methods, CMake is first configured, then (if no errors) the generate step creates the build files.
 
+The Web GUI interface does not work with the linux version of OpenSpace. Use the F1 menu instead, which provides full functionality but has a different layout.
+
 # Run OpenSpace
 
 Execute:
