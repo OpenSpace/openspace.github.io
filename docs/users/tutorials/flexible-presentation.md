@@ -31,7 +31,6 @@ scene/solarsystem/planets/earth/earth    earthAsset
 addons/testflight
 
 #Property
-setPropertyValue    {earth_satellites}.Renderable.Enabled    false
 setPropertyValue    "NavigationHandler.OrbitalNavigator.RetargetAnchorInterpolationTime"    2.000000
 setPropertyValue    "Scene.Mars.Renderable.Layers.ColorLayers.CTX_belended_01.Enabled"    true
 setPropertyValue    "Scene.Mars.Renderable.Layers.ColorLayers.CTX_belended_01.Settings.Opacity" 0.0
