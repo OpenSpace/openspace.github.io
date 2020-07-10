@@ -8,97 +8,179 @@ nav_order: 1
 ---
 
 # Overview
-There are many ways that OpenSpace can be used to visualize space concepts, one of which is as an effective tool for presenting to an audience.  The presentation can range from an open-ended, ad-hoc discussion to a fixed script.  This tutorial describes the creation of a simple presentation that lies somewhere in the middle of this spectrum--not so unstructured that an audience might lose patience with the slow pace of a presenter who is "winging it," but not as inflexible as an educational film.  This technique is somewhat like a slideshow where the presenter can show things in segments, allowing for questions, comments, or even repeating segments if necessary. This allows for a more collaborative session with the audience.
+There are many ways that OpenSpace can be used to visualize space concepts, one of which is as an effective tool for presenting to an audience. The presentation can range from an open-ended, ad-hoc discussion to a fixed script. This tutorial describes the creation of a simple presentation that lies somewhere in the middle of this spectrum--not so unstructured that an audience might lose patience with the slow pace of a presenter who is "winging it," but not as inflexible as an educational film. This technique is somewhat like a slideshow where the presenter can show things in segments, allowing for questions, comments, or even repeating segments if necessary. This allows for a more collaborative session with the audience.
 
-OpenSpace provides a high degree of visibility and control to its internal states through a Lua script interface.  Specific Lua commands can be used to set internal property values in order to execute each step.  Each command described here could be executed in the Lua console (accessible by pressing \`), or through the GUI menu.  However, either method would be time-consuming and distracting during a presentation. The commands can instead be assigned to specific keyboard presses.
+OpenSpace provides a high degree of visibility and control to its internal states through a Lua script interface. Specific Lua commands can be used to set internal property values in order to execute each step. Each command described here could be executed in the Lua console (accessible by pressing \`), or through the GUI menu. However, either method would be time-consuming and distracting during a presentation. The commands can instead be assigned to specific keyboard presses.
 
 # Presentation
-This tutorial describes how to configure OpenSpace to visualize the 2017 solar eclipse as its shadow moves across North America, and also the position of the moon relative to the sun.  The presenter starts OpenSpace with a focus on Earth.  Pressing F5 brings the camera view to center on North America at an appropriate altitude to view the shadow's path.  Pressing F6 changes the simulation time to August 21, 2017 16:45 UTC. After discussing some of the details, the presenter presses F7 to speed up the rate of simulation time to 5 minutes per second, in order to show the shadow moving across the continent.  The rate of time acceleration makes the movement fast enough to see, while giving the presenter time to discuss the eclipse in more detail.  When the shadow has passed, F8 is pressed to bring the time rate back to 1 sec/sec.  Finally, F9 is pressed to center the camera view on the Moon to show its path across the sun relative to Earth's position.
+This tutorial describes how to configure OpenSpace to visualize a flyover of Mars. The presenter starts OpenSpace with a focus on Earth. Pressing the right arrow initiates a flight to Mars, and subsequent right arrows will initiate other movements to different locations on Mars.
 
 # Configuring OpenSpace for the Presentation
-## Create New Configuration & Scene Files
-At startup, OpenSpace uses a .cfg file to tell it how to configure the display, what scene will be loaded, and many other settings.  The default config file is **openspace.cfg**.  Create a copy of this file and rename it **eclipse2017.cfg**.  Open this file in a text editor, and scroll down to find where the variable `Asset` is defined.  The comment header above it explains that this sets the scene to be loaded by OpenSpace (ignore the other Asset lines which are disabled by the Lua comment header `--`).  The `Asset` variable is normally set to "default", which is the name of a file in the directory **data/assets/** (the **.scene** file extension is assumed but not listed here).  Change this assignment to `Asset = presentations/eclipse2017`, which tells OpenSpace to load the scene file **data/assets/presentations/eclipse2017.scene**.  Now create this scene file by creating a new directory in **data/assets** called **presentations**.  Copy the file **data/assets/default.scene** to this new directory and rename it **eclipse2017.scene**.  Finally, open this new **data/assets/eclipse2017.scene** file in a text editor, and add a `../` prefix to each `asset.require` and `asset.request` statement it contains.  For example, all such statements will be changed from this:
-`asset.require('spice/base')`
-to this:
-`asset.require('../spice/base')`
-
-## Assigning Keyboard Shortcuts
-Now open **eclipse2017.scene** in a text editor and add the details necessary to set up actions for each keypress described above.  There is a Lua entry for `Keybindings` near the top of the file, with an individual entry for each key.  Add the following text to the `Keybindings` section (inside curly braces).
+## Create New Configuration & Profile Files
+At startup, OpenSpace uses a .cfg file to tell it how to configure the display, what scene will be loaded, and many other settings. The default config file is **openspace.cfg**, and will have an un-commented (`--`) line to load the default profile (`Profile = "default"`). Copy this line and paste below, then modify it to `Profile = "mars_flight"`). Finally, comment-out the original default Profile line.
+Now create this new **mars_flight.profile** file by going to **data/profiles/** in a file browser, copy **default.profile** and rename the new file **mars_flight.profile**.
+Open **mars_flight.profile** in a text editor, and replace the contents with the following:
 ```
-    {
-        Key = "F5",
-        Name="Eclipse: Set position North America",
-        Command = "openspace.globebrowsing.goToGeo(40, -98, 5000000)",
-        Documentation = "Sets position over North America for eclipse path to be visible",
-        GuiPath = "/Rendering",
-        Local = false
-    },
-    {
-        Key = "F6",
-        Name="Eclipse: Set to date & time",
-        Command = "openspace.time.setTime(\"2017 AUG 21 16:45:00\")",
-        Documentation = "Sets date & time to when eclipse begins movement over North America",
-        GuiPath = "/Rendering",
-        Local = false
-    },
-    {
-        Key = "F7",
-        Name="Eclipse: Set to accelerated time",
-        Command = "openspace.time.interpolateDeltaTime(300)",
-        Documentation = "Sets simulated time rate to 5 minutes per second to show shadow movement",
-        GuiPath = "/Rendering",
-        Local = false
-    },
-    {
-        Key = "F8",
-        Name="Eclipse: Set to accelerated time",
-        Command = "openspace.time.interpolateDeltaTime(1)",
-        Documentation = "Sets simulated time rate back to normal 1 sec per sec",
-        GuiPath = "/Rendering",
-        Local = false
-    },
-    {
-        Key = "F9",
-        Name="Eclipse: Set moon as focus node",
-        Command = "openspace.setPropertyValue('NavigationHandler.Origin', 'Moon')",
-        Documentation = "Sets camera view to moon in order to show Earth/moon/sun relative positions",
-        GuiPath = "/Rendering",
-        Local = false
-    },
+local sceneHelper = asset.require('util/scene_helper')
 
+asset.require('./base')
+local earthAsset = asset.require('scene/solarsystem/planets/earth/earth')
+asset.require('addons/testflight')
+
+asset.onInitialize(function ()
+    openspace.time.setTime("2020 JUN 11 11:00:00")
+    openspace.globebrowsing.goToGeo("Earth", 58.5877, 16.1924, 40000000)
+    openspace.globebrowsing.addFocusNodeFromLatLong("Olympus Mons", "Mars", 18.65, 226.2, 1000)
+    openspace.globebrowsing.addFocusNodeFromLatLong("Western Candor", "Mars", -6.48, -76.92, 1000)
+    openspace.setPropertyValueSingle("NavigationHandler.OrbitalNavigator.RetargetAnchorInterpolationTime", 2.000000)
+    openspace.setPropertyValueSingle("Scene.Mars.Renderable.Layers.ColorLayers.CTX_belended_01.Enabled", true)
+    openspace.setPropertyValueSingle("Scene.Mars.Renderable.Layers.ColorLayers.CTX_belended_01.Settings.Opacity", 0.0)
+    openspace.setPropertyValueSingle("Scene.Mars.Renderable.Layers.ColorLayers.Southwest_Candor_Chasma.Enabled", true)
+    openspace.setPropertyValueSingle("Scene.Mars.Renderable.Layers.HeightLayers.Southwest_Candor_Chasma.Enabled", true)
+
+    openspace.markInterestingNodes({ "Earth", "Mars", "Moon", "Sun" })
+end)
+
+asset.onDeinitialize(function ()
+    openspace.removeInterestingNodes({ "Earth", "Mars", "Moon", "Sun" })
+end)
 ```
-Each entry specifies the key, and has a name and documentation entry with it.  The `Command` string is the Lua command that executes the desired action.  When finished, save and close the file.
-Details of these and many other commands can be found in the documentation/ directory in the OpenSpace installation.  The `.html` files located there can be opened in a web browser.  **KeyboardMapping.html** lists the default key bindings that OpenSpace uses, and files like **LuaScripting.html** and **SceneProperties.html** provide a great amount of information.  These documents are to be used as references, and since they are auto-generated, they supersede any details or syntax in this or other documents.
+
+## Add Asset File That Contains the Individual Navigation Steps
+First create a new **addons/** directory in the **data/assets/** OpenSpace file path, and then add a new **testflight.asset** file there (the full path will be **data/assets/addons/testflight.asset**). Add the following contents to the file, and save it.
+```
+local stateMachineHelper = asset.require('util/state_machine_helper')
+
+local states = {
+    {
+        Title = "Start",
+        Play = function ()
+            openspace.printInfo("Start focused on Earth")
+            openspace.globebrowsing.goToGeo("Earth", 58.5877, 16.1924, 20000000)
+        end,
+        Rewind = function ()
+        end
+    },
+    {
+        Title = "LookAtMars",
+        Play = function ()
+            openspace.setPropertyValueSingle("NavigationHandler.OrbitalNavigator.Aim", '')
+            openspace.setPropertyValueSingle("NavigationHandler.OrbitalNavigator.Anchor", 'Mars')
+            openspace.setPropertyValueSingle("NavigationHandler.OrbitalNavigator.RetargetAnchor", nil)
+            openspace.printInfo("Look at Mars")
+        end,
+        Rewind = function ()
+        end
+    },
+    {
+        Title = "FlytoMars",
+        Play = function ()
+            openspace.setPropertyValueSingle("Scene.Mars.Renderable.Layers.ColorLayers.Southwest_Candor_Chasma.Settings.Opacity", 0.0)
+            openspace.setPropertyValueSingle("NavigationHandler.OrbitalNavigator.VelocityZoomControl", .01 )
+            openspace.setPropertyValueSingle('NavigationHandler.OrbitalNavigator.FlightDestinationDistance', 20000000.0)
+            openspace.setPropertyValue('NavigationHandler.OrbitalNavigator.ApplyLinearFlight', true)
+            openspace.printInfo("Going to Mars")
+        end,
+        Rewind = function ()
+        end
+    },
+    {
+        Title = "Aim On Olympus Mons",
+        Play = function ()
+            openspace.setPropertyValueSingle("NavigationHandler.OrbitalNavigator.Aim", 'Mars-Olympus Mons')
+            openspace.setPropertyValueSingle("NavigationHandler.OrbitalNavigator.RetargetAim", nil)
+            openspace.printInfo("Going to Olympus Mons")
+        end,
+        Rewind = function ()
+        end
+    },
+    {
+        Title = "Anchor On Olympus Mons and zoom down",
+        Play = function ()
+            openspace.setPropertyValueSingle("NavigationHandler.OrbitalNavigator.VelocityZoomControl", .005 )
+            openspace.setPropertyValueSingle("NavigationHandler.OrbitalNavigator.Anchor", 'Mars-Olympus Mons')
+            openspace.setPropertyValueSingle("NavigationHandler.OrbitalNavigator.RetargetAnchor", nil)
+            openspace.setPropertyValueSingle('NavigationHandler.OrbitalNavigator.FlightDestinationDistance', 300000.0)
+            openspace.setPropertyValueSingle("NavigationHandler.OrbitalNavigator.ApplyLinearFlight", true)
+            openspace.setPropertyValueSingle("Scene.Mars.Renderable.Layers.ColorLayers.CTX_belended_01.Settings.Opacity", 1.0,10)
+            openspace.printInfo("Anchor On Olumpus Mons and Zoom Down")
+        end,
+        Rewind = function ()
+        end
+    },
+    {
+        Title = "LiftUp",
+        Play = function ()
+            openspace.setPropertyValueSingle("NavigationHandler.OrbitalNavigator.RetargetAnchorInterpolationTime", 10.000000)
+            openspace.setPropertyValueSingle("NavigationHandler.OrbitalNavigator.Anchor", 'Mars')
+            openspace.setPropertyValueSingle("NavigationHandler.OrbitalNavigator.Aim", 'Mars')
+            openspace.setPropertyValueSingle("NavigationHandler.OrbitalNavigator.RetargetAnchor", nil)
+            openspace.setPropertyValueSingle("Scene.Mars.Renderable.Layers.ColorLayers.CTX_belended_01.Settings.Opacity", 0.0,1)
+            openspace.setPropertyValueSingle('NavigationHandler.OrbitalNavigator.FlightDestinationDistance', 4000000.0)
+            openspace.setPropertyValueSingle("NavigationHandler.OrbitalNavigator.ApplyLinearFlight", true)
+            openspace.printInfo("Lift Up")
+        end,
+        Rewind = function ()
+        end
+    },
+    {
+        Title = "Aim On Candor Chasma",
+        Play = function ()
+            openspace.setPropertyValueSingle("NavigationHandler.OrbitalNavigator.Aim", 'Mars-Western Candor')
+            openspace.setPropertyValueSingle("NavigationHandler.OrbitalNavigator.RetargetAim", nil)
+            openspace.printInfo("Aiming Candor Chasma")
+        end,
+        Rewind = function ()
+        end
+    },
+    {
+        Title = "Anchor On Candor Chasma and zoom down",
+        Play = function ()
+            openspace.setPropertyValueSingle("NavigationHandler.OrbitalNavigator.Anchor", 'Mars-Western Candor')
+            openspace.setPropertyValueSingle("NavigationHandler.OrbitalNavigator.RetargetAnchor", nil)
+            openspace.setPropertyValueSingle('NavigationHandler.OrbitalNavigator.FlightDestinationDistance', 10000.0)
+            openspace.setPropertyValueSingle("NavigationHandler.OrbitalNavigator.ApplyLinearFlight", true)
+            openspace.setPropertyValueSingle("Scene.Mars.Renderable.Layers.ColorLayers.CTX_belended_01.Settings.Opacity", 1.0,10)
+            openspace.setPropertyValueSingle("Scene.Mars.Renderable.Layers.ColorLayers.Southwest_Candor_Chasma.Settings.Opacity",1.0,10)
+            openspace.printInfo("Zoom Down on Candor Chasma")
+        end,
+        Rewind = function ()
+        end
+    }
+}
+
+local stateMachine
+
+function next()
+    stateMachine.goToNextState()
+end
+
+function previous()
+    stateMachine.goToPreviousState()
+end
+
+
+
+asset.onInitialize(function ()
+    stateMachine = stateMachineHelper.createStateMachine(states)
+    openspace.bindKey('RIGHT', 'next()')
+    openspace.bindKey('LEFT', 'previous()')
+end)
+
+
+asset.onDeinitialize(function ()
+    stateMachine = nil
+    openspace.clearKey('RIGHT')
+    openspace.clearKey('LEFT')
+end)
+```
+
+Each sub-entry under `states` defines a navigation step that can be individually triggered by pressing the right arrow.
 
 ## Starting OpenSpace to Display This Scene
-Now it is time to run OpenSpace with this presentation scene.  Open a terminal and navigate to the base OpenSpace directory.  Enter the path to the executable, and specify using the newly-created **eclipse2017.cfg** file (OpenSpace defaults to using **openspace.cfg** if none is specified).  The commands should look something like this Windows example:
-```
-cd C:\directory\to\OpenSpace
-bin\OpenSpace.exe -f eclipse2017.cfg
-```
-OpenSpace will start with Earth as the camera focus, and the presenter can then go through the steps described above at his/her own pace.
+Now it is time to run OpenSpace with this presentation scene.  With the **openspace.cfg** file as described above, double-clicking the OpenSpace icon will run with this new profile.
 
 # Using this Technique for Camera Playback using "Session Recording"
 This is an example of a simple scene, but these techniques can be used to create a presentation with much more detail.  Session Recording is another OpenSpace feature that is useful for presenting (covered in a separate document [here](http://wiki.openspaceproject.com/docs/components/session-recording)).  This feature can record all of the specific details and precise camera movements that a presenter might want to show an audience.  Camera movements can be saved in individual files, and then played back in discrete steps using keybindings in order to provide a more free-form presentation like the collaborative format described above.
 
-This idea was implemented for a presentation, and configured to work with a single keypress.  When a playback segment ends, the presenter can talk about the scene, and then press the Backspace key to start the next playback segment when desired.  To do this, the following section was added to the `Keybindings` section of the .scene file.  This segment of code would be pasted in the same section as the example given above.
-```
-   {
-        Key = "BACKSPACE",
-        Name="Advance to next playback",
-        Command = 
-          [[if slideNum == 0 then
-            openspace.sessionRecording.startPlayback('C:/openspace/recordings/playback_00.dat')
-          elseif slideNum == 1 then
-            openspace.sessionRecording.startPlayback('C:/openspace/recordings/playback_01.dat')
-          elseif slideNum == 2 then
-            openspace.sessionRecording.startPlayback('C:/openspace/recordings/playback_02.dat')
-          end
-          slideNum = slideNum + 1                           
-          ]],
-        Documentation = "Advances to the next playback segment in a presentation",
-        GuiPath = "/Rendering",
-        Local = false
-    },
-```
-After adding this to the `Keybindings` section, add the variable definition `slideNum = 0` as a single line immediately above that section.
+To use session recording/playback files, the `openspace.setPropertyValueSingle("NavigationHandler.OrbitalNavigator.*")` commands in the above example could be replaced with a command `openspace.sessionRecording.startPlayback('playback_00.dat')` where **playback_00.dat** is a previously-recorded file in the **recordings/** directory. Additional playback files can of course be added.
