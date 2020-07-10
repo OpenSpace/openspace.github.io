@@ -17,33 +17,42 @@ This tutorial describes how to configure OpenSpace to visualize a flyover of Mar
 
 # Configuring OpenSpace for the Presentation
 ## Create New Configuration & Profile Files
-At startup, OpenSpace uses a .cfg file to tell it how to configure the display, what scene will be loaded, and many other settings. The default config file is **openspace.cfg**, and will have an un-commented (`--`) line to load the default profile (`Profile = "default"`). Copy this line and paste below, then modify it to `Profile = "mars_flight"`). Finally, comment-out the original default Profile line.
+At startup, OpenSpace uses a .cfg file to tell it how to configure the display, what scene will be loaded, and many other settings. The default config file is **openspace.cfg**, and will have an un-commented (`--`) line to load the default profile (`Profile = "default"`). Copy this line and paste below it, modifying it to instead read `Profile = "mars_flight"`). Finally, comment-out the original default Profile line.
+
 Now create this new **mars_flight.profile** file by going to **data/profiles/** in a file browser, copy **default.profile** and rename the new file **mars_flight.profile**.
 Open **mars_flight.profile** in a text editor, and replace the contents with the following:
 ```
-local sceneHelper = asset.require('util/scene_helper')
+#Version
+1.0
 
-asset.require('./base')
-local earthAsset = asset.require('scene/solarsystem/planets/earth/earth')
-asset.require('addons/testflight')
+#Asset
+base   
+scene/solarsystem/planets/earth/earth    earthAsset
+addons/testflight
 
-asset.onInitialize(function ()
-    openspace.time.setTime("2020 JUN 11 11:00:00")
-    openspace.globebrowsing.goToGeo("Earth", 58.5877, 16.1924, 40000000)
-    openspace.globebrowsing.addFocusNodeFromLatLong("Olympus Mons", "Mars", 18.65, 226.2, 1000)
-    openspace.globebrowsing.addFocusNodeFromLatLong("Western Candor", "Mars", -6.48, -76.92, 1000)
-    openspace.setPropertyValueSingle("NavigationHandler.OrbitalNavigator.RetargetAnchorInterpolationTime", 2.000000)
-    openspace.setPropertyValueSingle("Scene.Mars.Renderable.Layers.ColorLayers.CTX_belended_01.Enabled", true)
-    openspace.setPropertyValueSingle("Scene.Mars.Renderable.Layers.ColorLayers.CTX_belended_01.Settings.Opacity", 0.0)
-    openspace.setPropertyValueSingle("Scene.Mars.Renderable.Layers.ColorLayers.Southwest_Candor_Chasma.Enabled", true)
-    openspace.setPropertyValueSingle("Scene.Mars.Renderable.Layers.HeightLayers.Southwest_Candor_Chasma.Enabled", true)
+#Property
+setPropertyValue    {earth_satellites}.Renderable.Enabled    false
+setPropertyValue    "NavigationHandler.OrbitalNavigator.RetargetAnchorInterpolationTime"    2.000000
+setPropertyValue    "Scene.Mars.Renderable.Layers.ColorLayers.CTX_belended_01.Enabled"    true
+setPropertyValue    "Scene.Mars.Renderable.Layers.ColorLayers.CTX_belended_01.Settings.Opacity" 0.0
+setPropertyValue    "Scene.Mars.Renderable.Layers.ColorLayers.Southwest_Candor_Chasma.Enabled"    true
+setPropertyValue    "Scene.Mars.Renderable.Layers.HeightLayers.Southwest_Candor_Chasma.Enabled"    true
 
-    openspace.markInterestingNodes({ "Earth", "Mars", "Moon", "Sun" })
-end)
+#Time
+relative    -1d
 
-asset.onDeinitialize(function ()
-    openspace.removeInterestingNodes({ "Earth", "Mars", "Moon", "Sun" })
-end)
+#Camera
+goToGeo    earthAsset.Earth.Identifier    58.5877    16.1924    40000000
+
+#MarkNodes
+Earth
+Mars
+Moon
+Sun
+
+#AdditionalScripts
+openspace.globebrowsing.addFocusNodeFromLatLong("Olympus Mons", "Mars", 18.65, 226.2, 1000)
+openspace.globebrowsing.addFocusNodeFromLatLong("Western Candor", "Mars", -6.48, -76.92, 1000)
 ```
 
 ## Add Asset File That Contains the Individual Navigation Steps
