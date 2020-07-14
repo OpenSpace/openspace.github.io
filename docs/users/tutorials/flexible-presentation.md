@@ -7,6 +7,8 @@ parent: Tutorials
 nav_order: 1
 ---
 
+Note: This presentation works only with verion 0.15.3 (or built from the latest master branch) since it uses Profiles rather than Scenes.
+
 # Overview
 There are many ways that OpenSpace can be used to visualize space concepts, one of which is as an effective tool for presenting to an audience. The presentation can range from an open-ended, ad-hoc discussion to a fixed script. This tutorial describes the creation of a simple presentation that lies somewhere in the middle of this spectrum--not so unstructured that an audience might lose patience with the slow pace of a presenter who is "winging it," but not as inflexible as an educational film. This technique is somewhat like a slideshow where the presenter can show things in segments, allowing for questions, comments, or even repeating segments if necessary. This allows for a more collaborative session with the audience.
 
@@ -53,7 +55,7 @@ Sun
 openspace.globebrowsing.addFocusNodeFromLatLong("Olympus Mons", "Mars", 18.65, 226.2, 1000)
 openspace.globebrowsing.addFocusNodeFromLatLong("Western Candor", "Mars", -6.48, -76.92, 1000)
 ```
-*Please note that the '** \t **' characters above represent spaces. This is done because they might not be preserved when copy&pasting.*
+*Please note that the **' \t '** characters above represent spaces. This is done because they might not be preserved when copy&pasting.*
 
 ## Add Asset File That Contains the Individual Navigation Steps
 First create a new **addons/** directory in the **data/assets/** OpenSpace file path, and then add a new **testflight.asset** file there (the full path will be **data/assets/addons/testflight.asset**). Add the following contents to the file, and save it.
