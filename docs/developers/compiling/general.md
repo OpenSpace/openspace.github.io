@@ -17,7 +17,7 @@ There are also separate pages with more particular information for each platform
   - [FreeBSD](freebsd)
 
 # 0. Hardware requirements
-  - OpenGL 3.3: Most new graphics cards have this capability, but sometimes you need to update your drivers.  Many older machines also have this capability, so this is not a hard requirement to fulfill
+  - Dedicated graphics card that supports OpenGL 3.3 or higher. Most new graphics cards have this capability, but sometimes you need to update your drivers. Nvidia graphics cards work best, but AMD cards will work (but currently have some known issues).
   - A mouse makes navigation easier than using a trackpad, since you need both left and right mouse buttons
   - Enough disk space (all numbers approximate):
     - 1 GB of disk space to clone the GitHub repository
