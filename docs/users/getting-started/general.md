@@ -8,6 +8,8 @@ has_toc: false
 nav_order: 1
 ---
 
+The best-supported platform for running OpenSpace is a Windows 10 machine with at least 8GB RAM and a discrete graphics card (Nvidia cards work best, but AMD cards work with some issues).
+
 Once you get OpenSpace to build, or have installed it from a .zip file, it's time to run it. The OpenSpace executable can be found in the `bin/` directory (or in `bin/Release` or `bin/RelWithDebInfo` if compiled on windows).
 Here is a brief overview of what you need to know to get started.
 
