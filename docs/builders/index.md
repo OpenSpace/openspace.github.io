@@ -19,4 +19,5 @@ nav_order: 3
   - [Using JPL Horizons Ephemeris for Solar System Objects](ephemeris/horizons)
   - [Using JPL Small SolarSystem Body Database (SBDB) for Orbital Data](ephemeris/sbdb)
   - [Using a KeplerTranslation](ephemeris/kepler)
+  - [Advanced Asteroids/Comets](ephemeris/asteroids)
 - [Socket API](network/socket-api)
