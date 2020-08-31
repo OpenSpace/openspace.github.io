@@ -61,7 +61,7 @@ Examine the .dat file and verify that it is valid.  If it only contains the head
 # Data Usage
 This wiki covers the scenario where an asset file references a data file served by one of the OpenSpace sync servers.  At runtime, the file will be downloaded if a local copy does not already exist.  This requires the file generated in the above steps to be uploaded to an OpenSpace sync server by one of the project's server administrators.
 
-For testing purposes, the file can be included in the asset by using the `localResource` method, but this is not discussed here.
+For testing purposes, the file can be included in the asset by using the `localResource` method, but this is not discussed here (however the [builders/asteroids](asteroids) page contains an example using this method).
 
 # Create an Asset File
 The following is an example asset file of the interstellar object 'Oumuamua.  This file is located at **data/assets/scene/solarsystem/interstellar/oumuamua.asset** in the OpenSpace directory structure.  This asset file will create a node (not renderable) for the position of the object, and a renderable trail.
