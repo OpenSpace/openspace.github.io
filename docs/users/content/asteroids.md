@@ -18,7 +18,7 @@ It is possible to modify the length of the orbital trail by adjusting the "Line 
 Some of the asteroid categories contain a very high number of objects, which will affect frame rate and program responsiveness. If performance slows too much, then un-click the offending category to prevent it from being rendered.
 
 ## Additional Features
-See the Components/Satellites [page](../../components/satellites.md) for more detailed information and advanced usage of this content.
+See the Builders/Ephemeris/Asteroids [page](../../builders/ephemeris/asteroids) and the Components/Satellites [page](../../components/satellites.md) for more detailed information and advanced usage of this content.
 
 ## Asteroid Content Categories
 All trajectory data were obtained from the [JPL Small-Body Database (SBDB)](https://ssd.jpl.nasa.gov/sbdb.cgi). The following categories are defined on this site and were used to group the orbital data.
