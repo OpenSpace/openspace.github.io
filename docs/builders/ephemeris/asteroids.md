@@ -59,7 +59,7 @@ Some groupings contain thousands of objects which can slow the rendering. The *U
 
 ## Rendering a Subset of the Objects in a Group
 
-A contiguous subset of a group can be rendered by changing the *Starting Index of Render* and *Size of Render Block* parameters. The first selects where in the group the rendering starts, and the second controls how many objects are rendered (starting from there.
+A contiguous subset of a group can be rendered by changing the *Starting Index of Render* and *Size of Render Block* parameters. The first selects where in the group the rendering starts, and the second controls how many objects are rendered starting from there.
 
 # Trail Rendering Settings
 
