@@ -14,7 +14,7 @@ The visualizations are based on a thesis project done by Karin Reidarman in 2018
 ## How to add an exoplanet system to OpenSpace
 Exoplanet systems of interest must be added to OpenSpace individually. The reason for this is that it is impractical to load all the systems in the database into OpenSpace on start-up due to the large number of confirmed exoplanets.
 
-As of now, exoplanet systems are added using the `openspace.exoplanets.addExoplanetSystem(name)` function in the OpenSpace scripting API, where the name of the system is the name of the host star. For example, `openspace.exoplanets.addExoplanetSystem(“Kepler-11”)` adds the Kepler-11 system, a system discovered in 2010 with a total of 6 confirmed orbiting the host star Kepler-11. A GUI for simplified adding of exoplanet systems will be implemented at a later stage. 
+As of now, exoplanet systems are added using the `openspace.exoplanets.addExoplanetSystem(name)` function in the OpenSpace scripting API, where the name of the system is the name of the host star. For example, `openspace.exoplanets.addExoplanetSystem("Kepler-11")` adds the Kepler-11 system, a system discovered in 2010 with a total of 6 confirmed orbiting the host star Kepler-11. It is also possible to add multiple systems at once by specifying a list of host names as input, for example like `{"Kepler-11", "GJ 1061"}`. A GUI for simplified adding of exoplanet systems will be implemented at a later stage. 
 
 Added exoplanet systems can be found in the Scene GUI under “Milky Way → Exoplanets → Exoplanet Systems”. Note that if an exoplanet system is added during runtime, the GUI must be refreshed for it to be visible. This can be done by pressing F5. 
 
