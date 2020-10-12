@@ -1,5 +1,5 @@
 ---
-title: Satellites
+title: Exoplanets
 layout: default
 
 parent: Content
