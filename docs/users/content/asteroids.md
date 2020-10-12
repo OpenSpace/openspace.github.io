@@ -1,7 +1,7 @@
 ---
 title: Asteroids
 layout: default
-
+grand_parent: Users
 parent: Content
 nav_order: 2
 ---
