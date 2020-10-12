@@ -17,3 +17,4 @@ Basic instructions for how users can enable and visualize content categories. Th
   - [Working With Layers](../globebrowsing/working-with-layers)
 - [Gaia](gaia)
 - [Asteroids/Comets](asteroids)
+- [Exoplanets](exoplanets)
