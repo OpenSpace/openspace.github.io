@@ -19,6 +19,7 @@ nav_order: 4
   - [Globebrowsing](content/globebrowsing)
   - [Gaia](content/gaia)
   - [Asteroids/Comets](content/asteroids)
+  - [Exoplanets](content/exoplanets)
 - Tutorials
   - [OpenSpace as a Flexible Presentation Tool](tutorials/flexible-presentation)
 - [OpenSpace Kiosk Touch-Screen Version](kiosk)
