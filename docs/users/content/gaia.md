@@ -1,7 +1,7 @@
 ---
 title: Gaia
 layout: default
-
+grand_parent: Users
 parent: Content
 nav_order: 4
 ---
