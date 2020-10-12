@@ -7,7 +7,7 @@ nav_order: 2
 ---
 
 ## About the Exoplanets Module
-The exoplanets module includes the possibility of adding visualizations of confirmed exoplanets and their host stars to OpenSpace. The data comes from the [NASA Exoplanet Archive](https://exoplanetarchive.ipac.caltech.edu) and includes a large range of properties on the exoplanet systems, often including uncertainty measureds. A table of the complete dataset can be found here: [Planetary Systems Coposite Data](https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&config=PSCompPars).
+The exoplanets module includes the possibility of adding visualizations of confirmed exoplanets and their host stars to OpenSpace. The data comes from the [NASA Exoplanet Archive](https://exoplanetarchive.ipac.caltech.edu) and includes a large range of properties on the exoplanet systems, often including uncertainty estimations. A table of the complete dataset can be found here: [Planetary Systems Coposite Data](https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&config=PSCompPars).
 
 The visualizations are based on a thesis project done by Karin Reidarman in 2018.
 
