@@ -8,7 +8,7 @@ nav_order: 4
 
 This is a document that covers advanced visualization and selection of Gaia data. See [this page](../users/content/gaia) for basic instructions.
 
-# Advanced Instructions for Defining What Dataset to Render
+## Advanced Instructions for Defining What Dataset to Render
 In the data/assets/scene/milkyway/gaia/ folder, the user can change file contents to define what dataset to render.  By default the radial velocity dataset of 7.2 million stars will be downloaded and rendered on startup.  The size of the dataset is 335 MB and it will be stored in the sync folder within the OpenSpace directory.
 
 An additional dataset of 618 million stars is available for download as well.  It can be downloaded by using the _TaskRunner.exe_ with "gaia_download.task".  The dataset consists of all stars with a parallax error below 0.5 and is about 28 GB in size.
@@ -17,7 +17,7 @@ The same script will also download the full DR2 dataset with 24 binary values pe
 
 To change dataset use to "localStars" variable in gaiamission.asset to point to another directory.  Loading from disk will be much faster if using a SSD hard drive so if that is available please consider moving the dataset from sync/http/gaia_stars_rv_octree/1/ to a directory named DR2_rv_Octree[10kSPN,20dist]/ on the SSD drive and change the "localStars" variable accordingly.
 
-# How to create new subsets from Gaia DR2 and how to render them (or your own star data) in OpenSpace 
+## How to create new subsets from Gaia DR2 and how to render them (or your own star data) in OpenSpace 
 This guide will go through the different steps needed for creating new subsets from big star datasets such as Gaia DR2 and also how to render your own star dataset with the technique used for Gaia stars. 
 
 A pre-processed version of the full DR2 have also been uploaded.  From this dataset endless new subsets can be created.  Step 0 describes how to download that dataset.
