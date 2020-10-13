@@ -1,5 +1,5 @@
 ---
-title: Using the commandline
+title: Using the Commandline
 layout: default
 
 parent: Users
