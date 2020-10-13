@@ -8,20 +8,20 @@ nav_order: 5
 
 This feature provides a method for recording all views, renderables, and time control to a file which can be played-back at a later time.
 
-# Getting Started With This Feature
+## Getting Started With This Feature
 This feature is not yet included in the master branch.  The **feature/sessionRecording** branch must be checked-out from github. All subsequent build & run steps are identical to the standard instructions for OpenSpace.  See [this page]({{ site.url }}/docs/developers/compiling/general) for more details about configuring & building OpenSpace.
 
-# Notes About Controls and File Management
+## Notes About Controls and File Management
 Currently things are done with lua commands in the console, but controls in the GUI have just been added and are being tested as of May 2019.  Also as of this date, all record/playback files are saved in the `recordings` directory in the base OpenSpace location.  In Lua commands as well as in the GUI, only a filename is used without a path (this replaces the old behavior where the files could be located anywhere on the filesystem).
 
-# Recording a Session
+## Recording a Session
 To start a recording, open the console with the **\`** key and enter:
 `openspace.sessionRecording.startRecording('filename.osrec');`
 Now use OpenSpace as you would normally, moving the camera around, adjusting layer visibility, time, whatever.  When you want to finish recording, open the console again and enter:
 `openspace.sessionRecording.stopRecording();`
 and you can go back to using OpenSpace.
 
-# Playback of a Recorded Session
+## Playback of a Recorded Session
 There are two ways to handle the simulation time when playing back a session.  The most common method is to allow OpenSpace to set the simulation time (the current time visible in the menu) to exactly what it was when recorded.
 
 1. To play back a session in this manner, use the syntax:
@@ -43,10 +43,10 @@ This function is available in the GUI with the "Force time change to match recor
 Currently mouse camera control is disabled during playback.  Log messages will indicate when playback is finished.  You can abort the playback by entering:
 `openspace.sessionRecording.stopPlayback();`
 
-# Known Issues
+## Known Issues
 Problems currently occur when playing back files that contain some types of time manipulation.  If playback gets in a strange state because of this, then the `openspace.sessionRecording.stopPlayback()` command can be used to end playback.  Camera positions are time dependent, so things can look different if you don't playback in simulation mode and the time is set far in the past/future.
 
-# ASCII File Format
+## ASCII File Format
 When saving the recording in ASCII format instead of binary, the file becomes editiable and will contain a series of rows like this:
 
 `camera 35.6259 0.125842 624861769.816 14150159.7269534 1447711.8646562 22214479.4404503 -0.2036835 -0.1934829 -0.7594912 -0.5867287 4.0000052e-07 F Earth`
@@ -67,17 +67,17 @@ Below is an explination of the 14 columns in the example entry:
 12 - "F" - a value representing (T)rue or (F)alse for whether or not the camera is following the rotation of the focus node (e.g. rotating along with a planet to stay fixed at a spot on its surface)
 13 - "Earth" - the openspace identifier of the camera's focus node
 
-# Improvements in Development
+## Improvements in Development
 The github repository contains some new features in the **feature/session-recording-improvements** branch. Some of the details above are changed in this version, which will be in the next release. In order use these currently, a new build using this branch is required.
 
-## File Conversion
+### File Conversion
 OpenSpace's TaskRunner executable can now be used to convert between ascii and binary recording formats. The typical format is binary, since it is much more space efficient. Using the conversion task to switch a binary recording to ascii makes it possible to debug or modify a recording in a readable form. It is also possible to split or combine recordings.
 The conversion task can be run by doing the following:
 1. Copy the file **data/tasks/sessionRecordConvertExample1.task** and rename it. Edit the contents to specify the `InputFilePath` to convert, and the desired `OutputFilePath`.
 2. Start **bin/TaskRunner** in a terminal. At the prompt, type the full name (with **.task** extension) of the task file copied & edited above.
 
-## File Extensions
+### File Extensions
 The extension of recording filenames has been changed to **.osrec** for binary format recordings and **.osrectxt** for ascii format. When starting a recording it is not necessary to add the file extension, as it will be added based on the recording mode. It is necessary to specify the full filename at playback, however.
 
-## Comment Lines
+### Comment Lines
 Comments can added to ascii recordings in order to help with debugging, joining, or splicing. Any line that starts with `#` is ignored as a comment line.
