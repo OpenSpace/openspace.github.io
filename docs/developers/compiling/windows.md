@@ -42,7 +42,6 @@ OpenSpace depends on several other software components, which are loaded as git 
 ### Get via Git
 Checkout OpenSpace **recursively** using SourceTree, SmartGit, or the command line.  The command line git command is:
     `git clone --recursive https://github.com/OpenSpace/OpenSpace` 
-
 ### Build OpenSpace
 1. Open CMake and set "Where is the source code:" to the directory you just cloned from github, for example `develop/OpenSpace`.
 1. Set "Where to build the binaries:" to the build subdirectory, for example: `develop\OpenSpace\build`
@@ -50,6 +49,7 @@ Checkout OpenSpace **recursively** using SourceTree, SmartGit, or the command li
     - `OPENSPACE_MODULE_CEFWEBGUI`
     - `OPENSPACE_MODULE_WEBBROWSER`
     - `OPENSPACE_MODULE_WEBGUI`
+1. Check the `Qt5_DIR` path variable value. It may be necessary to manually set this to the location of your Qt5 installation (mentioned in general build wiki). For example, the path might look something like: C:/Qt/5.12.2/msvc2017_64/lib/cmake/Qt5.
 1. Press the `Configure` button in CMake.  Expect errors, which you will then correct:
     - The first time you press `Configure` you are asked to select a "generator" for the project.  Select "Visual Studio 15 2017 Win64" (the Win64 is the important part)
     - Configure again, as needed, until you resolve all the errors (except anything that says "this warning is for project developers")
@@ -58,6 +58,8 @@ Checkout OpenSpace **recursively** using SourceTree, SmartGit, or the command li
 1. The generated solution file can be opened via `Open Project`.  Otherwise, navigate to the build directory and open the main Solution file, called `OpenSpace.sln`
 1. Select either the "Launcher" or the "OpenSpace" project as a startup project via right click in the "Solution Explorer" and build them
 1. You can start either application from within Visual Studio or by navigating to OpenSpace/bin/openspace
+### Copy Qt5 dll files to executable directory
+Copy the following three dll files from your Qt5 installation (e.g. Qt/5.xx/msvc2017_64/bin/) to the bin directory where OpenSpace.exe is generated (e.g. bin/Release/): Qt5Core.dll, Qt5Gui.dll, Qt5Widgets.dll.
 
 ## Notes
 ### CMake

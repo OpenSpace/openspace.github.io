@@ -76,6 +76,8 @@ libxrandr-dev libxinerama-dev xorg-dev libcurl4-openssl-dev libgdal-dev libxcurs
 git
 ```
 
+Note that a Qt5 installation is currently required (see general compile page). CMake will need help finding this install (for example, the required `Qt5_DIR` entry may be something like: /opt/Qt/5.15.0/gcc_64/lib/cmake/Qt5). In the future, this will be updated with the libQt5\*.so files which can be installed via `apt-get`.
+
 # Compile OpenSpace
 
 1) Checkout

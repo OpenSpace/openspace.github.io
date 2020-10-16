@@ -46,6 +46,7 @@ OpenSpace is written in C++17 and thus requires modern compiler versions that su
 # 2. Required libraries
   - [SGCT](https://github.com/sgct/sgct) is the Simple Graphics Cluster Toolkit, which was developed at C-Research, Linköping University.  SGCT is included as a submodule in OpenSpace, so it will automatically be updated and built.
   - [GDAL](http://www.gdal.org/) is the Geospatial Data Abstraction Library.  For **Windows**, this library is contained in the repository, otherwise you it is available via `apt-get` or `homebrew` or MacPorts.  Suggested version: 2.1.2 or above
+  - [Qt](https://www.qt.io/download) is used for the launcher / profile editor GUI. Suggested version: 5.10 or above
 
 # 3. Compiling
 Follow one of the linked instruction pages for your specific platform:
