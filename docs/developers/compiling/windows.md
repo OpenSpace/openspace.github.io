@@ -62,6 +62,15 @@ Checkout OpenSpace **recursively** using SourceTree, SmartGit, or the command li
 ### Copy Qt5 dll files to executable directory
 Copy the following three dll files from your Qt5 installation (e.g. Qt/5.xx/msvc2017_64/bin/) to the bin directory where OpenSpace.exe is generated (e.g. bin/Release/): Qt5Core.dll, Qt5Gui.dll, Qt5Widgets.dll.
 
+### Compiling Boost
+Some of the optional modules have Boost as a dependency, which will need to be compiled separately. See [boost.org](boost.org) for a complete compilation instructions.
+1. Download the newest version of the source from [here](https://dl.bintray.com/boostorg/release/).  For example: https://dl.bintray.com/boostorg/release/1.74.0/source/boost_1_74_0.7z
+1. Unpack the boost folder to its final destination
+1. Start the Visual Studio x64 native tools command prompt and navigate to the folder
+1. In the boost folder, run `bootstrap.bat` and wait
+1. Run the `b2` command
+1. Add the boost folder as the `BOOST_ROOT` environment variable
+
 ## Notes
 ### CMake
 - Create your build directory to store the configuration files anywhere outside the source files.  It's not required to be named `build` but that's common. You can keep it in the top level of your repository.
