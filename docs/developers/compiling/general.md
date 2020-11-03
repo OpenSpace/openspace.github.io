@@ -10,11 +10,7 @@ nav_order: 1
 
 This page outlines the steps and resources required to compile OpenSpace on all platforms.  You don't need to follow these instructions just to download and use an OpenSpace binary (when packages become available) but you currently need to be able to compile from source to get the latest version of OpenSpace.
 
-There are also separate pages with more particular information for each platform:
-  - [Windows](windows)
-  - [macOS](macos)
-  - [Ubuntu](ubuntu)
-  - [FreeBSD](freebsd)
+Please read this page first, since it contains details that apply to all platforms. Links to the platform-specific pages are included at the end of the page.
 
 # 0. Hardware requirements
   - Dedicated graphics card that supports OpenGL 3.3 or higher. Most new graphics cards have this capability, but sometimes you need to update your drivers. Nvidia graphics cards work best, but AMD cards will work (but currently have some known issues).
@@ -49,12 +45,6 @@ OpenSpace is written in C++17 and thus requires modern compiler versions that su
   - [Qt](https://www.qt.io/download) is used for the launcher / profile editor GUI. Suggested version: 5.10 or above
 
 # 3. Compiling
-Follow one of the linked instruction pages for your specific platform:
-  - [Windows](windows)
-  - [macOS](macos)
-  - [Ubuntu](ubuntu)
-  - [FreeBSD](freebsd)
-
 Roughly speaking, the following steps are taken on any platform:
 
 1. Clone the Git repository including all submodules.  If you use the commandline for this, a standard command would be: `git clone --recursive --branch master https://github.com/OpenSpace/OpenSpace`. This example specifies the master branch, but another branch name can be substituted (read [Branching Model](http://nvie.com/posts/a-successful-git-branching-model) for more information about git branches).
@@ -62,6 +52,11 @@ Roughly speaking, the following steps are taken on any platform:
 1. Once you have the configuration set with no errors, use CMake to "generate" a project file
 1. Compile
 
+Follow one of the linked instruction pages for your specific platform:
+  - [Windows](windows)
+  - [macOS](macos)
+  - [Ubuntu](ubuntu)
+  - [FreeBSD](freebsd)
 
 # 4. After compiling
 - See the [Getting Started Guide: Using OpenSpace]({{ site.url }}/users/gettingstarted-general) page for how to get started with running and using OpenSpace.  The first time you run OpenSpace you should run the Launcher and sync at least one Scene to be able to view something.

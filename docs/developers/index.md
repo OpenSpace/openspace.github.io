@@ -11,10 +11,6 @@ nav_order: 2
 "Developers" are those working on the OpenSpace source code to add new and improve functionality, improve the interface, build and package binaries, and fix bugs.
 
 - [Getting Started Guide: Compiling OpenSpace](compiling/general)
-  - [Windows](compiling/windows)
-  - [macOS](compiling/macos)
-  - [Ubuntu](compiling/ubuntu)
-  - [FreeBSD](compiling/freebsd)
 - [FAQ](faq)
 - [Deploy to a Windows Machine](deploying/windows)
 - [Compiling GDAL](external/gdal)
