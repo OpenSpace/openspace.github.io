@@ -5,6 +5,7 @@ layout: default
 grand_parent: Developers
 parent: Compiling OpenSpace
 nav_order: 2
+nav_exclude: true
 ---
 
 {% link docs/developers/compiling/general.md %}

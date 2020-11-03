@@ -5,6 +5,7 @@ layout: default
 grand_parent: Developers
 parent: Compiling OpenSpace
 nav_order: 3
+nav_exclude: true
 ---
 
 OpenSpace has been tested on Ubuntu versions 18.04 and 20.04.

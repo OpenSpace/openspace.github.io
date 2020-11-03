@@ -5,6 +5,7 @@ layout: default
 grand_parent: Developers
 parent: Compiling OpenSpace
 nav_order: 1
+nav_exclude: true
 ---
 
 
