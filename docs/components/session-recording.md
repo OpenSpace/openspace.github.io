@@ -67,17 +67,14 @@ Below is an explination of the 14 columns in the example entry:
 12 - "F" - a value representing (T)rue or (F)alse for whether or not the camera is following the rotation of the focus node (e.g. rotating along with a planet to stay fixed at a spot on its surface)
 13 - "Earth" - the openspace identifier of the camera's focus node
 
-## Improvements in Development
-The github repository contains some new features in the **feature/session-recording-improvements** branch. Some of the details above are changed in this version, which will be in the next release. In order use these currently, a new build using this branch is required.
-
-### File Conversion
+## File Conversion
 OpenSpace's TaskRunner executable can now be used to convert between ascii and binary recording formats. The typical format is binary, since it is much more space efficient. Using the conversion task to switch a binary recording to ascii makes it possible to debug or modify a recording in a readable form. It is also possible to split or combine recordings.
 The conversion task can be run by doing the following:
 1. Copy the file **data/tasks/sessionRecordConvertExample1.task** and rename it. Edit the contents to specify the `InputFilePath` to convert, and the desired `OutputFilePath`.
 2. Start **bin/TaskRunner** in a terminal. At the prompt, type the full name (with **.task** extension) of the task file copied & edited above.
 
-### File Extensions
+## File Extensions
 The extension of recording filenames has been changed to **.osrec** for binary format recordings and **.osrectxt** for ascii format. When starting a recording it is not necessary to add the file extension, as it will be added based on the recording mode. It is necessary to specify the full filename at playback, however.
 
-### Comment Lines
+## Comment Lines
 Comments can added to ascii recordings in order to help with debugging, joining, or splicing. Any line that starts with `#` is ignored as a comment line.
