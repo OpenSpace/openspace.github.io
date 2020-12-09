@@ -17,6 +17,7 @@ As development procedes, some versions get tagged with names.  This table indica
 
 | Version | _Name_ | _Date_ | _Description_ |
 | ------- | ------ | ------ | - |
+| 0.16.0 | Beta-8 | 2020-12-09 | This is the eigth beta release for the end of 2020 |
 | 0.15.2 | Beta-7 | 2020-06-26 | This is the seventh beta release for OpenSpace for the summer of 2020 |
 | 0.15.1 | Beta-6 | 2020-02-17 | This is the sixth beta release for OpenSpace in conjunction with the 4th annual developer's meeting |
 | 0.15.0 | Beta-5 | 2019-09-17 | This is the fifth beta release for OpenSpace released on September, 17th, 2019 for the ASTC conference |
@@ -33,6 +34,107 @@ As development procedes, some versions get tagged with names.  This table indica
 | 0.1.0 | Prerelease-5 | 2015-05-14 | This prerelease was published for the Pluto-Palooza event held at the AMNH in New York. |
 
 ***
+
+# Beta-8
+ - Version: 0.16.0
+ - Date: 2020-12-10
+ - Finished: [c13b211add7b1bc4336de34ee6cb4f6064420242](https://github.com/OpenSpace/OpenSpace/commit/c13b211add7b1bc4336de34ee6cb4f6064420242)
+ 
+## Changelog
+### Features
+- Add new 'Profiles' feature that replaces the `*.scene` files with a more descriptive format that enables editing with a graphical user interface
+  - Added a more rigorous way to specify the delta times in a profile (#1285)
+  - Added new user interface for editing Profiles and selecting which profile and configuration to use at startup
+- User interface improvements
+  - Added new user interface for adding Exoplanets (#1304)
+  - Added new user interface panel to remote control an OpenSpace instance. This panel is only shown when connecting to a running OpenSpace instance via an external browser by going to localhost:4680
+  - Added a button to the user interface to step between delta times from the Date/Time panel
+  - Added information icons to the user interface that show the information stored in the Meta field of the assets
+- Large performance improvements across the software (loading time and rendering) (#1270, #1271)
+  - Horizon translation files are now cached between starts of OpenSpace, improving the startup time (#1185)
+- Fixed the code so that it can be compiled and run on MacOS again
+- Added the ability to step between delta time steps using the arrow keys (#1174)
+- Automatically bind the negative delta time key by using the "ALT" key.  For example if "Shift+5" is mapped to a delta time of `30`, "Alt+Shift+5" will automatically be bound to `-30`.
+- Added a new field to assets and profiles that contains meta information about the asset, such as license information, author information, and additional description
+- Added the ability to change the focus node without resetting the cameras velocity (#1276)
+- Session recording improvements
+  - Added the ability to have # deliminated comment lines in the session recording file for use in scripting
+  - Introduced a breaking change by changing the binary folder of the session recording from using a 64bit script length to a 32bit script length. All session recordings will automatically be converted without the need for user action. The converted session recording file will be stored in the `recordings` folder
+  - Added `osrec` and `osrectxt` extension to session recordings
+  - Provided a Task that converts text-based session recordings to binary and vice versa
+- Added a property in the RenderEngine to be able to soft-cap the framerate without restarting OpenSpace
+- Added an alternative location for the sync folder to the openspace.cfg file that tries to find a `OPENSPACE_SYNC` environment variable. If such a variable is set, it is used for the location of the sync folder, making it easier to reuse sync folders between OpenSpace installations
+- Added a new Native-GUI (ImGui) component to load planetary labels from NASA GIBS
+- Added a property that disables joystick input to prevent erratic input on startup (#1370)
+- Added the ability to skip a range of screenshots when rendering out a long sequence
+- Added the ability to vertically offset the screenlog so that it is not covered by the user interface
+- Added the ability to change the screenshot folder at runtime (#1172)
+- Enabled OpenGL debug context by default for now to prevent large frame stuttering until a more permanent solution is implemented
+- Added a notification when OpenSpace is compiled with Tracy support (#1189)
+- Updated the CFITSIO library
+- Updated the GLFW library
+
+### Content
+- Added a method for dynamically adding all known Exoplanets to the scene (#919, #1303)
+- Split up all provided globebrowsing layers into individual assets such that they can be loaded/ignored by a Profile UI (#1259)
+- Added a polygonal model of the Orion Nebula
+- Added the C/2019 Y4 comet to the astroids scene (#1201)
+- Added trimmed-down version of the Voyager/Pioneer trails that omit the models
+- Updated James Hedberg's constellation images (#1263)
+- Added shadowing of Jupiter's main moons onto Jupiter (#1426)
+- Removed the multiverse CMB representations out of the `cmb.asset` and into their own asset file which no longer gets included by default in the `base.asset`
+- Updated the keys for the slide deck example from Left/Right/Up to KP_4/KP_6/KP_0 to not collide with the new delta time keys (#1320)
+- Added missing tags to the Pluto system (#1319)
+- Removed the "L4 G1SST" Earth layer with the "GHRSST L4 MUR Sea Surface temperature" (#1204)
+- Added an explicit `digitaluniverse.asset` file that is used in the `base.asset` instead of the previous `requireAll` function call (#1398)
+
+### Content Creation
+- Removed the `asset.request` in favor of only using `asset.require` (#1280)
+- Unify the usage of the color + transparency/opacity for all renderables (#1196)
+- Added a new radial grid in addition to the rectangular that already existed (#733)
+- Added the ability to use linear interpolation in a color map for the RenderableBillboards
+- Added a new function to procedurally create a grid without needing to create a SPECK file first (#733)
+- Added the ability to render out the current recording time during a session recording
+- Added a `BoundingSphere` parameter to SceneGraphNodes to manually specify a bounding sphere radius for objects that can't compute one automatically (#1238)
+- Made the `LabelText` in `RenderableLabels` optional (#1237)
+- Added the ability to toggle planets in the `customization/globebrowsing.asset` (#1392)
+
+### Bugfixes
+- Fixed issue where the normals of the ISS would look wrong in Fisheye rendering
+- Corrected the orientation of the digital universe's radiosphere (#1223)
+- Fixed issue where the trails would not show up properly when intersecting an atmosphere (#1217)
+- Fixed issue where the eclipse shadow would not scale when the shadowing body is enlarged (#1160)
+- Fixed issue that would prevent Earth from rendering with multiple Night-side layers (#1323)
+- Fixed an issue that would cause flickering of planetary atmospheres when the milky way sphere was disabled (#1360)
+- Fixed an issue where the camera would become invalid when selecting a linear flight distance of 0 (#1329)
+- Fixed error with capitalization of maps on Mercury that prevented them to be loaded on operating systems that care about capitalization (#1260, thanks John Riedel)
+- Fixed the wrong printing of error messages when loading a completely fine astroid dataset
+- Fixed an issue in curved-scree nrendering where the DigitalUniverse representations would change size when moving to the corner of a projector (#1354)
+- Corrected the size of Phobos and Daimos
+- Fixed an issue where the speed of the linear flight was not taking the framerate into account (#1369)
+- Fixed flood of warnings when trying to enable accurate normals for planetary surfaces without a heightmap (#1421)
+- Fixed the name of Kerberos' trail
+- Fixed a crash when setting the point-spread function texture for stars to a file that didn't exist (#1222)
+- Fixed a bug that caused the highest resolution map layer on planetary bodies to be ignored
+- Fixed bug that prevented labels from appearing (#1278)
+- Various fixes to make OpenSpace compile and run in Linux-based operating systems
+- The ISS is not correctly cleaning up after itself (#1318)
+- Fix issues with the SPOUT transmission of the rendered image
+- Fixed issue that would lead to the wrong height being used in the LuaConsole (#1375)
+- Fixed a warning that would appear when trying to switch to a non existing slide deck image with 0 interpolation time (#936)
+- Fixed issue where the extension of screenshots would be missing in some cases
+- Fixed UI bug where it would show -1sec/sec as "Realtime"
+- Fixed issue where OpenSpace would warn about an empty folder when loading the `customization/globebrowsing.asset`
+- Fixed issue where the 'swiftshader' folder in the bin folder would appear recursively
+
+## Breaking Changes
+1. The previous loading of `*.scene` files is no longer officially supported.  The suggested mitigation is to recreate the scene files using the new Profile editor or manually converting the `.scene` files into `.profile` files.  For logic that was previously performed in a scene file, we recommend either (a) adding a new `.asset` file with that logic as the last asset in the profile or (b) provide that logic in the _Additional Scripts_ section of the Profile.  Please note that the delta time keys are no longer bound manually in the file, but should be specified in their _Delta Times_ section of the Profile instead.  That will cause them to be bound to the expected number keys also also bind the negative version to the ALT key.  For example if "Shift+5" is mapped to a delta time of `30`, "Alt+Shift+5" will automatically be bound to `-30`.
+1. The handling of colors in the asset files and scripts has significantly changed.  Where previously some assets would use an (RGBA) 4-vector to combine the opacity and the color, this is now separated.  All colors are only specified using an (RGB) tuple and an *additional* `Opacity` value that specifies the opacity of the object.  Additionally, all instances of `Transparency` were converted to `Opacity`. Additionally, the `ScreenSpaceRenderable` classes were using "alpha", which has also been renamed to "opacity"
+1. The `asset.request` function was removed in favor of `asset.require`.  All use cases of `asset.request` can be achieved by calling `asset.require` instead
+1. Joystick input has been disabled by default and needs to be reenabled through a property in the NavigationHandler, if so desired.  The unexpected input of non-calibrated joysticks was jarring for a number of users and we feel that the default behavior should be to ignore joystick inputs
+
+## New Software
+The team has been working hard on providing a tool to start OpenSpace in distributed environments where it might be cumbersome to start OpenSpace (or any other application) manually on each computer.  See the _C-Troll_ application (https://github.com/c-toolbox/c-troll) for more information.
 
 # Beta-7
  - Version: 0.15.2
