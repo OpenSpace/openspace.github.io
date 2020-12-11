@@ -82,7 +82,7 @@ As development procedes, some versions get tagged with names.  This table indica
 - Added trimmed-down version of the Voyager/Pioneer trails that omit the models
 - Updated James Hedberg's constellation images (#1263)
 - Added shadowing of Jupiter's main moons onto Jupiter (#1426)
-- Removed the multiple viewpoint CMB representations out of the `cmb.asset` and into their own asset file which no longer gets included by default in the `base.asset`
+- Removed the multiple lookback perspective viewpoint CMB representations out of the `cmb.asset` and into their own asset file which no longer gets included by default in the `base.asset`
 - Updated the keys for the slide deck example from Left/Right/Up to KP_4/KP_6/KP_0 to not collide with the new delta time keys (#1320)
 - Added missing tags to the Pluto system (#1319)
 - Removed the "L4 G1SST" Earth layer with the "GHRSST L4 MUR Sea Surface temperature" (#1204)
