@@ -15,11 +15,11 @@ nav_order: 4
     - [Navigation](getting-started/navigation)
 - [Using the commandline](commandline)
 - [Content](content)
+  - [Asteroids/Comets](content/asteroids)
+  - [Exoplanets](content/exoplanets)
   - [Satellites](content/satellites)
   - [Globebrowsing](content/globebrowsing)
   - [Gaia](content/gaia)
-  - [Asteroids/Comets](content/asteroids)
-  - [Exoplanets](content/exoplanets)
 - Tutorials
   - [OpenSpace as a Flexible Presentation Tool](tutorials/flexible-presentation)
 - [OpenSpace Kiosk Touch-Screen Version](kiosk)
