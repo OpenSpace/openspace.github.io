@@ -3,30 +3,38 @@ title: Navigation
 layout: default
 
 grand_parent: Users
-parent: Getting Started Guide
+parent: Using GlobeBrowsing
 nav_order: 2
 ---
 
-The below assumes your use of OpenSpace with a computer, keyboard, and mouse or trackpad.
+# Navigation
+## Mouse and Keyboard
+The keyboard and mouse interaction works the same way for all focus nodes but can need a more detailed description when it comes to browsing globes since more in depth navigation is required for browsing across the surface of globes.
 
-## Navigation menu
-The Navigation menu in the lower left corner of your screen consists of **Focus, Anchor, and Aim,** which you can use to change the object in focus.  This allows you to set your destination which you can then fly to with Zoom. You can also use these options to set up your view.
+### Orbit / Horizontal Movement
+Orbiting an object is done by **clicking the left mouse button and dragging**.  This can be done at any distance  and will result in a horizontal motion across the surface when the camera is close to the surface.  The angular speed at which the camera is able to orbit around the globe is proportional to the distance to the surface up to a certain distance at which the angular speed will remain constant.  This distance is the same as the distance from the center of the globe to the surface.
 
-Click on Navigation to open the menu.  This will bring up options for your Focus, Anchor, and Aim which you can select by clicking on the object name.  More options can be accessed with the gray "More" button or by using the search bar, which you click to type into.
+### Horizontal Rotation
+Rotating the camera along the reference ellipsoid normal is done using **scroll wheel clicking and dragging** or using **Shift while clicking the left mouse button and dragging** along the x-axis of the screen.
 
-## Focus
-The object in Focus will be at the center of your movement and view.  Click on the crosshair icon to select your focus.
+### Camera Roll
+Rolling the camera around its local z-axis is done by holding **Ctrl while scroll wheel clicking and dragging** or holding **Ctrl + Shift while clicking the left mouse button and dragging**.  This is useful when for example correcting a tilted horizon.
 
-## Anchor and Aim
-Anchor and Aim are used together. Anchor locks you onto one object, while Aim will direct your view at another object.  By selecting an object to Aim at, you will remain locked on your Anchored object while looking at the Aimed object, keeping them both in view.  This presents a view that shows the objects in relation to each other, often for dramatic results.
+### Free Camera Rotation
+Look around freely by holding **Ctrl while clicking the left mouse button and dragging**.  This is useful in free flight to focus in any direction.
 
-In the Navigation menu, select the anchor icon and telescope icon to choose the objects to Anchor and Aim.
+### Vertical Motion
+The camera can be translated vertically (towards or away from the focus node) by **holding the right mouse button and dragging** along the y-axis of the screen.
 
-## Moving with your mouse or trackpad
-Rotate - hold the left mouse/trackpad button + move the cursor
+## Script Functions
+`openspace.globebrowsing.goToGeo()` can be used to go to a geographic location defined by a **latitude**, a **longitude **and alternatively an **altitude**.
 
-Zoom - hold the right mouse/trackpad button + move the cursor up or down
+`openspace.globebrowsing.goToChunk()` can be used to go to a specific chunk of the globe defined by an **x-coordinate**, a **y-coordinate**, and a **level**
 
-Pan - hold control + hold the left mouse/trackpad button + move the cursor
+`openspace.navigation.resetCameraDirection()` can be used to set the direction to point at the focus node.
 
-Roll - If you have a middle mouse button, hold middle mouse/trackpad button + move the cursor.  If you do not have a middle mouse button, hold shift + hold the left mouse/trackpad button + move the cursor.
+## Properties
+When the camera is far from the globe, it will not rotate with it.  When it is close, it will follow along the rotation. The cutting point is set by the property `NavigationHandler.OrbitalNavigator.FollowFocusNodeRotationDifference` which sets distance in number of radii from the center of the globe.
+
+## Temporal Navigation
+To see the effect of temporal datasets, navigation through time is necessary.  The global time step can be changed using the slider of the property for delta time.  Functions to set time are `openspace.time.setTime()` and `openspace.time.setDeltaTime()`, see script documentation for more info. By default, the keybindings for managing time are **space bar** for playing and pausing and the **numerical keys 1-0** along with **Ctrl and Shift** modifiers to set delta time.
