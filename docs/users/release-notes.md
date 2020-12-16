@@ -4,7 +4,7 @@ layout: default
 
 grand_parent: Users
 parent: Release notes
-nav_order: 1
+nav_order: 3
 ---
 
 Download v0.16.0 on the OpenSpace website [installation page.](https://openspaceproject.com/version0160) The below notes are highlights that will be of most interest to OpenSpace users. A complete changelog is available on the [release page.](http://wiki.openspaceproject.com/docs/general/releases.html#beta-8)
