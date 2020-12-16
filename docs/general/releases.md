@@ -41,6 +41,8 @@ As development procedes, some versions get tagged with names.  This table indica
  - Finished: [c13b211add7b1bc4336de34ee6cb4f6064420242](https://github.com/OpenSpace/OpenSpace/commit/c13b211add7b1bc4336de34ee6cb4f6064420242)
  
 ## Changelog
+See [Release notes](http://wiki.openspaceproject.com/docs/users/release-notes.html) for user-focused highlights.
+
 ### Features
 - Add new 'Profiles' feature that replaces the `*.scene` files with a more descriptive format that enables editing with a graphical user interface
   - Added a more rigorous way to specify the delta times in a profile (#1285)
