@@ -3,7 +3,7 @@ title: Navigation
 layout: default
 
 grand_parent: Users
-parent: Getting Started
+parent: Getting Started Guide
 nav_order: 3
 ---
 
