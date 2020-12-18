@@ -120,7 +120,7 @@ In addition to the below, there were performance improvements that should genera
   - The radial grid is new. The included grid is an example so you can customize your own.
   - Planar grid previously created with a speck file, example included is for easier customization option
 
-**Updated Mars MiRISE map:** Previously, HiRISE Local Set corresponded with available terrain models. New HiRISE layer has wider coverage, but without complete height map coverage.
+**Updated Mars HiRISE map:** Previously, HiRISE Local Set corresponded with available terrain models. New HiRISE layer has wider coverage, but without complete height map coverage.
 
 **Navigate from Web GUI**
 
