@@ -25,3 +25,4 @@ nav_order: 4
 - Tutorials
   - [OpenSpace as a Flexible Presentation Tool](tutorials/flexible-presentation)
 - [OpenSpace Kiosk Touch-Screen Version](kiosk)
+- [FAQ](faq)
