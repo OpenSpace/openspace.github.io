@@ -21,3 +21,4 @@ nav_order: 3
   - [Using a KeplerTranslation](ephemeris/kepler)
   - [Advanced Asteroids/Comets](ephemeris/asteroids)
 - [Socket API](network/socket-api)
+- [Model loading in master](model-loading)
