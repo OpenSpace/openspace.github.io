@@ -16,11 +16,11 @@ How the Renderable for the Juno spacecraft was specified before:
 ~~~
     Renderable = {
         Type = "RenderableModel",
-        Geometry = {{
+        Geometry = {
             Type = "MultiModelGeometry",
             GeometryFile = model .. "/Juno.obj",
             ColorTexture =  textures .. "/gray.png"
-        }},
+        },
         ModelTransform = RotationMatrix,
         LightSources = assetHelper.getDefaultLightSources(sunTransforms.SolarSystemBarycenter.Identifier)
     },
