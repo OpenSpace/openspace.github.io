@@ -54,7 +54,7 @@ Install the following libraries:
 | ------------- | ------------- |
 | [`glew-utils`](https://packages.ubuntu.com/bionic/glew-utils) | [OpenGL Extension Wrangler Library (GLEW)](http://glew.sourceforge.net/) |
 |[`freeglut3-dev`](https://packages.ubuntu.com/bionic/freeglut3-dev)|[Free OpenGL Utility Toolkit (GLUT)](http://freeglut.sourceforge.net/)|
-|[`libsoil1`](https://packages.ubuntu.com/bionic/libsoil1)*|[Simple OpenGL Image Library (SOIL)](http://www.lonesock.net/soil.html)|
+|[`libpng-dev`](https://packages.ubuntu.com/bionic/libpng-dev)|[PNG Library](http://www.libpng.org/pub/png/)|
 |[`libxrandr-dev`](https://packages.ubuntu.com/bionic/libxrandr-dev)|[X Window System Protocol 11 (X11) Resize, Rotate and Reflection (XRandR) extension library (development headers)](https://salsa.debian.org/xorg-team/lib/libxrandr)|
 |[`libxinerama-dev`](https://packages.ubuntu.com/bionic/libxinerama-dev)|[X Window System Protocol 11 (X11) Xinerama extension library (development headers)](https://salsa.debian.org/xorg-team/lib/libxinerama)|
 |[`xorg-dev`](https://packages.ubuntu.com/bionic/xorg-dev)|[X.Org X Window System development libraries](http://www.x.org/)|
@@ -63,8 +63,6 @@ Install the following libraries:
 |[`libxcursor-dev`](https://packages.ubuntu.com/bionic/libxcursor-dev)|[X cursor management library (development files)](https://www.x.org/)|
 |[`git`](https://packages.ubuntu.com/bionic/git)|[git](https://git-scm.com/)|
 
-
-\* The recommended image library for Linux.  While [FreeImage](https://freeimage.sourceforge.io/) seems to work well with OpenSpace on other platforms, problems have been encountered while using this on Linux
   
 ```
 sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
@@ -72,7 +70,7 @@ sudo apt-get update
 sudo apt-get install -y \
 build-essential software-properties-common \
 gcc-9 g++-9 cmake \
-glew-utils freeglut3-dev libsoil1 \
+glew-utils freeglut3-dev libpng-dev \
 libxrandr-dev libxinerama-dev xorg-dev libcurl4-openssl-dev libgdal-dev libxcursor-dev \
 git
 ```
