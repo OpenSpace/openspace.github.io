@@ -57,6 +57,7 @@ Follow one of the linked instruction pages for your specific platform:
   - [macOS](macos)
   - [Ubuntu](ubuntu)
   - [FreeBSD](freebsd)
+  - [Fedora](fedora)
 
 # 4. After compiling
 - See the [Getting Started Guide: Using OpenSpace]({{ site.url }}/users/gettingstarted-general) page for how to get started with running and using OpenSpace.  The first time you run OpenSpace you should run the Launcher and sync at least one Scene to be able to view something.
