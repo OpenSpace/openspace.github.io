@@ -81,7 +81,7 @@ Temporal datasets can also be used with local files.  Here is a simple example:
     <OpenSpaceTimeEnd></OpenSpaceTimeEnd>
     <OpenSpaceTimeResolution>1d</OpenSpaceTimeResolution>
     <OpenSpaceTimeIdFormat>YYYY-MM-DD</OpenSpaceTimeIdFormat>
-    "path/to/file${OpenSpaceTimeId}.jpg"
+    <FilePath>"path/to/file${OpenSpaceTimeId}.jpg"</FilePath>
 </OpenSpaceTemporalGDALDataset>
 ```
 where `path/to` is a folder containing files such as `file2015-11-24.jpg` where the date is interchangeable.
