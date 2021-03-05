@@ -5,5 +5,5 @@ layout: default
 parent: Developers
 has_children: true
 has_toc: false
-nav_order: 7
+nav_order: 6
 ---
