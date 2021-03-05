@@ -17,7 +17,7 @@ nav_order: 4
 - Release notes
   - [v0.16.0](release-notes)
 - [Content](content)
-  - [Profiles](content/profiles)
+  - [Profiles](content/profiles/index)
   - [Asteroids/Comets](content/asteroids)
   - [Exoplanets](content/exoplanets)
   - [Satellites](content/satellites)

@@ -4,9 +4,7 @@ layout: default
 
 grand_parent: Content
 parent: Profiles
-has_children: false
-has_toc: false
-nav_order: 1
+nav_order: 2
 ---
 
 ## Bastille day
