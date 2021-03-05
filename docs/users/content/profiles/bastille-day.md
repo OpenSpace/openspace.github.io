@@ -3,6 +3,9 @@ title: Bastille day
 layout: default
 
 parent: Profiles
+has_children: false
+has_toc: false
+nav_order: 1
 ---
 
 ## Bastille day

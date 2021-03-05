@@ -11,6 +11,7 @@ nav_order: 4
 # Content
 Basic instructions for how users can enable and visualize content categories. These do not discuss how to modify data or add new content.
 
+- [Profiles](profiles)
 - [Satellites](satellites)
 - [Globebrowsing](globebrowsing)
   - [Navigation](../globebrowsing/navigation)
