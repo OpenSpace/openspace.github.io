@@ -16,4 +16,5 @@ Description of different components of OpenSpace that don't fit the other catego
 - [Touch Interface](touch-interface)
 - [Gaia](gaia)
 - [Session Recording/Playback](session-recording)
+- [Data Distribution](data-distribution)
  
