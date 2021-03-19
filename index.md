@@ -29,3 +29,6 @@ Description of different components of OpenSpace that don't fit the other catego
 
 ## [Academics](docs/academics)
 Academic works that are related to OpenSpace.
+
+## [Links](docs/links)
+Links associated with OpenSpace

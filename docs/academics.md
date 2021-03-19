@@ -6,6 +6,8 @@ nav_order: 6
 ---
 
 # Academics
+{: .no_toc }
+
 Academic works that are related to OpenSpace.
 
 1. TOC

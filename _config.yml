@@ -22,3 +22,6 @@ plugins:
   - jekyll-avatar
   - jekyll-github-metadata
   - jekyll-feed
+  - jekyll-sitemap
+
+github: [metadata]
