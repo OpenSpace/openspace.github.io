@@ -31,10 +31,8 @@ Links for for the OpenSpace sofware, documentation, data, everything.
 
 | Name        | URL          | Description |
 |:-------------|:------------------|:------|
-| NASA TREKS | [https://trek.nasa.gov/](https://trek.nasa.gov/) | NASA Curated collection of maps for multiple Solar System bodies. Can be used to download regional patches of [globebrowsing](/docs/components/globebrowsing) data to add to OpenSpace. |
-| USGS Astropedia | [https://astrogeology.usgs.gov/search](https://astrogeology.usgs.gov/search) | USGS prepared maps for Solar System bodies. These maps are the source of many global mosaics in OpenSpace. |
-| LROC RDR | [http://wms.lroc.asu.edu/lroc/rdr_product_select](http://wms.lroc.asu.edu/lroc/rdr_product_select) | Lunar Reconansance Orbiter Reduced Data Record product search. This page can be used to obtain moon maps prepared by the LRO NAC team. |
-| Orbital Data Explorer | [https://ode.rsl.wustl.edu/](https://ode.rsl.wustl.edu/) | Search tool for PDS archived orbital mission data. This can be used to obtain regional [globebrowsing](/docs/components/globebrowsing) patches to add to OpenSpace from Mercury, Venus, the Moon, and Mars. |
+| SGCT | [https://sgct.github.io/](https://sgct.github.io/) | Documentation for setting up custom windows  |
+| Digital Universe | [https://www.haydenplanetarium.org/downloads/universe/DU-Data-Profiles.pdf]([https://www.haydenplanetarium.org/downloads/universe/DU-Data-Profiles.pdf]) | Documentation regarding the Digital Universe data set from AMNH |
 
 ## Data Links
 
@@ -42,8 +40,10 @@ Links for for the OpenSpace sofware, documentation, data, everything.
 
 | Name        | URL          | Description |
 |:-------------|:------------------|:------|
-| SGCT | [https://sgct.github.io/](https://sgct.github.io/) | Documentation for setting up custom windows  |
-| Digital Universe | [https://www.haydenplanetarium.org/downloads/universe/DU-Data-Profiles.pdf]([https://www.haydenplanetarium.org/downloads/universe/DU-Data-Profiles.pdf]) | Documentation regarding the Digital Universe data set from AMNH |
+| NASA TREKS | [https://trek.nasa.gov/](https://trek.nasa.gov/) | NASA Curated collection of maps for multiple Solar System bodies. Can be used to download regional patches of [globebrowsing](/docs/components/globebrowsing) data to add to OpenSpace. |
+| USGS Astropedia | [https://astrogeology.usgs.gov/search](https://astrogeology.usgs.gov/search) | USGS prepared maps for Solar System bodies. These maps are the source of many global mosaics in OpenSpace. |
+| LROC RDR | [http://wms.lroc.asu.edu/lroc/rdr_product_select](http://wms.lroc.asu.edu/lroc/rdr_product_select) | Lunar Reconansance Orbiter Reduced Data Record product search. This page can be used to obtain moon maps prepared by the LRO NAC team. |
+| Orbital Data Explorer | [https://ode.rsl.wustl.edu/](https://ode.rsl.wustl.edu/) | Search tool for PDS archived orbital mission data. This can be used to obtain regional [globebrowsing](/docs/components/globebrowsing) patches to add to OpenSpace from Mercury, Venus, the Moon, and Mars. |
 
 ### Orbital Data
 
