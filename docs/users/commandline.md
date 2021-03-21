@@ -31,24 +31,24 @@ Three different methods exist mainly to distinguish how the property or properti
 
 Different properties require different types of values (e.g. string, integer, float).  In order for these methods to be flexible in this way, they do not enforce a type.  It is therefore up to the user to ensure that the type of property value supplied matches what is expected.
 The `getPropertyValue` method works in the opposite way that `setPropertyValueSingle` works.  The "single" isn't part of the name, however, because there is no grouping ability with "get"--only the value of a single property can be obtained with each call.  The return value of the `getPropertyValue` call isn't visible unless it is routed to an output method.  For example, the command:
-`openspace.getPropertyValue("Scene.EarthTrail.renderable.Enabled")`
+`openspace.getPropertyValue("Scene.EarthTrail.Renderable.Enabled")`
 will return a 1 or 0 (for true or false), but that value isn't visible at the console.  In order to see the return value, enclose the command inside the `printInfo` command, like so:
-`openspace.printInfo(openspace.getPropertyValue("Scene.EarthTrail.renderable.Enabled"))`
+`openspace.printInfo(openspace.getPropertyValue("Scene.EarthTrail.Renderable.Enabled"))`
 
 At the bottom of the screen the 0 or 1 value will be visible in an Info message.
 
 ### Examples
 The following examples work with the default solar system scene.
 
-`openspace.setPropertyValueSingle("Scene.MarsTrail.renderable.Enabled", false)`
+`openspace.setPropertyValueSingle("Scene.MarsTrail.Renderable.Enabled", false)`
 
 This command will disable the visibility of the Mars orbit trail.  To re-enable it, use `true` as the 2nd argument.
 
-`openspace.setPropertyValue("Scene.*Trail.renderable.Enabled", false)`
+`openspace.setPropertyValue("Scene.*Trail.Renderable.Enabled", false)`
 
 will disable all planet trails by matching any property with any characters before the `Trail` in its name.
 
-`openspace.setPropertyValueRegex("Scene.M[a,e]r.*Trail.renderable.Enabled", false)`
+`openspace.setPropertyValueRegex("Scene.M[a,e]r.*Trail.Renderable.Enabled", false)`
 
 will disable only the Mercury and Mars orbit trails, due to the specific regex syntax provided.
 
@@ -66,8 +66,8 @@ The Saturn module `saturn.mod` has the following tag entry within its "SaturnTra
 
 since it belongs to a grouping that includes all planets in the solar system as well as the gas giant planets.  Earth's trail is tagged with `planetTrail_terrestrial`, but not `planetTrail_giants`.  To see how the tags can be used to differentiate planets, enter the following commands:
 ```
-openspace.setPropertyValue("{planetTrail_solarSystem}.renderable.Enabled", false)
-openspace.setPropertyValue("{planetTrail_terrestrial}.renderable.Enabled", false)
-openspace.setPropertyValue("{planetTrail_giants}.renderable.Enabled", false)
+openspace.setPropertyValue("{planetTrail_solarSystem}.Renderable.Enabled", false)
+openspace.setPropertyValue("{planetTrail_terrestrial}.Renderable.Enabled", false)
+openspace.setPropertyValue("{planetTrail_giants}.Renderable.Enabled", false)
 ```
 and using true/false arguments to enable/disable visibility.
