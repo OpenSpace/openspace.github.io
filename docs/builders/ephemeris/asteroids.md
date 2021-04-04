@@ -53,7 +53,7 @@ Start OpenSpace, and open the Scene menu. The added data can be found by expandi
 # Selective Rendering of Asteroids
 Expanding a particular asteroid/comet object in the menu shows additional controls under the *Renderable* category. A few of the options:
 
-## Reducing the Total Number of Rendered Objects in a Froup
+## Reducing the Total Number of Rendered Objects in a Group
 
 Some groupings contain thousands of objects which can slow the rendering. The *Upper Limit* option can be used to reduce the number of objects while retaining the overall shape of the group. For example, the main asteroid belt contains almost a million asteroids. Setting *Upper Limit* to 10,000 will make OpenSpace render every 100th object in the main belt file, providing an even sampling (rendering only the first 10,000 objects could skew the visualization because some data files are sorted).
 
