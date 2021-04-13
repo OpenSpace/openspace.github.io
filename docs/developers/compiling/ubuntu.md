@@ -41,10 +41,7 @@ CMAKE_C_COMPILER:FILEPATH=/usr/bin/gcc-9
 
 If you do want to change the defaults: [here](https://stackoverflow.com/questions/7832892/how-to-change-the-default-gcc-compiler-in-ubuntu)
 
-The CMake CXX flags variable should be set to:
-`-DGLM_ENABLE_EXPERIMENTAL`
-
-It is recommended to create a new CMake string variable `OPENGL_GL_PREFERENCE` and set its value to `GLVND`.
+There are specific CMake variables that need to be set. See the "Compile OpenSpace" section below for specific commandline arguments to CMake, including CMAKE_BUILD_TYPE, CMAKE_CXX_FLAGS, OpenGL_GL_PREFERENCE, etc. If using the CMake GUI, these will need to be set manually.
 
 # Dependencies
 Install the following libraries:
