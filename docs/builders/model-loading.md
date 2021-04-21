@@ -7,7 +7,7 @@ nav_order: 4
 ---
 
 # Breaking change in master: Model Loading
-The model loading in OpenSpace has been updated to support models with multiple parts, materials and textures. This update unfortunately means that previous asset files with models need to be updated. Note that this currently only concerns the master branch in OpenSpace and not the release 0.16.0.
+The model loading in OpenSpace has been updated to support models with multiple parts, materials and textures. This update unfortunately means that previous asset files with models need to be updated. Note that this currently only concerns the master branch but will be included in the next major release 0.17.0.
 
 Previously a model was specified in an asset file as a <code>Geometry</code> with a <code>Type</code>, <code>GeometryFile</code> and a <code>ColorTexture</code>. Now it is just specified with a <code>GeometryFile</code>, there is no need for a <code>ColorTexture</code> since this information will be read from the model. This may mean that the models that have previously been used might need to be exchanged or updated to properly work with the new model loading system, more on that later.
 
@@ -33,76 +33,6 @@ How the Renderable for the Juno spacecraft is specified now:
         GeometryFile = model .. "/Juno.obj",
         ModelTransform = RotationMatrix,
         LightSources = assetHelper.getDefaultLightSources(sunTransforms.SolarSystemBarycenter.Identifier)
-    },
-~~~
-
-If you still want to use the old models that have been split up into several parts there is a way to do this. Instead of specifying one model file you can specify several. However, we only recommend using this feature as a transition from the old system to the new as it will be removed in a future release.
-
-How the Renderable for the ISS was specified before:
-~~~
-    Renderable = {
-        Type = "RenderableModel",
-        Geometry = {
-            {
-                Type = "MultiModelGeometry",
-                GeometryFile = models .. "/0.obj",
-                ColorTexture = models .. "/0.png"
-            },
-            {
-                Type = "MultiModelGeometry",
-                GeometryFile = models .. "/1.obj",
-                ColorTexture = models .. "/1.png"
-            },
-            {
-                Type = "MultiModelGeometry",
-                GeometryFile = models .. "/2.obj",
-                ColorTexture = models .. "/2.png"
-            },
-            
-            ...
-
-            {
-                Type = "MultiModelGeometry",
-                GeometryFile = models .. "/plain.obj",
-                ColorTexture = models .. "/plain.png"
-            },
-        },
-        LightSources = {
-            {
-                Type = "SceneGraphLightSource",
-                Identifier = "Sun",
-                Node = sunTransforms.SolarSystemBarycenter.Identifier,
-                Intensity = 1.0
-            }
-        },
-        PerformShading = true,
-        DisableFaceCulling = true
-    },
-~~~
-
-How the Renderable for the ISS is specified now:
-~~~
-    Renderable = {
-        Type = "RenderableModel",
-        GeometryFile = {
-            models .. "/0.obj",
-            models .. "/1.obj",
-            models .. "/2.obj",
-            
-            ...
-
-            models .. "/plain.obj"
-        },
-        LightSources = {
-            {
-                Type = "SceneGraphLightSource",
-                Identifier = "Sun",
-                Node = sunTransforms.SolarSystemBarycenter.Identifier,
-                Intensity = 1.0
-            }
-        },
-        PerformShading = true,
-        DisableFaceCulling = true
     },
 ~~~
 

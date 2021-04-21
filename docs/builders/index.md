@@ -22,3 +22,4 @@ nav_order: 3
   - [Advanced Asteroids/Comets](ephemeris/asteroids)
 - [Socket API](network/socket-api)
 - [Model loading in master](model-loading)
+- [New feature: Animated models](model-animation)
