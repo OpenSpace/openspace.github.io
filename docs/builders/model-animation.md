@@ -20,7 +20,7 @@ To import a model that has an animation the model is added as normal in an asset
 There are a few settings that you can set for your animation. If any of these settings is given to a model that does not have an animation there will be a warning message in the log.
 
 ### Start time
-The start time is the date and time of when the animation should start playing in OpenSpace. This is a string that should be strictly formatted in this way: <code>"YYYY MM DD hh:mm:ss"</code>. Note that only numbers are allowed, for example <code>"2021 04 15 11:50:00"</code> is a valid date and time while "2021 APR 15 11:50:00" is not. The start time is required to enable the animation in OpenSpace.
+The start time is the date and time of when the animation should start playing in OpenSpace. This is a string that should be strictly formatted in this way: <code>"YYYY MM DD hh:mm:ss"</code>. Note that only numbers are allowed, for example <code>"2021 04 15 11:50:00"</code> is a valid date and time while <code>"2021 APR 15 11:50:00"</code> is not. The start time is required to enable the animation in OpenSpace.
 
 ~~~
     GeometryFile = models .. "BoxAnimated.fbx",
