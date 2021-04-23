@@ -1,5 +1,5 @@
 ---
-title: v0.16.0 release notes
+title: Release Notes
 layout: default
 
 parent: Users
