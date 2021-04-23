@@ -14,8 +14,8 @@ nav_order: 4
     - [Interface](getting-started/interface)
     - [Navigation](getting-started/navigation)
 - [Using the commandline](commandline)
-- Release notes
-  - [v0.16.0](release-notes)
+- [Release notes](release-notes/index)
+  - [v0.16.0](release-notes/v0160)
 - [Content](content)
   - [Profiles](content/profiles/index)
   - [Asteroids/Comets](content/asteroids)
