@@ -3,7 +3,7 @@ title: FAQ
 layout: default
 
 parent: Developers
-nav_order: 2
+nav_order: 9
 ---
 
 # Configuration

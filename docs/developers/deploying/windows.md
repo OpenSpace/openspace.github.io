@@ -3,7 +3,7 @@ title: Deploy to a Windows Machine
 layout: default
 
 parent: Developers
-nav_order: 3
+nav_order: 5
 ---
 
 You've got your Visual Studio build running smoothly on your development machine.  There's a simple way to deploy OpenSpace to another machine without installing lots of libraries and building it again - you can merely copy the necessary files to a new location.

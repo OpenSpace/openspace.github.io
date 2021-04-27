@@ -3,7 +3,7 @@ title: Git
 layout: default
 
 parent: Developers
-nav_order: 8
+nav_order: 4
 ---
 
 # Git software

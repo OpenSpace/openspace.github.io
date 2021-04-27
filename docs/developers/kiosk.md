@@ -3,7 +3,7 @@ title: Kiosk
 layout: default
 
 parent: Developers
-nav_order: 2
+nav_order: 6
 ---
 
 # How to Build

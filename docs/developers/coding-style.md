@@ -3,7 +3,7 @@ title: Coding Style
 layout: default
 
 parent: Developers
-nav_order: 3
+nav_order: 2
 ---
 
 This document provides the general coding guidelines for C++ code in the OpenSpace project.  The guidelines are based on these [guidelines](http://geosoft.no/development/cppstyle.html), but were adapted and modified.  Following this document ensures a common coding style for the project.  Each developer using their own guidelines will quickly lead to fragmented code and decrease readability and maintainability.  Please note rule #1; if, in a specific situation, the application of a rule would make the source code less readable it is advised to not follow the rule.
