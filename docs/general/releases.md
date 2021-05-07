@@ -40,6 +40,7 @@ As development procedes, some versions get tagged with names.  This table indica
  - Version: 0.16.1
  - Date: 2021-05-07
  - Finished: [452d4e9626c58629709c7ed061fedc7141964727](https://github.com/OpenSpace/OpenSpace/commit/452d4e9626c58629709c7ed061fedc7141964727)
+ - See [Release Notes](release-notes/v0161) for user-focused highlights.
 
 ### Features
  - Added Drag and Drop support for images and assets (#1497)
@@ -78,7 +79,7 @@ As development procedes, some versions get tagged with names.  This table indica
  - Finished: [c13b211add7b1bc4336de34ee6cb4f6064420242](https://github.com/OpenSpace/OpenSpace/commit/c13b211add7b1bc4336de34ee6cb4f6064420242)
  
 ## Changelog
-See [Release notes](http://wiki.openspaceproject.com/docs/users/release-notes.html) for user-focused highlights.
+See [Release notes](/release-notes/v0160) for user-focused highlights.
 
 ### Features
 - Add new 'Profiles' feature that replaces the `*.scene` files with a more descriptive format that enables editing with a graphical user interface
