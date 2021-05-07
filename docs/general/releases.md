@@ -6,7 +6,7 @@ parent: Home
 nav_order: 1
 ---
 
-# Releases {: .no_toc}
+# Releases
 OpenSpace versions labeled by a version number of the form `MM.mm.rr`,  where `MM` is the major version number, `mm` is the minor version nuber, and `rr` is the release number (see [Semantic Versioning](https://semver.org)).  In some cases there may be an additional number at the end, `MM.mm.rr.bb`, where bb is the build number, but that will only be for development and testing, not for public release.
 
 1. TOC
@@ -17,6 +17,7 @@ As development procedes, some versions get tagged with names.  This table indica
 
 | Version | _Name_ | _Date_ | _Description_ |
 | ------- | ------ | ------ | - |
+| 0.16.1 | Beta-9 | 2021-05-07 | This is the ninth beta release and the first in 2021 |
 | 0.16.0 | Beta-8 | 2020-12-09 | This is the eigth beta release for the end of 2020 |
 | 0.15.2 | Beta-7 | 2020-06-26 | This is the seventh beta release for OpenSpace for the summer of 2020 |
 | 0.15.1 | Beta-6 | 2020-02-17 | This is the sixth beta release for OpenSpace in conjunction with the 4th annual developer's meeting |
@@ -34,6 +35,42 @@ As development procedes, some versions get tagged with names.  This table indica
 | 0.1.0 | Prerelease-5 | 2015-05-14 | This prerelease was published for the Pluto-Palooza event held at the AMNH in New York. |
 
 ***
+
+# Beta-9
+ - Version: 0.16.1
+ - Date: 2021-05-07
+ - Finished: [452d4e9626c58629709c7ed061fedc7141964727](https://github.com/OpenSpace/OpenSpace/commit/452d4e9626c58629709c7ed061fedc7141964727)
+
+### Features
+ - Added Drag and Drop support for images and assets (#1497)
+
+### Content
+ - Added USGS WMS layers for Phobos and Deimos
+
+### Content Creation
+ - Added missing documentation for RenderableOrbitDisc
+ - Added the ability to use single radius for SizeReferenceTileProvider (#1562)
+ - Fixed an issue with the example asset for spheres
+
+### Bugfixes
+ - Fixed the keybinding-related loading error in the newhorizons and mars profiles
+ - Fixed an issue that would add too many delta time step keybindings (#1445)
+ - Fixed a crash that could occur when trying to reload the in-game browser twice in quick succession
+ - Fixed an issue where the joystick input was completely ignored in the deadzone and cause erratic behavior (#678)
+ - Fixed an issue where the milkyway sphere would not fade out correctly
+ - Fixed an issue where the labels of the grids would not be aligned correctly towards the camera (#1542)
+ - Fixed problems that prevented the 'gui_projector.xml' and 'spherical_mirror.xml' from working
+ - Fixed an issue that prevented the ESRI Local Set DEM from showing up
+ - Prevent the change of renderbins for overlay renderables, causing incorrect behavior for transparency (#1519)
+ - Fixed issues with the Pioneer model and updated identifiers to allow SPICE and Horizons versions to coexist (thanks Dan Tell)
+ - Fixed an issue where the slide deck functionality was no longer working (#1441)
+ - Fixed an issue where the Deep Sky Objects were scaled incorrectly by a factor of 1e6 (#1452)
+ - Fixed a bug that prevented the correct showing of color properties
+ - Fixed an accidental commit in the globebrowsing customization asset
+ - Fixed a bug that caused the item velocity dashboard item numbers not to show correctly
+ - Prevent a crash when reloading a renderable that only has a label, but not data
+ - Prevent a crash when trying to query the renderable of scenegraph nodes that don't exist
+ - Don't produce OpenGL performance warnings on Intel chips, leading to noisy logs
 
 # Beta-8
  - Version: 0.16.0
