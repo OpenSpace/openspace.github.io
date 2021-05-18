@@ -10,12 +10,12 @@ The `RenderableStars` class requires a few different data variables in the SPECK
 
 | Size Composition             | Color Option  | Required Data Value |
 | ---------------------------- | ------------- | ------------------- |
-| App Brightness               | Color         | luminance, 
-| Lum and Size                 | Color         | bv, luminance, absoluteMagnitude, 
-| Lum, Size and App Brightness | Color         | bv, luminance, absoluteMagnitude, 
-| Abs Magnitude                | Color         | bv, absoluteMagnitude, 
-| App Magnitude                | Color         | bv, absoluteMagnitude, 
-| Distance Modulus             | Color         | bv, absoluteMagnitude, 
+| App Brightness               | Color         | luminance
+| Lum and Size                 | Color         | bv, luminance, absoluteMagnitude
+| Lum, Size and App Brightness | Color         | bv, luminance, absoluteMagnitude
+| Abs Magnitude                | Color         | bv, absoluteMagnitude
+| App Magnitude                | Color         | bv, absoluteMagnitude
+| **Distance Modulus**         | **Color**     | bv, absoluteMagnitude
 | App Brightness               | Velocity      | luminance, vx, vy, vz
 | Lum and Size                 | Velocity      | luminance, absoluteMagnitude,  vx, vy, vz
 | Lum, Size and App Brightness | Velocity      | bv, luminance, absoluteMagnitude,  vx, vy, vz
@@ -40,3 +40,5 @@ The `RenderableStars` class requires a few different data variables in the SPECK
 | Abs Magnitude                | Fixed Color   | absoluteMagnitude
 | App Magnitude                | Fixed Color   | absoluteMagnitude
 | Distance Modulus             | Fixed Color   | absoluteMagnitude
+
+The **bold** values denote the default value for the stars.asset distributed with OpenSpace
