@@ -15,7 +15,7 @@ Upon recording, the sub-menu disappears and the program can be used normally, wi
 
 ## Playback of a Recorded Session
 There are two ways to handle the simulation time when playing back a session.  The most common method is to allow OpenSpace to set the simulation time (the current time visible in the menu) to exactly what it was when recorded ("Force time change to recorded time" checkbox). If the "Loop playback" option is checked, then the recording will continually repeat itself until manually stopped. The drop-down menu contains a list of files in the user/recordings/ directory that can be played.
-Mouse camera control is disabled during playback.  The bottom menu (as well as log messages) will indicate when playback is finished.  You can abort the playback by clicking the 'Stop Recording' button, or entering: 'openspace.sessionRecording.stopPlayback()' in the console. It is also possible to simply pause playback by clicking the menu button.
+Mouse camera control is disabled during playback.  The bottom menu (as well as log messages) will indicate when playback is finished.  You can abort the playback by clicking the 'Stop Recording' button, or entering: `openspace.sessionRecording.stopPlayback()` in the console. It is also possible to simply pause playback by clicking the menu button.
 
 # Advanced Features
 
