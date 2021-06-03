@@ -6,22 +6,29 @@ parent: Components
 nav_order: 5
 ---
 
-This feature provides a method for recording all views, renderables, and time control to a file which can be played-back at a later time.
-
-## Getting Started With This Feature
-This feature is not yet included in the master branch.  The **feature/sessionRecording** branch must be checked-out from github. All subsequent build & run steps are identical to the standard instructions for OpenSpace.  See [this page]({{ site.url }}/docs/developers/compiling/general) for more details about configuring & building OpenSpace.
-
-## Notes About Controls and File Management
-Currently things are done with lua commands in the console, but controls in the GUI have just been added and are being tested as of May 2019.  Also as of this date, all record/playback files are saved in the `recordings` directory in the base OpenSpace location.  In Lua commands as well as in the GUI, only a filename is used without a path (this replaces the old behavior where the files could be located anywhere on the filesystem).
+The Session Recording feature provides a way to record all views, renderables, and time control to a file which can be played-back at a later time. OpenSpace is interactive software, meant to be used in real time. However, it can be difficult and time-consuming to recreate all of the camera movements and content settings when presenting content that is complex and/or prolonged. Session Recording can be used to automate some or all parts of a particular presentation.
 
 ## Recording a Session
-To start a recording, open the console with the **\`** key and enter:
-`openspace.sessionRecording.startRecording('filename.osrec');`
-Now use OpenSpace as you would normally, moving the camera around, adjusting layer visibility, time, whatever.  When you want to finish recording, open the console again and enter:
-`openspace.sessionRecording.stopRecording();`
-and you can go back to using OpenSpace.
+Clicking the camera icon at the bottom menu bar will display the Session Recording menu. If using linux (which currently does not support the on-screen menu), a separate browser can be used to show the menu (http://localhost:4680/) or console commands can be used (see advanced section).
+The top half of the menu has controls for starting a recording. Leave the "Text file format" option unchecked unless advanced features are being used (see section below if interested). Enter a filename (without extension) for the recording, and press the Record button when ready to start. The file will be saved in user/recordings/ directory.
+Upon recording, the sub-menu disappears and the program can be used normally, with all actions & settings being recorded. Click the red "Stop recording" button when done, and a file of the specified name will be saved to user/recordings/ in the OpenSpace directory.
 
 ## Playback of a Recorded Session
+There are two ways to handle the simulation time when playing back a session.  The most common method is to allow OpenSpace to set the simulation time (the current time visible in the menu) to exactly what it was when recorded ("Force time change to recorded time" checkbox). If the "Loop playback" option is checked, then the recording will continually repeat itself until manually stopped. The drop-down menu contains a list of files in the user/recordings/ directory that can be played.
+Mouse camera control is disabled during playback.  The bottom menu (as well as log messages) will indicate when playback is finished.  You can abort the playback by clicking the 'Stop Recording' button, or entering: 'openspace.sessionRecording.stopPlayback()' in the console. It is also possible to simply pause playback by clicking the menu button.
+
+# Advanced Features
+
+## Console Script Commands
+To start a recording, open the console with the **\`** key and enter:
+`openspace.sessionRecording.startRecording('filename.osrec');`
+To finish recording, open the console again and enter:
+`openspace.sessionRecording.stopRecording();`
+The GUI restricts the available playback files to those that reside in user/recordings (or possibly elsewhere if the USER variable has a custom definition). However, a relative path to a playback file anywhere in the filesystem can be entered in the `startPlayback` function.
+To see a full list of these commands, open a browser URL window and type the directory path to where OpenSpace is installed, and add the following path:
+/documentation/index.html#openspace.sessionRecording
+
+## Playback Using Advanced Time Options
 There are two ways to handle the simulation time when playing back a session.  The most common method is to allow OpenSpace to set the simulation time (the current time visible in the menu) to exactly what it was when recorded.
 
 1. To play back a session in this manner, use the syntax:
@@ -40,18 +47,18 @@ This function is available in the GUI with the "Force time change to match recor
 4. Simulation Time - recorded actions will be locked to the simulated time in OpenSpace, and will not play back unless the time is set to the specific date & time.  With this mode, it is necessary to manually set the simulation time to before what it was when recorded.  Playback will begin when the current simulation time reaches the recorded simulation time. Example:
 `openspace.sessionRecording.startPlaybackSimulationTime('filename.osrec');`
 
-Currently mouse camera control is disabled during playback.  Log messages will indicate when playback is finished.  You can abort the playback by entering:
+You can abort the playback by entering:
 `openspace.sessionRecording.stopPlayback();`
 
 ## Known Issues
-Problems currently occur when playing back files that contain some types of time manipulation.  If playback gets in a strange state because of this, then the `openspace.sessionRecording.stopPlayback()` command can be used to end playback.  Camera positions are time dependent, so things can look different if you don't playback in simulation mode and the time is set far in the past/future.
+Problems currently occur when playing back files that contain some types of time manipulation.  If playback gets in a strange state because of this, then the `openspace.sessionRecording.stopPlayback()` command can be used to end playback.  Camera positions are time dependent, so things will look different if you don't playback in simulation mode and the time is set far in the past/future.
 
 ## ASCII File Format
 When saving the recording in ASCII format instead of binary, the file becomes editiable and will contain a series of rows like this:
 
 `camera 35.6259 0.125842 624861769.816 14150159.7269534 1447711.8646562 22214479.4404503 -0.2036835 -0.1934829 -0.7594912 -0.5867287 4.0000052e-07 F Earth`
 
-Below is an explination of the 14 columns in the example entry:
+Below is an explanation of the 14 columns in the example entry:
 00 - "camera" this denotes that this row represents a camera keyframe.
 01 - "35.6259" - a timestamp representing the number of seconds since openspace has been launched.
 02 - "0.125842" - a timestamp representing the number of seconds since the recording has been started.
@@ -67,6 +74,10 @@ Below is an explination of the 14 columns in the example entry:
 12 - "F" - a value representing (T)rue or (F)alse for whether or not the camera is following the rotation of the focus node (e.g. rotating along with a planet to stay fixed at a spot on its surface)
 13 - "Earth" - the openspace identifier of the camera's focus node
 
+## Saving Screen Frames for Offline Movie Rendering
+Session Recording can be used to generate individual screen frames which can be rendered into a movie file.
+When playing back using the GUI, check the "Output Frames" box, enter the desired saved framerate, then click Play. A .png image file will be saved for every frame in the user/screenshots/<date/time> directory.
+
 ## File Conversion
 OpenSpace's TaskRunner executable can now be used to convert between ascii and binary recording formats. The typical format is binary, since it is much more space efficient. Using the conversion task to switch a binary recording to ascii makes it possible to debug or modify a recording in a readable form. It is also possible to split or combine recordings.
 The conversion task can be run by doing the following:
@@ -74,7 +85,7 @@ The conversion task can be run by doing the following:
 2. Start **bin/TaskRunner** in a terminal. At the prompt, type the full name (with **.task** extension) of the task file copied & edited above.
 
 ## File Extensions
-The extension of recording filenames has been changed to **.osrec** for binary format recordings and **.osrectxt** for ascii format. When starting a recording it is not necessary to add the file extension, as it will be added based on the recording mode. It is necessary to specify the full filename at playback, however.
+The extension of recording filenames are **.osrec** for binary format recordings and **.osrectxt** for ascii format. When starting a recording it is not necessary to add the file extension, as it will be added based on the recording mode. It is necessary to specify the full filename at playback, however.
 
 ## Comment Lines
 Comments can added to ascii recordings in order to help with debugging, joining, or splicing. Any line that starts with `#` is ignored as a comment line.
