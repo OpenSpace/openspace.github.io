@@ -6,6 +6,8 @@ parent: Components
 nav_order: 5
 ---
 
+[This page]({{ site.url }}/docs/users/session-recording) covers the basics of the session recording feature.
+
 # Session Recording Advanced Features
 
 ## Console Script Commands
