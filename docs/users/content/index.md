@@ -19,3 +19,4 @@ Basic instructions for how users can enable and visualize content categories. Th
 - [Gaia](gaia)
 - [Asteroids/Comets](asteroids)
 - [Exoplanets](exoplanets)
+- [Session Recording](session-recording)
