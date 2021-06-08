@@ -24,8 +24,8 @@ nav_order: 4
   - [Satellites](content/satellites)
   - [Globebrowsing](content/globebrowsing)
   - [Gaia](content/gaia)
+  - [Session Recording](content/session-recording)
 - Tutorials
   - [OpenSpace as a Flexible Presentation Tool](tutorials/flexible-presentation)
 - [OpenSpace Kiosk Touch-Screen Version](kiosk)
-- [Session Recording](session-recording)
 - [FAQ](faq)
