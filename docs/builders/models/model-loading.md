@@ -2,12 +2,13 @@
 title: Model Loading
 layout: default
 
-parent: Builders
-nav_order: 4
+grand_parent: Builders
+parent: Models
+nav_order: 3
 ---
 
-# Breaking change in master: Model Loading
-The model loading in OpenSpace has been updated to support models with multiple parts, materials and textures. This update unfortunately means that previous asset files with models need to be updated. Note that this currently only concerns the master branch but will be included in the next major release 0.17.0.
+# Breaking change in 0.17.0: Model Loading
+The model loading in OpenSpace has been updated to support models with multiple parts, materials and textures. This update unfortunately means that previous asset files with models need to be updated. Note that this feature was added in release 0.17.0.
 
 Previously a model was specified in an asset file as a <code>Geometry</code> with a <code>Type</code>, <code>GeometryFile</code> and a <code>ColorTexture</code>. Now it is just specified with a <code>GeometryFile</code>, there is no need for a <code>ColorTexture</code> since this information will be read from the model. This may mean that the models that have previously been used might need to be exchanged or updated to properly work with the new model loading system, more on that later.
 
