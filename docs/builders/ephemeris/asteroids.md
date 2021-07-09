@@ -43,9 +43,7 @@ This example contains default rendering settings (color, segment quality, fade, 
 Please note that this example uses a local downloaded file (here in the same directory as the asset file), rather than a file synchronized from one of the OpenSpace sync servers. Existing files in the **sssb/** directory use this method (refer to them for the syntax of using `HttpSynchronization`). If you would like to add this new data to the OpenSpace sync servers, contact the team [here](https://www.openspaceproject.com/support).
 
 ## Add the Asset to a Scene or Profile
-If you are running version 0.15.2 or older, you will need to add this asset to a .scene file, such as **default.scene**. Add the line `asset.require('scene/solarsystem/sssb/<your object filename without extension>')` near the top of the file.
-
-If you are running a build of the latest master branch as of September 2020, you will need to add this asset to a .profile file. A GUI editor for profiles is coming soon, but for now this can be done by adding the line `scene/solarsystem/sssb/<your object filename without extension>` to the end of the `#Asset` section. **Note: Add a single tab character to the end of this line.**
+When starting OpenSpace, the Launcher window will appear first. You can either create a new profile, or edit an existing profile in the list. With either method, the profile editor window will appear. Modify the Profile Name at the top if desired. Click the Edit button of the Assets section, and then scroll through the directory navigation list to find the new asset file. Click the checkbox to enable this asset and then press the Save button. Finally, press the Save button back in the Profile editor to save the profile and then run OpenSpace with it.
 
 ## Start OpenSpace and Find the New Content in the Menu
 Start OpenSpace, and open the Scene menu. The added data can be found by expanding the *Solar System -> Small Bodies* menu. The example above enables the visibility (*Renderable.Enabled*) by default, so it should have an enabled checkbox.
