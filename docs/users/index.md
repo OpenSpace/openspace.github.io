@@ -13,6 +13,7 @@ nav_order: 4
 - [Getting Started Guide: Using OpenSpace](getting-started/general)
     - [Interface](getting-started/interface)
     - [Navigation](getting-started/navigation)
+    - [Hardware requirements](getting-started/hardware-requirements)
 - [Using the commandline](commandline)
 - [Release notes](release-notes/index)
   - [v0.16.0](release-notes/v0160)
