@@ -17,7 +17,7 @@ As development procedes, some versions get tagged with names.  This table indica
 
 | Version | _Name_ | _Date_ | _Description_ |
 | ------- | ------ | ------ | - |
-| 0.17.0 | Beta-10 | 2021-07-14 | This is the ninth beta release and the second in 2021 |
+| 0.17.0 | Beta-10 | 2021-07-14 | This is the tenth beta release and the second in 2021 |
 | 0.16.1 | Beta-9 | 2021-05-07 | This is the ninth beta release and the first in 2021 |
 | 0.16.0 | Beta-8 | 2020-12-09 | This is the eigth beta release for the end of 2020 |
 | 0.15.2 | Beta-7 | 2020-06-26 | This is the seventh beta release for OpenSpace for the summer of 2020 |
