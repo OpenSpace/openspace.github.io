@@ -40,20 +40,19 @@ As development procedes, some versions get tagged with names.  This table indica
  - Version: 0.17.0
  - Date: 2021-07-16
  - Finished: [3069457d674b71497b5fe1e361c3850672650e44](https://github.com/OpenSpace/OpenSpace/commit/3069457d674b71497b5fe1e361c3850672650e44)
- - See [Release Notes](http://wiki.openspaceproject.com/docs/users/release-notes/v0170) for user-focused highlights.
 
 ### Features
  - Add drag and drop support for images and assets (#1497)
  - Added central location for user profiles, assets, screenshots and config files. Making it easier to upgrade OpenSpace versions.
  - Added support for multitexturing of 3D models
  - Added support for 3D model animation
- - Add Logarithmic sliders and Color picker (#1564)
+ - Add logarithmic sliders and color picker (#1564)
  - Add the ability to remap SPECK variables to usage values for star data (#1598)
- - Multiple New Session Recording Features
+ - Multiple new Session Recording features
     - Fixed-framerate playback for HD rendering playback
-    - Time rate at beginning of record is preserved
+    - Time rate at beginning of recording is preserved
     - For every property change made during a recording, a corresponding property command is added to the start of the file to preserve its initial conditions
-    - A recorded file is parsed before playback starts, and is rejected if it contains asset(s) that are not currently loaded
+    - A recorded file is parsed before playback starts, and is rejected if it contains assets that are not currently loaded
     - Pausing during playback is now supported
     - A reject list will prevent certain scripts from being recorded (which might interfere with playback or with editing playback files)
     - Now records to timeline in memory, saving to disk when recording has stopped
@@ -62,79 +61,78 @@ As development procedes, some versions get tagged with names.  This table indica
  - Add functions to convert a cartesian coordinate to a ra dec distance
 
 ### Content
- - Add habitable zone for exoplanet systems (#1436)
+ - Add habitable zone for exoplanet systems (#1436) and our Sun
  - Add 1 AU size comparison ring for exoplanet systems (closes #1413)
- - Add habitable zone for our Sun
  - Update ISS model
  - Update DU Kepler planetary candidates data version
  - Update the constellation art (closes #1553)
  - Add Titan atmosphere
  - Add new asset to show a target marker (closes #85)
- - Added esri MOLA_HRSC dem and made default for mars
- - Added pluto kepler trail and decriptions to pluto trails
- - Changing default texture for newhorizions profile;
- - Feature/jwst (#1611)
-    - Added 3d model of James Webb Space Telescope
-    - Added trail of JWST orbiting L2
-    - Added L2 position, marker and line from earth
-    - Added safe-viewing band for JWST
-    - Added view frustrum for JWST
-    - Added Hubble Deep Field image
-    - Added other lagrange points
-  - Feature/orex2021 (#1623) 
-    - updating files for orex return
+ - Added ESRI MOLA_HRSC DEM and made default for Mars
+ - Added Pluto Kepler trail and decriptions to Pluto trails
+ - Changed default texture for newhorizions profile
+ - Add jwst profile (#1611)
+    - Add 3D model of the James Webb Space Telescope
+    - Add trail of JWST orbiting L2
+    - Add L2 position, marker, and line from earth
+    - Add safe-viewing band for JWST
+    - Add view frustrum for JWST
+    - Add Hubble Deep Field image
+    - Add other Lagrange points
+  - Updated osirisrex profile (#1623) 
+    - Update files for OSIRIS-REx return
     - Changes to osirisrex assets to bring mission events up to date
     - Adding hi-res 75cm Bennu model from asteroidmission.org
   - Remove camera as light source for New Horizons model
 
 ### Content Creation
- - Specification of Atmosphere in assets no longer needs the `Atmosphere` parent table
+ - Specify of Atmosphere in assets no longer needs the `Atmosphere` parent table
  - Bring back fading of sphere with only fade out threshold specified
- - Added examples for all grid types
- - Added USGS wms layers for Phobos and Deimos; moved them to planets.asset to be consistant with other solarsystem moons
- - Improved documentation for renderables
+ - Add examples for all grid types
+ - Add USGS WMS layers for Phobos and Deimos; moved them to planets.asset to be consistent with other solar system moons
+ - Improve documentation for renderables
  - Add missing documentation for NonUniformStaticScale
- - Add examples for circle, ellipse and elliptic disc
+ - Add examples for circle, ellipse, and elliptic disc
  - Enable support for single double radius in SizeReferenceTileProvider (closes #1562)
  - Add ListProperties and SelectionProperty (#1558)
    - Add string list property tests and structure test files
    - Add IntListProperty, DoubleListProperty
  - Add GlobeTranslation Documentation to exported documentations (closes #1566)
  - Remove unused parameters and document the remaining properties of RenderableGlobe (closes #1470)
- - Enable Screenspace renderable to have a multiplicative color; 
- - Fixed missing documentation for time.interpolateTime 
- - Added fixed time for spice translations and rotations
+ - Enable Screenspace renderable to have a multiplicative color 
+ - Fix missing documentation for time.interpolateTime 
+ - Add fixed time for spice translations and rotations
  - Add simple animation example asset
 
 ### Bugfixes
- - Fixed Deep Sky Objects basic unit and increased maximum scale range. (#1452)
- - Fix reading of horizons files
+ - Fix Deep Sky Objects basic unit and increased maximum scale range (#1452)
+ - Fix reading of newhorizons files
  - Update newhorizons.profile
    - Fix error that the shadow of Charon is not toggled with Shift+T (closes #1463)
    - Fix syntax error in A key (closes #1464)
- - Fix for issue/1453 modis water mask udpate
+ - Fix for issue #1453 MODIS water mask udpate
  - Avoid adding too many delta time step keybindings (closes #1445)
  - Small grid renderable updates/fixes (#1473)
    - Fix problems with blending when rendering transparent grids
    - Fix issue with resizing box grid
    - Avoid problems with line width on Mac
- - Globebrowsing Fade-In/Out Fix and Assets Updates (Issue #1209) (#1476)
+ - Globebrowsing fade-in/out fix and assets updates (Issue #1209) (#1476)
    - Fixed fade out algorithm to use correct distance from globe center
    - Updated planet labels in asset files to match fixed fade-out algorithm
  - Fix issue with the item velocity not showing up correctly and with varying lengths
- - Fix a crash when reloading a browxser instance twice in quick succession
- - Fix for HiRISE Local Set DEM from esri
- - Fixed pioneer model. added meta info
- - Fixes for Issue #1409 (#1501)
-   - Fixed renderablesmallbody selective rendering props to accept asset file settings
-   - Mirrored selective rendering behavior from smallbody to satellites
-   -  Added property coupling of values to satellite/asteroid render settings for size, start index, upperlimit
+ - Fix a crash when reloading a browser instance twice in quick succession
+ - Fix for HiRISE Local Set DEM from ESRI
+ - Fix Pioneer model, added meta info
+ - Fixes for issue #1409 (#1501)
+   - Fix renderablesmallbody selective rendering props to accept asset file settings
+   - Mirror selective rendering behavior from smallbody to satellites
+   - Add property coupling of values to satellite/asteroid render settings for size, start index, upperlimit
    - Improvements to documentation and handling values spec'd in asset file
    - Fix for satellites: selective rendering settings specified from assets
- - prevent renderbin change for overlay renderables (#1519)
+ - Prevent renderbin change for overlay renderables (#1519)
  - Fix labels not facing the camera due to static rotation (closes #1542)
  - Prevent crash when reloading renderable that only has labels and no data
- - Updated Apollo models for new model code
+ - Update Apollo models for new model code
  - Ignore joystick input in deadzone, fixes #678
  - Prevent setting zero line width from UI
  - Fix an issue that prevented the spheres from being rendered
@@ -145,21 +143,21 @@ As development procedes, some versions get tagged with names.  This table indica
  - Rename PerSceneCache to PerProfileCache and make it work again (closes #1577)
  - Only use the adaptive level-of-detail when actually rendering out frames in a session recording (closes #1292)
  - Actually make use of the model matrix in the atmosphere radius calculation for determining whether it should be culled (closes #1465)
- - Fixed issue when trying to print non-ascii character
- - Fixed Interpolation Problem with Playback of Session Recording in HD (#1373)
- - Fixed Session Recording needs Initial Simulation Time Rate to be Saved in File (#1506)
- - Fix for issue/1582 voyager 2 trail
- - Fixed side by side rendering (PR #1613) 
+ - Fix issue when trying to print non-ASCII character
+ - Fix interpolation problem with playback of session recording in HD (#1373)
+ - Fix session recording needs initial simulation time rate to be saved in file (#1506)
+ - Fix for Voyager 2 trail (#1582)
+ - Fix side by side rendering (PR #1613) 
  - Fix an issue with syncing Gaia profile
- - Fixed misaligned surface texutres for Callisto, Europa, Jupiter, Titan, and Saturn.
- - Mostly eliminated an issue where planets disappear when changing focus (#1455)
+ - Fix misaligned surface texutres for Callisto, Europa, Jupiter, Titan, and Saturn
+ - Mostly eliminate an issue where planets disappear when changing focus (#1455)
  - Reduce risk of font rendering errors from user interaction (#1206 hot fix) (#1616)
- - Fix voyager spelling mistake
- - update documentaiton for bindkey
+ - Fix Voyager spelling mistake
+ - Update documentation for bindkey
  - Fix broken referencing links in documentation
- - Fixed and issue when RenderableBillboardsCloud had data without colors
+ - Fix issue when RenderableBillboardsCloud had data without colors
  - Read Horizons file with double precision
- - Fixed some small issues with trail identifiers
+ - Fix some small issues with trail identifiers
  - Comment out FOV for REXIS as it has an unsupported shape (closes #1650)
  - Prevent NaN values in StaticTranslation by limiting min and max size 
  - Add exponent to GlobeTranslation altitude slider
@@ -197,7 +195,7 @@ As development procedes, some versions get tagged with names.  This table indica
  - Centering of shutdown warning and a dimming of the rendering
  - Feature/render at distance (#1665) Adding option to disable distance check for globes
  - Add the ability to optionally ignore the scale value read from session recordings
- - Added new launcher images
+ - Added new images to OpenSpace Launcher
 
 
 ## Breaking Changes
