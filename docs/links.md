@@ -32,7 +32,7 @@ Links for for the OpenSpace sofware, documentation, data, everything.
 
 | Name        | URL          | Description |
 |:-------------|:------------------|:------|
-| SGCT | [https://sgct.github.io/](https://sgct.github.io/) | Documentation for setting up custom windows  |
+| SGCT | [https://sgct.github.io/configuration-files.html](https://sgct.github.io/configuration-files.html) | Documentation for setting up custom windows  |
 | Digital Universe | [https://www.haydenplanetarium.org/downloads/universe/DU-Data-Profiles.pdf](https://www.haydenplanetarium.org/downloads/universe/DU-Data-Profiles.pdf) | Documentation regarding the Digital Universe data set from AMNH |
 
 ## Data Links
