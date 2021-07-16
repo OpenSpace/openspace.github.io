@@ -8,9 +8,9 @@ nav_order: 4
 ---
 
 # Hardware requirements
-OpenSpace is designed for use on laptops up to planetarium domes. A minimum i5 processor and Nvidia 1060 GTX GPU (or comparable), 8 GB RAM, and 4 GB VRAM are required. For optimal use, we recommend 16 GB RAM and 6 GB VRAM or more. For the minimum RAM and VRAM requirements by scene, see below.
+OpenSpace is designed for use on laptops up to planetarium domes. A minimum i5 processor and Nvidia 1060 GTX GPU (or comparable), 8 GB RAM, and 4 GB VRAM are required. For optimal use, we recommend 16 GB RAM and 6 GB VRAM or more. For the minimum RAM and VRAM requirements by profile, see below.
 
-## Requirements by scene
+## Requirements by profile
 
 ### Apollo
 * RAM: 10 GB
