@@ -30,7 +30,7 @@ As development procedes, some versions get tagged with names.  This table indica
 | 0.11.1 | Beta-1 | 2018-02-13 | This is a patch release for the beta-1 version released on January 1st, 2018. It mainly fixes bugs and issues that have come up for users with the beta-1 release of OpenSpace. |
 | 0.11.0 | Beta-1 | 2018-01-01 | This is the first beta release for OpenSpace released on January 1st, 2018. It contains all of the previously released features + new content and feature updates. |
 | 0.10.0 | Prerelease-15 | 2017-10-24 | This prerelease is a collection of features that have been developed since the last public prerelease version for release at the Association of Science – Technology Centers (ASTC) conference. |
-| 0.9.0 | Prerelease-14 | 2017-07-20 | This prerelease is a collection of features that have been developed since the last public prerelease version. |
+| 0.9.0 | Prerelease-14 | 2017-07-21 | This prerelease is a collection of features that have been developed since the last public prerelease version. |
 | 0.4.0 | Prerelease-9 | 2016-07-11 | This pre-release version was prepared for a meeting at the AMNH of the ISI User Network. |
 | 0.2.0 | Prerelease-7 | 2015-07-08 | This prerelease was published for a global, networked event in celebration of New Horizon’s closest approach to Pluto. |
 | 0.1.0 | Prerelease-5 | 2015-05-14 | This prerelease was published for the Pluto-Palooza event held at the AMNH in New York. |
