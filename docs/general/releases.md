@@ -32,6 +32,9 @@ As development procedes, some versions get tagged with names.  This table indica
 | 0.10.0 | Prerelease-15 | 2017-10-24 | This prerelease is a collection of features that have been developed since the last public prerelease version for release at the Association of Science – Technology Centers (ASTC) conference. |
 | 0.9.0 | Prerelease-14 | 2017-07-21 | This prerelease is a collection of features that have been developed since the last public prerelease version. |
 | 0.8.0 | Prerelease-13 | 2017-04-18 | Prerelease for the Earth Day 2017 |
+| 0.7.0 | Prerelease-12 | 2016-02-19 | NAOJ presentation |
+| 0.6.0 | Prerelease-11 | 2016-12-14 | AGU presentation |
+| 0.5.0 | Prerelease-10 | 2016-09-25 | Norrköping's Kulturnatten presentation |
 | 0.4.0 | Prerelease-9 | 2016-07-11 | This pre-release version was prepared for a meeting at the AMNH of the ISI User Network. |
 | 0.3.4 | Prerelease-8 | 2016-06-22 | IPS exhibition |
 | 0.3.3 | Prerelease-8 | 2016-06-07 | EuroVis presentation |
