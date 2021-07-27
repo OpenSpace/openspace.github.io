@@ -157,10 +157,10 @@ As development procedes, some versions get tagged with names.  This table indica
  - Fixed issue when trying to print non-ASCII character
  - Fixed interpolation problem with playback of session recording in HD (#1373)
  - Fixed session recording needs initial simulation time rate to be saved in file (#1506)
- - Fixed for Voyager 2 trail (#1582)
+ - Fix for Voyager 2 trail (#1582)
  - Fixed side by side rendering (PR #1613) 
  - Fixed an issue with syncing Gaia profile
- - Fixed misaligned surface texutres for Callisto, Europa, Jupiter, Titan, and Saturn
+ - Fixed misaligned surface textures for Callisto, Europa, Jupiter, Titan, and Saturn
  - Mostly eliminated an issue where planets disappear when changing focus (#1455)
  - Reduced risk of font rendering errors from user interaction (#1206 hot fix) (#1616)
  - Fixed Voyager spelling mistake
