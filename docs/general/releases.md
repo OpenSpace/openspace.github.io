@@ -121,7 +121,7 @@ As development procedes, some versions get tagged with names.  This table indica
  - Updated newhorizons.profile
    - Fixed error that the shadow of Charon is not toggled with Shift+T (closes #1463)
    - Fixed syntax error in A key (closes #1464)
- - Fixed for issue #1453 MODIS water mask udpate
+ - Fixed for issue #1453 MODIS water mask update
  - Avoided adding too many delta time step keybindings (closes #1445)
  - Small grid renderable updates/fixes (#1473)
    - Fixed problems with blending when rendering transparent grids
@@ -193,7 +193,7 @@ As development procedes, some versions get tagged with names.  This table indica
  - Feature/galaxy (#1576)
    - Remove translation from renderablegalaxy
    - Apply additive blending when compositing downsampled volume;  Use star distance as alpha for transparency (closes #1208)
- - Added the ability to specifiy a specific time for a TemporalTileProvider (closes #1171)
+ - Added the ability to specify a specific time for a TemporalTileProvider (closes #1171)
  - Feature/interactionsphere (#1561)
    - Added ability to render the bounding sphere as a debug option
    - Separate boundingsphere and interactionspheres
@@ -213,14 +213,14 @@ As development procedes, some versions get tagged with names.  This table indica
  - Remove the ability to render AABB for globes as it caused a circular dependency between GlobeBrowsing and Debugging
  - Renamed `AtmosphereRadius` -> `AtmosphereHeight` and `GroundRadianceEmittion` -> `GroundRadianceEmission`
  - Changes specification of Shadowgroups in Atmosphere to be list-based
- - Rename `GridColor` to `Color` for better consistenty among renderables
+ - Rename `GridColor` to `Color` for better consistency among renderables
  - Updated pioneer identifiers to allow spice and horizions to coexist
  - Move default_dashboard asset from util folder to new dashboard folder that also includes the individual dashboard items
  - Include strict lua file, throw error in configuration loading when overriding with unused variable
  - Feature/numeric slider updates (#1609) Renderables with rename properties: `RenderableLabels , GlobeLabelsComponent, RenderableBillboardsCloud, RenderableDUMeshes, RenderableRadialGrid` ) see [https://github.com/OpenSpace/OpenSpace/commit/169593774976b7389f1d3c921e2074e8a701d000](https://github.com/OpenSpace/OpenSpace/commit/169593774976b7389f1d3c921e2074e8a701d000) for details.
  - Switch use of Spice id SUN to SSB where SSB is parent
  - Place planets in their centers and not barycenters
- - Seperate the different joystick configurations into their own assets
+ - Separate the different joystick configurations into their own assets
  - Update faulty docs and function name for getGeoPosition (#1662) (#1677)
 
 
