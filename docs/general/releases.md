@@ -50,7 +50,9 @@ As development procedes, some versions get tagged with names.  This table indica
 # Beta-10
  - Version: 0.17.0
  - Date: 2021-07-16
- - Finished: [3069457d674b71497b5fe1e361c3850672650e44](https://github.com/OpenSpace/OpenSpace/commit/3069457d674b71497b5fe1e361c3850672650e44)
+ - Finished: [3069457d674b71497b5fe1e361c3850672650e44](https://github.com/OpenSpace/OpenSpace/commit/3069457d674b71497b5fe1e361c3850672650e44) 
+ - See [Release Notes](http://wiki.openspaceproject.com/docs/users/release-notes/v0170.html) for user-focused highlights.
+
 
 ### Features
  - Added drag and drop support for images and assets (#1497)
