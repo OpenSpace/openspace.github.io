@@ -38,7 +38,6 @@ As development procedes, some versions get tagged with names.  This table indica
 | 0.4.0 | Prerelease-9 | 2016-07-11 | This pre-release version was prepared for a meeting at the AMNH of the ISI User Network. |
 | 0.3.4 | Prerelease-8 | 2016-06-22 | IPS exhibition |
 | 0.3.3 | Prerelease-8 | 2016-06-07 | EuroVis presentation |
-| 0.3.3 | Prerelease-8 | 2016-06-07 | EuroVis presentation |
 | 0.3.2 | Prerelease-8 | 2016-04-15 | CCMC Show |
 | 0.3.1 | Prerelease-8 | 2016-03-03 | New Horizons Show |
 | 0.3.0 | Prerelease-8 | 2015-07-16 | |
