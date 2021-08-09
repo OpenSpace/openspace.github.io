@@ -17,6 +17,7 @@ As development procedes, some versions get tagged with names.  This table indica
 
 | Version | _Name_ | _Date_ | _Description_ |
 | ------- | ------ | ------ | - |
+| 0.17.1 | Beta-10 | 2021-08-09 | This is a patch release for the tenth beta that addresses initial bug reports |
 | 0.17.0 | Beta-10 | 2021-07-14 | This is the tenth beta release and the second in 2021 |
 | 0.16.1 | Beta-9 | 2021-05-07 | This is the ninth beta release and the first in 2021 |
 | 0.16.0 | Beta-8 | 2020-12-09 | This is the eigth beta release for the end of 2020 |
@@ -46,6 +47,45 @@ As development procedes, some versions get tagged with names.  This table indica
 | 0.1.0 | Prerelease-5 | 2015-05-14 | This prerelease was published for the Pluto-Palooza event held at the AMNH in New York. |
 
 ***
+
+# Beta-10
+ - Version: 0.17.1
+ - Date: 2021-08-09
+ - Finished: [c5b71d13a5b9d893448f7ddddbc7ecb6df4e1044](https://github.com/OpenSpace/OpenSpace/commit/c5b71d13a5b9d893448f7ddddbc7ecb6df4e1044)
+
+### Features
+ - The DashboardItemGlobeLocation now prints the camera location in more standard GPS coordinates in Degrees, Minutes, and Seconds (DMS) (#1632)
+ - Automatically reload the WebUI after a drag & drop event (#1703)
+ - An info message is printed when an asset is added via drag & drop
+ - Added option to the OpenGL Debug layer to print a stacktrace (#1700)
+ - Removed the option of changing the rendering to the (already non-functioning) A-Buffer
+
+### Content
+ - Corrected the parent of the Gaia spacecraft trail (#1573)
+ - Fixed model assets with incorrect (outdated) syntax (#1692)
+   - Pioneer models
+   - Apollo boulders
+
+### Content Creation
+ - Profile Editor keybindings panel can have multiple binds of same key (#1461)
+ - Added the ability to read a file through Lua (`openspace.readFile`)  (#1636)
+
+### Bugfixes
+ - Fixed an issue where planet atmospheres are not rendered on Intel GPUs
+ - Fixed a crash when resetting tile provides on a RenderableGlobe without layers (#1383)
+ - Fixed an issue where the resetting of font sizes would cause file handles to overflow
+ - Fixed an issue that would double frames in Session Recording when in 'Output Frames' playback mode (#1669)
+ - Fixed an issue where the scripting print functions do not handle all return values correctly and reliably (#1635)
+ - Fixed an issue where the ConstantRotation transform doesn't respect non-incremental time changes (#1681)
+ - Fixed a crash when removing the scene graph node that the camera is currently focused on (#1402)
+ - Fixed an issue that prevented loading a prespecified SGCT configuration file through the launcher (#1624)
+ - Prevent setting camera position to NaN under weird circumstances (#1686)
+ - Fixed an issue where disabling the `Master rendering` option also disables the UI and client renderings (#1699)
+ - Fixed an issue where speck file containing tabs were not loaded correctly (#1688)
+ - Fixed an issue where speck files with different capitalization of keywords were not loaded correctly (#1689)
+ - Fixed an issue with the debug axis causing a color loss in scaling (#1560)
+ - Fixed an issue with Launcher background showed gray instead of an image; Launcher image search now ignores non-png files (#1693)
+
 # Beta-10
  - Version: 0.17.0
  - Date: 2021-07-16
