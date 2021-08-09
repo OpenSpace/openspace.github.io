@@ -48,7 +48,7 @@ As development procedes, some versions get tagged with names.  This table indica
 
 ***
 
-# Beta-10
+# Beta-10 (Patch-1)
  - Version: 0.17.1
  - Date: 2021-08-09
  - Finished: [c5b71d13a5b9d893448f7ddddbc7ecb6df4e1044](https://github.com/OpenSpace/OpenSpace/commit/c5b71d13a5b9d893448f7ddddbc7ecb6df4e1044)
