@@ -24,7 +24,7 @@ Links for for the OpenSpace sofware, documentation, data, everything.
 | OpenSpace | [https://www.openspaceproject.com](https://www.openspaceproject.com) | OpenSpace homepage  |
 | OpenSpace Asset Hub | [http://hub.openspaceproject.com](http://hub.openspaceproject.com) | OpenSpace Asset Hub  |
 | OpenSpace Server Status | [http://status.openspaceproject.com](http://status.openspaceproject.com) | Status page for OpenSpace servers. Used to determine if the OpenSpace data and map servers are currently functioning.  |
-| YouTube Channel | [https://www.youtube.com/channel/UCHZpv-5zARkWibw1Z-g6ptQ](https://www.youtube.com/channel/UCHZpv-5zARkWibw1Z-g6ptQ)   | Videos from our team and partners  |
+| YouTube Channel | [https://www.youtube.com/c/openspacesoftware](https://www.youtube.com/c/openspacesoftware)   | Videos from our team and partners  |
 | Reddit Community | [https://www.reddit.com/r/OpenSpaceProject/](https://www.reddit.com/r/OpenSpaceProject/) | A place for the world to share ideas, questions and intersting things related to OpenSpace |
 | Slack Workspace | [https://openspacesupport.slack.com/](https://openspacesupport.slack.com/) | A place to interact and get help from the OpenSpace team and global community. |
 
