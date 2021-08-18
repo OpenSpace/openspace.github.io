@@ -48,7 +48,7 @@ As development procedes, some versions get tagged with names.  This table indica
 
 ***
 
-# Beta-10 (Patch-1)
+# Beta-10 (Patch-1) [0.17.1]
  - Version: 0.17.1
  - Date: 2021-08-09
  - Finished: [c5b71d13a5b9d893448f7ddddbc7ecb6df4e1044](https://github.com/OpenSpace/OpenSpace/commit/c5b71d13a5b9d893448f7ddddbc7ecb6df4e1044)
@@ -86,12 +86,11 @@ As development procedes, some versions get tagged with names.  This table indica
  - Fixed an issue with the debug axis causing a color loss in scaling (#1560)
  - Fixed an issue with Launcher background showed gray instead of an image; Launcher image search now ignores non-png files (#1693)
 
-# Beta-10
+# Beta-10 [0.17.0]
  - Version: 0.17.0
  - Date: 2021-07-16
  - Finished: [3069457d674b71497b5fe1e361c3850672650e44](https://github.com/OpenSpace/OpenSpace/commit/3069457d674b71497b5fe1e361c3850672650e44) 
  - See [Release Notes](http://wiki.openspaceproject.com/docs/users/release-notes/v0170.html) for user-focused highlights.
-
 
 ### Features
  - Added drag and drop support for images and assets (#1497)
@@ -266,7 +265,7 @@ As development procedes, some versions get tagged with names.  This table indica
 
 
 
-# Beta-9
+# Beta-9 [0.16.1]
  - Version: 0.16.1
  - Date: 2021-05-07
  - Finished: [452d4e9626c58629709c7ed061fedc7141964727](https://github.com/OpenSpace/OpenSpace/commit/452d4e9626c58629709c7ed061fedc7141964727)
@@ -303,7 +302,7 @@ As development procedes, some versions get tagged with names.  This table indica
  - Prevent a crash when trying to query the renderable of scenegraph nodes that don't exist
  - Don't produce OpenGL performance warnings on Intel chips, leading to noisy logs
 
-# Beta-8
+# Beta-8 [0.16.0]
  - Version: 0.16.0
  - Date: 2020-12-10
  - Finished: [c13b211add7b1bc4336de34ee6cb4f6064420242](https://github.com/OpenSpace/OpenSpace/commit/c13b211add7b1bc4336de34ee6cb4f6064420242)
@@ -406,7 +405,7 @@ See [Release notes](http://wiki.openspaceproject.com/docs/users/release-notes/v0
 ## New Software
 The team has been working hard on providing a tool to start OpenSpace in distributed environments where it might be cumbersome to start OpenSpace (or any other application) manually on each computer.  See the _C-Troll_ application (https://github.com/c-toolbox/c-troll) for more information.
 
-# Beta-7
+# Beta-7 [0.15.2]
  - Version: 0.15.2
  - Date: 2020-06-22
  - Finished: [076a96e651a59cc9f330ef94c09259db2dbd41de](https://github.com/OpenSpace/OpenSpace/commit/076a96e651a59cc9f330ef94c09259db2dbd41de)
@@ -460,7 +459,7 @@ The team has been working hard on providing a tool to start OpenSpace in distrib
  - Fixed a rendering issue that made the grids flicker
 
 
-# Beta-6
+# Beta-6 [0.15.1]
  - Version: 0.15.1
  - Date: 2020-02-17
  - Finished: [9c34a55e50d7039c4408d2d0f8f9b0e73fc93bdc](https://github.com/OpenSpace/OpenSpace/commit/9c34a55e50d7039c4408d2d0f8f9b0e73fc93bdc)
@@ -522,7 +521,7 @@ The team has been working hard on providing a tool to start OpenSpace in distrib
  - Drastically improved the rendering speed of the milky way volume by adaptively downscaling the rendering resolution
  - Improved the rendering performance of the billboard clouds used for galaxy points
 
-# Beta-5
+# Beta-5 [0.15.0]
  - Version: 0.15.0
  - Date: 2019-09-17
  - Finished: [c3b481f1e9b340cda49147ce8c7eb2f99fc98f53](https://github.com/OpenSpace/OpenSpace/commit/c3b481f1e9b340cda49147ce8c7eb2f99fc98f53)
@@ -589,7 +588,7 @@ The team has been working hard on providing a tool to start OpenSpace in distrib
  - Drastically improved the performance and timing consistency of the Globebrowsing image loading
  - Used the more optimal `setPropertyValueSingle` instead of `setPropertyValue` Lua function in the `propertyHelper.invert` functions, which no longer causes unnecessary RegExp to be compiled
  
-# Beta-4 (Patch 1)
+# Beta-4 (Patch 1) [0.14.1]
  - Version: 0.14.1
  - Date: 2019-06-04
  - Finished: [0a68b06823a0f4809150db5f649ac923560afc52](https://github.com/OpenSpace/OpenSpace/commit/0a68b06823a0f4809150db5f649ac923560afc52)
@@ -625,7 +624,7 @@ The team has been working hard on providing a tool to start OpenSpace in distrib
  - Updated number of samples for configs to make gui work on MacOS
  - Fixed bug where the UI would not show up if the computer is not connected to the internet
 
-# Beta-4
+# Beta-4 [0.14.0]
  - Version: 0.14.0
  - Date: 2019-05-20
  - Finished: [cdeaae5068444f09129c703c40c9733a7d47e7d1](https://github.com/OpenSpace/OpenSpace/commit/cdeaae5068444f09129c703c40c9733a7d47e7d1)
@@ -712,7 +711,7 @@ The team has been working hard on providing a tool to start OpenSpace in distrib
  - Slightly improved the rendering speed of the stars
 
 
-# Beta-3
+# Beta-3 [0.13.0]
  - Version: 0.13.0
  - Date: 2018-11-05
  - Finished: [8e93463c1aba03445804c10172c85be69cbc1cb3](https://github.com/OpenSpace/OpenSpace/commit/8e93463c1aba03445804c10172c85be69cbc1cb3)
@@ -761,7 +760,7 @@ The team has been working hard on providing a tool to start OpenSpace in distrib
   - Better reuse of vertex buffer objects for Digital Universe dataset to reduce memory footprint
   - Improved rendering times by reusing uniform locations
 
-# Beta-2
+# Beta-2 [0.12.0]
   - Version: 0.12.0
   - Date: 2018-07-11
   - Finished: [c2b1a3fd42b107ed37a1d0006058ae9d2df4baaf](https://github.com/OpenSpace/OpenSpace/commit/c2b1a3fd42b107ed37a1d0006058ae9d2df4baaf)
@@ -796,7 +795,7 @@ The team has been working hard on providing a tool to start OpenSpace in distrib
   - Fix bug preventing Saturn's rings from rendering
   - Fix bug causing Kepler-based translation to use a wrong value for the semi-major axis
 
-# Beta-1
+# Beta-1 [0.11.1]
   - Version: 0.11.1
   - Date: 2018-02-13
   - Finished: [a65eea61a1b8807ce3d69e9925e75f8e3dfb085d](https://github.com/OpenSpace/OpenSpace/commit/a65eea61a1b8807ce3d69e9925e75f8e3dfb085d)
@@ -814,7 +813,7 @@ The team has been working hard on providing a tool to start OpenSpace in distrib
  - Fixed rendering issue where the stars would not show up if they are the only Digital Universe object included in the scene
  
 
-# Beta-1
+# Beta-1 [0.11.0]
   - Version: 0.11.0
   - Date: 2018-01-01
   - Finished: [6e969794638d7e4761180dc97ca01fb35f356e46](https://github.com/OpenSpace/OpenSpace/commit/6e969794638d7e4761180dc97ca01fb35f356e46) 
@@ -885,7 +884,7 @@ The team has been working hard on providing a tool to start OpenSpace in distrib
     - New token `${WEB}`
   - Redesigned on-screen text information to be more flexible
 
-# Prerelease 15 (ASTC) 
+# Prerelease 15 (ASTC)  [0.10.0]
   - Version: 0.10.0
   - Date: 2017-10-24
   - Finished: [50fd93](https://github.com/OpenSpace/OpenSpace/commit/50fd9309ba9dc9e5d73bf4bde3b0d6014bb75287)
