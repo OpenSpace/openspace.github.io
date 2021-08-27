@@ -97,6 +97,6 @@ This section will cover the functionalty available when exploring worlds in the 
 <span class="fs-6"><-- Previous |</span>
 <span class="fs-6">Next -->  </span>
 <span class="v-align-middle">
-[Coming Soon](/docs/tutorials/users/menusglobebrowsing){: .btn .btn-purple }
+[Coming Soon](/docs/tutorials/){: .btn .btn-purple }
 </span>
 
