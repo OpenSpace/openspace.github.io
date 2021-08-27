@@ -18,7 +18,7 @@ This section will cover getting OpenSpace from our website and running it on you
 
 ## OpenSpace for Windows
 
-This video covers downloading OpenSpace from our (website)[https://www.openspaceproject.com/], extracting the application from the zip file, and running the application for the first time.
+This video covers downloading OpenSpace from our [website](https://www.openspaceproject.com/), extracting the application from the zip file, and running the application for the first time.
 <iframe width="740" height="530" id='tutorialPlayer' src="https://www.youtube.com/embed/YHl5L85hEUQ?enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 | Video time | Description |
