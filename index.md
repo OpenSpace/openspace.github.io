@@ -13,8 +13,6 @@ Regarding any issues, whether it is building the application, creating new conte
 
 - [OpenSpace Release Versions and Changelog](docs/general/releases)
 
-
-
 ## [Developers](docs/developers/index)
 "Developers" are those working on the OpenSpace source code to add new and improve functionality, improve the interface, build and package binaries, and fix bugs.
 
@@ -32,3 +30,6 @@ Academic works that are related to OpenSpace.
 
 ## [Links](docs/links)
 Links associated with OpenSpace
+
+## [Tutorials](docs/tutorials/index)
+Video and text based tutorials for a range of topics from operating and installing OpenSpace, to adding your own data or customizations
