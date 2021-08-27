@@ -21,7 +21,7 @@ This section will cover using the menus to turn on and off or maninpulate datase
 ## Finding Datasets
  - All datasets in OpenSpace can be found in the Scene menu.
  - You can search for datasets by typing into the search bar, or browse for them in the menus.
- - Some things you find will not be datasets. All datasets will show a checkbox next to their name.
+ - Some things you find will not be datasets, and instead are just a focus node. All items that are datasets will show a checkbox next to their name.
  - Some items with checkboxes many traditionally be considered a dataset, such as a 3D model, or a planet.
 
 ## Enabling and Disabling Datasets
