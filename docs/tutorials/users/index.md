@@ -9,10 +9,10 @@ nav_order: 1
 ---
 
 # User Tutorials
-Here you will find tutorials on topics on the basics of using OpenSpace like:
- - navigating in the software
- - content avaialble within OpenSpace
- - how to use the menus
- - built in window configurations
- - advanced controls
- - how to find and enable different datasets 
+Here you will find tutorials on the basics of using OpenSpace, including:
+ - Content available within OpenSpace
+ - How to use the menus
+ - Navigating in the software
+ - Built-in window configurations
+ - Advanced controls
+ - How to find and enable different datasets 
