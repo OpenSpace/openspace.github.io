@@ -73,7 +73,7 @@ This section will cover using the menus to manipulate time in OpenSpace.
 | 0:11 | Change the date by typing and pressing Enter. |
 | 0:31 | Change the date with the arrows above and below the date. |
 | 1:11 | Change the date by opening the calendar view and clicking on a date. |
-| 1:41 | Change the rate of time while time is paused with the sliders. |
+| 1:41 | Change the rate of time with the sliders. |
 | 2:20 | Using the quick adjust slider to temporarily adjust the rate of time. |
 | 3:02 | Play and pause time with the menu's play and pause button. |
 | 3:30 | Change the rate of time using the menu's left and right arrows. |
