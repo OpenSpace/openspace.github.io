@@ -1,5 +1,5 @@
 ---
-title: Navigation - Controling the Camera
+title: Navigation - Controlling the Camera
 layout: default
 parent: User Tutorials
 grand_parent: Tutorials
