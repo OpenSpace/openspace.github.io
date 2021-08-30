@@ -17,6 +17,7 @@ As development procedes, some versions get tagged with names.  This table indica
 
 | Version | _Name_ | _Date_ | _Description_ |
 | ------- | ------ | ------ | - |
+| 0.17.2 | Beta-10 | 2021-08-27 | This is a patch release for the tenth beta that addresses an issue with Earth terrain |
 | 0.17.1 | Beta-10 | 2021-08-09 | This is a patch release for the tenth beta that addresses initial bug reports |
 | 0.17.0 | Beta-10 | 2021-07-14 | This is the tenth beta release and the second in 2021 |
 | 0.16.1 | Beta-9 | 2021-05-07 | This is the ninth beta release and the first in 2021 |
@@ -47,6 +48,20 @@ As development procedes, some versions get tagged with names.  This table indica
 | 0.1.0 | Prerelease-5 | 2015-05-14 | This prerelease was published for the Pluto-Palooza event held at the AMNH in New York. |
 
 ***
+
+# Beta-10 (Patch-2) [0.17.2]
+ - Version: 0.17.2
+ - Date: 2021-08-27
+ - Finished: [3a81662dd2e76bfb1c88c08449e1119a66965d2b](https://github.com/OpenSpace/OpenSpace/commit/3a81662dd2e76bfb1c88c08449e1119a66965d2b)
+
+### Features
+ - Added Enabled/Disabled color customization to RenderEngine (partially address #1697)
+
+### Content
+ - **Updated Earth terrain server to new ESRI server**
+- Corrected the scale of Apollo capsule model (#1718)
+ - Fixed image type for GHRSST L4 MUR sea temperature
+
 
 # Beta-10 (Patch-1) [0.17.1]
  - Version: 0.17.1
