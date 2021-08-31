@@ -12,7 +12,7 @@ nav_order: 2
 # Navigation: Controlling the Camera
 {: .no_toc }
 
-This section will cover controlling the camera in OpenSpace using a mouse and keyboard. A three-buttoned mouse is recommended for easiest use of OpenSpace.
+This section will cover controlling the camera in OpenSpace using a mouse and keyboard. A three-button mouse is recommended for easiest use of OpenSpace.
 
 1. TOC
 {:toc}
@@ -20,12 +20,12 @@ This section will cover controlling the camera in OpenSpace using a mouse and ke
 ## Rotation
  - Use the left mouse button and drag your mouse to rotate or orbit around your target.
  - The camera will rotate in the direction you drag.
- - How far you drag the mouse will be how fast the camera will move.
+ - How far you drag the mouse will determine how fast the camera will move.
 
 ## Zoom
  - Use the right mouse button and drag to zoom closer or further away from your target.
  - Dragging down will zoom away, dragging up will zoom closer.
- - How far you drag the mouse will be how fast the camera will move.
+ - How far you drag the mouse will determine how fast the camera moves.
  - To zoom quickly, press and hold the 'Z' key.
 
 ## Roll, Yaw, and Pitch
@@ -34,8 +34,8 @@ This section will cover controlling the camera in OpenSpace using a mouse and ke
 
 ## Friction
  - By default, friction is enabled when controlling the camera, slowing the camera to a stop after you move it.
- - Friction can be toggled independantly for Rotation, Zoom, or Roll.
- - Click the words in the upper right on-screen dashbord to toggle the type of friction you want to change.
+ - Friction can be toggled independently for Rotation, Zoom, or Roll.
+ - Click the words in the upper right on-screen dashboard to toggle the type of friction you want to change.
  - You can also toggle the friction for Rotation, Zoom, and Roll with the 'F', 'Shift+F' or 'Ctrl+F' keybinds, respectively.
 
 ## Video
