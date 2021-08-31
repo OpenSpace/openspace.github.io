@@ -25,12 +25,12 @@ This section will cover how to change your focus using the menus so that you can
 ## Retargeting
  - Open the focus menu by clicking. Select your focus from the list or type to search.
  - When you select your new object of focus, the camera will move to look at your new target.
- - The amount of time taken to change the focus can be adusted in the settings under Settings -> Orbital Navigator -> "Retarget interpolation time." The higher the number, the longer it will take to switch between targets.
+ - The amount of time taken to change the focus can be adjusted in the settings under Settings -> Orbital Navigator -> "Retarget interpolation time." The higher the number, the longer it will take to switch between targets.
  - After choosing a new target, you will then have to fly to it, by [zooming in](/docs/tutorials/users/navigationcamera.html#zoom).
 
 ## Many Items Will Focus You on the Sun
  - Since focusing on an item will always focus on its center, focusing on many items will appear to target the sun.
- - This is because an items like "HII Regions" or "Jupiter Trail" are datasets based around the sun.
+ - This is because items like "HII Regions" or "Jupiter Trail" are datasets based around the sun.
  - For these types of items, there is no point in focusing on them, instead target 'Orion Nebula'
  or 'Jupiter.'
  - To target an individual item from a dataset, you must first create a bookmark for it. Stay tuned for the [Customizing - Bookmarks](docs/tutorials/users/customizingbookmarks) tutorial.
