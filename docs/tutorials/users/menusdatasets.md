@@ -13,7 +13,7 @@ nav_order: 6
 # Using the Menus - Datasets
 {: .no_toc }
 
-This section will cover using the menus to turn on and off or maninpulate datasets.
+This section will cover using the menus to turn on and off or manipulate datasets.
 
 1. TOC
 {:toc}
@@ -22,7 +22,7 @@ This section will cover using the menus to turn on and off or maninpulate datase
  - All datasets in OpenSpace can be found in the Scene menu.
  - You can search for datasets by typing into the search bar, or browse for them in the menus.
  - Some things you find will not be datasets, and instead are just a focus node. All items that are datasets will show a checkbox next to their name.
- - Some items with checkboxes many traditionally be considered a dataset, such as a 3D model, or a planet.
+ - Some items with checkboxes may not be traditionally considered a dataset, such as a 3D model, or a planet.
 
 ## Enabling and Disabling Datasets
  - Use the checkbox next to the dataset's name in the menu to turn it on or off in OpenSpace.
@@ -30,7 +30,7 @@ This section will cover using the menus to turn on and off or maninpulate datase
  - Some datasets have sizing or fading applied to them based on distances, so they may not appear even if they are enabled. The 'Tully Galaxies' or 'Earth Label' are examples of this. 
 
 ## Manipulating Datasets
- - For most datasets you can change aspects of how they are visualized in OpenSpace. Examples include changing the color, opacity of items, the size of text, and the width or lengh of trails.
+ - For most datasets you can change aspects of how they are visualized in OpenSpace. Examples include changing the color, opacity of items, the size of text, and the width or length of trails.
  - Changes can be made by clicking the item's title to open its submenu.
  - You can also click the wrench icon to pop out a panel for the item's properties.
  - Changes made are not saved between OpenSpace sessions. To learn how to save your changes, stay tuned for the [Customizing OpenSpace - Profiles](/docs/tutorials/users/customizingprofiles) tutorial.
