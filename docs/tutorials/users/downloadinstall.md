@@ -11,7 +11,7 @@ nav_order: 1
 
 # Download, Install, and Run
 {: .no_toc }
-This section will cover getting OpenSpace from our website and running it on your computer.
+This section will cover downloading OpenSpace from our website and running it on your computer.
 
 1. TOC
 {:toc}
@@ -45,7 +45,7 @@ This video covers downloading OpenSpace from our website, running the installer 
 | 1:45 | Run the pkg file to install OpenSpace. |
 | 2:33 | If a MacOS installation "unidentified developer" error pops up, go to System Preferences, Security & Privacy and click "Open Anyways." Another pop up will say the software cannot be verified. Click "Open." |
 | 3:28 | Run the installer and close when it is complete. You can delete the pkg file when prompted. |
-| 4:53 | Select the installed OpenSpace folder and File > Get Info. In the info window, apply Read & Write privleges to the  OpenSpace folder. |
+| 4:53 | Select the installed OpenSpace folder and File > Get Info. In the info window, apply Read & Write privileges to the  OpenSpace folder. |
 | 5:23 | Run the OpenSpace application, found in the bin folder. When the Launcher opens, start OpenSpace with the start button. |
 | 6:25 | Open OpenSpace in low resolution mode by selecting the application and going to File > Get Info. Check the box that says "Open in Low Resolution" and then run the application. |
 
