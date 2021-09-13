@@ -60,8 +60,8 @@ Before: ApproachSphere  Before: ReachedSphere  Before: ApproachSphere  Before: O
 After: Outside          After: ApproachSphere  After: ReachedSphere    After: ApproachSphere
 ```
 
-> `Node`:  The name of the node the camera is transitioning relative to.  Currently is always the same as the camera's focus node
-> `Before`:  The name of the area the camera was in before the transition;  is one of `Outside`, `ApproachSphere`, or `ReachedSphere`
+> `Node`:  The name of the node the camera is transitioning relative to.  Currently is always the same as the camera's focus node \
+> `Before`:  The name of the area the camera was in before the transition;  is one of `Outside`, `ApproachSphere`, or `ReachedSphere` \
 > `After`: The name of the area the camera is in after the transition;  is one of `Outside`, `ApproachSphere`, or `ReachedSphere`
 
 ### TimeOfInterestReached
@@ -73,7 +73,7 @@ This event is created when the end of a mission phase is reached.  This event is
 ### PlanetEclipsed
 This event is created when a planet is eclipsed by a moon or a different planet.  This event is currently unused.
 
-> `Eclipsee`:  The identifier of the scene graph node that is eclipsed by another object
+> `Eclipsee`:  The identifier of the scene graph node that is eclipsed by another object \
 > `Eclipser`:  The identifier of the scene graph node that is eclipsing the other object
 
 ### InterpolationFinished
@@ -84,21 +84,21 @@ This event is created when the interpolation of a property value is finished.  I
 ### FocusNodeChanged
 This event is created when the camera changes focus nodes.  Even if the camera position is interpolated, the node change happens instantaneously and the event is fired at the same time.
 
-> `OldNode`:  The identifier of the scene graph node which was the old focus node
+> `OldNode`:  The identifier of the scene graph node which was the old focus node \
 > `NewNode`:  The identifier of the scene graph node that is the new focus node
 
 ### LayerAdded
 This event is created when a layer is added to to a globe.
 
-> `Globe`:  The identifier of the globe to which the layer is added
-> `Group`:  The identifier of the layer group to which the layer is added
+> `Globe`:  The identifier of the globe to which the layer is added \
+> `Group`:  The identifier of the layer group to which the layer is added \
 > `Layer`:  The identifier of the layer that was added
 
 ### LayerRemoved
 This event is created when a layer is removed from a globe.
 
-> `Globe`:  The identifier of the globe from which the layer is removed
-> `Group`:  The identifier of the layer group from which the layer is removed
+> `Globe`:  The identifier of the globe from which the layer is removed \
+> `Group`:  The identifier of the layer group from which the layer is removed \
 > `Layer`:  The identifier of the layer that was removed
 
 ### SessionRecordingPlayback
