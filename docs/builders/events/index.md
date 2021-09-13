@@ -56,13 +56,12 @@ Diagram of events for a camera moving from right-to-left. Interaction sphere is 
       
 (                       (           O          )                       )
 ^                       ^                      ^                       ^
-Before: ApproachSphere  Before: ReachedSphere  Before: ApproachSphere  Before: Outside
-After: Outside          After: ApproachSphere  After: ReachedSphere    After: ApproachSphere
+Exiting                 Receding               Reaching                Approaching
 ```
 
 > `Node`:  The name of the node the camera is transitioning relative to.  Currently is always the same as the camera's focus node \
-> `Before`:  The name of the area the camera was in before the transition;  is one of `Outside`, `ApproachSphere`, or `ReachedSphere` \
-> `After`: The name of the area the camera is in after the transition;  is one of `Outside`, `ApproachSphere`, or `ReachedSphere`
+> `Transition`:  The name of the area the camera was in before the transition;  is one of `Outside`, `ApproachSphere`, or `ReachedSphere` \
+> `After`: The transition type that the camera just finished; is one of `Approaching`, `Reaching`, `Receding`, or `Exiting`
 
 ### TimeOfInterestReached
 This event is created with a specific time of interest is reached.  This event is currently unused.
