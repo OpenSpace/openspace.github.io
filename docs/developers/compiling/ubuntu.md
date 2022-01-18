@@ -128,4 +128,7 @@ Error: GLSL 3.00 is not supported.  Supported versions are: 1.10, 1.20, 1.30, 1.
  - Enter the following line in the terminal before running, or add this to `~/.bashrc` or `~/.profile`:
  `export MESA_GL_VERSION_OVERRIDE=4.3`
  
+Set a number format on your system that uses the dot as decimal separator. Otherwise you might see errors like this from OpenGL complaining about invalid numbers, e.g. `error: syntax error, unexpected INTCONSTANT, expecting IDENTIFIER or TYPE_IDENTIFIER or NEW_IDENTIFIER`.
+ - Before launching, set the system locale to `en_US` or similar: `export LC_NUMERIC="en_US.UTF-8"` 
+ 
 It may be necessary to install boost if trying to build some of the older branches.
