@@ -23,6 +23,7 @@ Quick summary:
 ## Development Tools
 ### Git Client
 The source code for OpenSpace is distributed via [GitHub](https://github.com/OpenSpace/OpenSpace), and so you will need a Git client to obtain a copy of the source code.  OpenSpace uses git submodules, so a client which can handle these gracefully is preferred.  These include:
+   1. [Fork](https://git-fork.com/)
    1. SourceTree
    1. SmartGit
    1. Git GUI (a part of the basic git [download](http://git-scm.com/download) or Visual Studio)
@@ -65,8 +66,8 @@ Checkout OpenSpace **recursively** using SourceTree, SmartGit, or the command li
 Copy the entire plugins/platforms/ directory from the Qt installation (e.g. Qt/5.xx/msvc2019_64/bin/) to the bin directory where OpenSpace.exe is generated (e.g. bin/Release/).
 
 ### Compiling Boost
-Some of the optional modules have Boost as a dependency, which will need to be compiled separately. See [boost.org](boost.org) for a complete compilation instructions.
-1. Download the newest version of the source from [here](https://dl.bintray.com/boostorg/release/).  For example: https://dl.bintray.com/boostorg/release/1.74.0/source/boost_1_74_0.7z
+Some of the optional modules have Boost as a dependency, which will need to be compiled separately. See [boost.org](https://www.boost.org) for a complete compilation instructions.
+1. Download the newest version of the source from [here](https://www.boost.org/users/download/).
 1. Unpack the boost folder to its final destination
 1. Start the Visual Studio x64 native tools command prompt and navigate to the folder
 1. In the boost folder, run `bootstrap.bat` and wait
