@@ -202,6 +202,7 @@ if (!(fileHandle = open(fileName, "w"))) {
 ... }
 ```
  > This is an extension of the "one statement per line" rule that makes things easier to debug.  Storing values in local variables is not a performance drawback as they will get optimized away.  This rule also discourages assignments in `if` statements as allowed in newer C++:  `if (int i = value()) { ... }`
+ > This rule is somewhat relaxed with C++ feature of having an instruction and evaluating the result in the same if statement. As long as this lowers the scope of the variable the following is allowed:  `if (int count = countThings();  count > 0) {`
 
 ## 26. The use of magic values in the code should be avoided
 Numbers other than `0`, `1`, or `-1` should be declared as named constants instead.  The same holds true for string constants, refactoring is made easier if they are defined as a constant.
