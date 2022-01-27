@@ -13,7 +13,7 @@ This page began as the Few-Frills How-To for building on Windows 10, but now we 
 
 Quick summary:
 1. [Development Tools](#tools)
-   1. Git client (one of SourceTree, Git Kraken, SmartGit, or Git for Windows)
+   1. Git client
    1. [CMake](#cmake)
    1. [Visual Studio](#visual-studio-2019)
 1. [Build/Install Libraries](#buildinstall-libraries)
@@ -29,7 +29,7 @@ The source code for OpenSpace is distributed via [GitHub](https://github.com/Ope
    1. Git GUI (a part of the basic git [download](http://git-scm.com/download) or Visual Studio)
 
 ### Visual Studio 2019
-[Visual Studio 2019](http://www.visualstudio.com) is the standard Interactive Development Environment (IDE) for Windows.  The "community" version is a free download.  When you install it, be sure to select "Custom" configuration and select the C++ compiler -- it is not included by default.  You can also select a git client here ("Git GUI").  Installation could take a while (like an hour or so, depending on the machine).  We are following the development of the C++ language quite closely, so there are more and more features that are no longer supported in Visual Studio 2017.
+[Visual Studio 2022](http://www.visualstudio.com) is the standard Interactive Development Environment (IDE) for Windows.  The "community" version is a free download.  When you install it, be sure to select "Custom" configuration and select the C++ compiler -- it is not included by default.  You can also select a git client here ("Git GUI").  Installation could take a while (like an hour or so, depending on the machine).  We are following the development of the C++ language quite closely, so there are more and more features that are no longer supported in Visual Studio 2017.
 
 ### CMake
 - Download and run the [CMake installer](https://cmake.org/download/)
@@ -44,23 +44,20 @@ OpenSpace depends on several other software components, which are loaded as git 
 ### Get via Git
 Checkout OpenSpace **recursively** using SourceTree, SmartGit, or the command line.  The command line git command is:
     `git clone --recursive https://github.com/OpenSpace/OpenSpace`
+
 ### Build OpenSpace
 1. Open CMake and set "Where is the source code:" to the directory you just cloned from github, for example `develop/OpenSpace`.
 1. Set "Where to build the binaries:" to the build subdirectory, for example: `develop/OpenSpace/build`
-1. Set CMake variables to enable or disable specific modules.  The default settings are fine, but make sure that the following are enabled:
-    - `OPENSPACE_MODULE_CEFWEBGUI`
-    - `OPENSPACE_MODULE_WEBBROWSER`
-    - `OPENSPACE_MODULE_WEBGUI`
-1. Create an environment variable in your Windows system for the path to the Qt directory. Do this by searching for `Edit the system environment variables` in the Windows search box and open it. Open `Environment variables...`. In `System variables`, click on `Path` and `Edit` and add the path to the folder where the Qt binaries are stored. For example, the path might look something like: `C:/Qt/5.15.2/msvc2019_64/bin`. In Cmake, the `Qt5_DIR` should now be automatically set. It may be necessary to manually set this to the location of your Qt installation if it does not show up (the path can also be to a higher version of Qt than 5).
-
+1. Set CMake variables to enable or disable specific modules
+1. Create an environment variable in your Windows system for the path to the Qt directory. Do this by searching for `Edit the system environment variables` in the Windows search box and open it. Open `Environment variables...`. In `System variables`, click on `Path` and `Edit` and add the path to the folder where the Qt binaries are stored. For example, the path might look something like: `C:/Qt/5.15.2/msvc2019_64/bin`. In CMake, the `Qt5_DIR` should now be automatically set. It may be necessary to manually set this to the location of your Qt installation if it does not show up (the path can also be to a higher version of Qt than 5).
 1. Press the `Configure` button in CMake.  Expect errors, which you will then correct:
-    - The first time you press `Configure` you are asked to select a "generator" for the project.  Select "Visual Studio 16 2019 Win64" (the Win64 is the important part)
+    - The first time you press `Configure` you are asked to select a "generator" for the project.  Select "Visual Studio 16 2022 Win64" (the Win64 is the important part)
     - Configure again, as needed, until you resolve all the errors (except anything that says "this warning is for project developers")
     - You can start over by pulling down "File->Delete Cache".
 1. Press the `Generate` button.  This creates the Visual Studio Solution (`.sln`) file and supporting Project (`.vcxproj`) files.  
 1. The generated solution file can be opened via `Open Project`.  Otherwise, navigate to the build directory and open the main Solution file, called `OpenSpace.sln`
-1. Select either the "Launcher" or the "OpenSpace" project as a startup project via right click in the "Solution Explorer" and build them
-1. You can start either application from within Visual Studio or by navigating to OpenSpace/bin/openspace
+1. Select the "OpenSpace" project as a startup project via right click in the "Solution Explorer" and build them
+1. You can start either application from within Visual Studio or by navigating to `OpenSpace/bin/openspace`
 
 ### Copy Qt dll files to executable directory
 Copy the entire plugins/platforms/ directory from the Qt installation (e.g. Qt/5.xx/msvc2019_64/bin/) to the bin directory where OpenSpace.exe is generated (e.g. bin/Release/).
@@ -77,7 +74,6 @@ Some of the optional modules have Boost as a dependency, which will need to be c
 ## Notes
 ### CMake
 - Create your build directory to store the configuration files anywhere outside the source files.  It's not required to be named `build` but that's common. You can keep it in the top level of your repository.
-- Unlike the Mac & Linux platforms, the Windows Debug version will run _much_ slower than its Release counterpart due to additional tests by the standard library.  The `RelWithDebInfo` build option will enable optimizations but also makes debugging inside of Visual Studio possible.
 - When in doubt File -> Delete Cache and start again.
 - To execute cmake from visual studio command line, cmake args must be passed with -D<cmake flag>:
 ```
@@ -93,9 +89,7 @@ Some of the optional modules have Boost as a dependency, which will need to be c
 - If you use the command line interface for `git`, remember that OpenSpace has many submodules.  You'll want to `git clone --recursive` and/or use the `git submodule` commands. The `submodule` commands will need to be run in both the main repository and `ext/ghoul`.
 
 ### Visual Studio
-
 - When switching between `Release` and `Debug` configuration in Visual Studio, there has been cases where some targets aren't getting rebuilt properly. Therefore, highlight `tinyxml2static` and `VRPN` in the solution, right click and select `Rebuild Selection` _after_ changing build configuration.
-
 
 ### FAQ
 If Windows is complaining that it cannot find the `VCOMP120.dll`, download https://www.microsoft.com/en-us/download/details.aspx?id=40784 the Visual Studio 2013 Redistributable.  On Windows 10, this is not installed by default anymore.
