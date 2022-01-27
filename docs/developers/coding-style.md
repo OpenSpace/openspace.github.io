@@ -216,7 +216,7 @@ Numbers other than `0`, `1`, or `-1` should be declared as named constants inste
 The C++ standard libraries `<algorithm>` header contains many useful functions that can make programming life very easy.  Good examples are [`std::for_each`](https://en.cppreference.com/w/cpp/algorithm/for_each), [`std::accumulate`](en.cppreference.com/w/cpp/algorithm/accumulate), [`std::lower_bound`](https://en.cppreference.com/w/cpp/algorithm/lower_bound), [`std::all_of`](https://en.cppreference.com/w/cpp/algorithm/all_any_none_of). See [Cppreference](https://en.cppreference.com/w/cpp/algorithm).
 
 ## Keep it simple, sailor
-Looking at the time spend for each line of code, the amount of time that future developers (including the future-self of the author of a lin) will spend much much more wall-clock time on any code snippet than the CPU spends executing it.  **Unless it is a performance-critical part of the run-loop**, prefer easy to understand code over obscure and optimized code.  If you come back to a code you wrote 6 months later, it is effectively the same as someone else going back to that code.
+Looking at the time spend for each line of code, the amount of time that future developers (including the future-self of the author of a line) will spend much much more wall-clock time on any code snippet than the CPU spends executing it.  **Unless it is a performance-critical part of the run-loop**, prefer easy to understand code over obscure and optimized code.  If you come back to a code you wrote 6 months later, it is effectively the same as someone else going back to that code.
 
 # File formatting
 ## Handling line breaks
