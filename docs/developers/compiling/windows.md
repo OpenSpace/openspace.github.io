@@ -59,9 +59,6 @@ Checkout OpenSpace **recursively** using SourceTree, SmartGit, or the command li
 1. Select the "OpenSpace" project as a startup project via right click in the "Solution Explorer" and build them
 1. You can start either application from within Visual Studio or by navigating to `OpenSpace/bin/openspace`
 
-### Copy Qt dll files to executable directory
-Copy the following three dll files from your Qt5 installation (e.g. Qt/5.xx/msvc2017_64/bin/) to the bin directory where OpenSpace.exe is generated (e.g. bin/Release/): Qt5Core.dll, Qt5Gui.dll, Qt5Widgets.dll. Also copy the entire plugins/platforms/ directory from the Qt5 installation (e.g. Qt/5.xx/msvc2017_64/plugins/platforms/ to bin/.
-
 ### Compiling Boost
 Some of the optional modules have Boost as a dependency, which will need to be compiled separately. See [boost.org](https://www.boost.org) for a complete compilation instructions.
 1. Download the newest version of the source from [here](https://www.boost.org/users/download/).
