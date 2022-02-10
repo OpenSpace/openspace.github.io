@@ -24,7 +24,13 @@ The main goal of these guidelines is to improve readability and thereby the unde
 TABs can be handled differently on different operating systems and make it hard to correctly format code.  Most editors have settings that will automatically convert TABs to spaces
 
 ## 5. Use the `auto` keyword sparingly
-The overuse of `auto` in the code can make the code much harder to understand.  If the return type of a function is known, the `auto` keyword must not be used unless the type is very verbose.  The only every-day location where `auto` would be necessary is generic lambdas or shorthand for iterator types.
+The overuse of `auto` in the code can make the code much harder to understand.  If the return type of a function is known, the `auto` keyword must not be used unless the type is very verbose.  In general the use of `auto` to deduce the type must be avoided with the only exceptions being the shortening of iterator types (example 1), shortening of time-measuring types from the `std::chrono` library (example 2), storing lambda functions (example 3), structured bindings (example 4), and if the type is explicitly mentioned on the same line (or line continuation if the column width was exceeded) (example 5).
+
+- Example 1: `auto it = std::find(vector.begin(), vector.end(), value);`
+- Example 2: `auto start = std::chrono::high_resolution_clock::now();`
+- Example 3: `auto fn = [](int value) { return value * 2; };`
+- Example 4: `auto& [val, ue] = std::tuple<std::string, int>("abc", 2);`
+- Example 5: `auto type = std::make_unique<Struct>(val1, val2);`
 
 ## 6. Use `//` for all comments, including multi-line comments
 Using `//` comments ensure that it is always possible to comment out entire sections of a file using /\* \*/ for debugging purposes etc.  Please note that his rule does not apply to the Doxygen comments in the header, as we use the variant that starts with `/**`
