@@ -137,7 +137,7 @@ Using all uppercase for the base name will give conflicts with the naming conven
 
 # Structure
 ## 19. `#include` statements should be at the top of the file, sorted and grouped
-Sorted by their hierarchical position in the system and sorted by name with low-level system or std files included last.  The first entry in a `.cpp` file is the corresponding `.h` file separated from the remaining heads by an empty line.  For the remaining headers, this means first the parent header (if it is a `cpp` file), then all `openspace` headers, then `ghoul` headers, then all other headers, each group sorted by name.
+Include-files should be grouped based on their first directory entry (´modules´, ´openspace´, ´ghoul´) in this ordered, followed by headers for external libraries, followed by standard libraries.  Each group must be sorted alphabetrically individually.  The first entry in a `.cpp` file is the corresponding `.h` file separated from the remaining headerfiles by an empty line.  For header files, the first entry/entries are the header files of the parent classes separated by an empty line.
 ```cpp
 #include "com/company/ui/PropertiesDialog.h"
 
