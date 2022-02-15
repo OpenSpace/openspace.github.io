@@ -104,7 +104,7 @@ As development procedes, some versions get tagged with names.  This table indica
 # Beta-10 [0.17.0]
  - Version: 0.17.0
  - Date: 2021-07-16
- - Finished: [3069457d674b71497b5fe1e361c3850672650e44](https://github.com/OpenSpace/OpenSpace/commit/3069457d674b71497b5fe1e361c3850672650e44) 
+ - Finished: [3025fbc200ffdd8cf80f95c5f251d0daf793fbdf](https://github.com/OpenSpace/OpenSpace/commit/3025fbc200ffdd8cf80f95c5f251d0daf793fbdf) 
  - See [Release Notes](http://wiki.openspaceproject.com/docs/users/release-notes/v0170.html) for user-focused highlights.
 
 ### Features
