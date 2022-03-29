@@ -76,5 +76,5 @@ openspace.setPropertyValueSingle("Scene.Earth.Renderable.Enabled", false)
 
 Note that the script log file is cleared and overwritten on every startup.  
 
-The script log can be useful when trying to figure out how to achieve a certain visul effect with scripting, or find the "key" to a access a certain property. A common approach is to first get the visual appearance wanted using the settings in the UI, and then collecting the commands to achieve that appearance from the ScriptLog.txt file.
+The script log can be useful when trying to figure out how to achieve a certain visul effect with scripting, or find the identifier to a access a certain property (e.g. `"Scene.Earth.Renderable.Enabled"` above). A common approach is to first get the visual appearance wanted using the settings in the UI, and then collecting the commands to achieve that appearance from the ScriptLog.txt file.
 
