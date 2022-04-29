@@ -41,7 +41,7 @@ The `PathNavigator` settings is found under `NavigationHandler` in the settings 
 | DefaultPathType | The type of path that is going to be created when generating a path (see next table)|
 | SpeedScale   | Can be used to increase or decrease the traversal speed |
 | ArrivalDistanceFactor   | Decides how far away from a target object the camera should stop. The factor will be multiplied with the bounding sphere of the node and the resulting distance is used to compute the target position when a path is created. |
-| ApplyIdleBehaviorOnFinish   | If checked, the currently chosen IdleBehavior (see wiki page on IdleBehaviors) is triggered when the path is finished. Can be used to automatically start a rotation around the target when arriving. |
+| ApplyIdleBehaviorOnFinish   | If checked, the currently chosen [Idle Behavior](idle-behavior) is triggered when the path is finished. Can be used to automatically start a rotation around the target when arriving. |
 | RelevantNodeTags   | A list of tags of nodes that is relevant for the path generation. Used for example when computing collisions. |
 | IncludeRoll   | If false, any rolling rotation is removed from the rotation interpolation. Useful in situations where rolling motions can be uncomfortable for the user. OBS! Disabled per default, and we do not recommend turning it on for any paths apart from the `AvoidCollision` and `Linear`, since it might cause uncomfortable rotations. |
 
