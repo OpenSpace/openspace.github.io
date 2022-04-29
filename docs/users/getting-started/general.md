@@ -18,12 +18,14 @@ The data used by OpenSpace includes a number of very large data files, which can
 
 1. To perform the Sync you just start OpenSpace with the scene and and wait
 
-### Navigation via mouse
-Navigation in OpenSpace is based on the central object of the Scene, which is called called the "Origin".  You can change your viewpoint around the origin using mouse motion.   You must press and hold a button (or combination of buttons) while you move the mouse.
+### Navigation Via Mouse
+Navigation in OpenSpace is based on the central object of the Scene, which is called the "Origin" or "Focus".  You can change your viewpoint around the origin using mouse motion. You must press and hold a button (or combination of buttons) while you move the mouse.
 - Left mouse button - rotate position around the origin
 - Middle mouse button - roll
 - Right mouse button - zoom in or out (by moving the mouse forward or backwards)
 - CTRL+left mouse - pitch and yaw camera direction away from the origin
+
+More info on how to navigate in the software can be found under "Navigation" in the menu to the left on this page, or in the video tutorials under "User Tutorials". For basic navigation, see [this page](/docs/users/navigation/basic-navigation.html).
 
 ### Editing Internal Settings
 Press the `F1` brings up a menu of possible internal OpenSpace settings.  These will be documented on a separate page.  For now, two of the items you may be interested in are setting the `Origin` (the central object in the Scene) and the `Delta Time`, which controls how fast time passes in the simulation relative to real-world time.  The menu for the `Origin` is a scroll-down menu.  For `Delta Time` you can either slide the mouse across the field to change the value like a slider, or type a numerical value.

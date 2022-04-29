@@ -3,7 +3,7 @@ title: Using the Commandline
 layout: default
 
 parent: Users
-nav_order: 3
+nav_order: 4
 ---
 
 This wiki covers the use of the OpenSpace console, which allows precise details of a scene to be accessed or controlled.  The console is an advanced tool, and a basic understanding of OpenSpace properties and namespaces is recommended before using it.
