@@ -14,7 +14,7 @@ Basic instructions for how users can enable and visualize content categories. Th
 - [Profiles](profiles)
 - [Satellites](satellites)
 - [Globebrowsing](globebrowsing)
-  - [Navigation](../globebrowsing/navigation)
+  - [Navigation](../navigation/basic-navigation)
   - [Working With Layers](../globebrowsing/working-with-layers)
 - [Gaia](gaia)
 - [Asteroids/Comets](asteroids)
