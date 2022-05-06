@@ -7,16 +7,17 @@ nav_order: 1
 ---
 
 # Releases
-OpenSpace versions labeled by a version number of the form `MM.mm.rr`,  where `MM` is the major version number, `mm` is the minor version nuber, and `rr` is the release number (see [Semantic Versioning](https://semver.org)).  In some cases there may be an additional number at the end, `MM.mm.rr.bb`, where bb is the build number, but that will only be for development and testing, not for public release.
+OpenSpace versions labeled by a version number of the form `MM.mm.rr`,  where `MM` is the major version number, `mm` is the minor version number, and `rr` is the release number (see [Semantic Versioning](https://semver.org)).  In some cases there may be an additional number at the end, `MM.mm.rr.bb`, where bb is the build number, but that will only be for development and testing, not for public release.
 
 1. TOC
 {:toc}
 
 # Overview
-As development procedes, some versions get tagged with names.  This table indicates which version numbers go with which tags, and some notes about each:
+As development proceeds, some versions get tagged with names.  This table indicates which version numbers go with which tags, and some notes about each:
 
 | Version | _Name_ | _Date_ | _Description_ |
 | ------- | ------ | ------ | - |
+| 0.18.0 | Beta-11 | 2022-05-06 | This is the eleventh beta release and the first in 2022 |
 | 0.17.2 | Beta-10 | 2021-08-27 | This is a patch release for the tenth beta that addresses an issue with Earth terrain |
 | 0.17.1 | Beta-10 | 2021-08-09 | This is a patch release for the tenth beta that addresses initial bug reports |
 | 0.17.0 | Beta-10 | 2021-07-14 | This is the tenth beta release and the second in 2021 |
@@ -49,6 +50,12 @@ As development procedes, some versions get tagged with names.  This table indica
 
 ***
 
+# Beta-11 [0.18.0]
+- Version: 0.18.0
+- Date: 2022-05-06
+- Finished: 
+- See [Release Notes](http://wiki.openspaceproject.com/docs/users/release-notes/v0180.html) for user-focused highlights.
+
 # Beta-10 (Patch-2) [0.17.2]
  - Version: 0.17.2
  - Date: 2021-08-27
@@ -61,7 +68,6 @@ As development procedes, some versions get tagged with names.  This table indica
  - **Updated Earth terrain server to new ESRI server**
 - Corrected the scale of Apollo capsule model (#1718)
  - Fixed image type for GHRSST L4 MUR sea temperature
-
 
 # Beta-10 (Patch-1) [0.17.1]
  - Version: 0.17.1
@@ -233,7 +239,6 @@ As development procedes, some versions get tagged with names.  This table indica
  - Fixes to fullscreen1080 and spoutOutput config files
  - Adapt addFocusNodes for GlobeTranslation
 
-
 ### Enhancements
  - Added module property for exoplanet habitable zone opacity
  - Speed up for `setPropertyValue` function
@@ -263,7 +268,6 @@ As development procedes, some versions get tagged with names.  This table indica
  - Added the ability to optionally ignore the scale value read from session recordings
  - Added new images to OpenSpace Launcher
 
-
 ## Breaking Changes
  - Remove the ability to render AABB for globes as it caused a circular dependency between GlobeBrowsing and Debugging
  - Renamed `AtmosphereRadius` -> `AtmosphereHeight` and `GroundRadianceEmittion` -> `GroundRadianceEmission`
@@ -277,8 +281,6 @@ As development procedes, some versions get tagged with names.  This table indica
  - Place planets in their centers and not barycenters
  - Separate the different joystick configurations into their own assets
  - Update faulty docs and function name for getGeoPosition (#1662) (#1677)
-
-
 
 # Beta-9 [0.16.1]
  - Version: 0.16.1
@@ -473,7 +475,6 @@ The team has been working hard on providing a tool to start OpenSpace in distrib
  - Fixed an error with the orientation of the Digital Universe deep-sky objects
  - Fixed a rendering issue that made the grids flicker
 
-
 # Beta-6 [0.15.1]
  - Version: 0.15.1
  - Date: 2020-02-17
@@ -602,6 +603,7 @@ The team has been working hard on providing a tool to start OpenSpace in distrib
  - Replaced Multisampling Antialiasing (MSAA) for a faster Fast Approximate Antialiasing (FXAA) which improves performance and reduced the graphics memory footprint of the application
  - Drastically improved the performance and timing consistency of the Globebrowsing image loading
  - Used the more optimal `setPropertyValueSingle` instead of `setPropertyValue` Lua function in the `propertyHelper.invert` functions, which no longer causes unnecessary RegExp to be compiled
+ 
  
 # Beta-4 (Patch 1) [0.14.1]
  - Version: 0.14.1
