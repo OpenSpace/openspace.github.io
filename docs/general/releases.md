@@ -56,11 +56,11 @@ As development proceeds, some versions get tagged with names.  This table indica
 - Finished: [5877112103cdcb894695c214c21c15d2625fbe0b](https://github.com/OpenSpace/OpenSpace/commit/5877112103cdcb894695c214c21c15d2625fbe0b)
 - See [Release Notes](http://wiki.openspaceproject.com/docs/users/release-notes/v0180.html) for user-focused highlights.
 
-# Features
-## SkyBrowser
+## Features
+### SkyBrowser
 This feature adds an entirely new system to OpenSpace that interfaces with the [AAS Worldwide Telescope](https://worldwidetelescope.org) application to bring high-resolution astronomical images into OpenSpace. The location of a selected image is shown in the 3D view inside of OpenSpace. 
 
-## Camera paths (Fly-To)
+### Camera paths (Fly-To)
 This feature adds the ability to automatically fly the camera between different objects and between different navigation states. Currently, this feature only works when the in-game time is paused and triggering a procedural flight path will automatically pause the time and unpause it (if it was unpaused before) after completing the path. Additionally, this feature enables the use of "Idle behaviors" that can either be triggered manually or by completing a procedural flight that will make the camera do something interesting until the user interacts with the system again.
   - Adding procedurally generated camera paths (#1667)
   - Remove `OrbitalNavigator.LinearFlight` and instead add "Zoom to" helper functions (#1837)
@@ -70,18 +70,18 @@ This feature adds the ability to automatically fly the camera between different 
   - Automatically pause simulation time when starting a camera path (#1832)
   - Add bool property to toggle follow anchor node rotation (#1839)
 
-## Actions
+### Actions
 Introducing "Actions" as first-class elements in OpenSpace to make repeatable changes. In prior versions it was possible to bin scripts to keybinds and use a "key-less keybind" to configure repeatable effects. The "Action" concept replaces this by encapsulating the changes in an Action and then provide the ability to bind a key to trigger an action instead. This also enables the reuse of "Actions" in other parts of the software. Older profiles that were made with previous version will be converted automatically on load with an Action identifier generated automatically.
   - Added Actions concept (#1708)
 
-## Event System
+### Event System
 Added a system that causes a specific list of events to be triggered automatically depending on the state in OpenSpace. This, for example, enables features to automatically fade an object's trial when flying closer to an object, but there are many more events that are defined in the system
  - Add implementation of the EventEngine to handle global event chains (#1741)
 
-## User interface improvements
+### User interface improvements
 Various user interface improvements in the launcher and the in-game interface
 
-### Launcher
+#### Launcher
   - Add a new panel in the launcher used to create new SGCT configuration files.
   - Add a new panel to query the JPL horizons interface and being able to generate Horizons files based on that
   - Add ability in different Launcher panels to select profile properties from the ScriptLog of a previous OpenSpace run (#1780)
@@ -89,7 +89,7 @@ Various user interface improvements in the launcher and the in-game interface
   - Add the ability to choose the script from the ScriptLog in the ActionDialog and the additional script dialog including filtering and reloading the ScriptLog file (#2019)
   - Add warning to keybinding editor for duplicate assignments (#1461)
 
-### In-game
+#### In-game
   - Add a new UI panel that shows a representation of the keyboard and all actions that are bound to keys
   - Add links to a tutorial page in the hamburger menu in the bottom left
   - Add UI elements that enables dynamic reordering of planetary layers
@@ -97,7 +97,7 @@ Various user interface improvements in the launcher and the in-game interface
   - Reload UI after adding screen space renderables or assets (#1703)
   - Add the ability to enable and disable the Exoplanets and Skybrowser components for individual profiles (#1945)
 
-## Various Enhancements
+### Various Enhancements
   - Changed the default format of window configuration files from XML-based to JSON-based. The old XML format is deprecated and will be removed in the next major release (#1795)
   - Add an asset (and load it in the provided profiles) to dynamically address some scaling based on the Operating System's DPI scaling (#1880)
   - Add preliminary support for multiple simultaneous joysticks (#1787)
@@ -114,8 +114,8 @@ Various user interface improvements in the launcher and the in-game interface
   - Clean up the remainders of the native GUI to harmonize its organization with the WebGUI (#2060)
   - Make the font size of the Lua console dependent on the DPI scaling for increased readability
   
-# Content
-## New Assets
+## Content
+### New Assets
   - Add most of the image sequences available from NOAA’s Science-on-a-Sphere (#1863)
   - Add new assets provided access to a large number of NASA TREKs Moon, Mars, and Mercury layers layers (#888)
   - Add a new profile and assets that show the solar activity in July 2012, a time in which a few coronal mass ejections were ejected into the solar system
@@ -126,7 +126,7 @@ Various user interface improvements in the launcher and the in-game interface
   - Add a large number of new actions that are useful in their own right, but also serve as examples for implementing new user-defined actions (#2077)
   - Add trails for the planets barycenters which are disabled by default
 
-## Fixes to existing assets 
+### Fixes to existing assets 
   - Update the general planetary spice kernel to a new version that extending the range of planetary positions to covering 1550-2650 (#2061)
   - Removed the Orion nebula model from the default profile
   - Updates to JWST profile
@@ -163,8 +163,8 @@ Other changes
   - The “Period” of a RenderableTrailOrbit is no longer converted from days to seconds when loading an asset (#1860)
   - Renamed the prefix for the constellation art by James Hedberg from `ConstellationArt` to `ImageConstellation` to provide a better search result when searching for “Constellation”
 
-## Content Creation
-### Assets
+### Content Creation
+#### Assets
   - Deprecate the use of the `asset_helper` file in exchange for explicitly writing the initialize/deinitialize functions (#1868)
   - Change the behavior of TemporalTileProviders to provide both a Folder based and a Prototyped mode (#1800)
   - Adding an ImageSequenceTileProvider that loads a folder of images and makes them available through a user-selectable index (#1798)
@@ -185,7 +185,7 @@ Other changes
   - Add support for DMS format support in the DashboardItemGlobeLocation (#1632)
   - Renamed “RenderOption” to “RenderMode” in RenderableGaiaStars (#2078)
 
-### Lua
+#### Lua
   - Add a Lua-controllable State machine that can contain nodes and edges where transitions can be defined that execute Lua scripts (#1705)
   - Make the UTC function return the date in ISO 8601 format as advertised. Add SPICE function to get the old format (#1776)
   - Add ability to print all types of information in the printInfo/... functions and add the ability to pass any number of arguments to the function (#1635)
@@ -195,7 +195,7 @@ Other changes
   - Add Lua functions to get the bounding and interaction sphere values for a SGN
   - Add Lua function to get current application time
 
-# Bug Fixes
+## Bug Fixes
   - Fix issue that would prevent Windows 11 from being detected correctly
   - Correctly specify tags and fix usage of "refreshRate" and "vsync" parameters (#1890)
   - Fix globe transformations not updating from height map if simulation time paused (#1766)
@@ -253,7 +253,7 @@ Other changes
   - Fixed an issue where the focus node would not be correctly reset after a session recording finishes (#2070)
 
 
-# Breaking Changes
+## Breaking Changes
  - Renamed `RenderEngine.ShowOverlayOnSlaves` to `RenderEngine.ShowOverlayOnClients`
 - Change how moveLayer works slightly, so it is easier to use in a GUI implementation
 - Remove non-functioning ABufferRenderer from RenderEngine
