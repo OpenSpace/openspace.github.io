@@ -53,8 +53,224 @@ As development proceeds, some versions get tagged with names.  This table indica
 # Beta-11 [0.18.0]
 - Version: 0.18.0
 - Date: 2022-05-06
-- Finished: 
+- Finished: [5877112103cdcb894695c214c21c15d2625fbe0b](https://github.com/OpenSpace/OpenSpace/commit/5877112103cdcb894695c214c21c15d2625fbe0b)
 - See [Release Notes](http://wiki.openspaceproject.com/docs/users/release-notes/v0180.html) for user-focused highlights.
+
+# Features
+## SkyBrowser
+This feature adds an entirely new system to OpenSpace that interfaces with the [AAS Worldwide Telescope](https://worldwidetelescope.org) application to bring high-resolution astronomical images into OpenSpace. The location of a selected image is shown in the 3D view inside of OpenSpace. 
+
+## Camera paths (Fly-To)
+This feature adds the ability to automatically fly the camera between different objects and between different navigation states. Currently, this feature only works when the in-game time is paused and triggering a procedural flight path will automatically pause the time and unpause it (if it was unpaused before) after completing the path. Additionally, this feature enables the use of "Idle behaviors" that can either be triggered manually or by completing a procedural flight that will make the camera do something interesting until the user interacts with the system again.
+  - Adding procedurally generated camera paths (#1667)
+  - Remove `OrbitalNavigator.LinearFlight` and instead add "Zoom to" helper functions (#1837)
+  - Adding the ability to trigger an idle behavior for the camera after finishing a procedural camera path (#1898)
+    - Add an OrbitAroundUp IdleBehavior that rotates around the y-axis of the node instead of the z-axis
+  - Add Lua function to directly create path to a navigation state
+  - Automatically pause simulation time when starting a camera path (#1832)
+  - Add bool property to toggle follow anchor node rotation (#1839)
+
+## Actions
+Introducing "Actions" as first-class elements in OpenSpace to make repeatable changes. In prior versions it was possible to bin scripts to keybinds and use a "key-less keybind" to configure repeatable effects. The "Action" concept replaces this by encapsulating the changes in an Action and then provide the ability to bind a key to trigger an action instead. This also enables the reuse of "Actions" in other parts of the software. Older profiles that were made with previous version will be converted automatically on load with an Action identifier generated automatically.
+  - Added Actions concept (#1708)
+
+## Event System
+Added a system that causes a specific list of events to be triggered automatically depending on the state in OpenSpace. This, for example, enables features to automatically fade an object's trial when flying closer to an object, but there are many more events that are defined in the system
+ - Add implementation of the EventEngine to handle global event chains (#1741)
+
+## User interface improvements
+Various user interface improvements in the launcher and the in-game interface
+
+### Launcher
+  - Add a new panel in the launcher used to create new SGCT configuration files.
+  - Add a new panel to query the JPL horizons interface and being able to generate Horizons files based on that
+  - Add ability in different Launcher panels to select profile properties from the ScriptLog of a previous OpenSpace run (#1780)
+  - Explicitly sort file lists before showing them to the user in the Launcher and the Session recording which were presented non-alphabetically on MacOS (#1943)
+  - Add the ability to choose the script from the ScriptLog in the ActionDialog and the additional script dialog including filtering and reloading the ScriptLog file (#2019)
+  - Add warning to keybinding editor for duplicate assignments (#1461)
+
+### In-game
+  - Add a new UI panel that shows a representation of the keyboard and all actions that are bound to keys
+  - Add links to a tutorial page in the hamburger menu in the bottom left
+  - Add UI elements that enables dynamic reordering of planetary layers
+  - Add action dialog used to browse and trigger the available actions that are defined in the current scene
+  - Reload UI after adding screen space renderables or assets (#1703)
+  - Add the ability to enable and disable the Exoplanets and Skybrowser components for individual profiles (#1945)
+
+## Various Enhancements
+  - Changed the default format of window configuration files from XML-based to JSON-based. The old XML format is deprecated and will be removed in the next major release (#1795)
+  - Add an asset (and load it in the provided profiles) to dynamically address some scaling based on the Operating System's DPI scaling (#1880)
+  - Add preliminary support for multiple simultaneous joysticks (#1787)
+  - Automatically use 66% of the monitor size by default instead of 1280x720 (#1883)
+  - Pass information about the operating system to the version reporter script (#1865)
+  - Add a new environment variable OPENSPACE_GLOBEBROWSING that is queried for the extra download files for offline planetary surface images 
+  - Update CEF version which improves the responsiveness of the user interface (#1114)
+  - Add the ability to define and use custom properties using the `openspace.addCustomProperty` Lua function (#2064)
+  - Backwards incompatible change to the Astrocasting protocol that reduces the amount of data that is transferred while connected to an Astrocasting session (#1985)
+  - Improve support for the handling of SpaceMouse input devices and XBox controllers (#1989)
+  - Add error message when trying to access Gaia module on Mac (#843)
+  - Add two properties to control the font color of the Rotation, Zoom, and Roll toggles (#1726) [Thanks BlueVista] 
+  - Added SpoutFlatProjection type [Thanks Marco @ Elumenati]
+  - Clean up the remainders of the native GUI to harmonize its organization with the WebGUI (#2060)
+  - Make the font size of the Lua console dependent on the DPI scaling for increased readability
+  
+# Content
+## New Assets
+  - Add most of the image sequences available from NOAA’s Science-on-a-Sphere (#1863)
+  - Add new assets provided access to a large number of NASA TREKs Moon, Mars, and Mercury layers layers (#888)
+  - Add a new profile and assets that show the solar activity in July 2012, a time in which a few coronal mass ejections were ejected into the solar system
+  - Add new asset containing the Starlink satellites (#1818) 
+  - Add new asset showing the active satellites (#1805)
+  - Add model-based representations of the Mars moons Phobos and Deimos (#1963)
+  - Add a model for the Eiffel tower with an accompanying action to place the model underneath the camera location to be used for scale references
+  - Add a large number of new actions that are useful in their own right, but also serve as examples for implementing new user-defined actions (#2077)
+  - Add trails for the planets barycenters which are disabled by default
+
+## Fixes to existing assets 
+  - Update the general planetary spice kernel to a new version that extending the range of planetary positions to covering 1550-2650 (#2061)
+  - Removed the Orion nebula model from the default profile
+  - Updates to JWST profile
+    - Add a new new animated model (#1759)
+    - Update for the timing information to match the actual launch date
+    - Add new kernels that show the position of JWST from the launch all the way to the orbit around L2 (#2085)
+    - Add more target images
+    - Add a custom webpage (http://ui.openspaceproject.com/jwst_scripts/index.html) used to control the orientation of JWST
+    - Add the Hubble telescope trail
+  - Update the kernels used in the OSIRIS-REx asset (#1651)
+  - Update to all Horizons-based trails to use VECTORS type ephemeridis that do not suffer from the light-travel offset inherent in the Observer type (#1434)
+  - Updated the kernels used for the Perseverance landing
+  - Update the Earth Terrain WMS to the new ESRI server
+  - Correctly specify the bounding sphere for the ISS
+  - Add the option to apply a color map to the values of the Quasars dataset from the Digital Universe
+  - Fix issue with stretched Themis maps on Mars (#1707)
+  - Update the data used to show the Gaia trail (#1817)
+  - Correctly specify the model size of the Apollo capsules (#1718)
+  - Correctly add the Mercury DEM layers (#1799)
+  - Update the Pioneer model to include textures
+  - Fix the image type for GHRSST L4 MUR sea temperature layer on Earth
+  - Update the color map for the Gaia Apogee and Galah datasets
+  - Set the correct radii for Bianca moon
+  - Set the correct radii for Mimas moon
+  - Remove the padding images from New Horizons that mess up instrument timings in the dashboard info in the New Horizons profile
+  - Correctly parent the Gaia trail and model to the Earth Center to match the Horizons file (#1573)
+  - Fix mistake that caused the Gaia spacecraft to not point away from the Sun anymore
+  - Fix issue where the identifier of the Camera Velocity dashboard was wrong
+  - Move the launcher image synchronization from base into the base_blank asset
+  - Move the trail-related actions from the base_blank into the base asset
+Other changes
+  - Add an action and event to automatically switch the Sun and SunGlare when approaching the Sun (#1914)
+  - Add bounding spheres to many more renderable types (#1957)
+  - The “Period” of a RenderableTrailOrbit is no longer converted from days to seconds when loading an asset (#1860)
+  - Renamed the prefix for the constellation art by James Hedberg from `ConstellationArt` to `ImageConstellation` to provide a better search result when searching for “Constellation”
+
+## Content Creation
+### Assets
+  - Deprecate the use of the `asset_helper` file in exchange for explicitly writing the initialize/deinitialize functions (#1868)
+  - Change the behavior of TemporalTileProviders to provide both a Folder based and a Prototyped mode (#1800)
+  - Adding an ImageSequenceTileProvider that loads a folder of images and makes them available through a user-selectable index (#1798)
+  - Add a new (hidden from UI) "Fade" property to enable the smooth fading of objects without messing with user's opacity (#1970)
+  - Add the ability to ingest VECTORS type ephemeridis from Horizons (#1434)
+  - Add properties to SceneGraphNodes to determine two distance radii for camera-based events
+  - Add a new rotation type `GlobeRotation` with examples (#1737)
+  - Interpolation of tiles added to tileprovider, with additional new shaders to make this work (#1769)
+  - Add moon_minor tag for all minor moons
+  - Implement new Spout input methods to tile providers and new Renderables (#1901) [Thanks Marco @ Elumenati]
+  - Make the Sun asset export the Sun as a light source (#1870)
+  - Replaced "UseAdditiveBlending" with "RenderBinMode" in some Renderables (#1842)
+  - No longer require the filenames from a synced resource to start with a /
+  - Add support for RenderableModel to take custom shader code with example (#1723)
+  - Remove Fallback layer concept (#1819)
+  - Remove the old virtual property code
+  - Add new model format compatible with TurboSquid requirements (#1706)
+  - Add support for DMS format support in the DashboardItemGlobeLocation (#1632)
+  - Renamed “RenderOption” to “RenderMode” in RenderableGaiaStars (#2078)
+
+### Lua
+  - Add a Lua-controllable State machine that can contain nodes and edges where transitions can be defined that execute Lua scripts (#1705)
+  - Make the UTC function return the date in ISO 8601 format as advertised. Add SPICE function to get the old format (#1776)
+  - Add ability to print all types of information in the printInfo/... functions and add the ability to pass any number of arguments to the function (#1635)
+  - Add the ability to target the next interesting focus node as provided by the profile (#1717)
+  - Add a Lua function to be able to read files from disk (closes #1636)
+  - Add Lua script to manually sync or unsync resources (#1713)
+  - Add Lua functions to get the bounding and interaction sphere values for a SGN
+  - Add Lua function to get current application time
+
+# Bug Fixes
+  - Fix issue that would prevent Windows 11 from being detected correctly
+  - Correctly specify tags and fix usage of "refreshRate" and "vsync" parameters (#1890)
+  - Fix globe transformations not updating from height map if simulation time paused (#1766)
+  - Prevent the loss of precision in the Launcher camera UI dialog (#1642)
+  - Prevent a crash when a profile does not provide any Time or Camera information (#1981)
+  - Prevent crash in DashboardItemInstruments when using dates before 2000 (#1878)
+  - Add the current working directory correctly when registering the application's binary path
+  - Fix issue that prevented AMD cards from being detected correctly (#1907)
+  - Correctly destroy RenderableGalaxy shader when deinitializing (#1601)
+  - Prevent some crashes from occurring trying to query non-existing scene graph nodes (#1831)
+  - Fix issue where the search bar would not show all entries in the Scene list (#1775)
+  - Fix a crash when unloading GlobeBrowsing layers
+  - Fix issue that prevents the drag-dropping of an image that has extra dots in the name (#1793)
+  - Fix issue loading a colormap for the Gaia stars
+  - Fix for a crash that happened occasionally when adding exoplanet systems (#1781)
+  - Fix RenderablePlaneImageOnline not updating size on property change
+  - Prevent the use of modifier keys as actual key bindings (#1744)
+  - Prevent saving keybinds without a key as that leads to a crash (#1758)
+  - Removed hard-coded path expectations to allow drag & drop playback (#1754)
+  - Correctly display user assets in the asset selection GUI (closes #1739)
+  - Avoid crash in AstroCasting when there is no connection
+  - Fix GlobeRotation/Translation not updating if simulation time is paused
+  - Add fix to raw tile reader size calculation that prevented the full resolution of a GeoTiff to be used (#1716)
+  - Fixed timing issue when interpolating property values while playing back a session recording while writing out frames (#1690)
+  - Don't disable the CEF UI when turning off Master rendering (#1699)
+  - Reset the anchor/aim node when removing a scene graph node to prevent a crash because of the node missing (#1402)
+  - Prevent resetting of empty tile providers which would cause a crash (#1383)
+  - Increase the sensitivity in the DebugAxis to prevent loss of color in debug axis (#1560)
+  - Prevent the failure of font loading from keeping file handles open and breaking everything else (#1627)
+  - Explicitly check for NaN in camera setting which would sometimes lead to the camera borking out (#1686)
+  - Don't accidentally delete someone else’s VBO and VAO in Atmosphere Deferred Caster (#1694)
+  - Filter out non-image files from the launcher collection (#1693)
+  - Add support for speck keywords that are mixed case (#1689)
+  - Make the speck loader ignore tabs as well as spaces (#1688)
+  - Provide error messages when loading a speck file that contains entries that are not numbers (#1903)
+  - Fix for rendering atmospheres on Intel chips
+  - Fix an issue that lead to misclassification of OpenGL versions
+  - Fix mix-up with the enabled cube faces in the spout configuration
+  - Fix issue that could lead to an unresponsive application when encountering FreeType errors
+  - Improved numerical precision on scale value in sessionRecording files in ascii format (#1732)
+  - Prevent the automatic detection of texture sizes that would prevent a, for example, 128x1 image to be used as a 2D texture
+  - Support negative altitudes in GlobeTranslation
+  - Fix for an issue that would lead to an infinite loop when loading an invalid Horizons file in a HorizonsTranslation (#1849)
+  - Fix for a rendering issue where labels on planets would be rendered without depth testing (#1915)
+  - Fix for rendering "DoubleProperty"s in ImGui that led to a crash when looking at the property list
+  - Fix that prevented the playback of an ASCII session playback file with a script recording that contains a newline character (#1974)
+  - Fix issue where playing back a session recording containing a multi-line script would fail loading (#1905)
+  - Fix issue that could occur when there is an erroneous TUIO server sending input that are interpreted as touch inputs
+  - Fix issue that would prevent the loading of map tiles from the Utah WMS server
+  - Prevent a crash when using a colormap in the RendrableBillboardsCloud without entries or if the provided color map did not exist (#2082)
+  - Fix an issue where the loading of NaN values from a speck file failed to work and would stop the file loading (#2054)
+  - Fix an issue where a FixedRotation depending on the position of other nodes would not update correctly when the time is paused (#1751, #2069)
+  - Fix a bug that would load the wrong profile when selecting a built-in profile with the same name as a user profile (#2074)
+  - Fix issue where the colormap values for a custom coloring option in the RenderableStars were not loaded correctly (#2080)
+  - Fixed an issue where the focus node would not be correctly reset after a session recording finishes (#2070)
+
+
+# Breaking Changes
+ - Renamed `RenderEngine.ShowOverlayOnSlaves` to `RenderEngine.ShowOverlayOnClients`
+- Change how moveLayer works slightly, so it is easier to use in a GUI implementation
+- Remove non-functioning ABufferRenderer from RenderEngine
+- moveLayer indexing changed;  "newPosition" is now considered to be the item's new position (index) in the list
+- Keybindings -> Actions transition; users need to first define actions and then bind to keybindings rather than just defining keybindings
+  - Loading .scene files is no longer supported and files need to be converted to .profile files
+  - `tileProvider` renamed to `TileProvider` and `adjustment` renamed to `Adjustment` in Globes
+  - Linear flight removed and replaced with camera paths
+  - Lua function renaming/changes
+    - `getKeybinding` -> `keyBindings`
+    - `getSpiceBodies` -> `spiceBodies`
+    - `getSpkCoverage` -> removed
+    - `getCkCoverage` -> removed
+  - Renamed “RenderOption” property to “RenderMode” in the RenderableGaiaStars (#2078)
+  - Renamed “openspace.walkDirectoryFolder” to “openspace.walkDirectoryFolders”
+  - Removed non-functioning “openspace.saveLastChangeToProfile” function
+
 
 # Beta-10 (Patch-2) [0.17.2]
  - Version: 0.17.2
