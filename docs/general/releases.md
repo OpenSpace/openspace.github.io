@@ -155,11 +155,10 @@ Various user interface improvements in the launcher and the in-game interface
   - Fix issue where the identifier of the Camera Velocity dashboard was wrong
   - Move the launcher image synchronization from base into the base_blank asset
   - Move the trail-related actions from the base_blank into the base asset
-  - Other changes
-    - Add an action and event to automatically switch the Sun and SunGlare when approaching the Sun (#1914)
-    - Add bounding spheres to many more renderable types (#1957)
-    - The “Period” of a RenderableTrailOrbit is no longer converted from days to seconds when loading an asset (#1860)
-    - Renamed the prefix for the constellation art by James Hedberg from `ConstellationArt` to `ImageConstellation` to provide a better search result when searching for “Constellation”
+  - Add an action and event to automatically switch the Sun and SunGlare when approaching the Sun (#1914)
+  - Add bounding spheres to many more renderable types (#1957)
+  - The “Period” of a RenderableTrailOrbit is no longer converted from days to seconds when loading an asset (#1860)
+  - Renamed the prefix for the constellation art by James Hedberg from `ConstellationArt` to `ImageConstellation` to provide a better search result when searching for “Constellation”
 
 ### Content Creation
   - Deprecate the use of the `asset_helper` file in exchange for explicitly writing the initialize/deinitialize functions (#1868)
