@@ -58,17 +58,15 @@ As development proceeds, some versions get tagged with names.  This table indica
 
 ## Features
 ### SkyBrowser
-This feature adds an entirely new system to OpenSpace that interfaces with the [AAS Worldwide Telescope](https://worldwidetelescope.org) application to bring high-resolution astronomical images into OpenSpace. The location of a selected image is shown in the 3D view inside of OpenSpace. 
+This feature brings high-resolution astronomical images from the [AAS Worldwide Telescope](https://worldwidetelescope.org) into OpenSpace. The location of a selected image is shown in the 3D view inside of OpenSpace. 
 
 ### Camera paths (Fly-To)
-This feature adds the ability to automatically fly the camera between different objects and between different navigation states. Currently, this feature only works when the in-game time is paused and triggering a procedural flight path will automatically pause the time and unpause it (if it was unpaused before) after completing the path. Additionally, this feature enables the use of "Idle behaviors" that can either be triggered manually or by completing a procedural flight that will make the camera do something interesting until the user interacts with the system again.
+This feature adds the ability to automatically fly the camera between different objects and between different navigation states. Currently, this feature only works when the time in OpenSpace is paused. A "Fly-to" or "Zoom-to" path will automatically pause the time and unpause it (if it was unpaused before) after completing the flight. Additionally, this feature enables the use of "Idle behaviors" that can either be triggered manually or by completing a Fly-to or Zoom-to flight that will make the camera do something interesting until the user interacts with the system again.
   - Adding procedurally generated camera paths (#1667)
   - Remove `OrbitalNavigator.LinearFlight` and instead add "Zoom to" helper functions (#1837)
-  - Adding the ability to trigger an idle behavior for the camera after finishing a procedural camera path (#1898)
+  - Adding the ability to trigger an idle behavior for the camera after finishing a Fly-to or Zoom-to flight path (#1898)
     - Add an OrbitAroundUp IdleBehavior that rotates around the y-axis of the node instead of the z-axis
-  - Add Lua function to directly create path to a navigation state
-  - Automatically pause simulation time when starting a camera path (#1832)
-  - Add bool property to toggle follow anchor node rotation (#1839)
+  - Automatically pause simulation time when starting a Fly-to or Zoom-to flight (#1832)
 
 ### Actions
 Introducing "Actions" as first-class elements in OpenSpace to make repeatable changes. In prior versions it was possible to bin scripts to keybinds and use a "key-less keybind" to configure repeatable effects. The "Action" concept replaces this by encapsulating the changes in an Action and then provide the ability to bind a key to trigger an action instead. This also enables the reuse of "Actions" in other parts of the software. Older profiles that were made with previous version will be converted automatically on load with an Action identifier generated automatically.
@@ -134,7 +132,7 @@ Various user interface improvements in the launcher and the in-game interface
     - Update for the timing information to match the actual launch date
     - Add new kernels that show the position of JWST from the launch all the way to the orbit around L2 (#2085)
     - Add more target images
-    - Add a custom webpage (http://ui.openspaceproject.com/jwst_scripts/index.html) used to control the orientation of JWST
+    - Add a [custom webpage](http://ui.openspaceproject.com/jwst_scripts/index.html) used to control the orientation of JWST
     - Add the Hubble telescope trail
   - Update the kernels used in the OSIRIS-REx asset (#1651)
   - Update to all Horizons-based trails to use VECTORS type ephemeridis that do not suffer from the light-travel offset inherent in the Observer type (#1434)
@@ -157,14 +155,13 @@ Various user interface improvements in the launcher and the in-game interface
   - Fix issue where the identifier of the Camera Velocity dashboard was wrong
   - Move the launcher image synchronization from base into the base_blank asset
   - Move the trail-related actions from the base_blank into the base asset
-Other changes
-  - Add an action and event to automatically switch the Sun and SunGlare when approaching the Sun (#1914)
-  - Add bounding spheres to many more renderable types (#1957)
-  - The “Period” of a RenderableTrailOrbit is no longer converted from days to seconds when loading an asset (#1860)
-  - Renamed the prefix for the constellation art by James Hedberg from `ConstellationArt` to `ImageConstellation` to provide a better search result when searching for “Constellation”
+  - Other changes
+    - Add an action and event to automatically switch the Sun and SunGlare when approaching the Sun (#1914)
+    - Add bounding spheres to many more renderable types (#1957)
+    - The “Period” of a RenderableTrailOrbit is no longer converted from days to seconds when loading an asset (#1860)
+    - Renamed the prefix for the constellation art by James Hedberg from `ConstellationArt` to `ImageConstellation` to provide a better search result when searching for “Constellation”
 
 ### Content Creation
-#### Assets
   - Deprecate the use of the `asset_helper` file in exchange for explicitly writing the initialize/deinitialize functions (#1868)
   - Change the behavior of TemporalTileProviders to provide both a Folder based and a Prototyped mode (#1800)
   - Adding an ImageSequenceTileProvider that loads a folder of images and makes them available through a user-selectable index (#1798)
@@ -184,8 +181,6 @@ Other changes
   - Add new model format compatible with TurboSquid requirements (#1706)
   - Add support for DMS format support in the DashboardItemGlobeLocation (#1632)
   - Renamed “RenderOption” to “RenderMode” in RenderableGaiaStars (#2078)
-
-#### Lua
   - Add a Lua-controllable State machine that can contain nodes and edges where transitions can be defined that execute Lua scripts (#1705)
   - Make the UTC function return the date in ISO 8601 format as advertised. Add SPICE function to get the old format (#1776)
   - Add ability to print all types of information in the printInfo/... functions and add the ability to pass any number of arguments to the function (#1635)
