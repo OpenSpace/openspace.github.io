@@ -9,7 +9,7 @@ nav_order: 3
 
 This page covers the basics of downloading orbital data for a solar system object in the proper format required by OpenSpace, and then configuring a renderable scenegraph node for it.
 
-This method differs from the JPL Horizons [page](horizons) in that it provides parameters that describe the orbit of an object rather than its pre-computed position in galactic coordinates.  This SBDB method is best for objects that have stable, predictable orbits.
+This method differs from the JPL Horizons [page](horizons-web) in that it provides parameters that describe the orbit of an object rather than its pre-computed coordinates.  This SBDB method is best for objects that have stable, predictable orbits.
 
 # Downloading Orbital Data from the JPL Small-Body Database (SBDB)
 Browse to the JPL SBDB query page [here](https://ssd.jpl.nasa.gov/sbdb_query.cgi) and follow the instructions for each input section below.
