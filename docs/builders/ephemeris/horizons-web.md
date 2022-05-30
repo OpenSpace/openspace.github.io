@@ -14,16 +14,16 @@ Since version 0.18.0 of OpenSpace there is a feature to download Horizons data d
 This method differs from the JPL Small SolarSystem Body Database ([SBDB page](sbdb)) in that it provides pre-computed coordinates in a specified time window.  The SBDB method provides orbital characteristics that are used to compute the position without a time window restriction.  Objects with irregular orbits must use this Horizons method.
 
 # Downloading Ephemeris Data from JPL Horizons Site
-Browse to Horizons page (https://ssd.jpl.nasa.gov/horizons.cgi).  Follow instructions for each input section below.
+Browse to the Horizons page (https://ssd.jpl.nasa.gov/horizons.cgi).  Follow instructions for each input section below.
 
 ## Ephemeris Type
-Click the box to the right of the text and select **Vector Table** or **Observer Table**.  OpenSpace supports both of theses options but we recomend you to use **Vector Table**.
+Click the box to the right of the text and select **Vector Table** or **Observer Table**.  OpenSpace supports both of these options but we recommend you to use **Vector Table**.
 
 ## Target Body
 Click *edit* and enter the desired object identifier.
 
 ## Coordinate Center or Observer Location
-Click *edit* and type `@0` in the text entry box.  You should end up withb `Solar System Barycenter (SSB) [500@0]`.
+Click *edit* and type `@0` in the text entry box.  You should end up with `Solar System Barycenter (SSB) [500@0]`.
 
 ## Time Specification
 Click *edit* and pick the time range you want.  Note that these depend on the target, and an error may result if no data exists in the specified range.
