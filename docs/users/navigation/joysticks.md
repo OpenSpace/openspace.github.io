@@ -8,7 +8,7 @@ nav_order: 2
 ---
 
 # Joystick Navigation
-In addition to the normal navigation in OpenSpace using the keyborad and mouse it is also possible to navigate using a game controller, such as an Xbox controller, PS4 controller or a SpaceMouse. If you want to use any of these supported joysitck you need to include their asset file into a profile. This can be done in the profile editor in the launcher by editing the profile to include one of the joystick assets. All of the joystick assets are located in the sub-folder <code>data/assets/util/joysticks</code> in the location of your OpenSpace folder. It is important that you include the right asset file for the type of game controller you are using. For example the wireless Xbox asset will not work with a non-wireless Xbox controller and vice versa.
+In addition to the normal navigation in OpenSpace using the keyboard and mouse it is also possible to navigate using a game controller, such as an Xbox controller, PS4 controller or a SpaceMouse. If you want to use any of these supported controllers you need to include their asset file into a profile. This can be done in the profile editor in the launcher by editing the profile to include one of the joystick assets. All of the joystick assets are located in the sub-folder <code>data/assets/util/joysticks</code> in the location of your OpenSpace folder. It is important that you include the right asset file for the type of game controller you are using. For example the wireless Xbox asset will not work with a non-wireless Xbox controller and vice versa.
 
 ## Xbox Controller
 The navigation using an Xbox or PS4 controller are very similar, the only difference is the layout of the controllers. Otherwise the functionality is the same. The image below shows a map over the buttons and joysticks on a Xbox controller.
@@ -17,8 +17,8 @@ The navigation using an Xbox or PS4 controller are very similar, the only differ
 
 The navigation using a Xbox controller in OpenSpace is defined in the xbox asset file <code>(data/assets/util/joysticks/xbox.asset)</code> or the Xbox wireless asset file <code>(data/assets/util/joysticks/xbox-wireless.asset)</code>. The table below will give an overview of what each button or joystick on the Xbox controller does in OpenSpace. NA in the table specifies that this button or joystick has no functionality in the default version.
 
-| Button | Description |
-|--------|-------------|
+| Button or joystick | Description |
+|--------------------|-------------|
 | A | Toggle zoom friction |
 | B | Toggle rotation friction |
 | X | Switch focus to Earth |
@@ -69,10 +69,11 @@ The navigation using a PS4 controller in OpenSpace is defined in the PS4 asset f
 | Right Joystick Press | NA |
 | Share | NA |
 | Options | NA |
+| Touch Pad | NA |
 | PS | NA |
 
 ## SpaceMouse
-The SpaceMouse is a joystick with 6 degrees of freedom that is sold by the company [3Dconnexion](https://3dconnexion.com/uk/spacemouse/). There are a few different versions of it and therefor thare are a few different versions of the asset files that specify the navigation. The versions that are currently supported (as of release 0.18.0) is the SpaceMouse Compact <code>(data/assets/util/joysticks/space-mouse-compact.asset)</code> and the SpaceMouse Enterprise <code>(data/assets/util/joysticks/space-mouse-enterprise.asset)</code>, both of which can be in wireless mode <code>(data/assets/util/joysticks/space-mouse-compact-wireless.asset and data/assets/util/joysticks/space-mouse-enterprise-wireless.asset</code>). The image below is a map of the different movements of the SpaceMouse and a translation from the terminology used by 3Dconnexion (3D) and the terminology used by OpenSpace (OS).
+The SpaceMouse is a joystick with 6 degrees of freedom that is sold by the company [3Dconnexion](https://3dconnexion.com/uk/spacemouse/). There are a few different versions of it and therefore there are a few different versions of the asset files that specify the navigation. The versions that are currently supported (as of release 0.18.0) is the SpaceMouse Compact <code>(data/assets/util/joysticks/space-mouse-compact.asset)</code> and the SpaceMouse Enterprise <code>(data/assets/util/joysticks/space-mouse-enterprise.asset)</code>, both of which can be in wireless mode <code>(data/assets/util/joysticks/space-mouse-compact-wireless.asset and data/assets/util/joysticks/space-mouse-enterprise-wireless.asset</code>). The image below is a map of the different movements of the SpaceMouse and a translation from the terminology used by 3Dconnexion (3D) and the terminology used by OpenSpace (OS).
 
 ![](images/spacemouse-map.png)
 
