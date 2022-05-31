@@ -15,7 +15,7 @@ The navigation using an Xbox or PS4 controller are very similar, the only differ
 
 ![](images/xbox.png)
 
-The navigation using a Xbox controller in OpenSpace is defined in the xbox asset file <code>(data/assets/util/joysticks/xbox.asset)</code> or the Xbox wireless asset file <code>(data/assets/util/joysticks/xbox-wireless.asset)</code>. The table below will give an overview of what each button or joystick on the Xbox controller does in OpenSpace. NA in the table specifies that this button or joystick has no functionality in the default version.
+The navigation using a Xbox controller in OpenSpace is defined in the xbox asset file <code>(xbox.asset)</code> or the Xbox wireless asset file <code>(xbox-wireless.asset)</code>. The table below will give an overview of what each button or joystick on the Xbox controller does in OpenSpace. NA in the table specifies that this button or joystick has no functionality in the default version of OpenSpace.
 
 | Button or joystick | Description |
 |--------------------|-------------|
@@ -35,7 +35,7 @@ The navigation using a Xbox controller in OpenSpace is defined in the xbox asset
 | Left Joystick left/right | Orbit around focus left/right |
 | Left Joystick Press | NA |
 | Right Joystick up/down | Pan camera up/down |
-| Right Joystick left/right | Pan camera left/right |
+| Right Joystick left/right | Pan camera left/right <br/>If LB or RB is pressed: Roll camera left/right |
 | Right Joystick Press | NA |
 | Select | NA |
 | Start | NA |
@@ -45,7 +45,7 @@ The image below shows a map over the buttons and joysticks on a PS4 controller.
 
 ![](images/ps4.png)
 
-The navigation using a PS4 controller in OpenSpace is defined in the PS4 asset file <code>(data/assets/util/joysticks/ps4.asset)</code>. The table below will give an overview of what each button or joystick on the PS4 controller does. NA in the table specifies that this button or joystick has no functionality in the default version of OpenSpace.
+The navigation using a PS4 controller in OpenSpace is defined in the PS4 asset file <code>(ps4.asset)</code>. The table below will give an overview of what each button or joystick on the PS4 controller does. NA in the table specifies that this button or joystick has no functionality in the default version of OpenSpace.
 
 | Button or joystick | Description |
 |--------------------|-------------|
@@ -53,9 +53,9 @@ The navigation using a PS4 controller in OpenSpace is defined in the PS4 asset f
 | Circle | Toggle rotation friction |
 | Square | Switch focus to Earth |
 | Triangle | Switch focus to Mars |
-| L1 | Pressed: Switch to local roll mode. Released: Switch back to normal mode |
+| L1 | Pressed: Switch to local roll mode <br/>Released: Switch back to normal mode |
 | L2 | Zoom out |
-| R1 | Pressed: Switch to global roll mode. Released: Switch back to normal mode |
+| R1 | Pressed: Switch to global roll mode <br/>Released: Switch back to normal mode |
 | R2 | Zoom in |
 | Up | NA |
 | Right | NA |
@@ -65,7 +65,7 @@ The navigation using a PS4 controller in OpenSpace is defined in the PS4 asset f
 | Left Joystick left/right | Orbit around focus left/right |
 | Left Joystick Press | NA |
 | Right Joystick up/down | Pan camera up/down |
-| Right Joystick left/right | Pan camera left/right |
+| Right Joystick left/right | Pan camera left/right <br/>If L1 or R1 is pressed: Roll camera left/right|
 | Right Joystick Press | NA |
 | Share | NA |
 | Options | NA |
@@ -73,7 +73,7 @@ The navigation using a PS4 controller in OpenSpace is defined in the PS4 asset f
 | PS | NA |
 
 ## SpaceMouse
-The SpaceMouse is a joystick with 6 degrees of freedom that is sold by the company [3Dconnexion](https://3dconnexion.com/uk/spacemouse/). There are a few different versions of it and therefore there are a few different versions of the asset files that specify the navigation. The versions that are currently supported (as of release 0.18.0) is the SpaceMouse Compact <code>(data/assets/util/joysticks/space-mouse-compact.asset)</code> and the SpaceMouse Enterprise <code>(data/assets/util/joysticks/space-mouse-enterprise.asset)</code>, both of which can be in wireless mode <code>(data/assets/util/joysticks/space-mouse-compact-wireless.asset and data/assets/util/joysticks/space-mouse-enterprise-wireless.asset</code>). The image below is a map of the different movements of the SpaceMouse and a translation from the terminology used by 3Dconnexion (3D) and the terminology used by OpenSpace (OS).
+The SpaceMouse is a joystick with 6 degrees of freedom that is sold by the company [3Dconnexion](https://3dconnexion.com/uk/spacemouse/). There are a few different versions of it and therefore there are a few different versions of the asset files that specify the navigation. The versions that are currently supported (as of release 0.18.0) is the SpaceMouse Compact <code>(space-mouse-compact.asset)</code> and the SpaceMouse Enterprise <code>(space-mouse-enterprise.asset)</code>, both of which can be in wireless mode <code>(space-mouse-compact-wireless.asset and space-mouse-enterprise-wireless.asset</code>). The image below is a map of the different movements of the SpaceMouse and a translation from the terminology used by 3Dconnexion (3D) and the terminology used by OpenSpace (OS).
 
 ![](images/spacemouse-map.png)
 
@@ -88,3 +88,35 @@ The table below will give an overview of what each button or joystick on the Spa
 | Tilt up/down | Pan camera up/down |
 | Left button | Switch to local roll |
 | Right button | Switch to global roll |
+
+
+# Issues and Solutions
+Here is a list of some issues you can encounter related to the joysticks and some tips on how to fix them.
+
+## OpenSpace does not react to the controller input
+First thing to check here is that the controller is properly connected to the computer and that the correct asset file has been included to the profile and that the correct profile is run. If OpenSpace still does not react to the controller then it is possible that your controller has a different name than what OpenSpace expects. You can check the name of your controller when OpenSpace is running in any profile. Press the *F1* button on the keyboard and you will see the old GUI interface of OpenSpace pop up. In the window called **OpenSpace GUI**, press the empty checkbox next to **Joysticks Information**. This will open a new window and here all the connected joysticks will be listed. In this list you can search for your joystick and note down what name it has in the list, ignoring the number in the end. The items in the list called *3Dconnexion KMJ Emulator* or *Summed contributions* can be ignored. The next step is to change the name of the controller in the asset file. Start by opening the asset file corresponding to your controller in a text editor. You will need to change one line of code that specifies the controller name, below you can see an example for the Xbox controller (all other joystick assets look similar as well).
+
+```
+  asset.onInitialize(function()
+    local controller = XBoxController;
+    local name = "Xbox Controller"; -- Change this to the name of your controller
+
+    local deadzoneJoysticks = 0.15
+    local deadzoneTriggers = 0.05
+```
+
+Here the line <code>local name = "Xbox Controller";</code> should be changed to <code>local name = "The name of your controller";</code>.
+
+## OpenSpace keeps spinning even when the joysticks are not touched
+This issue is caused by the deadzone being too small for the joysticks or the triggers on the controller. To fix it you can increase the size of the deadzone by editing one or two lines in the asset file. Start by opening the asset file corresponding to your controller in a text editor. You will need to change one or two lines of code that specify the deadzone size, below you can see an example for the Xbox controller (all other joystick assets look similar as well).
+
+```
+  asset.onInitialize(function()
+    local controller = XBoxController;
+    local name = "Xbox Controller";
+
+    local deadzoneJoysticks = 0.15 -- Increase this number to increase the deadzone for the joysticks
+    local deadzoneTriggers = 0.05 -- Increase this number to increase the deadzone for the triggers
+```
+
+Adjust these values until the spinning stops and the feel of the navigation is good. If the value is too small then the spinning might still occur at some occasions, if the value is too large then OpenSpace reaction to the input might feel delayed.
