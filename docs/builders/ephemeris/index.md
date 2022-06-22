@@ -10,7 +10,7 @@ nav_order: 2
 
 Pages that deal with different types of Ephemeres that are supported:
 
-- [Using the GUI in OpenSpace to download Horizons data](horizons-gui)
+- [Using the Gui in Openspace to Download Horizons Data](horizons-gui)
 - [Using JPL Horizons Ephemeris for Solar System Objects](horizons-web)
 - [Using JPL Small SolarSystem Body Database (SBDB) for Orbital Data](sbdb)
 - [Using a KeplerTranslation](kepler)

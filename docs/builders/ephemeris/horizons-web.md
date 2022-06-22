@@ -7,7 +7,7 @@ parent: Ephemeris
 nav_order: 1
 ---
 
-This covers the basics of downloading ephemeris data for a solar system object from JPL Horizons webpage in the proper format for OpenSpace, and then configuring a renderable asset for it.  This document only applies to an object in the solar system, using the sun as the origin.
+This covers the basics of downloading ephemeris data for a solar system object from JPL Horizons web page in the proper format for OpenSpace, and then configuring a renderable asset for it.  This document only applies to an object in the solar system, using the Sun as the origin.
 
 Since version 0.18.0 of OpenSpace there is a feature to download Horizons data directly in the OpenSpace launcher, for more information check [Download Horizons data via OpenSpace](horizons-gui).
 
@@ -76,7 +76,7 @@ Finally, click on the **Generate Ephemeris** button to get the ephemeris data in
 Examine the .hrz file and verify that it is valid.  If it only contains the header but no space-delimited lines of data, then there should be an error message explaining the problem.  For example, this will happen if the start/end dates are beyond the valid time range of the target object.
 
 # Data Usage
-This wiki covers the scenario where an asset file references a data file served by one of the OpenSpace sync servers.  At runtime, the file will be downloaded if a local copy does not already exist.  This requires the file generated in the above steps to be uploaded to an OpenSpace sync server by one of the project's server administrators.
+This wiki covers the scenario where an asset file references a data file served by one of the OpenSpace sync servers.  At runtime, the file will be downloaded if a local copy does not already exist.  This requires the file generated in the steps above to be uploaded to an OpenSpace sync server by one of the project's server administrators.
 
 For testing purposes, the file can be included in the asset by using the `localResource` method, but this is not discussed here (however the [builders/asteroids](asteroids) page contains an example using this method).
 
