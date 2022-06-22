@@ -42,7 +42,7 @@ Navigation using a Xbox controller in OpenSpace is defined in the Xbox asset fil
 
 The LB and RB buttons switch the roll mode to local or global respectively. The difference between these two is that the local roll mode rolls the camera around the center of the screen, while the global roll mode rolls the camera around the current focus.
 
-## PS4
+## PS4 Controller
 The image below shows a map over the buttons and joysticks on a PS4 controller.
 
 <img src="images/ps4.png" style="text-align:center; width:70%;"/>
@@ -100,7 +100,7 @@ The Left and Right buttons switch the roll mode to local or global respectively.
 # Issues and Solutions
 Here is a list of some issues you can encounter related to the joysticks and some tips on how to fix them.
 
-## OpenSpace does not react to the controller input
+## Openspace Does Not React to the Controller Input
 First thing to check here is that the controller is properly connected to the computer and that the correct asset file has been included to the profile and that the correct profile is run. If OpenSpace still does not react to the controller then it is possible that your controller has a different name than what OpenSpace expects. You can check the name of your controller when OpenSpace is running in any profile. Press the *F1* button on the keyboard and you will see the old GUI interface of OpenSpace pop up. In the window called **OpenSpace GUI**, press the empty checkbox next to **Joysticks Information**. This will open a new window and here all the connected joysticks will be listed. In this list you can search for your joystick and note down what name it has in the list, ignoring the number in the end. The items in the list called *3Dconnexion KMJ Emulator* or *Summed contributions* can be ignored. The next step is to change the name of the controller in the asset file. Start by opening the asset file corresponding to your controller in a text editor. You will need to change one line of code that specifies the controller name, below you can see an example for the Xbox controller (all other joystick assets look similar as well).
 
 ```
@@ -114,7 +114,7 @@ First thing to check here is that the controller is properly connected to the co
     ...
 ```
 
-## OpenSpace keeps spinning even when the joysticks are not touched
+## Openspace Keeps Spinning Even When the Joysticks Are Not Touched
 This issue is caused by the deadzone being too small for the joysticks or the triggers on the controller. To fix it you can increase the size of the deadzone by editing one or two lines in the asset file. Start by opening the asset file corresponding to your controller in a text editor. You will need to change one or two lines of code that specify the deadzone size, below you can see an example for the PS4 controller (all other joystick assets look similar as well).
 
 ```
