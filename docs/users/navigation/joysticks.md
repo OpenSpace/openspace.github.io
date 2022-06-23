@@ -11,7 +11,7 @@ nav_order: 2
 In addition to the normal navigation in OpenSpace, using the keyboard and mouse, it is also possible to navigate using a game controller, such as an Xbox controller, PS4 controller or a SpaceMouse. If you want to use any of these supported controllers you need to include their corresponding asset file in a profile. This can be done in the profile editor in the launcher by editing the profile to include one of the joystick assets. All of the joystick assets are located in the sub-folder <code>data/assets/util/joysticks</code> inside the OpenSpace folder. It is important to include the right asset file for the type of game controller you are using. For example, the wireless Xbox asset will not work with a non-wireless Xbox controller and vice versa.
 
 ## Xbox Controller
-The navigation using an Xbox or PS4 controller are very similar, the only difference is the layout of the controllers. Otherwise the functionality is the same. The image below shows a map over the buttons and joysticks on a Xbox controller.
+The image below shows a map over the buttons and joysticks on a Xbox controller.
 
 <img src="images/xbox.png" style="text-align:center; width:70%;"/>
 
@@ -43,7 +43,7 @@ Navigation using a Xbox controller in OpenSpace is defined in the Xbox asset fil
 The LB and RB buttons switch the roll mode to local or global respectively. The difference between these two is that the local roll mode rolls the camera around the center of the screen, while the global roll mode rolls the camera around the current focus.
 
 ## PS4 Controller
-The image below shows a map over the buttons and joysticks on a PS4 controller.
+The navigation using an Xbox or PS4 controller are very similar, the only difference is the layout of the controllers. Otherwise the functionality is the same. The image below shows a map over the buttons and joysticks on a PS4 controller.
 
 <img src="images/ps4.png" style="text-align:center; width:70%;"/>
 
