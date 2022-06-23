@@ -45,7 +45,7 @@ The LB and RB buttons switch the roll mode to local or global respectively. The 
 ## PS4 Controller
 The navigation using an Xbox or PS4 controller are very similar, the only difference is the layout of the controllers. Otherwise the functionality is the same. The image below shows a map over the buttons and joysticks on a PS4 controller.
 
-<img src="images/ps4.png" style="text-align:center; width:70%;"/>
+<img src="images/ps4.png" style="text-align:center; width:75%;"/>
 
 Navigation using a PS4 controller in OpenSpace is defined in the PS4 asset file (<code>ps4.asset</code>). The table below gives an overview of what each button or joystick on the PS4 controller does in OpenSpace. NA in the table specifies that this button or joystick has no functionality in the default version of OpenSpace.
 
@@ -81,7 +81,7 @@ The SpaceMouse is a joystick with 6 degrees of freedom that is sold by the compa
 
 <img src="images/spacemouse-map.png" style="text-align:center;"/>
 
-The table below will give an overview of what each button or joystick on the SpaceMouse does in OpenSpace. The Left and Right buttons are only supported for the Compact version of the SpaceMouse. However, if you are using the Enterprise version you can bind some of the buttons to a regular key on the keyboard and bind actions to them, read more about this [here](basic-navigation) and [here](../../builders/profile_syntax).
+The table below gives an overview of what each button or joystick on the SpaceMouse does in OpenSpace. The Left and Right buttons are only supported for the Compact version of the SpaceMouse. However, if you are using the Enterprise version you can bind some of the buttons to a regular key on the keyboard and bind actions to them, read more about this [here](basic-navigation) and [here](../../builders/profile_syntax).
 
 | Button or joystick | Description |
 |--------------------|-------------|
@@ -91,8 +91,8 @@ The table below will give an overview of what each button or joystick on the Spa
 | Twist left/right | Pan camera left/right |
 | Tilt left/right | Roll camera |
 | Tilt up/down | Pan camera up/down |
-| Left button | Switch to local roll |
-| Right button | Switch to global roll |
+| Left button | Switch to local roll mode (Default) |
+| Right button | Switch to global roll mode |
 
 The Left and Right buttons switch the roll mode to local or global respectively. The difference between these two is that the local roll mode rolls the camera around the center of the screen, while the global roll mode rolls the camera around the current focus.
 
