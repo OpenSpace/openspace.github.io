@@ -23,9 +23,9 @@ Navigation using a Xbox controller in OpenSpace is defined in the Xbox asset fil
 | B | Toggle rotation friction |
 | X | Switch focus to Earth |
 | Y | Switch focus to Mars |
-| LB | Pressed: Switch to local roll mode. <br/>Released: Switch back to normal mode |
+| LB | Pressed: Switch to local roll mode <br/>Released: Switch back to normal mode |
 | LT | Zoom out |
-| RB | Pressed: Switch to global roll mode. <br/>Released: Switch back to normal mode |
+| RB | Pressed: Switch to global roll mode <br/>Released: Switch back to normal mode |
 | RT | Zoom in |
 | Up | NA |
 | Right | NA |
