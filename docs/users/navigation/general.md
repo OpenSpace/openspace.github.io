@@ -10,6 +10,7 @@ nav_order: 3
 
 Pages covering navigation in space and time
 - [Basic Navigation](basic-navigation)
+- [Joystick Navigation](joysticks)
 - [Camera Path Navigation](camera-paths)
 - [Idle Behavior - Automatic Motion in Relation to the Focus Node](idle-behavior)
 
