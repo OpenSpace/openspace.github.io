@@ -55,7 +55,8 @@ Create directories where modules were to be built.
 
 ```bash
 mkdir ~/modules
-mkdir ~/libs
+mkdir ~/lib
+mkdir ~/include
 ```
 
 ## Building `mod_mrf` module
