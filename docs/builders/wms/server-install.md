@@ -49,7 +49,7 @@ Some, but not all, modules require include files from other modules or related l
 
 Ensure all the directories are next to each other, this is important for building the modules as they reference each other.
 
-## Preparing building/compiling AHTSE modules
+## Preparing building/compiling AHTSE modules/libraries
 
 Create directories where modules were to be built.
 
@@ -59,9 +59,41 @@ mkdir ~/lib
 mkdir ~/include
 ```
 
-## Building `mod_mrf` module
+You will also add a line to the `/etc/ld.so.conf.d/libc.conf` where the `lib` is created.
 
-From the base directory, `cd mod_mrf/src/` and create a Makefile by copying from the provided example:
+Add the following line to the bottom of the file:
+
+```conf
+/home/[user]/lib
+```
+
+The libraries build will output to that directory, and will be used by Apache as a module.
+
+## Building AHTSE modules/libraries
+
+### Building `libicd` library
+
+From the base directory (in this case `~/wms_modules`), `cd libicd/src/` and create a Makefile by copying from the provided example:
+
+```bash
+cp Makefile.lcl.example Makefile.lcl
+```
+
+Run `make` to build the dependencies, then `make install` to automatically place the dependencies in the correct location.
+
+### Building `libahtse` module
+
+From the base directory (in this case `~/wms_modules`), `cd libahtse/src/` and create a Makefile by copying from the provided example:
+
+```bash
+cp Makefile.lcl.example Makefile.lcl
+```
+
+Run `make` to build the dependencies, then `make install` to automatically place the dependencies in the correct location.
+
+### Building `mod_mrf` module
+
+From the base directory (in this case `~/wms_modules`), `cd mod_mrf/src/` and create a Makefile by copying from the provided example:
 
 ```bash
 cp Makefile.lcl.example Makefile.lcl
@@ -77,78 +109,176 @@ EXTRA_INCLUDES += -I../../mod_receive/src
 
 Type `make` to build the module, and `make install` to install the resulting library file in `~/modules` to the apache modules location.
 
-Add the module to Apache's `modules-available` by creating the file `/etc/apache2/modules-available/mrf.load` and adding the line:
+### Building `mod_convert`
 
-```conf
-LoadModule mrf_module /usr/lib64/apache2-prefork/mod_mrf.so
+From the base directory (in this case `~/wms_modules`), `cd mod_convert/src/` and create a Makefile by copying from the provided example:
+
+```bash
+cp Makefile.lcl.example Makefile.lcl
 ```
 
-Note the `-prefork` in the path, and make sure that this path matches the apache2 install path on the system.  In other words, add `-prefork` to the end of the **MOD_PATH** from your Makefile, and then verify that the resulting path exists on the filesystem.  This is a directory created by Apache at runtime, so it may be necessary to restart on a system where Apache was newly installed.  At startup, Apache takes the modules from the **MOD_PATH** location and copies them to the prefork directory.
+Run `make` to build the dependencies, then `make install` to automatically place the dependencies in the correct location.
 
-Restart Apache using the command: `sudo apachectl restart`
+### Building `mod_receive`
 
-Verify that the module is loaded by typing: `sudo apachectl -M`
+From the base directory (in this case `~/wms_modules`), `cd mod_receive/src/` and create a Makefile by copying from the provided example:
 
-There should be a **mrf_module** line in the listing.  If not, troubleshoot the above steps.
+```bash
+cp Makefile.lcl.example Makefile.lcl
+```
 
-Another way to list running modules is to use a browser to view the Apache server info page `http://localhost/server-info`.  Some Apache installs do not provide the server module required to view this page by default.  If the page does not load, it is probably because the info module isn't loaded in Apache.  To add this module, add the following line to `/etc/apache2/loadmodule.conf`:
+Run `make` to build the dependencies, then `make install` to automatically place the dependencies in the correct location.
 
-`LoadModule mod_info_module /usr/lib64/apache2-prefork/mod_info.so`
-and also add **info** to the **APACHE_MODULES** line in `/etc/sysconfig/apache2`.  Finally, restart apache2 using the command in the previous step.
+### Building `mod_reproject`
 
-## Add the `mod_receivef`module
+From the base directory (in this case `~/wms_modules`), `cd mod_reproject/src/` and create a Makefile by copying from the provided example:
 
-1. From the base directory, `cd mod_receive/src/` and create a Makefile by copying from the provided example: `cp Makefile.lcl.example Makefile.lcl`
-2. No **EXTRA_INCLUDES** definitions are needed for this module.
-3. Same as MRF example above.
-4. It does not appear to be necessary to add a LoadModule command to `/etc/apache2/loadmodule.conf` for this module.
-5. Add **receive** to the list of **APACHE_MODULES** in the `/etc/sysconfig/apache2` file.
-6. Restart Apache.
-7. Verify that the **receive_module** is listed in the `apachectl -M` output.
+```bash
+cp Makefile.lcl.example Makefile.lcl
+```
 
-## Add the `mod_sfim` module
+Run `make` to build the dependencies, then `make install` to automatically place the dependencies in the correct location.
 
-1. From the base directory, `cd mod_sfim/src/` and create a Makefile by copying from the provided example: `cp Makefile.lcl.example Makefile.lcl`
-2. No **EXTRA_INCLUDES** definitions are needed for this module.
-3. Same as MRF example above.
-4. It does not appear to be necessary to add a LoadModule command to `/etc/apache2/loadmodule.conf` for this module.
-5. Add **sfim** to the list of **APACHE_MODULES** in the `/etc/sysconfig/apache2` file.
-6. Restart Apache.
-7. Verify that the **sfim_module** is listed in the `apachectl -M` output.
+**Note: The module generated is `mod_retile`, this is still the same module, just renamed.**
 
-## Add the `mod_reproject` module
+### Building `mod_sfim`
 
-1. From the base directory, `cd mod_reproject/src/` and create a Makefile by copying from the provided example: `cp Makefile.lcl.example Makefile.lcl` 
-2. Add the 3 additional **EXTRA_INCLUDES** lines to Makefile.lcl, as described in the mrf module instructions above.
-3. Same as MRF example above.
-4. It does not appear to be necessary to add a LoadModule command to `/etc/apache2/loadmodule.conf` for this module.
-5. Add **reproject** to the list of **APACHE_MODULES** in the `/etc/sysconfig/apache2` file.
-6. Restart Apache.
-7. Verify that the **reproject_module** is listed in the `apachectl -M` output.
+From the base directory (in this case `~/wms_modules`), `cd mod_sfim/src/` and create a Makefile by copying from the provided example:
 
-## Add the `mod_convert` module
+```bash
+cp Makefile.lcl.example Makefile.lcl
+```
 
-1. From the base directory, `cd mod_convert/src/` and create a Makefile by copying from the provided example: `cp Makefile.lcl.example Makefile.lcl`
-2. Add the 3 additional **EXTRA_INCLUDES** lines to Makefile.lcl, as described in the mrf module instructions above.
-3. Same as MRF example above.
-4. It does not appear to be necessary to add a LoadModule command to `/etc/apache2/loadmodule.conf` for this module.
-5. Add **convert** to the list of **APACHE_MODULES** in the `/etc/sysconfig/apache2` file.
-6. Restart Apache.
-7. Verify that the **convert_module** is listed in the `apachectl -M` output.
+Run `make` to build the dependencies, then `make install` to automatically place the dependencies in the correct location.
 
-At this point, the system is ready to operate as a WMS tile-serving engine.
+## Installing modules for Apache
+
+### Installing `mod_mrf`
+
+To install `mod_mrf`, you need to create a new Apache module in `/etc/apache2/mods-available` called `mrf.load`.
+
+The contents of this file will consist of:
+
+```conf
+LoadFile /home/[user]/modules/libahtse.so
+LoadModule mrf_module /home/[user]/modules/mod_mrf.so
+```
+
+Create a soft-symlink to `mods-enabled` via this command:
+
+```bash
+ln -s /etc/apache2/mods-available/mrf.load /etc/apache2/mods-enabled/mrf.load
+```
+
+You may need `sudo` to execute.
+
+Restart the Apache server with `sudo apachectl restart`, there will be a message that looks like:
+
+To verify if the module is loaded, run `sudo apachectl -M` and check if `mrf_module` is loaded.
+
+### Installing `mod_convert`
+
+To install `mod_convert`, you need to create a new Apache module in `/etc/apache2/mods-available` called `convert.load`.
+
+The contents of this file will consist of:
+
+```conf
+LoadModule convert_module /home/[user]/modules/mod_convert.so
+```
+
+Create a soft-symlink to `mods-enabled` via this command:
+
+```bash
+ln -s /etc/apache2/mods-available/convert.load /etc/apache2/mods-enabled/convert.load
+```
+
+You may need `sudo` to execute.
+
+Restart the Apache server with `sudo apachectl restart`, there will be a message that looks like:
+
+To verify if the module is loaded, run `sudo apachectl -M` and check if `convert_module` is loaded.
+
+### Installing `mod_receive`
+
+To install `mod_receive`, you need to create a new Apache module in `/etc/apache2/mods-available` called `receive.load`.
+
+The contents of this file will consist of:
+
+```conf
+LoadModule receive_module /home/[user]/modules/mod_receive.so
+```
+
+Create a soft-symlink to `mods-enabled` via this command:
+
+```bash
+ln -s /etc/apache2/mods-available/receive.load /etc/apache2/mods-enabled/receive.load
+```
+
+You may need `sudo` to execute.
+
+Restart the Apache server with `sudo apachectl restart`, there will be a message that looks like:
+
+To verify if the module is loaded, run `sudo apachectl -M` and check if `receive_module` is loaded.
+
+### Installing `mod_retile`
+
+To install `mod_retile`, you need to create a new Apache module in `/etc/apache2/mods-available` called `retile.load`.
+
+The contents of this file will consist of:
+
+```conf
+LoadModule retile_module /home/[user]/modules/mod_retile.so
+```
+
+Create a soft-symlink to `mods-enabled` via this command:
+
+```bash
+ln -s /etc/apache2/mods-available/retile.load /etc/apache2/mods-enabled/retile.load
+```
+
+You may need `sudo` to execute.
+
+Restart the Apache server with `sudo apachectl restart`, there will be a message that looks like:
+
+To verify if the module is loaded, run `sudo apachectl -M` and check if `retile_module` is loaded.
+
+### Installing `mod_sfim`
+
+To install `mod_sfim`, you need to create a new Apache module in `/etc/apache2/mods-available` called `sfim.load`.
+
+The contents of this file will consist of:
+
+```conf
+LoadModule sfim_module /home/[user]/modules/mod_sfim.so
+```
+
+Create a soft-symlink to `mods-enabled` via this command:
+
+```bash
+ln -s /etc/apache2/mods-available/sfim.load /etc/apache2/mods-enabled/sfim.load
+```
+
+You may need `sudo` to execute.
+
+Restart the Apache server with `sudo apachectl restart`, there will be a message that looks like:
+
+To verify if the module is loaded, run `sudo apachectl -M` and check if `sfim_module` is loaded.
 
 ## Configure Apache Virtual Host to Serve MRF Data
 
-The Apache server has a directory from which web content is served.  This can be the default directory based on the install, or Apache can be configured with a Virtual Host that has special behavior based on the address of received requests.  AHTSE is configured to provide this behavior for the WMS data.
+The Apache server has a directory from which web content is served. This can be the default directory based on the install, or Apache can be configured with a Virtual Host that has special behavior based on the address of received requests.
 
-Configuring Apache with a Virtual Host is optional for AHTSE.  However, it provides flexibility with the web server so that it can be used for different types of content if so needed.  Some of the following steps would still be needed without a Virtual Host setup.
+AHTSE is configured to provide this behavior for the WMS data.
+
+Configuring Apache with a Virtual Host is optional for AHTSE. However, it provides flexibility with the web server so that it can be used for different types of content if so needed.
+
+Some of the following steps would still be needed without a Virtual Host setup.
 
 1. Add a configuration file in Apache's virtual hosts directory (e.g. `/etc/apache2/vhosts.d/`) by copying & renaming a template file provided in the install (e.g. **vhost.template**).
-1. Modify the **\<VirtualHost\>** tag to match the hostname or URL that you want to be directed to AHTSE requests.
-1. Set **\<DocumentRoot\>** to the Apache web content directory structure containing the **.wms** files.  See the wiki on importing MRF data sets, ".wms file" section for more information.
-1. Add specific detail to **\<Directory\>** tag, including where **.wms** files are located in the Apache web content directory, server options, permissions.
-1. Set log file locations for logging accesses and errors.
+2. Modify the **\<VirtualHost\>** tag to match the hostname or URL that you want to be directed to AHTSE requests.
+3. Set **\<DocumentRoot\>** to the Apache web content directory structure containing the **.wms** files.  See the wiki on importing MRF data sets, ".wms file" section for more information.
+4. Add specific detail to **\<Directory\>** tag, including where **.wms** files are located in the Apache web content directory, server options, permissions.
+5. Set log file locations for logging accesses and errors.
 
 Here is an example from the Utah server configuration file `/etc/apache2/vhosts.d/openspace.conf`:
 
