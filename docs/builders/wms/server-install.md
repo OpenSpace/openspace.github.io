@@ -286,41 +286,39 @@ chown -R www-data:www-data /var/www/openspace/*
 chown -R apache:apache /var/www/openspace/*
 ```
 
-To set up a server configuration to serve WMS data:
+Now you should be ready to create and configure a Virtual Host from Apache.
 
-1. Add a configuration file in Apache's virtual hosts directory (e.g. `/etc/apache2/vhosts.d/`) by copying & renaming a template file provided in the install (e.g. **vhost.template**).
-2. Modify the **\<VirtualHost\>** tag to match the hostname or URL that you want to be directed to AHTSE requests.
-3. Set **\<DocumentRoot\>** to the Apache web content directory structure containing the **.wms** files.  See the wiki on importing MRF data sets, ".wms file" section for more information.
-4. Add specific detail to **\<Directory\>** tag, including where **.wms** files are located in the Apache web content directory, server options, permissions.
-5. Set log file locations for logging accesses and errors.
+Create a new site config in `/etc/apache2/sites-available` in a format that is `XXX-[generic-name].conf` where `X` is a number and the `[generic-name]` can be any relevant name.
 
-Here is an example from the Utah server configuration file `/etc/apache2/vhosts.d/openspace.conf`:
+Copy and paste the following configuration into the file:
 
 ```apache
-#(IP address below is fake)
-<VirtualHost 000.000.000.000:80>
-    ServerName openspace.sci.utah.edu
-    DocumentRoot /srv/www/vhosts/openspace
-    HostnameLookups Off
-    UseCanonicalName Off
-    ServerSignature Off
-    <IfModule mod_userdir.c>
-        UserDir public_html
-        Include /etc/apache2/mod_userdir.conf
-    </IfModule>
-    <Directory "/srv/www/vhosts/openspace">
-        Options Indexes FollowSymLinks
-        AllowOverride None
-        <IfModule !mod_access_compat.c>
-            Require all granted
-        </IfModule>
-        <IfModule mod_access_compat.c>
-            Order allow,deny
-            Allow from all
-        </IfModule>
+<VirtualHost *:80>
+    ServerName [domain]
+    DocumentRoot /var/www/openspace
+    <Directory />
+        Options +Indexes
+        Require all granted
     </Directory>
-    ErrorLog /var/log/apache2/openspace/openspace_error_log
-    LogLevel error
-    TransferLog /var/log/apache2/openspace/openspace_access_log
 </VirtualHost>
 ```
+
+**Make sure you change the `[domain]` setting to your preferred domain name**
+
+After that, you create a sym-link to `/etc/apache2/sites-enabled` and restart Apache.
+
+```bash
+ln -s /etc/apache2/sites-available/XXX-[generic-name].conf /etc/apache2/sites-enabled/XXX-[generic-name].conf
+apachectl restart
+```
+
+You may need `sudo` to execute.
+
+This configuration file:
+
+- Sets the VirtualHost to respond on all requests on port `80`
+- Sets a server name to respond to (e.g., browsing to it via a web browser)
+- Sets a served directory to store and server `.wms` data and files
+- Sets permissions to be set on the served directory
+
+To retrieve and serve content, you now can head to [this wiki](server-import) to start serving WMS data to OpenSpace clients.
