@@ -183,6 +183,7 @@ To install `mod_convert`, you need to create a new Apache module in `/etc/apache
 The contents of this file will consist of:
 
 ```conf
+LoadFile /home/[user]/modules/libahtse.so
 LoadModule convert_module /home/[user]/modules/mod_convert.so
 ```
 
