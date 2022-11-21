@@ -7,7 +7,7 @@ parent: WMS
 nav_order: 1
 ---
 
-This wiki covers the steps required to get an OpenSpace WMS (Web Map Server) configured & running. This serves MRF (Meta Raster Format) files. Another name for this service is AHTSE (An Httpd/Apache Tile-Serving Engine).
+This wiki covers the steps required to get an OpenSpace WMS (Web Map Server) configured & running. This serves MRF (Meta Raster Format) files. Another name for this service is [AHTSE](https://github.com/lucianpls/AHTSE) (Apache HTTPD Tile Server Ecosystem).
 [This wiki](server-import) covers the steps involved in importing WMS dataset(s) so that the AHTSE can serve tiles from the set. [This wiki](server-conversion) covers the steps involved in converting a raw raster image into the MRF format.
 
 These instructions are specific to a Ubuntu Linux 22.04 server install. However other Linux distributions can work with some packages or paths changed around.
@@ -273,6 +273,20 @@ AHTSE is configured to provide this behavior for the WMS data.
 Configuring Apache with a Virtual Host is optional for AHTSE. However, it provides flexibility with the web server so that it can be used for different types of content if so needed.
 
 Some of the following steps would still be needed without a Virtual Host setup.
+
+You also need to configure a directory to be used to serve the WMS data, this can be any directory however you need to make it accessible to Apache, you can use the `www-data` (or `apache` if on CentOS) group to serve this data.
+
+```bash
+mkdir /var/www/openspace
+
+# If not on CentOS
+chown -R www-data:www-data /var/www/openspace/*
+
+# If on CentOS
+chown -R apache:apache /var/www/openspace/*
+```
+
+To set up a server configuration to serve WMS data:
 
 1. Add a configuration file in Apache's virtual hosts directory (e.g. `/etc/apache2/vhosts.d/`) by copying & renaming a template file provided in the install (e.g. **vhost.template**).
 2. Modify the **\<VirtualHost\>** tag to match the hostname or URL that you want to be directed to AHTSE requests.
