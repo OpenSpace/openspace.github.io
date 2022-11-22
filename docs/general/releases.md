@@ -17,6 +17,7 @@ As development proceeds, some versions get tagged with names.  This table indica
 
 | Version | _Name_ | _Date_ | _Description_ |
 | ------- | ------ | ------ | - |
+| 0.18.1 | Beta-11 | 2022-11-22 | This is a patch release for the eleventh beta release |
 | 0.18.0 | Beta-11 | 2022-05-06 | This is the eleventh beta release and the first in 2022 |
 | 0.17.2 | Beta-10 | 2021-08-27 | This is a patch release for the tenth beta that addresses an issue with Earth terrain |
 | 0.17.1 | Beta-10 | 2021-08-09 | This is a patch release for the tenth beta that addresses initial bug reports |
@@ -49,6 +50,55 @@ As development proceeds, some versions get tagged with names.  This table indica
 | 0.1.0 | Prerelease-5 | 2015-05-14 | This prerelease was published for the Pluto-Palooza event held at the AMNH in New York. |
 
 ***
+
+# Beta-11 (Patch-1) [0.18.1]
+ - Version: 0.18.1
+ - Date: 2022-11-22
+ - Finished: [0a6aa29b1b0c054fa59236b008749d1b98ebca9d](https://github.com/OpenSpace/OpenSpace/commit/0a6aa29b1b0c054fa59236b008749d1b98ebca9d)
+
+## Fixes to existing assets
+ - Use the new ESRI WorldImagery URL
+ - Use the new CelesTrek URL for all satellites fixing an issue where satellites would no longer appear due to a change in the CelesTrek API (#2135, #2146)
+ - Fix the Mars profile so that Perseverance and Insight do not land inside Mars anymore and stay there as well (#2049)
+ - Update OsirisREx kernels to include a missing kernel file that would prevent the profile from loading correctly (#2177)
+ - Reorganized the assets for the NASA Treks values to make it less likely to end up with too long file paths on Windows when installing OpenSpace in a nested folder (#2311)
+ - Fixed issue with Show All Trails / Hide all Trails when executed in a profile that did not have `*trail` and `*Trail` scene graph nodes 
+ - Updated the bounding spheres for Vesta and the Orion Nebula to make it possible to use the Fly-To feature with these objects (#2259)
+ - Fixed a typo in the reset_loop_action.asset that prevented the asset from being able to be included
+ - Fixed spelling mistakes in the Andromeda constellation image (#2129)
+ - Fixed spelling mistake in Voyager focus action
+ - Fixed missing GuiPath for Jupiter approach in Voyager profile
+ - Update the descriptions for the Open Star Cluster Digital Universe asset
+
+## Bug Fixes
+ - Fix issue where parts of a globe would disappear when the settings of a heightlayer change (#2096)
+ - Fix an issue where it was not possible to drag the SkyBrowser window in fisheye rendering mode (#2093)
+ - Fixed an issue where executing a SessionRecording containing a wildcard character `*` in the property name fails to load (#2121)
+ - Provide a better error message when failing to load a dataset for GlobeBrowsing layer
+ - Fixed an issue where ScreenSpace images would be too dark by adding a gamma correction slider
+ - Various compilation and UI fixes for Linux (#1479, #2111, #2123, #2163)
+ - Fixed an issue where the conversion of a preexisting profile from version 1.0 to 1.1 would not rename the keypad numbers correctly, causing the new profile to fail to load (#2138)
+ - Fix issue where the first row in the ScriptsDialog of the Profile Editor would be automatically selected (#2282)
+ - Fixed an issue where the navigation state was not loaded correctly from a profile (#2143)
+ - Fixed an issue where exporting the camera position to a Navigation State would lose precision
+ - Provide a better error message when trying to edit a profile that does not exist (#2224)
+ - Fixed an issue where special characters would not show in the keybinding panel correctly
+ - Fixed issue that prevented the full range of values for the field-of-view slider in the SGCT configuration editor from being used(#2148)
+ - Place some stricter limitations on the field-of-view settings in the SGCT Configuration editor (#2156)
+ - Fixed an issue that what cause a SkyBrowser display copy from being removed properly (#2200)
+ - Fixed an issue that would occur when the camera's focus node was removed (#2196)
+ - Correctly use the default position of display copies of the SkyBrowser
+ - Fixed an issue where the time component in the WebUI would flicker as time is progressing
+ - Fix an error where the interpolation parameter for a camera path was out of range causing the Fly-To to fail occasionally (#2211)
+ - Fixed issue where an asset in the Profile Editor would be selected if there wasa folder with the same name as the asset (#2154)
+ - Fixed an issue that would prevent multiple files from being synced in a UrlSynchronization
+ - Updated SGCT configuration files that where using a legacy user position
+
+
+## Breaking Changes
+ - The height offset of a GlobeBrowsing height layer was calculated incorrectly before, causing a flip in the sign.  Before, an offset of 1000 would cause the terrain to be _lowered_ by 1000m, not _raised_ by 1000m as expected.  With this version, this bug is fixed, but it might require some adjustments in existing profiles. **Fix**: Invert the sign of all `*.Settings.Offset`s in scripts that apply to Height Maps
+ - The organization of the NASA TREKs asset files has changed as the old method caused many users to get "too long path" errors on Windows.  **Fix**: Any user-created profile that uses the NASA Treks files needs to be manually updated.
+
 
 # Beta-11 [0.18.0]
 - Version: 0.18.0
