@@ -17,6 +17,7 @@ As development proceeds, some versions get tagged with names.  This table indica
 
 | Version | _Name_ | _Date_ | _Description_ |
 | ------- | ------ | ------ | - |
+| 0.18.2 | Beta-11 | 2022-12-24 | This is a second patch release for the eleventh beta release | 
 | 0.18.1 | Beta-11 | 2022-11-22 | This is a patch release for the eleventh beta release |
 | 0.18.0 | Beta-11 | 2022-05-06 | This is the eleventh beta release and the first in 2022 |
 | 0.17.2 | Beta-10 | 2021-08-27 | This is a patch release for the tenth beta that addresses an issue with Earth terrain |
@@ -50,6 +51,23 @@ As development proceeds, some versions get tagged with names.  This table indica
 | 0.1.0 | Prerelease-5 | 2015-05-14 | This prerelease was published for the Pluto-Palooza event held at the AMNH in New York. |
 
 ***
+
+# Beta-11 (Patch-2) [0.18.2]
+ - Version: 0.18.2
+ - Date: 2022-12-24
+ - Finished: [7b09d1a2288090e403ef79317309ee9f16b2c37a](https://github.com/OpenSpace/OpenSpace/commit/7b09d1a2288090e403ef79317309ee9f16b2c37a)
+
+## Bugfixes
+  - Fix to a problem that caused the Mars profile to not load correctly
+  - Fix for an issue that made the some of the options of the configuration helper functions in the openspace.cfg file unusable (#2364)
+  - Fix to an asset dependecy issue that prevent the JWST asset from being included outside the JWST profile (#2378)
+  - Fix to an issue that would prevent the FOV slider from working in a rendering+GUI window setup
+  - Fix to prevent invalid entries for actions and keybindings in the Profile Editor (#2362)
+  - Fixed and issue where it was possible to interact with a joystick during a camera path or a session recording
+  - Fix problem with the interaction sphere of scene graph nodes without renderables being unused (#2399)
+  - Fix issue where the explicit bounding sphere was being ignored (#1899)
+  - Fixed a typo in the documentation for the RenderableTimeVaryingSphere
+
 
 # Beta-11 (Patch-1) [0.18.1]
  - Version: 0.18.1
