@@ -18,7 +18,7 @@ nav_order: 3
 ~~~
 
 ## Formats
-OpenSpace uses the [Assimp library](https://github.com/assimp/assimp) to load models and therefore our supported formats are similar to their supported formats. For a full list see [List of formats]](##list-of-formats) further down this page.
+OpenSpace uses the [Assimp library](https://github.com/assimp/assimp) to load models and therefore our supported formats are similar to their supported formats. For a full list see [List of formats]](#list-of-formats) further down this page.
 
 ## Debugging your model
 If your model does not show up in OpenSpace and you are sure that you have done everything right, there is a tool that you could use for debugging. In the asset file you can add an optional property for forcing invisible parts of the model to render. This forces any part of the model that is invisible (has no texture or color) to render. This property is called <code>ForceRenderInvisible</code>, for example the Juno spacecraft:
