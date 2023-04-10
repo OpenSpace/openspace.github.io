@@ -33,6 +33,8 @@ Click the **Output Selection Controls** header to expand this section. Do not se
 
 When all are selected, click the **add->** button to add them to the "Output Fields" box. Make sure that the order inside this box is exactly the same as listed above.
 
+Finally, enable the "Full Precision" checkbox.
+
 ## Generate Output
 Click "Get Results" button, and then the "Download (CSV-format)" button to save as a .csv file locally.
 
