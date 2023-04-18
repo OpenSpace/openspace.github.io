@@ -1,4 +1,4 @@
-OBS:  These release notes are still in a pretty raw state and will be updates as the release candidate evolves
+The following release notes are incomplete and will be updated as the release candidate evolves.
 
 # Features
  - Add settings in OpenSpaceEngine that sets visibility in gui / Adapt the visibility settings for all properties / Add the ability to set the default property visibility in the openspace.cfg file, which can be overridden with the OPENSPACE_LEVEL environment variable
@@ -72,7 +72,7 @@ OBS:  These release notes are still in a pretty raw state and will be updates as
  - Better organization for moons and some GUI Name fixes #2609
  - Constellations - Actions for zodiac constellations. #2272
  - Added action for global lighting of all globes (closes #2494)
- - disabled assets for asteroids profile start (#2590)
+ - Disabled assets for asteroids profile start (#2590)
  - Move the keybindings out of the base.asset and the specific label keybinding out of the default_keybindings
  - Switch MessengerTrail to RenderableTrailTrajectory in order to match start/end times, and add corresponding sample interval (#2552)
  - Update exoplanets data (#2450)
@@ -86,11 +86,11 @@ OBS:  These release notes are still in a pretty raw state and will be updates as
  - Add lighthour grid to DU, and lightminute and lightsecond grids to Earth (closes #2439)
  - Move the Milky Way Image and arm labels from /Universe/Galaxies to /Milky Way
  - Remove luastatemachine example asset, closes #2193
- -  Rename ISS scene graph node #2245 
+ - Rename ISS scene graph node #2245 
  - Adds labels to the grids (fixes #1244
  - Add trail that co-revolves with L2 around the Sun. Also tweaking the trail colors and speeds in the timelapse script (#2220)
  - Update the Ipac example asset
- - more explanation of the static magnetosphere
+ - More explanation of the static magnetosphere
 
 
 ## Content creation
@@ -125,7 +125,7 @@ OBS:  These release notes are still in a pretty raw state and will be updates as
 
 
 # Bug Fixes
- - feature/model-opacity #2550
+ - Feature/model-opacity #2550
  - Feature/touch fixes (#2463)
  - Multiple keys for same property in some assets #2598
  - Harmonize capitalization of action names (#2579)
