@@ -1,4 +1,4 @@
-The following release notes are incomplete and will be updated as the release candidate evolves.
+Please note: The following release notes are incomplete and will be updated as the release candidate evolves.
 
 # Features
  - Add settings in OpenSpaceEngine that sets visibility in gui / Adapt the visibility settings for all properties / Add the ability to set the default property visibility in the openspace.cfg file, which can be overridden with the OPENSPACE_LEVEL environment variable
