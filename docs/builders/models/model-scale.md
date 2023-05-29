@@ -76,4 +76,6 @@ It is also possible to give the <code>ModelScale</code> key a numerical value in
 ~~~
 
 ## Summary
-In short, if the model was developed in a unit other than Meters then use the <code>ModelScale</code> key to scale the model down with that unit. However, if the model was developed in Meters but intended to be interpreted as another unit then the scale needs to be inverted with the key <code>InvertModelScale</code>.
+In short, if the model was developed in a unit other than Meters then use the <code>ModelScale</code> key to scale the model down with that unit. However, if the model was developed in Meters but intended to be interpreted as another unit then the scale needs to be inverted with the key <code>InvertModelScale</code>. Unfortunatly the process of finding the correct model scale value is a matter of trial and error. However, since release 0.19.0 the numeric value of the <code>ModelScale</code> property is included in the GUI and can be changed at runtime with a slider. Note that this property is an <code>AdvancedUser</code> property and you might need to change your visiblity settings to see it in the GUI.
+
+![](images/iss-scale-gui.png)
