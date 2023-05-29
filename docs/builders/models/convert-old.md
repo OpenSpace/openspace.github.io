@@ -1,5 +1,5 @@
 ---
-title: Convert old models to new format in 0.17.0
+title: Convert old models to the new format in 0.17.0
 layout: default
 
 grand_parent: Builders
@@ -8,9 +8,9 @@ nav_order: 3
 ---
 
 # Breaking change in 0.17.0: Model Loading
-The model loading in OpenSpace has been updated to support models with multiple parts, materials and textures. This update unfortunately means that previous asset files with models need to be updated. Note that this feature was added in release 0.17.0.
+The model loading in OpenSpace has been updated to support models with multiple parts, materials, and textures. This update unfortunately means that previous asset files with models need to be updated. Note that this feature was added in release 0.17.0.
 
-Previously a model was specified in an asset file as a <code>Geometry</code> with a <code>Type</code>, <code>GeometryFile</code> and a <code>ColorTexture</code>. Now it is just specified with a <code>GeometryFile</code>, there is no need for a <code>ColorTexture</code> since this information will be read from the model. This may mean that the models that have previously been used might need to be exchanged or updated to properly work with the new model loading system, more on that later.
+Previously a model was specified in an asset file as a <code>Geometry</code> with a <code>Type</code>, <code>GeometryFile</code>, and a <code>ColorTexture</code>. Now it is just specified with a <code>GeometryFile</code>, there is no need for a <code>ColorTexture</code> since this information will be read from the model. This may mean that the models that have previously been used might need to be exchanged or updated to properly work with the new model loading system, more on that later.
 
 ## Examples
 How the Renderable for the Juno spacecraft was specified before:
@@ -61,22 +61,22 @@ Now it is specified as:
 ~~~
 
 ## Models
-As you may have noticed there is no need to specify the ColorTexture as before. Instead this information will be read from the model itself, which may mean that your old models need to be updated or exchanged. This depends very much on what kind of model you are using but in general there are two different ways to update the old model:
+As you may have noticed there is no need to specify the ColorTexture as before. Instead, this information will be read from the model itself, which may mean that your old models need to be updated or exchanged. This depends very much on what kind of model you are using but in general, there are two different ways to update the old model:
 
 * Embed the material or texture to the model.
 
 * Define a material file (.mtl) and link it to your model.
 
-Both of these could be done with any modeling software (such as Blender, Maya or 3ds Max). In both cases you need to make sure that you export the model with the materials or textures. In the second case you would get a material file (.mtl) that should be next to your model file. You can also do the second case manually as explained below. 
+Both of these could be done with any modeling software (such as Blender, Maya or 3ds Max). In both cases, you need to make sure that you export the model with the materials or textures. In the second case, you would get a material file (.mtl) that should be next to your model file. You can also do the second case manually as explained below.
 
 ### Create your own material file for your model
 It is possible to create your own material file and connect your model to the correct textures by editing the files in a text editor. Depending on how complex and large your model is this could take some time and effort.
 
 1. Start by creating a new text file and rename its extension to .mtl instead of .txt (you might have to turn on visible file extensions in Windows for this).
 
-2. Open your model file and material file in a text editor (such as Notepad, Notepad++ or Visual Studio Code).
+2. Open your model file and material file in a text editor (such as Notepad, Notepad++, or Visual Studio Code).
 
-3. In the model file, at the top you need to link the material file you just created with: <code>mtllib filename.mtl</code> replacing filename with the name of the material file you created in step 1.
+3. In the model file, at the top you need to link the material file you just created with <code>mtllib filename.mtl</code> replacing the filename with the name of the material file you created in step 1.
 
 4. In the model file there should be a long list of data, go to the line where the data shifts to <code>f</code>. A tip is to use the search function that most text editors have with Ctrl + f and search for <code>f</code>. Right before the first line of <code>f</code> insert the line: <code>usemtl materialName</code>. This tells the model that this part of the model should have this material.
 
@@ -112,7 +112,7 @@ It is possible to create your own material file and connect your model to the co
     ...
 ~~~
 
-7. Switch to the material file. Here is where you define your materials and the textures. Create a new material with: <code>newmtl materialName</code>. Note that materialName should be the same as you specified in the model file in step 4. Then connect the material to a texture using: <code>map_Kd textureName.png</code>. Note that the path to the texture should be given relative to the material file.
+7. Switch to the material file. Here is where you define your materials and the textures. Create a new material with <code>newmtl materialName</code>. Note that materialName should be the same as you specified in the model file in Step 4. Then connect the material to a texture using: <code>map_Kd textureName.png</code>. Note that the path to the texture should be given relative to the material file.
 
 8. If you specified several **different** materials in step 5 you will need to repeat step 7 for every new material. 
 
@@ -126,3 +126,5 @@ It is possible to create your own material file and connect your model to the co
 ~~~
 
 10. Make sure that your material file is in the same directory as the model file. Your model should now be textured in OpenSpace.
+
+
