@@ -15,6 +15,8 @@ Previously a model was specified in an asset file as a <code>Geometry</code> wit
 ## Examples
 How the Renderable for the Juno spacecraft was specified before:
 ~~~lua
+    local sun = asset.require('scene/solarsystem/sun/sun')
+
     Renderable = {
         Type = "RenderableModel",
         Geometry = {
@@ -23,12 +25,14 @@ How the Renderable for the Juno spacecraft was specified before:
             ColorTexture =  textures .. "/gray.png"
         },
         ModelTransform = RotationMatrix,
-        LightSources = assetHelper.getDefaultLightSources(sunTransforms.SolarSystemBarycenter.Identifier)
+        LightSources = { sun.LightSource }
     },
 ~~~
 
 How the Renderable for the Juno spacecraft is specified now:
 ~~~lua
+    local sun = asset.require('scene/solarsystem/sun/sun')
+
     Renderable = {
         Type = "RenderableModel",
         GeometryFile = model .. "Juno.obj",
