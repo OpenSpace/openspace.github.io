@@ -22,7 +22,7 @@ Click the **Limit by Orbit Class** header to expand its contents.  Sub-groups of
 ## Output Selection ##
 Click the **Output Selection Controls** header to expand this section. Do not select "Output Field Preset Selector". In the "Available Fields" box, click each of the following options to select _only_ these:
 - **[object fullname]**
-- **[epoch]**  epoch of osculation in Julian day form (TDB)
+- **[epoch_cal]**  epoch of osculation in Julian day form (TDB)
 - **[e]** eccentricity
 - **[a]** semi-major axis (au)
 - **[i]** inclination; angle with respect to x-y ecliptic plane (deg)
