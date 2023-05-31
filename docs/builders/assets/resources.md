@@ -21,7 +21,7 @@ To load a local resource into OpenSpace you need to specify a `path` to the file
 ## What are paths?
 
 Consider this file structure:
-![A folder with a file](/assets/images/path_folder.png)
+![A folder with a file](./images/path_folder.png)
 
 These are examples of paths to the file `myfile.txt`:
 
@@ -32,7 +32,7 @@ The first path is an **absolute path**. That means that the beginning of the pat
 
 The second path is a **relative path**. A relative path means that the path is relative to the folder it is in. It starts with `./` to specify "the current folder".  In general, we recommend using relative paths where ever possible as it makes it less painful to later move asset files to another computer or share them with another user.
 
-![A file referencing another file in the same folder](/assets/images/relative_path_folder.png)
+![A file referencing another file in the same folder](./images/relative_path_folder.png)
 
 For example, if you were to place a file in the folder `Documents` called `myResource.txt` you would be able to specify a relative path in the `myfile.txt` file with this relative path: `./myResource.txt`. **Important**: these files must be located in the same folder.
 
@@ -42,7 +42,7 @@ When loading a resource in an asset, you can either use an absolute path or a re
 
 How can we write a path in an asset that loads this movie?
 
-![An asset and a file in the same folder](/assets/images/asset_path.png)
+![An asset and a file in the same folder](./images/asset_path.png)
 
 ### Absolute path
 
