@@ -54,32 +54,32 @@ Here is the absolute path for the movie above: `"C:/Users/yourname/Desktop/Docum
 
 Here is an example of an asset where an absolute path is used for the `Video` property:
 
-```
+```lua
 local layer = {
-    Identifier = "ExampleVideoLocal",
-    Video = "C:/Users/yourname/Desktop/Documents/myVideo.mp4",
-    Name = "Example Video Local",
-    Enabled = true,
-    Type = "VideoTileLayer"
+  Identifier = "ExampleVideoLocal",
+  Video = "C:/Users/yourname/Desktop/Documents/myVideo.mp4",
+  Name = "Example Video Local",
+  Enabled = true,
+  Type = "VideoTileLayer"
 }
 
 asset.onInitialize(function()
-    openspace.globebrowsing.addLayer("Earth", "ColorLayers", layer)
+  openspace.globebrowsing.addLayer("Earth", "ColorLayers", layer)
 end)
 
 asset.onDeinitialize(function()
-    openspace.globebrowsing.deleteLayer("Earth", "ColorLayers", layer)
+  openspace.globebrowsing.deleteLayer("Earth", "ColorLayers", layer)
 end)
 
 asset.export("layer", layer)
 
 asset.meta = {
-    Name = "Video Player Test",
-    Version = "1.0",
-    Description = "An example asset that shows how to include a video on Earth",
-    Author = "OpenSpace Team",
-    URL = "https://openspaceproject.com",
-    License = "MIT"
+  Name = "Video Player Test",
+  Version = "1.0",
+  Description = "An example asset that shows how to include a video on Earth",
+  Author = "OpenSpace Team",
+  URL = "https://openspaceproject.com",
+  License = "MIT"
 }
 ```
 
@@ -95,32 +95,32 @@ Here is the finished relative path for the movie above: `asset.localResource("./
 
 Here is an example of the video asset with a relative path used for the `Video` property:
 
-```
-local layer = {
-    Identifier = "ExampleVideoLocal",
-    Video = asset.localResource("./myVideo.mp4"),
-    Name = "Example Video Local",
-    Enabled = true,
-    Type = "VideoTileLayer"
+```lua
+  local layer = {
+  Identifier = "ExampleVideoLocal",
+  Video = asset.localResource("./myVideo.mp4"),
+  Name = "Example Video Local",
+  Enabled = true,
+  Type = "VideoTileLayer"
 }
 
 asset.onInitialize(function()
-    openspace.globebrowsing.addLayer("Earth", "ColorLayers", layer)
+  openspace.globebrowsing.addLayer("Earth", "ColorLayers", layer)
 end)
 
 asset.onDeinitialize(function()
-    openspace.globebrowsing.deleteLayer("Earth", "ColorLayers", layer)
+  openspace.globebrowsing.deleteLayer("Earth", "ColorLayers", layer)
 end)
 
 asset.export("layer", layer)
 
 asset.meta = {
-    Name = "Video Player Test",
-    Version = "1.0",
-    Description = "An example asset that shows how to include a video on Earth",
-    Author = "OpenSpace Team",
-    URL = "https://openspaceproject.com",
-    License = "MIT"
+  Name = "Video Player Test",
+  Version = "1.0",
+  Description = "An example asset that shows how to include a video on Earth",
+  Author = "OpenSpace Team",
+  URL = "https://openspaceproject.com",
+  License = "MIT"
 }
 ```
 
@@ -132,26 +132,25 @@ The relative path is set with `Video = asset.localResource("./myVideo.mp4")`.
 
 There are two built-in mechanisms of resource synchronizations in OpenSpace: The `HttpSynchronization` and the `UrlSynchronization`. The `HttpSynchronization` is designed to fetch versioned data from the official OpenSpace server (data.openspaceproject.com), like this:
 
-```
+```lua
 local path = asset.syncedResource({
-    Type = "HttpSynchronization",
-    Name = "Foo"
-    Identifier = "foo",
-    Version = 1
+  Type = "HttpSynchronization",
+  Name = "Foo"
+  Identifier = "foo",
+  Version = 1
 })
 ```
 
 The UrlSynchronization can be used to fetch arbitrary data from the web.
 
-```
+```lua
 local path = asset.syncedResource({
-    Type = "UrlSynchronization",
-    Name = "Bar",
-    Identifier = "bar",
-    Url = "http://example.com/data.zip",
-    Override = true
+  Type = "UrlSynchronization",
+  Name = "Bar",
+  Identifier = "bar",
+  Url = "http://example.com/data.zip",
+  Override = true
 })
 ```
-
 
 The `Override` paramater can be used to force a new download even if the file has already previously been downloaded.
