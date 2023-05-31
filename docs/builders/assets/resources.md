@@ -126,6 +126,8 @@ asset.meta = {
 
 The relative path is set with `Video = asset.localResource("./myVideo.mp4")`.
 
+**OBS!** Note that the `asset.localResource` function actually returns the *absolute path* to that resource, based on the relative input path. When using paths as values in assets (e.g. for creating scene graph nodes or adding layers) OpenSpace always expects the absolute path to the file.
+
 # Synchronized resources
 
 There are two built-in mechanisms of resource synchronizations in OpenSpace: The `HttpSynchronization` and the `UrlSynchronization`. The `HttpSynchronization` is designed to fetch versioned data from the official OpenSpace server (data.openspaceproject.com), like this:
