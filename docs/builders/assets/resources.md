@@ -28,7 +28,7 @@ These are examples of paths to the file `myfile.txt`:
 1. `C:/Users/yourname/Desktop/Documents/myfile.txt`
 1. `./myfile.txt`
 
-The first path is an **absolute path**. That means that the beginning of the path starts with one of your harddrives, usually `D:/` or `C:/`.
+The first path is an **absolute path**. That means that the beginning of the path starts with one of your hard drives, usually `D:/` or `C:/`.
 
 The second path is a **relative path**. A relative path means that the path is relative to the folder it is in. It starts with `./` to specify "the current folder".  In general, we recommend using relative paths where ever possible as it makes it less painful to later move asset files to another computer or share them with another user.
 
@@ -130,7 +130,7 @@ The relative path is set with `Video = asset.localResource("./myVideo.mp4")`.
 
 # Synchronized resources
 
-There are two built-in mechanisms of resource synchronizations in OpenSpace: The `HttpSynchronization` and the `UrlSynchronization`. The `HttpSynchronization` is designed to fetch versioned data from the official OpenSpace server (data.openspaceproject.com), like this:
+There are two built-in mechanisms of resource synchronization in OpenSpace: The `HttpSynchronization` and the `UrlSynchronization`. The `HttpSynchronization` is designed to fetch versioned data from the official OpenSpace server (data.openspaceproject.com), like this:
 
 ```lua
 local path = asset.syncedResource({
@@ -153,4 +153,4 @@ local path = asset.syncedResource({
 })
 ```
 
-The `Override` paramater can be used to force a new download even if the file has already previously been downloaded.
+The `Override` parameter can be used to force a new download even if the file has already previously been downloaded.
