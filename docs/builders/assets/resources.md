@@ -36,7 +36,7 @@ The second path is a **relative path**. A relative path means that the path is r
 
 For example, if you were to place a file in the folder `Documents` called `myResource.txt` you would be able to specify a relative path in the `myfile.txt` file with this relative path: `./myResource.txt`. **Important**: these files must be located in the same folder.
 
-To use a path in an asset, you can either use a absolute path or a relative path.
+When loading a resource in an asset, you can either use an absolute path or a relative path.
 
 ## Using paths in assets
 
