@@ -30,7 +30,7 @@ These are examples of paths to the file `myfile.txt`:
 
 The first path is an **absolute path**. That means that the beginning of the path starts with one of your harddrives, usually `D:/` or `C:/`.
 
-The second path is a **relative path**. A relative path means that the path is relative to the folder it is in. It starts with `./` to specify "the current folder".
+The second path is a **relative path**. A relative path means that the path is relative to the folder it is in. It starts with `./` to specify "the current folder".  In general, we recommend using relative paths where ever possible as it makes it less painful to later move asset files to another computer or share them with another user.
 
 ![A file referencing another file in the same folder](/assets/images/relative_path_folder.png)
 
@@ -46,7 +46,7 @@ How can we write a path in an asset that loads this movie?
 
 ### Absolute path
 
-**Note**: paths in OpenSpace can only use forward slash `/`, not backward slash `\`.
+**Note**: paths in OpenSpace can only use forward slash `/`, never backward slash `\`.
 
 For the absolute path, you can copy the text file explorer (see the cursor in the above image) and then add the filename. If your path contains backward slashes `\` you need to swap them out to forward slashes `/`. Then you need to surround the path with quotation marks.
 
@@ -87,7 +87,7 @@ The absolute path is set with `Video = "C:/Users/yourname/Desktop/Documents/myVi
 
 ## Relative path
 
-**Note**: paths in OpenSpace can only use forward slash `/`, not backward slash `\`.
+**Note**: paths in OpenSpace can only use forward slash `/`, never backward slash `\`.
 
 To use a relative path in an asset, the file you are referencing needs to be located in the same folder as the asset file. A relative path `./myFile.txt` is recognized by OpenSpace if it is written like this: `asset.localResource("./myFile.txt")`.
 
@@ -128,7 +128,7 @@ The relative path is set with `Video = asset.localResource("./myVideo.mp4")`.
 
 # Synchronized resources
 
-There are two built-in mechanisms of resource synchronizations in OpenSpace: The `HttpSynchronization` and the `UrlSynchronization`. The `HttpSynchronization` is designed to fetch versioned data from the offical OpenSpace server (data.openspaceproject.com), like this:
+There are two built-in mechanisms of resource synchronizations in OpenSpace: The `HttpSynchronization` and the `UrlSynchronization`. The `HttpSynchronization` is designed to fetch versioned data from the official OpenSpace server (data.openspaceproject.com), like this:
 
 ```
 local path = asset.syncedResource({
@@ -151,6 +151,5 @@ local path = asset.syncedResource({
 })
 ```
 
-While a synchronized asset can be required or requested from multiple locations, it can only declared in one location. For example, consider a synchronized asset that contains more than one file (e.g. `solarsystem/planets/jupiter/jupiter_labels.asset`). If the individual label files are used in different asset files, they must all reference the same source asset, and then append the label filename to the _jupiter_labels_ asset path. An error will occur if different synchronized assets are defined in order to request the individual label files.
 
 The `Override` paramater can be used to force a new download even if the file has already previously been downloaded.
