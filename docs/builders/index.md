@@ -25,4 +25,4 @@ nav_order: 3
   - [Loading Models](models/model-loading)
   - [Model Scale](models/model-scale)
   - [Animated Models](models/model-animation)
-- [Events](events/index)  
+- [Events](events/index)

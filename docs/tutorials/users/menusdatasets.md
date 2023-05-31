@@ -27,10 +27,10 @@ This section will cover using the menus to turn on and off or manipulate dataset
 ## Enabling and Disabling Datasets
  - Use the checkbox next to the dataset's name in the menu to turn it on or off in OpenSpace.
  - Sometimes you will have to enable or disable multiple items for the effect you want. For example, if you don't want to see Mars, you must also turn off its atmosphere, which is a separate checkbox.
- - Some datasets have sizing or fading applied to them based on distances, so they may not appear even if they are enabled. The 'Tully Galaxies' or 'Earth Label' are examples of this. 
+ - Some datasets have sizing or fading applied to them based on distances, so they may not appear even if they are enabled. The 'Tully Galaxies' or 'Earth Label' are examples of this.
 
 ## Manipulating Datasets
- - For most datasets you can change aspects of how they are visualized in OpenSpace. Examples include changing the color, opacity of items, the size of text, and the width or length of trails.
+ - For most datasets, you can change aspects of how they are visualized in OpenSpace. Examples include changing the color, opacity of items, the size of text, and the width or length of trails.
  - Changes can be made by clicking the item's title to open its submenu.
  - You can also click the wrench icon to pop out a panel for the item's properties.
  - Changes made are not saved between OpenSpace sessions. To learn how to save your changes, stay tuned for the [Customizing OpenSpace - Profiles](/docs/tutorials/users/customizingprofiles) tutorial.

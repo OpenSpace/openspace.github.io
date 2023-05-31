@@ -11,7 +11,7 @@ nav_order: 2
 In addition to the normal navigation in OpenSpace, using the keyboard and mouse, it is also possible to navigate using a game controller, such as an Xbox controller, PS4 controller or a SpaceMouse. If you want to use any of these supported controllers you need to include their corresponding asset file in a profile. This can be done in the profile editor in the launcher by editing the profile to include one of the joystick assets. All of the joystick assets are located in the sub-folder <code>data/assets/util/joysticks</code> inside the OpenSpace folder. It is important to include the right asset file for the type of game controller you are using. For example, the wireless Xbox asset will not work with a non-wireless Xbox controller and vice versa.
 
 ## Xbox Controller
-The image below shows a map over the buttons and joysticks on a Xbox controller.
+The image below shows a map of the buttons and joysticks on an Xbox controller.
 
 <div style="text-align:center"><img src="images/xbox.png"/></div>
 
@@ -43,7 +43,7 @@ Navigation using a Xbox controller in OpenSpace is defined in the Xbox asset fil
 The LB and RB buttons switch the roll mode to local or global respectively. The difference between these two is that the local roll mode rolls the camera around the center of the screen, while the global roll mode rolls the camera around the current focus.
 
 ## PS4 Controller
-The navigation using an Xbox or PS4 controller are very similar, the only difference is the layout of the controllers. Otherwise the functionality is the same. The image below shows a map over the buttons and joysticks on a PS4 controller.
+The navigation using an Xbox or PS4 controller is very similar, the only difference is the layout of the controllers. Otherwise, the functionality is the same. The image below shows a map of the buttons and joysticks on a PS4 controller.
 
 <div style="text-align:center"><img src="images/ps4.png"/></div>
 
@@ -101,9 +101,9 @@ The Left and Right buttons switch the roll mode to local or global respectively.
 Here is a list of some issues you can encounter related to the joysticks and some tips on how to fix them.
 
 ## Openspace Does Not React to the Controller Input
-First thing to check here is that the controller is properly connected to the computer and that the correct asset file has been included to the profile and that the correct profile is run. If OpenSpace still does not react to the controller then it is possible that your controller has a different name than what OpenSpace expects. You can check the name of your controller when OpenSpace is running in any profile. Press the *F1* button on the keyboard and you will see the old GUI interface of OpenSpace pop up. In the window called **OpenSpace GUI**, press the empty checkbox next to **Joysticks Information**. This will open a new window and here all the connected joysticks will be listed. In this list you can search for your joystick and note down what name it has in the list, ignoring the number in the end. The items in the list called *3Dconnexion KMJ Emulator* or *Summed contributions* can be ignored. The next step is to change the name of the controller in the asset file. Start by opening the asset file corresponding to your controller in a text editor. You will need to change one line of code that specifies the controller name, below you can see an example for the Xbox controller (all other joystick assets look similar as well).
+The first thing to check here is that the controller is properly connected to the computer and that the correct asset file has been included in the profile and that the correct profile is run. If OpenSpace still does not react to the controller then your controller may have a different name than what OpenSpace expects. You can check the name of your controller when OpenSpace is running in any profile. Press the *F1* button on the keyboard and you will see the old GUI interface of OpenSpace pop up. In the window called **OpenSpace GUI**, press the empty checkbox next to **Joysticks Information**. This will open a new window and here all the connected joysticks will be listed. In this list you can search for your joystick and note down what name it has in the list, ignoring the number in the end. The items in the list called *3Dconnexion KMJ Emulator* or *Summed contributions* can be ignored. The next step is to change the name of the controller in the asset file. Start by opening the asset file corresponding to your controller in a text editor. You will need to change one line of code that specifies the controller name. Below you can see an example for the Xbox controller (all other joystick assets look similar as well).
 
-```
+```lua
   asset.onInitialize(function()
     local controller = XBoxController;
     local name = "Xbox Controller"; -- Change this to the name of your controller
@@ -117,7 +117,7 @@ First thing to check here is that the controller is properly connected to the co
 ## Openspace Keeps Spinning Even When the Joysticks Are Not Touched
 This issue is caused by the deadzone being too small for the joysticks or the triggers on the controller. To fix it you can increase the size of the deadzone by editing one or two lines in the asset file. Start by opening the asset file corresponding to your controller in a text editor. You will need to change one or two lines of code that specify the deadzone size, below you can see an example for the PS4 controller (all other joystick assets look similar as well).
 
-```
+```lua
   asset.onInitialize(function()
     local controller = PS4Controller;
     local name = "Wireless Controller";

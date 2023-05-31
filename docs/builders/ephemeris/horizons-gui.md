@@ -18,7 +18,7 @@ Since version 0.18.0 of OpenSpace there is a new feature that allows our users t
 <div style="text-align:center"><img src="images/gui.png"/></div>
 
 # The Horizons Tool
-In the new window there are a few places where you can input specifications for what Horizons data you want to access. Once you have entered all information you can press the *Save* button at the bottom of the window. At this point OpenSpace will ask the Horizons service for the data you want and download it and store it on your computer. This wiki will go through every step of this process and explain what each field in the UI means. This process is very similar to how you would do it on the Horizons web page. Read more about that [here](horizons-web).
+In the new window, there are a few places where you can input specifications for what Horizons data you want to access. Once you have entered all information you can press the *Save* button at the bottom of the window. At this point, OpenSpace will ask the Horizons service for the data you want and download it and store it on your computer. This wiki will go through every step of this process and explain what each field in the UI means. This process is very similar to how you would do it on the Horizons web page. Read more about that [here](horizons-web).
 
 The following sections describe each field of the Horizons UI.
 
@@ -56,7 +56,7 @@ There are a few different things that can go wrong while using this tool. Most o
 The target you searched for could not be found. Check that the name has been spelt correctly and you can also add a <code>*</code> at the end of the name to widen your search. If you still cannot find what you are looking for, it is possible that there might be an alternative name for it in the Horizons database or that it does not exist.
 
 ## Multiple Matching Targets
-Multiple matches were found in the Horizons database for the target you searched for. There should be an added drop down menu close to the **Target Body** field where you can select one of the matches. If none of them is what you were looking for, you can keep the first item in the list selected and write a new name to search for.
+Multiple matches were found in the Horizons database for the target you searched for. There should be an added dropdown menu close to the **Target Body** field where you can select one of the matches. If none of them is what you were looking for, you can keep the first item in the list selected and write a new name to search for.
 
 ## Target and Observer Are the Same
 This issue only happens when the **Observer Table** format is selected and happens when the target and the observer are the same object. This can be fixed by either changing the observer or the target to something else. If the **Vector Table** format is selected, then this is allowed even if it does not give any useful results (all the data will be zero).
@@ -65,10 +65,10 @@ This issue only happens when the **Observer Table** format is selected and happe
 The observer location you searched for could not be found. Check that the name has been spelt correctly and you can also add a <code>@</code> to the beginning of the name to widen your search. If you still cannot find what you are looking for, it is possible that there might be an alternative name for it in the Horizons database or that it does not exist.
 
 ## Multiple Matching Observers
-Multiple matches were found in the Horizons database for the observer you searched for. There should be an added drop down menu close to the **Observer Location** field where you can select one of the matches. If none of them is what you were looking for, you can keep the first item in the list selected and write a new name to search for.
+Multiple matches were found in the Horizons database for the observer you searched for. There should be an added dropdown menu close to the **Observer Location** field where you can select one of the matches. If none of them is what you were looking for, you can keep the first item in the list selected and write a new name to search for.
 
 ## Multiple Matching Observer Stations
-The observer you searched for found multiple matching observer stations in the Horizons database. There should be an added drop down menu close to the **Observer Location** field where you can select one of the matches. If none of them is what you were looking for, you can keep the first item in the list selected and write a new name to search for. If you did not intend to search for an observer station, try to add a <code>@</code> to the beginning of the name to widen your search.
+The observer you searched for found multiple matching observer stations in the Horizons database. There should be an added dropdown menu close to the **Observer Location** field where you can select one of the matches. If none of them is what you were looking for, you can keep the first item in the list selected and write a new name to search for. If you did not intend to search for an observer station, try to add a <code>@</code> to the beginning of the name to widen your search.
 
 ## Time Range Is Outside Available Time Range for Target
 Each target has data available in a certain time range and this issue happens when you ask for data outside of that range. There should be an added button *Import Time Range* close to the time selection fields. This button will set the time selection to the entire available range for the current target. There will also be a message in the Horizons log detailing what this range is for the target. This can be helpful in adjusting the time selection to be within the range. If the button or the message does not show up, then there will be an error file stored at the specified location in the **File Path** field and this file might contain some useful information on how to fix the issue.

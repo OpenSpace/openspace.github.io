@@ -13,7 +13,7 @@ OpenSpace uses GDAL as the main tool for loading dynamic map datasets for globe 
 As described in [Creating a Renderable Globe](creating-a-renderableglobe), a layer is defined by a Lua table.  What we want is a dataset definition to be used for the **FilePath** of the Lua table and there are many alternatives.
 
 ## Web Map Services
-The main source of map datasets we can use within OpenSpace are provided through web map services which lets the user download parts of the datasets from remote servers.  There are different variations of web map services used by different providers.  The main types are:
+The main source of map datasets we can use within OpenSpace is provided through web map services which let the user download parts of the datasets from remote servers.  There are different variations of web map services used by different providers.  The main types are:
 
   - **WMS** -- Very general and lets the user download any part of a map, heavy for the server
   - **TMS** -- Tiled service, faster than WMS
@@ -30,10 +30,10 @@ https://wiki.earthdata.nasa.gov/display/GIBS/GIBS+Available+Imagery+Products.
 As described in [Creating a Renderable Globe](creating-a-renderableglobe), scripting can be used to create definitions for these datasets.
 
 ## Local Files
-GDAL also allows for reading a vast number image files including geo-referenced map datasets such as GeoTIFF, CUBE, VRT and other.  When it comes to geo-referenced formats, the current requirements OpenSpace has on these datasets are that the geo-referenced coordinates are given in longlat space (degrees), as opposed to meters or kilometers, and that the dataset has global coverage of the globe, i.e. covers the longlat space longitude \[-180,180\] and latitude \[-90,90\].
+GDAL also allows for reading a vast number of image files including geo-referenced map datasets such as GeoTIFF, CUBE, VRT and others.  When it comes to geo-referenced formats, the current requirements OpenSpace has on these datasets are that the geo-referenced coordinates are given in longlat space (degrees), as opposed to meters or kilometers, and that the dataset has global coverage of the globe, i.e. covers the longlat space longitude \[-180,180\] and latitude \[-90,90\].
 
 ## Temporal Datasets
-A temporal dataset is an extension of GDAL's WMS dataset definition used by OpenSpace.  The layer type needs to be **TemporalTileLayer** to load these datasets.  Currently this is only supported if OpenSpace was compiled with GDAL.  The dataset features are defined in an XML file just as the WMS files that GDAL reads.  An example of an OpenSpaceTemporalGDALDataset is defined below:
+A temporal dataset is an extension of GDAL's WMS dataset definition used by OpenSpace.  The layer type needs to be **TemporalTileLayer** to load these datasets. Currently, this is only supported if OpenSpace was compiled with GDAL. The dataset features are defined in an XML file just as the WMS files that GDAL reads.  An example of an OpenSpaceTemporalGDALDataset is defined below:
 
 Important tags are:
 - `<OpenSpaceTemporalGDALDataset>` - Encloses the dataset XML definition

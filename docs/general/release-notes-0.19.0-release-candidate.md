@@ -25,7 +25,7 @@ Please note: The following release notes are incomplete and will be updated as t
  - Improve SkyBrowser performance
  - Add property to disable zoom and roll interaction for touch
  - Add the ability to disablee keybindings (closes #2238)
- - SkyBrowser: Being able to make the image inset with a rounded corner #2029 
+ - SkyBrowser: Being able to make the image inset with a rounded corner #2029
  - Expose ambient intensity value for globes as a property
  - Enable highlights in grids (#1683)
  - Add ability to select constellations (#1682)

@@ -24,7 +24,7 @@ The current requirements OpenSpace has on the datasets that can be loaded are th
 GDAL can either be built from source or installed with binaries.  To download the software, go to http://www.gdal.org/ and follow the instructions for installing.  Important to notice is that to be able to use GDAL with the features needed in the following tutorial for local patches, GDAL needs to be linked with curl (for WMS reading) and with proj4 (for reprojection).
 
 ## Local Patches
-OpenSpace is not currently able to read local datasets which is why there is some preprocessing needed for these types of local patches.  The essential idea is to define a so called virtual dataset which lets GDAL trick OpenSpace to think that a local patch dataset is actually a global dataset.  There are some downsides to doing this.  The main thing is that OpenSpace will not only load map data at places covered by the local patch.  It will also load empty tiles in to memory where there are no data.  Due to another current restriction in OpenSpace which basically says that the georeferenced coordinates of a dataset needs to be in equidistant lat-long space there is often some more preprocessing needed to be able to load local datasets into OpenSpace.
+OpenSpace is not currently able to read local datasets which is why there is some preprocessing needed for these types of local patches.  The essential idea is to define a so called virtual dataset which lets GDAL trick OpenSpace to think that a local patch dataset is actually a global dataset.  There are some downsides to doing this.  The main thing is that OpenSpace will not only load map data at places covered by the local patch.  It will also load empty tiles into memory where there are no data.  Due to another current restriction in OpenSpace which basically says that the georeferenced coordinates of a dataset needs to be in equidistant lat-long space there is often some more preprocessing needed to be able to load local datasets into OpenSpace.
 
 Below follows a tutorial on which preprocessing steps are needed to be able to read local map datasets in OpenSpace.
 
@@ -36,12 +36,12 @@ If a DTM is created using NASAs stereo pipeline it should be exported as two dat
 Let's now focus on a specific HiRISE DTM patch and all the steps needed to get it to work within OpenSpace.  The patch we are focusing on covers a small part of the South-West Candor Chasma and can be found on this link: http://www.uahirise.org/dtm/dtm.php?ID=PSP_001918_1735.
 Information about the HiRISE DTMs and what the file names mean can be found here: http://www.uahirise.org/dtm/about.php.
 
-First we download the **heightmap DTEEC_001918_1735_001984_1735_U01.IMG** together with one of the corresponding texture maps, for example **PSP_001918_1735_RED_A_01_ORTHO.JP2**.  These are provided under "DTM & ORTHOIMAGES" and have a resolution of 0.25 cm per pixel.  Both the left observation and the right observation of the stereo pair are provided, both with high (0.25 cm) resolution and low(er) (1 m) resolution.  The file size of the 1 m resolution image will of course be smaller.
+First, we download the **heightmap DTEEC_001918_1735_001984_1735_U01.IMG** together with one of the corresponding texture maps, for example **PSP_001918_1735_RED_A_01_ORTHO.JP2**.  These are provided under "DTM & ORTHOIMAGES" and have a resolution of 0.25 cm per pixel.  Both the left observation and the right observation of the stereo pair are provided, both with high (0.25 cm) resolution and low(er) (1 m) resolution.  The file size of the 1 m resolution image will of course be smaller.
 
 ### Fix Incorrect Metadata (applies only to HiRISE DTMs)
-Unfortunately, many of the HiRISE DTMs downloaded from the site provided above have some errors in their metadata which essentially defines the longlat position and size of the patch on a globe.  To see this problem, run the command `gdalinfo` on both the heightmap (IMG) and the texture (JP2). When looking at the output we can see that there is a slight miss match in the corner coordinates of each patch.  If there is no miss match, this step is unnecessary.
+Unfortunately, many of the HiRISE DTMs downloaded from the site provided above have some errors in their metadata which essentially defines the longlat position and size of the patch on a globe.  To see this problem, run the command `gdalinfo` on both the height map (IMG) and the texture (JP2). When looking at the output we can see that there is a slight miss match in the corner coordinates of each patch.  If there is no miss match, this step is unnecessary.
 
-    > gdalinfo DTEEC_001918_1735_001984_1735_U01.IMG 
+    > gdalinfo DTEEC_001918_1735_001984_1735_U01.IMG
     ...
     Corner Coordinates:
     Upper Left  (   -3094.483, -378027.655) ( 76d58'56.67"W,  6d22'40.21"S)
@@ -63,7 +63,7 @@ and
     Center      (     127.841, -383474.739) ( 76d55'40.24"W, 11d28'10.02"S)
     ...
 
-This is a known issue, however, not properly addressed at the HiRISE website.  Information about the problem and a solution can be found here: https://isis.astrogeology.usgs.gov/IsisSupport/index.php?topic=3440.0,
+This is a known issue, however, not properly addressed on the HiRISE website.  Information about the problem and a solution can be found here: https://isis.astrogeology.usgs.gov/IsisSupport/index.php?topic=3440.0,
 And here: https://trac.osgeo.org/gdal/ticket/2706.
 The problem basically has to do with an incorrect radius set as part of the metadata in the JP2 (JPEG2000) files.  We need to download the small program "fix_jp2", either an executable (ftp://pdsimage2.wr.usgs.gov/pub/pigpen/c_FORTRAN_code/) or the C++ code to compile it yourself (see the link to the trac ticket above), and run it with the JP2 file of interest as argument:
 
@@ -82,7 +82,7 @@ Now when running gdalinfo on the JP2 file again we get better results:
     Center      (     127.841, -383474.739) ( 76d55'40.21"W,  6d28'10.02"S)
     ...
 
-There is still some difference between the height map and the texture.  This is mainly due to the fact that a heightmap and a corresponding texture don't necessarily have the same pixel size and position.
+There is still some difference between the height map and the texture.  This is mainly because a height map and a corresponding texture don't necessarily have the same pixel size and position.
 
 ### File Format Conversion
 
@@ -200,7 +200,7 @@ The result is the following VRT for the texture dataset:
 ```
 
 ## Wrapping Up
-Now we are finally done creating the virtual datasets we need to be able to make OpenSpace read the local datasets correctly!  The files we still need are the two longlat geotiffs and the virtual dataset definition files.  Since the VRTs uses relative paths to find the image files they use, they should be kept in the same folder if they were built in the same directory.
+Now we are finally done creating the virtual datasets we need to be able to make OpenSpace read the local datasets correctly!  The files we still need are the two longlat geotiffs and the virtual dataset definition files.  Since the VRTs use relative paths to find the image files they use, they should be kept in the same folder if they were built in the same directory.
 
 Now these files can be read by OpenSpace as part of a RenderableGlobe.  The texture dataset can be added as a color layer while the height map is simply set as a height layer.  To use underlying color information, we can set the blend mode to **Color** for the texture layer.
 ```lua

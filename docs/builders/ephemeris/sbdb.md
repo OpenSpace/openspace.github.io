@@ -17,7 +17,7 @@ Browse to the JPL SBDB query page [here](https://ssd.jpl.nasa.gov/tools/sbdb_que
 ## Search Constraints
 There are currently just under one million Small SolarSystem Bodies (SSSB) listed in this database.  Attempting to render all of them at once would cause low rendering performance and result in "visualization overload," so some level of filtering is necessary.
 
-Click the **Limit by Orbit Class** header to expand its contents.  Sub-groups of asteroids and/or comets (e.g. main asteroid belt) can be selected.  If desired, additional filtering can be applied using object characteristics such as size, orbital period, or inclination. Filters can be selected and combined with a logical AND/OR operation. This _advanced_ option is availale under the **Custom Object/Orbit Constraints** header.
+Click the **Limit by Orbit Class** header to expand its contents.  Sub-groups of asteroids and/or comets (e.g. main asteroid belt) can be selected.  If desired, additional filtering can be applied using object characteristics such as size, orbital period, or inclination. Filters can be selected and combined with a logical AND/OR operation. This _advanced_ option is available under the **Custom Object/Orbit Constraints** header.
 
 ## Output Selection ##
 Click the **Output Selection Controls** header to expand this section. Do not select "Output Field Preset Selector". In the "Available Fields" box, click each of the following options to select _only_ these:
@@ -57,9 +57,9 @@ assetHelper.registerSceneGraphNodesAndExport(asset, { object })
 ```
 The `util/asset_helper` file provides utilities and is included in almost all assets.  The `sssb_shared` file provides the functionality necessary to configure the object in a format that can be interpreted by OpenSpace as a scenegraph node.
 
-The `downloadSssbDatabaseFile` function sets up a reference to an http-synchronized file which will be downloaded from the sync server mentioned previously.  The 2nd argument is just a name, but the final argument needs to match the corresponding entry stored at the sync server.  The `createSssbGroupObject` is also provided by the `sssb_shared` file, and it creates a Lua table in the format expected of a scenegraph node.  T he 1st argument is the exact filename that will be stored in the local sync folder as a result of the download step above.  The final argument is the RGB color of its orbital trail.
+The `downloadSssbDatabaseFile` function sets up a reference to an HTTP-synchronized file which will be downloaded from the sync server mentioned previously.  The 2nd argument is just a name, but the final argument needs to match the corresponding entry stored at the sync server.  The `createSssbGroupObject` is also provided by the `sssb_shared` file, and it creates a Lua table in the format expected of a scenegraph node. The 1st argument is the exact filename that will be stored in the local sync folder as a result of the download step above.  The final argument is the RGB color of its orbital trail.
 
-In this example the renderable will not be enabled by default, but can of course be enabled manually in the GUI or console.  As the function name implies, the final call to `registerSceneGraphNodesAndExport` completes the process and registers this asset as a scenegraph node in OpenSpace.
+In this example, the renderable will not be enabled by default, but can of course be enabled manually in the GUI or console.  As the function name implies, the final call to `registerSceneGraphNodesAndExport` completes the process and registers this asset as a scenegraph node in OpenSpace.
 
 # Add the Asset to OpenSpace
 The final step is to simply add this asset to OpenSpace for rendering.  This can be done by either:

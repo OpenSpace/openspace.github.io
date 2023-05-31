@@ -8,12 +8,12 @@ nav_order: 2
 
 
 ## Satelllite Data from Celestrak
-The satellite data included in OpenSpace comes from service [Celestrak](https://celestrak.com/), and in particular their current data page: [https://celestrak.com/NORAD/elements/](https://celestrak.com/NORAD/elements/). On this page you will find overall categories in **BOLD** and their sub cateories listed below them. Listed below are the OpenSpace assets files that correspond. Should you wish to include an entire category, there are asset files includes named *satellites_communications*, *satellites_debris*, etc. The OpenSpace category of **Misc** corresponds to the first Celestrak category 'Special-Interest Satellites'.
+The satellite data included in OpenSpace comes from service [Celestrak](https://celestrak.com/), and in particular their current data page: [https://celestrak.com/NORAD/elements/](https://celestrak.com/NORAD/elements/). On this page, you will find overall categories in **BOLD** and their sub cateories listed below them. Listed below are the OpenSpace assets files that correspond. Should you wish to include an entire category, there are asset files to include named *satellites_communications*, *satellites_debris*, etc. The OpenSpace category of **Misc** corresponds to the first Celestrak category 'Special-Interest Satellites'.
 
 
 ## Satellites in the 'default' Profile
 
-Satellites in the default scene can be activated with the 's' hotkey, or the 'Toggle Satellites' shorcut. They can also be found in the Scene menu under Solar System->Planets->Earth->Satellites. Below are a listing of the ones included in the default scene.
+Satellites in the default scene can be activated with the 's' hotkey, or the 'Toggle Satellites' shorcut. They can also be found in the Scene menu under Solar System->Planets->Earth->Satellites. Below is a listing of the ones included in the default scene.
 
 | Menu name | Celestrak category | Description |
 | --- | ----------- | ------- |

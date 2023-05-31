@@ -38,13 +38,13 @@ Each planet in the solar system has its own button. Press it to move the camera 
 Each moon in the story has a button that will move the camera to its location.  There is also a button that will scale the moons from their true scale to 10X size for better visibility.
 
 ### Earth Weather & Events
-There is a "Select Event" button that will pop-up a list of interesting dates and their description.  Selecting an event will cause the date/time to jump to that point in time.
+There is a "Select Event" button that will pop up a list of interesting dates and their description.  Selecting an event will cause the date/time to jump to that point in time.
 
 ### Interesting Sights on Mars
-This story has a "Select Sight" button that will pop-up a list of interesting locations on Mars.  The camera will zoom-in close to the surface when a sight is selected.  Pressing the "Overview" button will reset the camera to a planetary view.
+This story has a "Select Sight" button that will pop up a list of interesting locations on Mars.  The camera will zoom in close to the surface when a sight is selected.  Pressing the "Overview" button will reset the camera to a planetary view.
 
 ### Galaxies
-There are a number of individual buttons available that will toggle visibility of specific galaxy layers.
+There are a number of individual buttons available that will toggle the visibility of specific galaxy layers.
 
 # Info Buttons
-In addition to the main Info button for the story in the menu bar at bottom, labels with an (i)nfo icon sometimes appear.  Pressing the (i) will toggle visibility of an info description for the corresponding object.
+In addition to the main Info button for the story in the menu bar at the bottom, labels with an (i)nfo icon sometimes appear.  Pressing the (i) will toggle the visibility of an info description for the corresponding object.

@@ -6,7 +6,7 @@ parent: Components
 nav_order: 2
 ---
 
-This rendering code was created to visualize satellites in earth orbit.  The precise position of each satellite above the Earth is rendered according to the date & time.  The Two-Line Element set (TLE) file format is a standard for defining satellite orbital mechanics.  It contains all of the necessary Keplerian elements to define an orbital path.  When running the satellites module, OpenSpace reads all of the provided TLE files and generates a renderable for each entry.
+This rendering code was created to visualize satellites in Earth's orbit.  The precise position of each satellite above the Earth is rendered according to the date & time.  The Two-Line Element set (TLE) file format is a standard for defining satellite orbital mechanics.  It contains all of the necessary Keplerian elements to define an orbital path.  When running the satellites module, OpenSpace reads all of the provided TLE files and generates a renderable for each entry.
 
 See the Users/Content/Satellites [page](../users/content/satellites.md) for basic instructions on how to select satellites to view, and start OpenSpace with this content.
 

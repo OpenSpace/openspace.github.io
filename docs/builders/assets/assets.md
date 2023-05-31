@@ -23,7 +23,7 @@ An asset that is imported into OpenSpace goes through a sequence of states: _Loa
 
 ### Loading
 
-When an asset is loaded, the asset file's lua code is executed. The method `asset.require` may be used to declare dependencies on other assets, stating that they should be loaded first.
+When an asset is loaded, the asset file's Lua code is executed. The method `asset.require` may be used to declare dependencies on other assets, stating that they should be loaded first.
 
 The asset may register resource synchronizations using `asset.syncedResource` and provide functions to be executed upon asset initialization (`asset.onInitialize`) and deinitialization (`asset.onDeinitialize`). The loading step itself should not manipulate the OpenSpace scene in any way. Instead, it should register any such logic with the `asset.onInitialize` and `asset.onDeinitialize` methods. If an asset is loaded successfully it will transition to the `Synchronizing` state.
 

@@ -15,4 +15,4 @@ Due to our branching model, which is adapted from [here](http://nvie.com/posts/a
 
 Alternatively, if there is a fix for a specific issue, the branch should be `issue/<issue-number>` with the issue number being the number of the GitHub issue.
 
-In either way, the commits that happen directly to the `master` branch should be kept to an absolute minimum to ensure that the branch can always be compiled. 
+In either way, the commits that happen directly to the `master` branch should be kept to an absolute minimum to ensure that the branch can always be compiled.

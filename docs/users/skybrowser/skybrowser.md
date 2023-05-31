@@ -9,7 +9,7 @@ nav_order: 2
 
 # Sky Browser
 
-The Sky Browser feature is a virtual telescope. It lets you see telescope images taken by famous telescopes, such as Hubble, Chandra and Spitzer, while also visualizing their locations on the sky. The Sky Browser is powered by [AAS WorldWide Telescope](http://worldwidetelescope.org/webclient/).
+The Sky Browser feature is a virtual telescope. It lets you see telescope images taken by famous telescopes, such as Hubble, Chandra and Spitzer, while also visualizing their locations in the sky. The Sky Browser is powered by [AAS WorldWide Telescope](http://worldwidetelescope.org/webclient/).
 
 ### Browser
 
@@ -17,7 +17,7 @@ The browser displays a part of the sky. By clicking images in the list, you can 
 
 ### Target
 
-Each target belongs to a browser and is either in the shape of a crosshair or a crosshair and a rectangle. It shows where the browser is aiming and how large portion of the sky it is viewing. The target can be moved around by dragging on the Sky Browser.
+Each target belongs to a browser and is either in the shape of a crosshair or a crosshair and a rectangle. It shows where the browser is aiming and how large a portion of the sky it is viewing. The target can be moved around by dragging on the Sky Browser.
 
 ### Image list
 
@@ -40,7 +40,7 @@ From left to right:
 
 ### Display Copies
 
-Sometimes it is necessary to show the browser outside of the graphical user interface, for example if you are in a dome or are using a display wall. To display the sky browser there, you can simply add Display Copies. The Display Copies are rendered in the 3D environment in OpenSpace and will be visible even if the GUI is not shown. If you are in a dome environment, you can add many Display Copies at once in order to spread them out on the Azimuth.
+Sometimes it is necessary to show the browser outside of the graphical user interface, for example, if you are in a dome or are using a display wall. To display the sky browser there, you can simply add Display Copies. The Display Copies are rendered in the 3D environment in OpenSpace and will be visible even if the GUI is not shown. If you are in a dome environment, you can add many Display Copies at once in order to spread them out on the Azimuth.
 
 - Scale: Sets the height of the Display Copy
 - Face Camera: Rotates the Display Copy to face the camera
@@ -52,9 +52,9 @@ Sometimes it is necessary to show the browser outside of the graphical user inte
 
 - Show Title in GUI: Displays the title of the sky browser on the top bar of the browser
 - Allow Camera Rotation: Decides if the camera should rotate if the target is outside of the master node screen
-- Camera Rotation Speed: The speed of the camera rotation. Higher number means higher speed
-- Target Animation Speed: The speed of the animation of the target. Higher number means higher speed
-- Field of View Animation Speed: the speed of the animation of the field of view. Higher number means higher speed
+- Camera Rotation Speed: The speed of the camera rotation. A higher number means higher speed
+- Target Animation Speed: The speed of the animation of the target. A higher number means higher speed
+- Field of View Animation Speed: the speed of the animation of the field of view. A higher number means higher speed
 - Hide targets and browsers with GUI: If checked, the targets and browsers are not rendered if the sky browser panel is not visible
 - Inverse Zoom Direction: Flips the zoom direction
 - Space Craft Animation Time: Sets the animation time for moving space crafts in seconds.

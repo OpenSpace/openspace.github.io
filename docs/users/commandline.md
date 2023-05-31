@@ -11,7 +11,7 @@ This wiki covers the use of the OpenSpace console, which allows precise details 
 ## Basic Use
 The console is opened using the \` backtick character (below ~ on most keyboards). A **>** prompt will appear, where commands can be entered. Pressing \` again hides the console.  Just as in a normal terminal window, a command is typed and executed using the Enter key.  If there is a problem with the command, an error message will appear at the bottom of the screen.
 
-On startup, OpenSpace auto-generates documentation files in html format in the `documentation/` folder.  Since these documentation files are "living documents" that are always up-to-date, they should always be consulted for specific details. A a summary of the commands that can be entered in the console can be found in the generated documentation, by selecting `Scripting` in the menu to the left. 
+On startup, OpenSpace auto-generates documentation files in HTML format in the `documentation/` folder.  Since these documentation files are "living documents" that are always up-to-date, they should always be consulted for specific details. A summary of the commands that can be entered in the console can be found in the generated documentation, by selecting `Scripting` in the menu to the left.
 
 In contrast to these auto-generated reference documents, this wiki is intended to explain how to use these commands, what value they provide, and in what situations they are useful.
 
@@ -24,7 +24,7 @@ Each command for setting properties has 2 arguments:
 1. Identity of property or properties to be set
 2. Value that the property(s) will be assigned
 
-Three different methods exist mainly to distinguish how the property or properties are identified: 
+Three different methods exist mainly to distinguish how the property or properties are identified:
 * `setPropertyValueSingle` is used only if a specific property is to be identified exactly by name
 * `setPropertyValue` can use the `*` wildcard represent any character(s) in the property name
 
@@ -34,7 +34,7 @@ The `getPropertyValue` method works in the opposite way that `setPropertyValueSi
 will return a 1 or 0 (for true or false), but that value isn't visible at the console.  In order to see the return value, enclose the command inside the `printInfo` command, like so:
 `openspace.printInfo(openspace.getPropertyValue("Scene.EarthTrail.Renderable.Enabled"))`
 
-At the bottom of the screen the 0 or 1 value will be visible in an Info message.
+At the bottom of the screen, the 0 or 1 value will be visible in an Info message.
 
 ### Examples
 The following examples work with the default solar system scene.
@@ -74,7 +74,7 @@ Each command/script that is run in the software during a session shows up in the
 openspace.setPropertyValueSingle("Scene.Earth.Renderable.Enabled", false)
 ```
 
-Note that the script log file is cleared and overwritten on every startup.  
+Note that the script log file is cleared and overwritten on every startup.
 
-The script log can be useful when trying to figure out how to achieve a certain visul effect with scripting, or find the identifier to a access a certain property (e.g. `"Scene.Earth.Renderable.Enabled"` above). A common approach is to first get the visual appearance wanted using the settings in the UI, and then collecting the commands to achieve that appearance from the ScriptLog.txt file.
+The script log can be useful when trying to figure out how to achieve a certain visual effect with scripting, or find the identifier to access a certain property (e.g. `"Scene.Earth.Renderable.Enabled"` above). A common approach is to first get the visual appearance wanted using the settings in the UI, and then collect the commands to achieve that appearance from the ScriptLog.txt file.
 
