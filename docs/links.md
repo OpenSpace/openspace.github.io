@@ -7,7 +7,7 @@ nav_order: 7
 
 # Links
 {: .no_toc }
-Links for for the OpenSpace sofware, documentation, data, everything.
+Links for the OpenSpace software, documentation, data, everything.
 
 ## Table of contents
 {: .no_toc .text-delta }

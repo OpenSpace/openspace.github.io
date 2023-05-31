@@ -13,7 +13,7 @@ The satellite data included in OpenSpace comes from service [Celestrak](https://
 
 ## Satellites in the 'default' Profile
 
-Satellites in the default scene can be activated with the 's' hotkey, or the 'Toggle Satellites' shorcut. They can also be found in the Scene menu under Solar System->Planets->Earth->Satellites. Below is a listing of the ones included in the default scene.
+Satellites in the default scene can be activated with the 's' hotkey, or the 'Toggle Satellites' shortcut. They can also be found in the Scene menu under Solar System->Planets->Earth->Satellites. Below is a listing of the ones included in the default scene.
 
 | Menu name | Celestrak category | Description |
 | --- | ----------- | ------- |

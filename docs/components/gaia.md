@@ -210,7 +210,7 @@ A smaller value for _MaxStarsPerNode_ is better for data uploads to the GPU whil
 
 
 ### 4. Run in OpenSpace
-To render Gaia stars in OpenSpace first make sure that the correct scene is used.  This is done by setting `Asset = "gaia"` in openspace.cfg.  The scene is then defined in data/assets/gaia.scene.  Here you can define if anything else should be rendered in OpenSpace.  By default, the full digital Universe catalog will be included as well as the Sun, Earth, Moon, a model of the Gaia spacecraft and its trail.
+To render Gaia stars in OpenSpace first make sure that you start the program using the gaia profile. By default, this profile also includes the full digital Universe catalog, as well as the Sun, Earth, Moon, a model of the Gaia spacecraft and its trail.
 
 Which stars to render can be changed in data/assets/scene/milkyway/gaia/gaiamission.asset.  By default, the official radial velocity dataset will be downloaded and rendered.  That dataset consists of the 7.2 million stars that were released with any radial velocity in DR2. Its size is 335 MB and it is stored in ~3k files.
 
