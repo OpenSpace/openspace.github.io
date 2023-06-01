@@ -54,9 +54,9 @@ This breaking change is also applied to the RenderableModelProjection. For examp
       GeometryFile = models .. "/67P_rotated_5_130.obj",
       ColorTexture = textures .. "/gray.jpg"
     },
-    Projection
-    ...
+    Projection ...
   },
+  ...
 ~~~
 
 Now it is specified as:
@@ -65,9 +65,9 @@ Now it is specified as:
   Renderable = {
     Type = "RenderableModelProjection",
     GeometryFile = models .. "67P_rotated_5_130.obj",
-    Projection
-    ...
+    Projection ...
   },
+  ...
 ~~~
 
 ## Models

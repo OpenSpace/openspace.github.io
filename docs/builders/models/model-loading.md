@@ -19,7 +19,6 @@ To load a model into OpenSpace you will need to create a new asset file. To lear
     GeometryFile = modelPath .. "BoxAnimated.glb",
     LightSources = { sun.LightSource }
   }
-
   ...
 ~~~
 
@@ -45,7 +44,6 @@ If your model does not show up in OpenSpace and you are sure that you have done 
 
 ~~~lua
   ...
-
   Renderable = {
     Type = "RenderableModel",
     GeometryFile = model .. "Juno.obj",
@@ -53,7 +51,6 @@ If your model does not show up in OpenSpace and you are sure that you have done 
     ModelTransform = RotationMatrix,
     LightSources = { sun.LightSource }
   },
-
   ...
 ~~~
 

@@ -11,10 +11,8 @@ nav_order: 3
 If a model looks too big or too small in OpenSpace, there are two different keys that can be used in the asset file to correct it. If the model is bigger than what is anticipated, then use the key <code>ModelScale</code> with a unit of scaling (often <code>"Centimeter"</code>) such as: 
 
 ~~~lua
-  ...
   GeometryFile = models .. "/ISS.fbx",
   ModelScale = "Centimeter",
-  ...
 ~~~
 
 This unit comes from the software that the model originally was created in. Usually, the exact value for this is hard to find, so unfortunately this is a matter of trial and error to find the right one. Here is a list of all the available units:
@@ -39,11 +37,9 @@ This unit comes from the software that the model originally was created in. Usua
 If instead, the model looks smaller than intended, then use the key <code>InvertModelScale = true</code> together with the previous key to invert the scaling and scale the model up instead of down, such as:
 
 ~~~lua
-  ...
   GeometryFile = model .. "/JWSTFBX.osmodel",
   ModelScale = "Foot",
   InvertModelScale = true,
-  ...
 ~~~
 
 For more information read the following two sections, but for the most common cases, the tips above should be enough to get a correct scaling. The following text is more complicated and goes more in-depth into both cases.
@@ -52,10 +48,8 @@ For more information read the following two sections, but for the most common ca
 OpenSpace expects the models to be in the unit Meter, however, there are many models that are developed in a different unit, for example, Centimeters or Feet. Previously this scaling problem has been solved by applying a <code>StaticScale</code> to the model. In the release 0.17.0 there is a new tool that makes this easier. If you are aware that your model has been developed in Centimeters, or any other unit than Meters, you can specify that in the asset file with the key <code>ModelScale</code>:
 
 ~~~lua
-  ...
   GeometryFile = models .. "/ISS.fbx",
   ModelScale = "Centimeter",
-  ...
 ~~~
 
 This will make OpenSpace interpret every unit in the model as Centimeters instead of Meters. If this scale would **not** be applied then every Centimeter in the model would be interpreted as Meters, and this would make the model look 100 times bigger than intended. So with the <code>ModelScale</code> the model is scaled down with the specified unit.
