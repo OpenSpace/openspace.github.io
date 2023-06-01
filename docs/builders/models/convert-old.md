@@ -8,66 +8,72 @@ nav_order: 3
 ---
 
 # Breaking change in 0.17.0: Model Loading
-The model loading in OpenSpace has been updated to support models with multiple parts, materials, and textures. This update unfortunately means that previous asset files with models need to be updated. Note that this feature was added in release 0.17.0.
+In release 0.17.0, the model loading in OpenSpace was updated to support models with multiple parts, materials, and textures. This update unfortunately means that previous asset files with models need to be updated.
 
 Previously a model was specified in an asset file as a <code>Geometry</code> with a <code>Type</code>, <code>GeometryFile</code>, and a <code>ColorTexture</code>. Now it is just specified with a <code>GeometryFile</code>, there is no need for a <code>ColorTexture</code> since this information will be read from the model. This may mean that the models that have previously been used might need to be exchanged or updated to properly work with the new model loading system, more on that later.
 
 ## Examples
 How the Renderable for the Juno spacecraft was specified before:
 ~~~lua
-    local sun = asset.require('scene/solarsystem/sun/sun')
-
-    Renderable = {
-        Type = "RenderableModel",
-        Geometry = {
-            Type = "MultiModelGeometry",
-            GeometryFile = model .. "/Juno.obj",
-            ColorTexture =  textures .. "/gray.png"
-        },
-        ModelTransform = RotationMatrix,
-        LightSources = { sun.LightSource }
+  ...
+  Renderable = {
+    Type = "RenderableModel",
+    Geometry = {
+      Type = "MultiModelGeometry",
+      GeometryFile = model .. "/Juno.obj",
+      ColorTexture =  textures .. "/gray.png"
     },
+    ModelTransform = RotationMatrix,
+    LightSources = assetHelper.getDefaultLightSources(sunTransforms.SolarSystemBarycenter.Identifier)
+  },
+  ...
 ~~~
 
 How the Renderable for the Juno spacecraft is specified now:
 ~~~lua
-    local sun = asset.require('scene/solarsystem/sun/sun')
+  ...
+  local sun = asset.require('scene/solarsystem/sun/sun')
 
-    Renderable = {
-        Type = "RenderableModel",
-        GeometryFile = model .. "Juno.obj",
-        ModelTransform = RotationMatrix,
-        LightSources = { sun.LightSource }
-    },
+  Renderable = {
+    Type = "RenderableModel",
+    GeometryFile = model .. "Juno.obj",
+    ModelTransform = RotationMatrix,
+    LightSources = { sun.LightSource }
+  },
+  ...
 ~~~
 
 ## RenderableModelProjection
-This breaking change is also applied to the RenderableModelProjection, for example in the Rosetta profile the model for 67P Churymov-Gerasimenkou was previously specified as:
+This breaking change is also applied to the RenderableModelProjection. For example, in the Rosetta profile the model for 67P Churymov-Gerasimenkou was previously specified as:
 ~~~lua
-    Renderable = {
-        Type = "RenderableModelProjection",
-        Geometry = {
-            Type = "MultiModelGeometry",
-            GeometryFile = models .. "/67P_rotated_5_130.obj",
-            ColorTexture = textures .. "/gray.jpg"
-        },
-        Projection ...
+  ...
+  Renderable = {
+    Type = "RenderableModelProjection",
+    Geometry = {
+      Type = "MultiModelGeometry",
+      GeometryFile = models .. "/67P_rotated_5_130.obj",
+      ColorTexture = textures .. "/gray.jpg"
     },
+    Projection
+    ...
+  },
 ~~~
 
 Now it is specified as:
 ~~~lua
-    Renderable = {
-        Type = "RenderableModelProjection",
-        GeometryFile = models .. "67P_rotated_5_130.obj",
-        Projection ...
-    },
+  ...
+  Renderable = {
+    Type = "RenderableModelProjection",
+    GeometryFile = models .. "67P_rotated_5_130.obj",
+    Projection
+    ...
+  },
 ~~~
 
 ## Models
 As you may have noticed there is no need to specify the ColorTexture as before. Instead, this information will be read from the model itself, which may mean that your old models need to be updated or exchanged. This depends very much on what kind of model you are using but in general, there are two different ways to update the old model:
 
-* Embed the material or texture to the model.
+* Embed the material or texture in the model.
 
 * Define a material file (.mtl) and link it to your model.
 
