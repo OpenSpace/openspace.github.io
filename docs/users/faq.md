@@ -3,7 +3,7 @@ title: Frequenty Asked Questions
 layout: default
 
 parent: Users
-nav_order: 7
+nav_order: 6
 ---
 
 # Linux

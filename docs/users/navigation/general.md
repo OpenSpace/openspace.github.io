@@ -5,7 +5,7 @@ layout: default
 parent: Users
 has_children: true
 has_toc: false
-nav_order: 3
+nav_order: 2
 ---
 
 Pages covering navigation in space and time
