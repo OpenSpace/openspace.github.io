@@ -4,7 +4,7 @@ layout: default
 
 grand_parent: Builders
 parent: Models
-nav_order: 3
+nav_order: 1
 ---
 
 # How to load a model into OpenSpace
