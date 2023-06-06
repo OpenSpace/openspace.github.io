@@ -16,141 +16,102 @@ Resources are files that can be loaded as data into OpenSpace. A resource can fo
 
 # Local resources
 
-To load a local resource into OpenSpace you need to specify a `path` to the file so that OpenSpace will know where it is located.
+To load a local resource into OpenSpace you need to tell OpenSpace where the file is located. You can do this in two different ways depending on if your file is located in the same folder as the asset.
 
-## What are paths?
+The recommended method is to place the resource in the same folder as the asset as it makes it easier to share assets with others.
 
-Consider this file structure:
-![A folder with a file](./images/path_folder.png)
+## If your resource is in the same folder as the asset
 
-These are examples of paths to the file `myfile.txt`:
+If your asset file and resource are in the same folder you can include the resource by writing `asset.localResource("filename.fileextension")`. In the example below, it would be:
 
-1. `C:/Users/yourname/Desktop/Documents/myfile.txt`
-1. `./myfile.txt`
+```
+asset.localResource("myVideo.mp4")
+```
 
-The first path is an **absolute path**. That means that the beginning of the path starts with one of your hard drives, usually `D:/` or `C:/`.
+![An asset and a file in the same folder](/assets/images/asset_path.png)
 
-The second path is a **relative path**. A relative path means that the path is relative to the folder it is in. It starts with `./` to specify "the current folder".  In general, we recommend using relative paths where ever possible as it makes it less painful to later move asset files to another computer or share them with another user.
+Here is how the `video.asset` file above could load the video file `myVideo.mp4` in a video screen space renderable:
 
-![A file referencing another file in the same folder](./images/relative_path_folder.png)
+```
+local ScreenSpace = {
+  Identifier = "ScreenSpaceVideoExample",
+  Type = "ScreenSpaceVideo",
+  Name = "Screen Space Video Example",
+  Video = asset.localResource("myVideo.mp4")
+}
 
-For example, if you were to place a file in the folder `Documents` called `myResource.txt` you would be able to specify a relative path in the `myfile.txt` file with this relative path: `./myResource.txt`. **Important**: these files must be located in the same folder.
 
-When loading a resource in an asset, you can either use an absolute path or a relative path.
+asset.onInitialize(function()
+  openspace.addScreenSpaceRenderable(ScreenSpace)
+end)
 
-## Using paths in assets
+asset.onDeinitialize(function()
+  openspace.removeScreenSpaceRenderable(ScreenSpace)
+end)
 
-How can we write a path in an asset that loads this movie?
+asset.export(ScreenSpace)
+```
 
-![An asset and a file in the same folder](./images/asset_path.png)
+## If your resource is not located in the same folder as the asset
 
-### Absolute path
+To load a file that is located somewhere else than where your asset file is, you need to specify the **absolute path**. An absolute path tells the location of the file and usually starts with the name of the disk the file is located on, most commonly `C:/` or `D:/`. This is the absolute path for the movie in the image above:
 
-**Note**: paths in OpenSpace can only use forward slash `/`, never backward slash `\`.
+```
+"C:/Users/yourname/Desktop/Documents/myVideo.mp4"
+```
 
-For the absolute path, you can copy the text file explorer (see the cursor in the above image) and then add the filename. If your path contains backward slashes `\` you need to swap them out to forward slashes `/`. Then you need to surround the path with quotation marks.
+To find the absolute path, you can copy the text in the search field in the file explorer and then add the filename. You can also right-click on the file and click `Properties`, which opens a window where the path should be displayed.
 
-Here is the absolute path for the movie above: `"C:/Users/yourname/Desktop/Documents/myVideo.mp4"`.
+1. The path must only contain forward slashes `/`, not backwards slashes `\`. If your path contains backward slashes, just change them to forward slashes.
+2. The path must be surrounded by quotation marks.
 
 Here is an example of an asset where an absolute path is used for the `Video` property:
 
-```lua
-local layer = {
-  Identifier = "ExampleVideoLocal",
-  Video = "C:/Users/yourname/Desktop/Documents/myVideo.mp4",
-  Name = "Example Video Local",
-  Enabled = true,
-  Type = "VideoTileLayer"
+```
+local ScreenSpace = {
+  Identifier = "ScreenSpaceVideoExample",
+  Type = "ScreenSpaceVideo",
+  Name = "Screen Space Video Example",
+  Video = "C:/Users/yourname/Desktop/Documents/myVideo.mp4"
 }
 
+
 asset.onInitialize(function()
-  openspace.globebrowsing.addLayer("Earth", "ColorLayers", layer)
+  openspace.addScreenSpaceRenderable(ScreenSpace)
 end)
 
 asset.onDeinitialize(function()
-  openspace.globebrowsing.deleteLayer("Earth", "ColorLayers", layer)
+  openspace.removeScreenSpaceRenderable(ScreenSpace)
 end)
 
-asset.export("layer", layer)
-
-asset.meta = {
-  Name = "Video Player Test",
-  Version = "1.0",
-  Description = "An example asset that shows how to include a video on Earth",
-  Author = "OpenSpace Team",
-  URL = "https://openspaceproject.com",
-  License = "MIT"
-}
+asset.export(ScreenSpace)
 ```
-
-The absolute path is set with `Video = "C:/Users/yourname/Desktop/Documents/myVideo.mp4"`.
-
-## Relative path
-
-**Note**: paths in OpenSpace can only use forward slash `/`, never backward slash `\`.
-
-To use a relative path in an asset, the file you are referencing needs to be located in the same folder as the asset file. A relative path `./myFile.txt` is recognized by OpenSpace if it is written like this: `asset.localResource("./myFile.txt")`.
-
-Here is the finished relative path for the movie above: `asset.localResource("./myVideo.mp4")`.
-
-Here is an example of the video asset with a relative path used for the `Video` property:
-
-```lua
-  local layer = {
-  Identifier = "ExampleVideoLocal",
-  Video = asset.localResource("./myVideo.mp4"),
-  Name = "Example Video Local",
-  Enabled = true,
-  Type = "VideoTileLayer"
-}
-
-asset.onInitialize(function()
-  openspace.globebrowsing.addLayer("Earth", "ColorLayers", layer)
-end)
-
-asset.onDeinitialize(function()
-  openspace.globebrowsing.deleteLayer("Earth", "ColorLayers", layer)
-end)
-
-asset.export("layer", layer)
-
-asset.meta = {
-  Name = "Video Player Test",
-  Version = "1.0",
-  Description = "An example asset that shows how to include a video on Earth",
-  Author = "OpenSpace Team",
-  URL = "https://openspaceproject.com",
-  License = "MIT"
-}
-```
-
-The relative path is set with `Video = asset.localResource("./myVideo.mp4")`.
-
-**OBS!** Note that the `asset.localResource` function actually returns the *absolute path* to that resource, based on the relative input path. When using paths as values in assets (e.g. for creating scene graph nodes or adding layers) OpenSpace always expects the absolute path to the file.
 
 # Synchronized resources
 
-There are two built-in mechanisms of resource synchronization in OpenSpace: The `HttpSynchronization` and the `UrlSynchronization`. The `HttpSynchronization` is designed to fetch versioned data from the official OpenSpace server (data.openspaceproject.com), like this:
+There are two built-in mechanisms of resource synchronizations in OpenSpace: The `HttpSynchronization` and the `UrlSynchronization`. The `HttpSynchronization` is designed to fetch versioned data from the offical OpenSpace server (data.openspaceproject.com), like this:
 
-```lua
+```
 local path = asset.syncedResource({
-  Type = "HttpSynchronization",
-  Name = "Foo"
-  Identifier = "foo",
-  Version = 1
+    Type = "HttpSynchronization",
+    Name = "Foo"
+    Identifier = "foo",
+    Version = 1
 })
 ```
 
 The UrlSynchronization can be used to fetch arbitrary data from the web.
 
-```lua
+```
 local path = asset.syncedResource({
-  Type = "UrlSynchronization",
-  Name = "Bar",
-  Identifier = "bar",
-  Url = "http://example.com/data.zip",
-  Override = true
+    Type = "UrlSynchronization",
+    Name = "Bar",
+    Identifier = "bar",
+    Url = "http://example.com/data.zip",
+    Override = true
 })
 ```
 
-The `Override` parameter can be used to force a new download even if the file has already previously been downloaded.
+While a synchronized asset can be required or requested from multiple locations, it can only declared in one location. For example, consider a synchronized asset that contains more than one file (e.g. `solarsystem/planets/jupiter/jupiter_labels.asset`). If the individual label files are used in different asset files, they must all reference the same source asset, and then append the label filename to the _jupiter_labels_ asset path. An error will occur if different synchronized assets are defined in order to request the individual label files.
+
+The `Override` paramater can be used to force a new download even if the file has already previously been downloaded.
