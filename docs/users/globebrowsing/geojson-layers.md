@@ -1,0 +1,130 @@
+---
+title: Geometry on Globes with GeoJson
+layout: default
+
+grand_parent: Users
+parent: Using GlobeBrowsing
+nav_order: 2
+---
+
+# Globe Geometry Features from GeoJson Files
+As of version 0.19.0, OpenSpace includes support for drawing geometry features on a globe based on files in the [GeoJson](https://geojson.org/) file format. GeoJson is a format for encoding geographic data structures based on 2D or 3D geographic coordinates, with latitude, longitude and an optional altitude. It supports shapes like points, lines and polygons. See the GeoJson specification for more details. It is also possible to change the appearance of the resulting features based on some predefined available properties. See [this later section](http://internal.openspaceproject.com/private/emma/wiki-drafts/geojson#customize-visual-properties) for more details
+
+Some examples of features are shown below
+
+<< TODO: INCLUDE IMAGES >>
+
+
+Each GeoJson file loads a *collection* of features, which will make up a group of rendered features in OpenSpace, that can be toggled on/off, et cetera.
+
+## Adding GeoJson features to a globe
+There are two ways of adding GeoJson features to a selected globe: either directly from a .geojson file or by specifying a table in an OpenSpace asset. Once added, all content in a GeoJson file will appear as a component under "GeoJson" in the scene menu, as part of the globe it was added to.
+
+### Creating a GeoJson asset
+
+The preferred way to load a GeoJson file is to create an asset. This lets you load the file and add it to the correct globe, already at startup. It also lets you easily customize the visual properties of the rendered feature.
+
+Adding GeoJson to a globe through an asset works very similarly to how a Globebrowsing Layer is added. An example is shown in the [Example](#example) section below.
+
+### Add directly from a file, using drag and drop
+
+If the current focus node is a globe, you can also drag and drop a GeoJson file in the OpenSpace window to add it to the currently focused node. The file's features will then be added with default values for all properties not included in the file. Under the hood, this simply calls the following Lua call, with the name of the file you dropped:
+
+```
+openspace.globebrowsing.addGeoJsonFromFile("filename.geojson")
+```
+
+
+## Customize visual properties
+The visuals of the geometry features can be customized either through properties directly in the .geojson files, or through the `DefaultProperties` property of the main component created from the asset file.
+
+The following table summarizes the available keys and properties. Note that the property identifier is also always a valid key in the GeoJson file.
+
+| Property Identifier | Accepted keys (in .geojson file) | Value                                    | Description |
+| ------------------- |--------------------------------- | ---------------------------------------- | ----------- |
+| Name                | `name`                           | string                                   | This will be the name for the feature that shows in the "Features" menu in the UI |
+| Description         | `description`                    | string                                   | (Not used anywhere right now, but will be shown in the UI in the future) |
+| Opacity             | `opacity`                        | float, [0-1]                             | The opacity that will be used for drawing lines and points |
+| Color               | `color`, `stroke`                | RGB (vec3, [0-1]) or hex value (string)  | The color that will be used for drawing lines and points. For points, the color will be blended with the color of the point texture |
+| FillColor           | `fill`, `fill-color`             | RGB (vec3, [0-1]) or hex value (string)  | The color that will be used for drawing filled polygons and extruded geometry |
+| FillOpacity         | `fill-opacity`                   | float, [0-1]                             | The opacity that will be used for drawing filled polygons and extruded geometry |
+| Extrude             | `extrude`                        | boolean (true/false)                     | If true, extrude the geometry to intersect the globe. Lines/polygons will be extruded with polygons, and points with lines |
+| AltitudeMode        | `altitudeMode`                   | string (`"absolute"` or `"relativeToGround"`) | Decides how any height values of the geo coordinates should be interpreted. "Absolute" means that the height is interpreted as the height above the reference ellipsoid, while "RelativeToGround" takes the height map into account |
+| **Points Specific**          |                   |                              |  |
+| PointSize           | `point-size`                     | float (> 0)                              | A value that will be used to decide the size of rendered points. The size will be scaled based on the bounding sphere of the globe   |
+| PointTexture        | `texture`, `sprite`, `point-texture` | string (path to a texture)           | A texture to be used for rendering points |
+| PointTextureAnchor  | `point-anchor`, `anchor`         | string (`"bottom"` or `"center"`)        | Decides the placement of the point texture in relation to the position. Default is a the bottom of the texture, but it can also be put at the center |
+
+
+### Tesselation (advanced)
+<< TODO... >>
+
+## Example
+Here is an example of a simple GeoJson file, with one single feature that has some specified properties.
+
+*lines.geojson*
+```json
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "stroke": "#e849fd",
+        "stroke-width": 2,
+        "stroke-opacity": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [[ -68.159, -16.426 ], [ -65.170, -19.062 ], [ -64.775, -21.535 ], [ -68.994, -22.391 ], [ -65.083, -15.496 ], [ -62.622, -15.665 ] ]
+      }
+    }
+  ]
+}
+```
+
+And an asset that loads the files, adds it to Earth, as well as specifies some default properties, to use for the properties that were not specified in the .geojson file
+
+*lines.asset*
+```lua
+local ExampleLines = {
+  Identifier = "Lines-Example",
+  File = "lines.geojson",
+  HeightOffset = 2000.0, -- Put the geomoetry 2000 meters higher than what's specified in the file
+  DefaultProperties = {
+    LineWidth = 2.0,
+    Extrude = true
+  },
+  Name = "Example Lines"
+}
+
+asset.onInitialize(function()
+  openspace.globebrowsing.addGeoJson("Earth", ExampleLines)
+end)
+
+asset.onDeinitialize(function()
+  openspace.globebrowsing.deleteGeoJson("Earth", ExampleLines)
+end)
+```
+
+More examples are available in the OpenSpace/data/assets/examples folder of your OpenSpace installation.
+
+## Other useful properties and settings
+In addition to the visual properties in the GeoJson files, there are also some regular OpenSpace properties that can be set for any loaded features. These can be used to navigate to a feature, change the visuals to match the projection system you are currently using, or just alter the look in general.
+
+### Automatic flying to a feature
+First, the Scene includes a buton<< TODO... >>
+
+### Alignment of points
+For points, it is possible to change how the points align themselves against the globe surface. ... < TODO >
+
+### Height offset, opacity, and scale
+<< TODO >>
+
+## Known issues
+The GeoJson support implemented in 0.19.0 is a first iteration and may be subject to changes in the future. It also includes some known issues that we intend to fix down the line. Here is a summary of those issues:
+
+* The performance of the rendering is suffering when a feature consists of a lot of triangles, or when loading files with lots of features
+* The motion generated by the "fly to" feature is currently a bit weird when flying between things on a planet surface. This will be improved in the future.
+* One remaining altitude mode to implement is "Clamp to ground", which will render the geometry as a texture on the surface and follow the height map exactly. Until that's implemented, we refer to our regular layer system (ColorLayers or Overlays) for such use cases.
+
