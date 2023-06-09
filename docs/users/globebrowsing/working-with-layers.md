@@ -8,11 +8,11 @@ nav_order: 1
 ---
 
 # Working With Layers
-This page goes through how to work with layers on a high level.  For more detail in how to create layers to be loaded or to add layers to globes see [Creating a Renderable Globe]({{ site.url }}/docs/builders/globebrowsing/creating-a-renderableglobe) and [Readable Datasets]({{ site.url }}/docs/builders/globebrowsing/readable-datasets).
+This page goes through how to work with layers on a high level.  For more detail on how to create layers to be loaded or to add layers to globes see [Creating a Renderable Globe]({{ site.url }}/docs/builders/globebrowsing/creating-a-renderableglobe) and [Readable Datasets]({{ site.url }}/docs/builders/globebrowsing/readable-datasets).
 
 ## Layer Groups
-There are five layer groups which are used for different purposes:
-- **HeightLayers** -- Elevation maps used to offset the terrain of the globe. These layers are single channeled.
+There are five layer groups that are used for different purposes:
+- **HeightLayers** -- Elevation maps used to offset the terrain of the globe. These layers are single-channeled.
 - **ColorLayers** -- Sets the texture of the globe before shading.
 - **Overlays** -- Sets the texture of the globe after shading is performed.
 - **NightLayers** -- Visible only on the night side of the globe. Mainly useful for adding city lights to Earth.
@@ -22,13 +22,13 @@ Each layer group can contain many layers which have their own separate propertie
 
 ## Layer Types
 Each layer has a fixed type:
-- **DefaultTileLayer** -- One image dataset covering the full geographic extent of the globe. 
+- **DefaultTileLayer** -- One image dataset covering the full geographic extent of the globe.
 - **SingleImageTileLayer** -- One image used for every individual tile.
 - **SizeReferenceTileLayer** -- Size reference which shows the latitudinal length of every tile in kilometers and meters.
-- **TemporalTileLayer** -- Time varying dataset which opens a new image dataset for each time interval defined for the layer.  For example, a temporal version of the VIIRS corrected reflectance dataset of Earth can be used to show the reflectance for each day. The dataset is updated when scrubbing through the global OpenSpace time.
+- **TemporalTileLayer** -- Time-varying dataset which opens a new image dataset for each time interval defined for the layer.  For example, a temporal version of the VIIRS corrected reflectance dataset of Earth can be used to show the reflectance for each day. The dataset is updated when scrubbing through the global OpenSpace time.
 - **TileIndexTileLayer** -- Displays the tile index (chunk index) of every chunk. Mainly used for debugging.
 - **ByIndexTileLayer** -- Shows specific tile layers only at specific tile indices.
-- **ByLevelTileLayer** -- One or more image datasets bound by given maximum levels.  Having different datasets for different levels makes it possible to, for example, have a cloud covered layer for Earth at low levels and replacing it with a clear image layer for higher levels.
+- **ByLevelTileLayer** -- One or more image datasets bound by given maximum levels.  Having different datasets for different levels makes it possible to, for example, have a cloud-covered layer for Earth at low levels and replace it with a clear image layer for higher levels.
 - **SolidColor** -- This layer type does not make use of tiles.  A solid color defines the resulting color.
 
 ## Tile Provider
@@ -48,7 +48,7 @@ Each layer has its own blend mode.  It defines how the layer will be blended on 
 - **Multiply** -- Multiplies the RGB components with the underlying color
 - **Add** -- Adds the RGB components to the underlying color
 - **Subtract** -- Subtracts the RGB components from the underlying color
-- **Color** -- Converts the underlying color from RGB to HDV and sets the V value from the grayscale representation of this layer, then converts back to RGB.
+- **Color** -- Converts the underlying color from RGB to HDV and sets the V value from the grayscale representation of this layer, then converts it back to RGB.
 
 ## Add or Remove Layers
 Layers can be added by calling the function `openspace.globebrowsing.addLayer()` or removed by calling the function `openspace.globebrowsing.deleteLayer()`.  See documentation for more info, also see [Creating a Renderable Globe]({{ site.url }}/docs/builders/globebrowsing/creating-a-renderable-globe.md) for information about how layers are defined as lua tables.

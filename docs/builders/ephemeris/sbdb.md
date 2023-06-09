@@ -12,44 +12,31 @@ This page covers the basics of downloading orbital data for a solar system objec
 This method differs from the JPL Horizons [page](horizons-web) in that it provides parameters that describe the orbit of an object rather than its pre-computed coordinates.  This SBDB method is best for objects that have stable, predictable orbits.
 
 # Downloading Orbital Data from the JPL Small-Body Database (SBDB)
-Browse to the JPL SBDB query page [here](https://ssd.jpl.nasa.gov/sbdb_query.cgi) and follow the instructions for each input section below.
+Browse to the JPL SBDB query page [here](https://ssd.jpl.nasa.gov/tools/sbdb_query.html) and follow the instructions for each input section below.
 
 ## Search Constraints
 There are currently just under one million Small SolarSystem Bodies (SSSB) listed in this database.  Attempting to render all of them at once would cause low rendering performance and result in "visualization overload," so some level of filtering is necessary.
 
-Under the **Step 1** header, there are a number of filtering options.  Asteroids or comets can be selected, as well as sub-groups within those classifications (e.g. main asteroid belt).  At the bottom of this section, additional filtering can be applied using object characteristics.  For example, objects of a certain size, orbital period, or inclination can be selected and combined with a logical AND/OR operation.
+Click the **Limit by Orbit Class** header to expand its contents.  Sub-groups of asteroids and/or comets (e.g. main asteroid belt) can be selected.  If desired, additional filtering can be applied using object characteristics such as size, orbital period, or inclination. Filters can be selected and combined with a logical AND/OR operation. This _advanced_ option is available under the **Custom Object/Orbit Constraints** header.
 
-## Output Fields - **Step 2**
-Select oribtal elements in the **Step 2** section in the fields selections below.  Do not select any of the "Pre-defined field sets"
+## Output Selection ##
+Click the **Output Selection Controls** header to expand this section. Do not select "Output Field Preset Selector". In the "Available Fields" box, click each of the following options to select _only_ these:
+- **[object fullname]**
+- **[epoch_cal]**  epoch of osculation in Julian day form (TDB)
+- **[e]** eccentricity
+- **[a]** semi-major axis (au)
+- **[i]** inclination; angle with respect to x-y ecliptic plane (deg)
+- **[node]** longitude of the ascending node (deg)
+- **[peri]** argument of perihelion (deg)
+- **[M]** mean anomaly (deg)
+- **[period (d)]** sidereal orbital period (d)
 
-### Object Fields
-Select only **object full name/designation**
+When all are selected, click the **add->** button to add them to the "Output Fields" box. Make sure that the order inside this box is exactly the same as listed above.
 
-### Orbital and Model Parameter Fields
-Multi-select (CTRL+mouse clicks) the following fields:
-- **epoch of osculation in calendar date/time form (TDB)**
-- **[e] eccentricity**
-- **[a] semi-major axis (au)**
-- **[i] inclination; angle with respect to x-y ecliptic plane (deg)**
-- **longitude of the ascending node (deg)**
-- **argument of perihelion (deg)**
-- **[M] mean anomaly (deg)**
-- **sidereal orbital period (d)**
+Finally, enable the "Full Precision" checkbox.
 
-## Output Fields - **Step 3**
-Click the **Append Selected** button, at which point a list will appear with labels for steps 4 and 5.  Verify that the list contains *only* these elements *in this exact order* (use the up/down buttons to adjust the order if necessary):
-- **object fullname**
-- **epoch (TDB)**
-- **e**
-- **a (au)**
-- **i (deg)**
-- **node (deg)**
-- **peri (deg)**
-- **M (deg)**
-- **period (d)**
-
-## Format Options
-Select the **CSV download** option, and then click the **Generate Table** button.  The .csv file will then be automatically downloaded by the browser.
+## Generate Output
+Click "Get Results" button, and then the "Download (CSV-format)" button to save as a .csv file locally.
 
 # Data Usage
 This wiki covers the scenario where an asset file references a data file served by one of the OpenSpace sync servers.  At runtime, the file will be downloaded if a local copy does not already exist.  This requires the file generated in the above steps to be uploaded to an OpenSpace sync server by one of the project's server administrators.
@@ -70,9 +57,9 @@ assetHelper.registerSceneGraphNodesAndExport(asset, { object })
 ```
 The `util/asset_helper` file provides utilities and is included in almost all assets.  The `sssb_shared` file provides the functionality necessary to configure the object in a format that can be interpreted by OpenSpace as a scenegraph node.
 
-The `downloadSssbDatabaseFile` function sets up a reference to an http-synchronized file which will be downloaded from the sync server mentioned previously.  The 2nd argument is just a name, but the final argument needs to match the corresponding entry stored at the sync server.  The `createSssbGroupObject` is also provided by the `sssb_shared` file, and it creates a Lua table in the format expected of a scenegraph node.  T he 1st argument is the exact filename that will be stored in the local sync folder as a result of the download step above.  The final argument is the RGB color of its orbital trail.
+The `downloadSssbDatabaseFile` function sets up a reference to an HTTP-synchronized file which will be downloaded from the sync server mentioned previously.  The 2nd argument is just a name, but the final argument needs to match the corresponding entry stored at the sync server.  The `createSssbGroupObject` is also provided by the `sssb_shared` file, and it creates a Lua table in the format expected of a scenegraph node. The 1st argument is the exact filename that will be stored in the local sync folder as a result of the download step above.  The final argument is the RGB color of its orbital trail.
 
-In this example the renderable will not be enabled by default, but can of course be enabled manually in the GUI or console.  As the function name implies, the final call to `registerSceneGraphNodesAndExport` completes the process and registers this asset as a scenegraph node in OpenSpace.
+In this example, the renderable will not be enabled by default, but can of course be enabled manually in the GUI or console.  As the function name implies, the final call to `registerSceneGraphNodesAndExport` completes the process and registers this asset as a scenegraph node in OpenSpace.
 
 # Add the Asset to OpenSpace
 The final step is to simply add this asset to OpenSpace for rendering.  This can be done by either:

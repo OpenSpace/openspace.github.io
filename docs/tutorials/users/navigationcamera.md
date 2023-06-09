@@ -24,7 +24,7 @@ This section will cover controlling the camera in OpenSpace using a mouse and ke
 
 ## Zoom
  - Use the right mouse button and drag to zoom closer or further away from your target.
- - Dragging down will zoom away, dragging up will zoom closer.
+ - Dragging down will zoom away, and dragging up will zoom closer.
  - How far you drag the mouse will determine how fast the camera moves.
  - To zoom quickly, press and hold the 'Z' key.
 

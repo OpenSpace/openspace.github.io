@@ -6,7 +6,7 @@ parent: Components
 nav_order: 8
 ---
 
-The `RenderableStars` class requires a few different data variables in the SPECK file. The mapping between internal name and the name of the variable in the SPECK file can be specified in the `.asset` file.  The combination of selected rendering parameter determine which values are necessary:
+The `RenderableStars` class requires a few different data variables in the SPECK file. The mapping between the internal name and the name of the variable in the SPECK file can be specified in the `.asset` file.  The combination of selected rendering parameter determines which values are necessary:
 
 | Size Composition             | Color Option  | Required Data Value |
 | ---------------------------- | ------------- | ------------------- |

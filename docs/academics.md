@@ -53,6 +53,6 @@ Academic works that are related to OpenSpace.
 </table>
 
 ## Contact
-For questions or inquries about thesis works please reach out over e-mail to exjobb@openspaceproject.com. 
+For questions or inquiries about thesis works please reach out over e-mail to exjobb@openspaceproject.com.
 
 For contact about research: research@openspaceproject.com

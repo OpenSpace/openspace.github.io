@@ -7,7 +7,7 @@ nav_order: 1
 ---
 
 # Releases
-OpenSpace versions labeled by a version number of the form `MM.mm.rr`,  where `MM` is the major version number, `mm` is the minor version number, and `rr` is the release number (see [Semantic Versioning](https://semver.org)).  In some cases there may be an additional number at the end, `MM.mm.rr.bb`, where bb is the build number, but that will only be for development and testing, not for public release.
+OpenSpace versions are labeled by a version number of the form `MM.mm.rr`,  where `MM` is the major version number, `mm` is the minor version number, and `rr` is the release number (see [Semantic Versioning](https://semver.org)).  In some cases there may be an additional number at the end, `MM.mm.rr.bb`, where bb is the build number, but that will only be for development and testing, not for public release.
 
 1. TOC
 {:toc}
@@ -17,7 +17,7 @@ As development proceeds, some versions get tagged with names.  This table indica
 
 | Version | _Name_ | _Date_ | _Description_ |
 | ------- | ------ | ------ | - |
-| 0.18.2 | Beta-11 | 2022-12-24 | This is a second patch release for the eleventh beta release | 
+| 0.18.2 | Beta-11 | 2022-12-24 | This is a second patch release for the eleventh beta release |
 | 0.18.1 | Beta-11 | 2022-11-22 | This is a patch release for the eleventh beta release |
 | 0.18.0 | Beta-11 | 2022-05-06 | This is the eleventh beta release and the first in 2022 |
 | 0.17.2 | Beta-10 | 2021-08-27 | This is a patch release for the tenth beta that addresses an issue with Earth terrain |
@@ -126,7 +126,7 @@ As development proceeds, some versions get tagged with names.  This table indica
 
 ## Features
 ### SkyBrowser
-This feature brings high-resolution astronomical images from the [AAS Worldwide Telescope](https://worldwidetelescope.org) into OpenSpace. The location of a selected image is shown in the 3D view inside of OpenSpace. 
+This feature brings high-resolution astronomical images from the [AAS Worldwide Telescope](https://worldwidetelescope.org) into OpenSpace. The location of a selected image is shown in the 3D view inside of OpenSpace.
 
 ### Camera paths (Fly-To)
 This feature adds the ability to automatically fly the camera between different objects and between different navigation states. Currently, this feature only works when the time in OpenSpace is paused. A "Fly-to" or "Zoom-to" path will automatically pause the time and unpause it (if it was unpaused before) after completing the flight. Additionally, this feature enables the use of "Idle behaviors" that can either be triggered manually or by completing a Fly-to or Zoom-to flight that will make the camera do something interesting until the user interacts with the system again.

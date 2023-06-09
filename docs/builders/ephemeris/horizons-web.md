@@ -9,12 +9,12 @@ nav_order: 1
 
 This covers the basics of downloading ephemeris data for a solar system object from JPL Horizons web page in the proper format for OpenSpace, and then configuring a renderable asset for it.  This document only applies to an object in the solar system, using the Sun as the origin.
 
-Since version 0.18.0 of OpenSpace there is a feature to download Horizons data directly in the OpenSpace launcher, for more information check [Download Horizons data via OpenSpace](horizons-gui).
+Since version 0.18.0 of OpenSpace, there is a feature to download Horizons data directly in the OpenSpace launcher, for more information check [Download Horizons data via OpenSpace](horizons-gui).
 
 This method differs from the JPL Small SolarSystem Body Database ([SBDB page](sbdb)) in that it provides pre-computed coordinates in a specified time window.  The SBDB method provides orbital characteristics that are used to compute the position without a time window restriction.  Objects with irregular orbits must use this Horizons method.
 
 # Downloading Ephemeris Data from JPL Horizons Site
-Browse to the Horizons page (https://ssd.jpl.nasa.gov/horizons.cgi).  Follow instructions for each input section below.
+Browse to the Horizons page (https://ssd.jpl.nasa.gov/horizons.cgi).  Follow the instructions for each input section below.
 
 ## Ephemeris Type
 Click the box to the right of the text and select **Vector Table** or **Observer Table**.  OpenSpace supports both of these options but we recommend you to use **Vector Table**.

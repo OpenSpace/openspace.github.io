@@ -15,4 +15,4 @@ Here you will find tutorials on the basics of using OpenSpace, including:
  - Navigating in the software
  - Built-in window configurations
  - Advanced controls
- - How to find and enable different datasets 
+ - How to find and enable different datasets

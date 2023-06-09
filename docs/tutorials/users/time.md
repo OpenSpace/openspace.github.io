@@ -32,7 +32,7 @@ This section will cover the various aspects of manipulating time in OpenSpace.
 ## Interpolate vs Instant Time Change
  - When changing the date, the rate of time change, or pausing time, the change will be interpolated so as not to 'jump' the camera.
  - The number of seconds it will take to interpolate can be set under Settings -> Time Manager, where there are individual settings for the time change, rate of time change, and pausing.
- - Various UI elements, lua scripts, and keyboard shortcuts will let you make these changes 'instantly' without the interpolation. 
+ - Various UI elements, Lua scripts, and keyboard shortcuts will let you make these changes 'instantly' without the interpolation.
 
 ## Default Keyboard Shortcuts for Time
  - Space bar will pause time (slowing it down to a pause over 0.5 seconds)
@@ -41,7 +41,7 @@ This section will cover the various aspects of manipulating time in OpenSpace.
  - The left arrow key will decrease the rate of time (decreasing over 0.5 seconds).
  - Shift + the arrow keys will increase/decrease the rate of time immediately.
  - The number keys will set increasing specific rates of time.
- - ALT / option + number keys will set a decreasing negative rates of time.
+ - ALT / option + number keys will set decreasing negative rates of time.
 
 
 ## Video

@@ -8,7 +8,7 @@ nav_order: 2
 ---
 
 # Creating a Renderable Globe
-The renderable globe is a type of OpenSpace renderable which can be used for all types of elliptically shaped celestial bodies such as planets, moons, and stars.
+The renderable globe is a type of OpenSpace renderable that can be used for all types of elliptically shaped celestial bodies such as planets, moons, and stars.
 
 The lua table below shows a definition of a simple RenderableGlobe as a Renderable which can be set for a given scene graph node.
 
@@ -35,7 +35,7 @@ Renderable = {
 ```
 
 ## Defining Layers
-Let's look closer in to what properties can be set for each layer.  In the above example we created a simple layer and put it in the **ColorLayers** layer group.  A layer is defined by a lua table such as the mentioned example:
+Let's look closer in to what properties can be set for each layer.  In the above example, we created a simple layer and put it in the **ColorLayers** layer group.  A layer is defined by a Lua table such as the mentioned example:
 ```lua
 {
     Name = "SimpleTexture", -- Unique name
@@ -44,7 +44,7 @@ Let's look closer in to what properties can be set for each layer.  In the above
     Enabled = true, -- Defaults to false if not set
 },
 ```
-These layers can be put in to any of the layer groups, they will be interpreted differently for the rendering.  Depending on the **Type** of the layer, some properties are different.  First, lets look at the properties that are used for all layer types.
+These layers can be put in to any of the layer groups, they will be interpreted differently for the rendering.  Depending on the **Type** of the layer, some properties are different.  First, let's look at the properties that are used for all layer types.
 
 ### None Type Dependent Properties
 * **Name** -- A **string** defining the name of the layer.  For each layer group and each layer, this must be unique.

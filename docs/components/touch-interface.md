@@ -6,12 +6,12 @@ parent: Components
 nav_order: 3
 ---
 
-The touch module provides support for a touch screen interface that uses the TUIO framework (https://www.tuio.org/), which is a common protocol/API for multitouch devices.
+The touch module provides support for a touch-screen interface that uses the TUIO framework (https://www.tuio.org/), which is a common protocol/API for multitouch devices.
 
 ## INSTALL
 Three main things are needed:
-1. **OpenSpace with built-in touch support:**  The build and/or install of OpenSpace is covered [here](https://github.com/OpenSpace/OpenSpace/wiki/Compiling).  The one important detail to add for touch is to enable `OPENSPACE_MODULE_TOUCH` in CMake.  It will be necessary to build OpenSpace from source with this module enabled, rather than using a pre-built binary (which as of this writing most likely does not have the touch module built-in).
-2. **TUIO Server:**  This is an executable separate from OpenSpace.  It was built by Jonathan Bosson (the original developer for the touch interface).  A few modifications were made to the "stock" build in order to get it to "hook" with the OpenSpace process.  Unfortunately the source code for this build was not kept, but was based on [this repository](https://github.com/vialab/Touch2Tuio/tree/master/TouchHook).  Currently the TUIO Server binary files work fine for our purposes, and reside on the touch table (C:/OpenSpaceTouch/tuioServer).  Gene Payne also has a copy.
+1. **OpenSpace with built-in touch support:**  The build and/or installation of OpenSpace is covered [here](https://github.com/OpenSpace/OpenSpace/wiki/Compiling).  The one important detail to add for touch is to enable `OPENSPACE_MODULE_TOUCH` in CMake.  It will be necessary to build OpenSpace from source with this module enabled, rather than using a pre-built binary (which as of this writing most likely does not have the touch module built-in).
+2. **TUIO Server:**  This is an executable separate from OpenSpace.  It was built by Jonathan Bosson (the original developer for the touch interface).  A few modifications were made to the "stock" build in order to get it to "hook" with the OpenSpace process.  Unfortunately, the source code for this build was not kept, but was based on [this repository](https://github.com/vialab/Touch2Tuio/tree/master/TouchHook).  Currently, the TUIO Server binary files work fine for our purposes and reside on the touch table (C:/OpenSpaceTouch/tuioServer).  Gene Payne also has a copy.
 3. **Script to run both software components together:**  The developer stated that:
 > The touchServer finds the process ID by string name (OpenSpace), so to get it to work you'll have to run it after OpenSpace has started. Finding the process ID can by iffy sometimes (either take time or fail), the most fool-proof way to do it is to launch touchServer.exe directly after OpenSpace.exe (while OpenSpace is loading).  You'll know it's working when the console window of the touchServer.exe steals OpenSpace's console window.  There should also be console outputs that describe the status.
 
@@ -38,10 +38,10 @@ On windows, a batch file runs both OpenSpace and the touch server at the same ti
 |3 finger move | pan the camera around, away from the focus node (disabled by default; needs to be enabled in F3 menu in order to use)|
 |1 finger double-tap (tap same spot twice within 0.5 seconds) |<ul><li>If tap is located on an object, it will be set as the camera's new focus node</li><li>If tap is in empty space, the camera will do a quick zoom-in action</li><li>If tap is in the lower-right corner of the screen, the camera will do a quick zoom-out action</li></ul>|
 
-There are two main modes of touch interface control: Normal and Direct-Touch.  Normal mode operates as described above, but Direct-Touch mode activates when the camera is brought close to the surface of the focus node object.  In this mode, the gesture control is similar, but movement or rotation of the planet is directly proportional to the actual movement of the finger, as if there was direct connection between the fingertip and planet surface.  Double-tap does not work in direct-touch mode.  Zooming-out away from the planet will cause a switch back to normal touch mode.
+There are two main modes of touch interface control: Normal and Direct-Touch.  Normal mode operates as described above, but Direct-Touch mode activates when the camera is brought close to the surface of the focus node object.  In this mode, the gesture control is similar, but the movement or rotation of the planet is directly proportional to the actual movement of the finger, as if there was a direct connection between the fingertip and planet's surface.  Double-tap does not work in direct-touch mode.  Zooming out away from the planet will cause a switch back to normal touch mode.
 
 ### Menu Control
-It is necessary to press F3 on the keyboard to bring up the on-screen menu (as well as hiding).  There is also an additional menu component that toggles with F2.  Once visible, the touch interface can be used to manipulate the menu controls.
+It is necessary to press F3 on the keyboard to bring up the on-screen menu (as well as hide).  There is also an additional menu component that toggles with F2.  Once visible, the touch interface can be used to manipulate the menu controls.
 
 ## BASIC DESCRIPTION OF SOURCE CODE
 Upon initialization, the touch module registers its callback functions with the OpenSpaceEngine component:
@@ -58,7 +58,7 @@ This class renders a visible marker (currently a transparent red circle) with ea
 ### TouchInteraction
 This class interprets the touch events as gestures and determines the resulting interaction in OpenSpace.
 With each `PreSync` call, the following calls to `TouchInteraction` are made:
-  * `setCamera` (just set pointer to OpenSpaceEngine's navigation handler camera)
+  * `setCamera` (just set the pointer to OpenSpaceEngine's navigation handler camera)
   * `setFocusNode` (just set pointer to OpenSpaceEngine's navigation handler focus node)
   * `updateStateFromInput` (if new touch events have occurred)
   * `resetAfterInput` (if all touch events have been handled, touch properties are reset for the next gesture)

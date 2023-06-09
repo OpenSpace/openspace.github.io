@@ -4,7 +4,7 @@ layout: default
 
 has_children: true
 has_toc: false
-nav_order: 4
+nav_order: 3
 ---
 
 # Users
@@ -15,6 +15,7 @@ nav_order: 4
     - [Navigation](getting-started/navigation)
     - [Hardware requirements](getting-started/hardware-requirements)
 - [Release notes](release-notes/index)
+  - [v0.18.0](release-notes/v0180)
   - [v0.17.0](release-notes/v0170)
   - [v0.16.1](release-notes/v0161)
   - [v0.16.0](release-notes/v0160)
