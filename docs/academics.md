@@ -16,7 +16,7 @@ Academic works that are related to OpenSpace.
 
 ## Papers
 <ul>
-{% assign sorted_papers = (site.papers | sort: 'date') | reverse %}
+{% assign sorted_papers = site.papers | sort: 'date' | reverse %}
 {% for paper in sorted_papers %}
   <li>
     {{paper.title}}, <i>{{paper.authors}}</i>, {{paper.journal}}, <b>{{paper.year}}</b>
@@ -36,7 +36,7 @@ Academic works that are related to OpenSpace.
     <th>Title</th>
     <th>Thesis</th>
   </tr>
-{% assign sorted_theses = (site.theses | sort: 'date') | reverse %}
+{% assign sorted_theses = site.theses | sort: 'date' | reverse %}
 {% for thesis in sorted_theses %}
   <tr>
     <td>{{thesis.year}}</td>
