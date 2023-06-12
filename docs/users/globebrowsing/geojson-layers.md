@@ -8,14 +8,13 @@ nav_order: 2
 ---
 
 # Globe Geometry Features from GeoJson Files
-As of version 0.19.0, OpenSpace includes support for drawing geometry features on a globe based on files in the [GeoJson](https://geojson.org/) file format. GeoJson is a format for encoding geographic data structures based on 2D or 3D geographic coordinates, with latitude, longitude and an optional altitude. It supports shapes like points, lines and polygons. See the GeoJson specification for more details. It is also possible to change the appearance of the resulting features based on some predefined available properties. See [this later section](http://internal.openspaceproject.com/private/emma/wiki-drafts/geojson#customize-visual-properties) for more details
+As of version 0.19.0, OpenSpace includes support for drawing geometry features on a globe based on files in the [GeoJson](https://geojson.org/) file format. GeoJson is a format for encoding geographic data structures based on 2D or 3D geographic coordinates, with latitude, longitude and an optional altitude. It supports shapes like points, lines and polygons. See the GeoJson specification for more details. It is also possible to change the appearance of the resulting features based on some predefined available properties. See [this later section](#customize-visual-properties) for more details.
 
-Some examples of features are shown below
+Some examples of features are shown below.
 
-<< TODO: INCLUDE IMAGES >>
+![geojson examples](./images/geojson/geojson_examples.jpg)
 
-
-Each GeoJson file loads a *collection* of features, which will make up a group of rendered features in OpenSpace, that can be toggled on/off, et cetera.
+Each GeoJson file loads a *collection* of features, which will make up a group of rendered features in OpenSpace, that can be toggled on/off, et cetera. In OpenSpace, the contents of a file are loaded into one property owner that will show up under the globe in the user interface, under "GeoJson".
 
 ## Adding GeoJson features to a globe
 There are two ways of adding GeoJson features to a selected globe: either directly from a .geojson file or by specifying a table in an OpenSpace asset. Once added, all content in a GeoJson file will appear as a component under "GeoJson" in the scene menu, as part of the globe it was added to.
@@ -49,12 +48,41 @@ The following table summarizes the available keys and properties. Note that the 
 | FillColor           | `fill`, `fill-color`             | RGB (vec3, [0-1]) or hex value (string)  | The color that will be used for drawing filled polygons and extruded geometry |
 | FillOpacity         | `fill-opacity`                   | float, [0-1]                             | The opacity that will be used for drawing filled polygons and extruded geometry |
 | Extrude             | `extrude`                        | boolean (true/false)                     | If true, extrude the geometry to intersect the globe. Lines/polygons will be extruded with polygons, and points with lines |
-| AltitudeMode        | `altitudeMode`                   | string (`"absolute"` or `"relativeToGround"`) | Decides how any height values of the geo coordinates should be interpreted. "Absolute" means that the height is interpreted as the height above the reference ellipsoid, while "RelativeToGround" takes the height map into account |
+| AltitudeMode        | `altitudeMode`                   | string (`"absolute"` or `"relativeToGround"`) | Decides how any height values of the geo coordinates should be interpreted. "Absolute" means that the height is interpreted as the height above the reference ellipsoid (sea level), while "RelativeToGround" takes the height map into account |
 | **Points Specific**          |                   |                              |  |
 | PointSize           | `point-size`                     | float (> 0)                              | A value that will be used to decide the size of rendered points. The size will be scaled based on the bounding sphere of the globe   |
 | PointTexture        | `texture`, `sprite`, `point-texture` | string (path to a texture)           | A texture to be used for rendering points |
 | PointTextureAnchor  | `point-anchor`, `anchor`         | string (`"bottom"` or `"center"`)        | Decides the placement of the point texture in relation to the position. Default is a the bottom of the texture, but it can also be put at the center |
 
+### Other useful properties and settings
+In addition to the visual properties in the GeoJson files, some regular OpenSpace properties can be set for any loaded features. These can be used to navigate to a feature, change the visuals to match the projection system you are currently using, or just alter the look in general. These can not be set from a .geojson file, but through the Scene menu in the user interface, or in an asset.
+
+#### Height offset, opacity, and scale
+Finally, a few helper properties have been added to simplify changing some aspects of the visuals of the entire collection at once:
+
+- *Opacity* - change the opacity of all features in a collection
+- *Height Offset* - move the geometry up/down in relation to the reference surface (based on the height map or sea level, depending on chosen Altitude Mode)
+- *Point Size Scale* - increase/decrease the size of any points in the collection
+- *Line Width Scale* - increase/decrease the width of any rendered lines in the collection
+
+#### Alignment of points
+For points, it is possible to change how the texture planes align against the globe surface. There are four different options:
+
+| Option           | Value | Description |
+| ---------------- | :---: | ----------- |
+| Camera Direction | 0     | Rotate the plane to face the camera view direction and alight the up-driection with the camera's up. Suitable for planar displays |
+| Camera Position  | 1     | Use the camera's up direction, but rotate the plane to face the camera position instead of view direction. Suitable for spherical displays, such as domes or planetariums |
+| Globe Normal     | 2     | Use the out-driection of the globe as the up direction |
+| Globe Surface    | 3     | Align the plane flat along the globe surface |
+
+
+Here are examples of points aligned with the Camera Direction, Globe Normal and Globe Surface options, respectively. The points have been extruded with a line that intersects the globe surface
+![point alignment examples](./images/geojson/points_transparent.png)
+
+#### Light sources
+Polygon geometry can be lit using an OpenSpace light source (for example the Sun, or the Camera). Per default, a camera-based light source is added for all features.
+
+Note that for the light source to make a visual difference, shading must be enabled for the feature (set under the `DefaultProperties` or in the GeoJson file).
 
 ### Tesselation (advanced)
 << TODO... >>
@@ -109,17 +137,8 @@ end)
 
 More examples are available in the OpenSpace/data/assets/examples folder of your OpenSpace installation.
 
-## Other useful properties and settings
-In addition to the visual properties in the GeoJson files, there are also some regular OpenSpace properties that can be set for any loaded features. These can be used to navigate to a feature, change the visuals to match the projection system you are currently using, or just alter the look in general.
-
-### Automatic flying to a feature
-First, the Scene includes a buton<< TODO... >>
-
-### Alignment of points
-For points, it is possible to change how the points align themselves against the globe surface. ... < TODO >
-
-### Height offset, opacity, and scale
-<< TODO >>
+## Automatic flying to a feature
+It is possible to fly to a GeoJson feature using the Scene menu. Each Feature collection and Feature has a "Fly to feature" button, that will trigger a camera path to that feature, framing it based on its latitude and longitude coordinates.
 
 ## Known issues
 The GeoJson support implemented in 0.19.0 is a first iteration and may be subject to changes in the future. It also includes some known issues that we intend to fix down the line. Here is a summary of those issues:
