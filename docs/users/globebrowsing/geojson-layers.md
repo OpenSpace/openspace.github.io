@@ -20,13 +20,11 @@ Each GeoJson file loads a *collection* of features, which will make up a group o
 There are two ways of adding GeoJson features to a selected globe: either directly from a .geojson file or by specifying a table in an OpenSpace asset. Once added, all content in a GeoJson file will appear as a component under "GeoJson" in the scene menu, as part of the globe it was added to.
 
 ### Creating a GeoJson asset
-
 The preferred way to load a GeoJson file is to create an asset. This lets you load the file and add it to the correct globe, already at startup. It also lets you easily customize the visual properties of the rendered feature.
 
 Adding GeoJson to a globe through an asset works very similarly to how a Globebrowsing Layer is added. An example is shown in the [Example](#example) section below.
 
 ### Add directly from a file, using drag and drop
-
 If the current focus node is a globe, you can also drag and drop a GeoJson file in the OpenSpace window to add it to the currently focused node. The file's features will then be added with default values for all properties not included in the file. Under the hood, this simply calls the following Lua call, with the name of the file you dropped:
 
 ```
