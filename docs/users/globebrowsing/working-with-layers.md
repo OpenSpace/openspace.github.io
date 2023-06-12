@@ -3,7 +3,7 @@ title: Working with Layers
 layout: default
 
 grand_parent: Users
-parent: Using GlobeBrowsing
+parent: Globes
 nav_order: 1
 ---
 

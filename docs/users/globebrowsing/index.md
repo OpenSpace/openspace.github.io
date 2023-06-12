@@ -1,5 +1,5 @@
 ---
-title: Using GlobeBrowsing
+title: Globes
 layout: default
 
 parent: Users

@@ -3,7 +3,7 @@ title: Geometry on Globes with GeoJson
 layout: default
 
 grand_parent: Users
-parent: Using GlobeBrowsing
+parent: Globes
 nav_order: 2
 ---
 
