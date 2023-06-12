@@ -228,11 +228,11 @@ Now we can begin to explore the controller. What we want to have in the end is a
 
 Now that we have a clear image of what the controller is capable of, we need to figure out how it is connected to OpenSpace. Let's start with the axes, we want to identify which index in the OpenSpace list corresponds to each axes on the controller. Choose one axis and move it around a little bit on the controller, you should see one or more sliders reacting to your movement in the list in OpenSpace. If you see several sliders reacting to your movement, try to isolate your movement to only one direction such as up/down or left/right. When you are certain of which index reacted to your input to the axis you can note that down and move on to the next axis. Below is an image to show how it can look like when one of the axes has been moved:
 
-![](images/joysticks-axis.png)
+![](images/joystick-axis.png)
 
 For the buttons, we will use the same strategy, push one button a few times and see which of the buttons in OpenSpace reacts, note down that number, and move on to the next. Now that we have a clear image of how each button and axis relate to the list in OpenSpace we could build a map in our asset. Below is an image to show how it can look like when one of the buttons is pressed:
 
-![](images/joysticks-button.png)
+![](images/joystick-button.png)
 
 In each joystick asset file that OpenSpace provides there will be a section at the top that looks similar to this:
 
@@ -301,4 +301,5 @@ local NameOfController = {
 
 Now that you have defined your map over your controller you can start customizing it and bind camera movements to the axes and scripts to the buttons, as the guide above describes.
 
-Now that you have created a new asset file for a controller that OpenSpace does not already provide, consider contributing it to the repository so other users can use it too. Contact us on our [Slack](https://openspacesupport.slack.com) and we can help you get it into the repository or onto our content [Hub](http://hub.openspaceproject.com/).
+## Contribute your asset
+If you have created a new asset file for a controller that OpenSpace does not already provide, consider contributing it to the repository so other users can use it too. Contact us on our [Slack](https://openspacesupport.slack.com) and we can help you get it into the repository or onto our content [Hub](http://hub.openspaceproject.com/).
