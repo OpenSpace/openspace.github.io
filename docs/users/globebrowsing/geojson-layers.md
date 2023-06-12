@@ -14,7 +14,7 @@ Some examples of features are shown below.
 
 ![geojson examples](./images/geojson/geojson_examples.jpg)
 
-Each GeoJson file loads a *collection* of features, which will make up a group of rendered features in OpenSpace, that can be toggled on/off, et cetera. In OpenSpace, the contents of a file are loaded into one property owner that will show up under the globe in the user interface, under "GeoJson".
+Each GeoJson file loads a *collection* of features, which will make up a group of rendered features in OpenSpace, that can be toggled on/off, et cetera. In OpenSpace, the contents of a file are loaded into one property owner that will show up under the globe in the user interface, under "GeoJson". Due to the similarity to [Globebrowsing Layers](./working-with-layers.md), we refer to these as "GeoJson Layers", or "Globe Geometry Layers".
 
 ## Adding GeoJson features to a globe
 There are two ways of adding GeoJson features to a selected globe: either directly from a .geojson file or by specifying a table in an OpenSpace asset. Once added, all content in a GeoJson file will appear as a component under "GeoJson" in the scene menu, as part of the globe it was added to.
@@ -33,7 +33,6 @@ If the current focus node is a globe, you can also drag and drop a GeoJson file 
 openspace.globebrowsing.addGeoJsonFromFile("filename.geojson")
 ```
 
-
 ## Customize visual properties
 The visuals of the geometry features can be customized either through properties directly in the .geojson files, or through the `DefaultProperties` property of the main component created from the asset file.
 
@@ -47,7 +46,7 @@ The following table summarizes the available keys and properties. Note that the 
 | Color               | `color`, `stroke`                | RGB (vec3, [0-1]) or hex value (string)  | The color that will be used for drawing lines and points. For points, the color will be blended with the color of the point texture |
 | FillColor           | `fill`, `fill-color`             | RGB (vec3, [0-1]) or hex value (string)  | The color that will be used for drawing filled polygons and extruded geometry |
 | FillOpacity         | `fill-opacity`                   | float, [0-1]                             | The opacity that will be used for drawing filled polygons and extruded geometry |
-| Extrude             | `extrude`                        | boolean (true/false)                     | If true, extrude the geometry to intersect the globe. Lines/polygons will be extruded with polygons, and points with lines |
+| Extrude             | `extrude`                        | boolean (`true`/`false`)                 | If true, extrude the geometry to intersect the globe. Lines/polygons will be extruded with polygons, and points with lines |
 | AltitudeMode        | `altitudeMode`                   | string (`"absolute"` or `"relativeToGround"`) | Decides how any height values of the geo coordinates should be interpreted. "Absolute" means that the height is interpreted as the height above the reference ellipsoid (sea level), while "RelativeToGround" takes the height map into account |
 | **Points Specific**          |                   |                              |  |
 | PointSize           | `point-size`                     | float (> 0)                              | A value that will be used to decide the size of rendered points. The size will be scaled based on the bounding sphere of the globe   |
@@ -58,7 +57,7 @@ The following table summarizes the available keys and properties. Note that the 
 In addition to the visual properties in the GeoJson files, some regular OpenSpace properties can be set for any loaded features. These can be used to navigate to a feature, change the visuals to match the projection system you are currently using, or just alter the look in general. These can not be set from a .geojson file, but through the Scene menu in the user interface, or in an asset.
 
 #### Height offset, opacity, and scale
-Finally, a few helper properties have been added to simplify changing some aspects of the visuals of the entire collection at once:
+A few helper properties have been added to simplify changing some aspects of the visuals of the entire collection at once:
 
 - *Opacity* - change the opacity of all features in a collection
 - *Height Offset* - move the geometry up/down in relation to the reference surface (based on the height map or sea level, depending on chosen Altitude Mode)
@@ -84,8 +83,22 @@ Polygon geometry can be lit using an OpenSpace light source (for example the Sun
 
 Note that for the light source to make a visual difference, shading must be enabled for the feature (set under the `DefaultProperties` or in the GeoJson file).
 
-### Tesselation (advanced)
-<< TODO... >>
+### Tessellation (advanced)
+Large geometry is split into smaller pieces and bent over the globe, to prevent the lines from intersecting the globe's surface. This "splitting" is known as tessellation, and does affect the performance of rendering the geometry. The more pieces the geometry is split into, the worse the performance.
+
+<details markdown=block><summary markdown=span>More info</summary>
+
+To give advanced users some control of that performance, tessellation can be enabled/disabled for each GeoJson layer. The degree of tessellation can also be controlled. See properties under the "Tessellation" owner for more details.
+
+The tessellation properties can also be set per feature in the .geojson file. Here are the details for the available properties:
+
+| Property Identifier              | Accepted keys (in .geojson file) | Value                    | Description |
+| -------------------              |--------------------------------- | ------------------------ | ----------- |
+| Tessellation.Enabled              | `tessellate`                     | boolean (`true`/`false`)| Decide whether or not to use tessellation. Default is `true` |
+| Tessellation.TessellationDistance | `tessellationDistance`           | float, (> 0)            | The distance/resolution for the tessellation. Anythin larger than this distance will be split into smaller pieces |
+| Tessellation.TessellationLevel    | `tessellationLevel`              | int                     | Decides how much to tessellate, in combination with the tessellation distance. The resulting distance used for the "splitting" is the tessellation distance divided by this value, so the larger the value, the smaller the pieces (and the more the performance will eb affected)  |
+
+</details>
 
 ## Example
 Here is an example of a simple GeoJson file, with one single feature that has some specified properties.
