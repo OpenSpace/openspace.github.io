@@ -14,7 +14,7 @@ Previously a model was specified in an asset file as a <code>Geometry</code> wit
 
 ## Examples
 How the Renderable for the Juno spacecraft was specified before:
-~~~lua
+```lua
   ...
   Renderable = {
     Type = "RenderableModel",
@@ -27,10 +27,10 @@ How the Renderable for the Juno spacecraft was specified before:
     LightSources = assetHelper.getDefaultLightSources(sunTransforms.SolarSystemBarycenter.Identifier)
   },
   ...
-~~~
+```
 
 How the Renderable for the Juno spacecraft is specified now:
-~~~lua
+```lua
   ...
   local sun = asset.require('scene/solarsystem/sun/sun')
 
@@ -41,11 +41,11 @@ How the Renderable for the Juno spacecraft is specified now:
     LightSources = { sun.LightSource }
   },
   ...
-~~~
+```
 
 ## RenderableModelProjection
 This breaking change is also applied to the RenderableModelProjection. For example, in the Rosetta profile the model for 67P Churymov-Gerasimenkou was previously specified as:
-~~~lua
+```lua
   ...
   Renderable = {
     Type = "RenderableModelProjection",
@@ -57,10 +57,10 @@ This breaking change is also applied to the RenderableModelProjection. For examp
     Projection ...
   },
   ...
-~~~
+```
 
 Now it is specified as:
-~~~lua
+```lua
   ...
   Renderable = {
     Type = "RenderableModelProjection",
@@ -68,7 +68,7 @@ Now it is specified as:
     Projection ...
   },
   ...
-~~~
+```
 
 ## Models
 As you may have noticed there is no need to specify the ColorTexture as before. Instead, this information will be read from the model itself, which may mean that your old models need to be updated or exchanged. This depends very much on what kind of model you are using but in general, there are two different ways to update the old model:
@@ -93,7 +93,7 @@ It is possible to create your own material file and connect your model to the co
 5. If there are several different lists of <code>f</code> you repeat step 4 until all lists of <code>f</code> has a material. You can use different materials (change materialName) if you would like the different parts of the model to have different materials or textures. 
 
 6. Your model file should look something like this at this point (example with two materials):
-~~~
+```
     # Header ...
 
     mtllib 0.mtl
@@ -120,20 +120,20 @@ It is possible to create your own material file and connect your model to the co
     f 1216/1216/491 1219/1219/494 1217/1217/492
 
     ...
-~~~
+```
 
 7. Switch to the material file. Here is where you define your materials and the textures. Create a new material with <code>newmtl materialName</code>. Note that materialName should be the same as you specified in the model file in Step 4. Then connect the material to a texture using: <code>map_Kd textureName.png</code>. Note that the path to the texture should be given relative to the material file.
 
 8. If you specified several **different** materials in step 5 you will need to repeat step 7 for every new material. 
 
 9. In the end your material file should look something like this (with two materials):
-~~~
+```
     newmtl ISS_03_dull
         map_Kd 0.png
 
     newmtl white
         map_Kd white_20.png
-~~~
+```
 
 10. Make sure that your material file is in the same directory as the model file. Your model should now be textured in OpenSpace.
 

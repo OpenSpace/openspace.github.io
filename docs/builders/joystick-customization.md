@@ -7,7 +7,7 @@ nav_order: 4
 ---
 
 # Customizing the joystick navigation
-This page will go in-depth into how to customize the joystick navigation to your own liking. If you want to learn more about the default joystick navigation in OpenSpace, see [Joystick Navigation](../../users/navigation/joysticks).
+This page goes in-depth into how to customize the joystick navigation to your own liking. If you want to learn more about the default joystick navigation in OpenSpace, see [Joystick Navigation](../../users/navigation/joysticks).
 
 To start, you will need an asset file to edit. If you are using a controller that matches one of the assets that OpenSpace already provides (Xbox, PS4, SpaceMouse, etc.) it is recommended that you start with a copy of that matching asset and place it in your `user\data\assets` folder. However, if the controller you will use does not match any provided asset, it is still recommended to start with one of the assets that are provided, such as the `space-mouse-compact` asset. The steps will be the same in both cases with the exception that the new controller will need some additional setup, see [Setup new joystick type](#Setup-new-joystick-type) before moving on to the customization.
 
@@ -44,7 +44,7 @@ To bind a camera movement to an axis of the controller you will need the functio
 8. (Optional) Sensitivity value for this axis. Can be used to fine-tune the sensitivity for all axes individually. Defaults to `1.0`. A value larger than `1.0` would lead to the axis becoming more sensitive and a value that is smaller than `1.0` would lead to the axis being less sensitive to input. There is also a global sensitivity property that can be adjusted in the GUI, under *Settings*, *Navigation Handler*, *Orbital Navigator* and then *Joystick Sensitivity* (identifier `NavigationHandler.OrbitalNavigator.JoystickSensitivity`). Note that this will affect all connected controllers and all of their axes.
 
 Here is an example asset with the SpaceMouse:
-~~~lua
+```lua
   local SpaceMouse = {
     -- Axes
     Push = {
@@ -74,7 +74,7 @@ Here is an example asset with the SpaceMouse:
     openspace.navigation.bindJoystickAxis(name, controller.Push.UpDown, "Zoom", false, "JoystickLike", true, false, 40.0)
     openspace.navigation.bindJoystickAxis(name, controller.Tilt.LeftRight, "LocalRoll", false, "JoystickLike", true, false, 35.0)
   end)
-~~~
+```
 
 ## Bind a property to a joystick axis
 To control an OpenSpace property using an axis on a controller you will need the function `openspace.navigation.bindJoystickAxisProperty` that takes seven arguments. Below is a list that describes each argument in detail.
@@ -94,7 +94,7 @@ To control an OpenSpace property using an axis on a controller you will need the
 7. (Optional) Whether or not the property change should be forwarded to other connected nodes or sessions. This is similar to the `"isLocal"` parameter for actions. Defaults to `true`.
 
 Here is an example asset with the Earth scale bound to the right trigger on an Xbox controller:
-~~~lua
+```lua
   local XBoxController = {
     -- Axes
     LeftThumbStick = {
@@ -134,7 +134,7 @@ Here is an example asset with the Earth scale bound to the right trigger on an X
     -- Bind Right trigger to Earth Scale
     openspace.navigation.bindJoystickAxisProperty(name, controller.RightTrigger, "Scene.Earth.Scale.Scale", 0.1, 100, false, true);
   end)
-~~~
+```
 
 ## Bind a script to a joystick button
 Binding a custom script to a controller button is done with the function `openspace.navigation.bindJoystickButton` that takes six arguments. Below is a list that describes each argument in detail.
@@ -159,7 +159,7 @@ Binding a custom script to a controller button is done with the function `opensp
 6. (Optional) Whether or not the script should be forwarded to other connected nodes or sessions. This is similar to the `"isLocal"` parameter for actions. Defaults to `true`.
 
 Here is an example asset that switches focus when pressing the trigger buttons on an Xbox controller:
-~~~lua
+```lua
   local XBoxController = {
     -- Axes
     LeftThumbStick = {
@@ -217,7 +217,7 @@ Here is an example asset that switches focus when pressing the trigger buttons o
       true
     )
   end)
-~~~
+```
 
 # Setup new joystick type
 When connecting a new controller to OpenSpace the first step is to get a good mapping of what buttons and axes the controller has and what indices they are connected to. To get an overview of the joysticks and its axes and buttons you can use the connected joysticks list in OpenSpace. You can access this list by pressing the *F1* button on the keyboard and you will see the old GUI interface of OpenSpace pop up. In the window called **OpenSpace GUI**, press the empty checkbox next to **Joysticks Information**. This will open a new window and here all the connected controllers will be listed. In this list, you can search for your controller. The items in the list called *3Dconnexion KMJ Emulator* or *Summed contributions* can be ignored. Once you have found your controller you will see two numbered lists of axes and buttons with a slider and button respectively. See the image below:
@@ -236,7 +236,7 @@ For the buttons, we will use the same strategy, push one button a few times and 
 
 In each joystick asset file that OpenSpace provides there will be a section at the top that looks similar to this:
 
-~~~lua
+```lua
 -- Name of the controller
 local XBoxController = {
   -- Axes
@@ -269,11 +269,11 @@ local XBoxController = {
     Left = 13
   }
 }
-~~~
+```
 
 This is the map of the controller that tells OpenSpace how each axis and button relate to the indices in the list that OpenSpace sees. Now with all the information you now have about your controller, you can make your own map. Start with a name for your controller, in the example above it is called `XBoxController`. Then you can start with the axes, in the example above there are four joysticks that each have one to two axes. There are the two joysticks that can move both left/right, and up/down, then there are the two triggers that only have one axis each. To add an axis to the list you add its name (no spaces or special characters) and set that equal to the index it corresponded to in the OpenSpace list. So it would look like:
 
-~~~lua
+```lua
 local NameOfController = {
   -- Axes
   NameOfJoystick1 = { -- This joystick on the controller has two axes, one for left/right and one for up/down
@@ -297,7 +297,7 @@ local NameOfController = {
 
   ...
 }
-~~~
+```
 
 Now that you have defined your map over your controller you can start customizing it and bind camera movements to the axes and scripts to the buttons, as the guide above describes.
 
