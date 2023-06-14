@@ -49,7 +49,7 @@ The following table summarizes the available keys and properties. Note that the 
 | **Points Specific**          |                   |                              |  |
 | PointSize           | `point-size`                     | float (> 0)                              | A value that will be used to decide the size of rendered points. The size will be scaled based on the bounding sphere of the globe   |
 | PointTexture        | `texture`, `sprite`, `point-texture` | string (path to a texture)           | A texture to be used for rendering points |
-| PointTextureAnchor  | `point-anchor`, `anchor`         | string (`"bottom"` or `"center"`)        | Decides the placement of the point texture in relation to the position. Default is a the bottom of the texture, but it can also be put at the center |
+| PointTextureAnchor  | `point-anchor`, `anchor`         | string (`"bottom"` or `"center"`)        | Decides the placement of the point texture in relation to the position. Default is at the bottom of the texture, but it can also be put at the center |
 
 ### Other useful properties and settings
 In addition to the visual properties in the GeoJson files, some regular OpenSpace properties can be set for any loaded features. These can be used to navigate to a feature, change the visuals to match the projection system you are currently using, or just alter the look in general. These can not be set from a .geojson file, but through the Scene menu in the user interface, or in an asset.
@@ -94,7 +94,7 @@ The tessellation properties can also be set per feature in the .geojson file. He
 | -------------------              |--------------------------------- | ------------------------ | ----------- |
 | Tessellation.Enabled              | `tessellate`                     | boolean (`true`/`false`)| Decide whether or not to use tessellation. Default is `true` |
 | Tessellation.TessellationDistance | `tessellationDistance`           | float, (> 0)            | The distance/resolution for the tessellation. Anythin larger than this distance will be split into smaller pieces |
-| Tessellation.TessellationLevel    | `tessellationLevel`              | int                     | Decides how much to tessellate, in combination with the tessellation distance. The resulting distance used for the "splitting" is the tessellation distance divided by this value, so the larger the value, the smaller the pieces (and the more the performance will eb affected)  |
+| Tessellation.TessellationLevel    | `tessellationLevel`              | int                     | Decides how much to tessellate, in combination with the tessellation distance. The resulting distance used for the "splitting" is the tessellation distance divided by this value, so the larger the value, the smaller the pieces (and the more the performance will be affected)  |
 
 </details>
 
@@ -146,7 +146,7 @@ asset.onDeinitialize(function()
 end)
 ```
 
-More examples are available in the OpenSpace/data/assets/examples folder of your OpenSpace installation.
+More examples are available in the OpenSpace/data/assets/examples/geojson folder of your OpenSpace installation.
 
 ## Automatic flying to a feature
 It is possible to fly to a GeoJson feature using the Scene menu. Each Feature collection and Feature has a "Fly to feature" button, that will trigger a camera path to that feature, framing it based on its latitude and longitude coordinates.
