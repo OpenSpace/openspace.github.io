@@ -3,7 +3,7 @@ title: Readable Datasets
 layout: default
 
 grand_parent: Builders
-parent: GlobeBrowsing
+parent: Globes
 nav_order: 1
 ---
 

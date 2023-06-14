@@ -1,5 +1,5 @@
 ---
-title: GlobeBrowsing
+title: Globes
 layout: default
 
 parent: Builders
