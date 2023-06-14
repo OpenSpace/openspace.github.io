@@ -15,6 +15,11 @@ nav_order: 4
   - [Import data](wms/server-import)
   - [Convert data](wms/server-conversion)
 - [Asset structure](assets)
+- [Globes](globebrowsing)
+  - [Create a RenderableGlobe](globebrowsing/creating-a-renderableglobe)
+  - [Readable Datasets](globebrowsing/readable-datasets)
+  - [Build Local DEM Patches to Load With OpenSpace](globebrowsing/build-local-dem-patches)
+  - [Adding Geometry with GeoJson](globebrowsing/adding-geojson-layers)
 - Ephemeris
   - [Using JPL Horizons Ephemeris for Solar System Objects](ephemeris/horizons)
   - [Using JPL Small SolarSystem Body Database (SBDB) for Orbital Data](ephemeris/sbdb)
