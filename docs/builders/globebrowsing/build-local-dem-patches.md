@@ -3,7 +3,7 @@ title: Build Local DEM Patches
 layout: default
 
 grand_parent: Builders
-parent: GlobeBrowsing
+parent: Globes
 nav_order: 3
 ---
 
@@ -53,7 +53,7 @@ Unfortunately, many of the HiRISE DTMs downloaded from the site provided above h
 
 and
 
-    > gdalinfo PSP_001918_1735_RED_A_01_ORTHO.JP2 
+    > gdalinfo PSP_001918_1735_RED_A_01_ORTHO.JP2
     ...
     Corner Coordinates:
     Upper Left  (   -3093.092, -378029.046) ( 76d58'55.86"W, 11d22'39.28"S)

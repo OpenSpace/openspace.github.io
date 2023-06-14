@@ -3,8 +3,8 @@ title: Create a RenderableGlobe
 layout: default
 
 grand_parent: Builders
-parent: GlobeBrowsing
-nav_order: 2
+parent: Globes
+nav_order: 1
 ---
 
 # Creating a Renderable Globe
@@ -117,7 +117,7 @@ Here is an example showing the use of many of the features mentioned above to cr
     Type = "ByLevelTileLayer",
     LevelTileProviders = {
         {
-            MaxLevel = 3, 
+            MaxLevel = 3,
             TileProvider = {
                 Name = "Temporal VIIRS SNPP",
                 Type = "TemporalTileLayer",
