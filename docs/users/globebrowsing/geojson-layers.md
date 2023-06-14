@@ -20,7 +20,7 @@ Each GeoJson file loads a *collection* of features, which will make up a group o
 There are two ways of adding GeoJson features to a selected globe: either directly from a .geojson file or by specifying a table in an OpenSpace asset. Once added, all content in a GeoJson file will appear as a component under "GeoJson" in the scene menu, as part of the globe it was added to.
 
 ### Creating a GeoJson asset
-The preferred way to load a GeoJson file is to create an asset. This lets you load the file and add it to the correct globe, already at startup. It also lets you easily customize the visual properties of the rendered feature.
+The preferred way to load a GeoJson file is to create an asset. This lets you load the file and add it to the correct globe, already at startup. It also lets you customize the visual properties of all the rendered features that do not have any properties specified in the GeoJson file (see [section on properties](#customize-visual-properties)).
 
 Adding GeoJson to a globe through an asset works very similarly to how a Globebrowsing Layer is added. An example is shown in the [Example](#example) section below.
 
@@ -67,7 +67,7 @@ For points, it is possible to change how the texture planes align against the gl
 
 | Option           | Value | Description |
 | ---------------- | :---: | ----------- |
-| Camera Direction | 0     | Rotate the plane to face the camera view direction and alight the up-driection with the camera's up. Suitable for planar displays |
+| Camera Direction | 0     | Rotate the plane to face the camera view direction and align the up-driection with the camera's up. Suitable for planar displays |
 | Camera Position  | 1     | Use the camera's up direction, but rotate the plane to face the camera position instead of view direction. Suitable for spherical displays, such as domes or planetariums |
 | Globe Normal     | 2     | Use the out-driection of the globe as the up direction |
 | Globe Surface    | 3     | Align the plane flat along the globe surface |
