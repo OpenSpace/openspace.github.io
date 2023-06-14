@@ -51,4 +51,4 @@ Each layer has its own blend mode.  It defines how the layer will be blended on 
 - **Color** -- Converts the underlying color from RGB to HDV and sets the V value from the grayscale representation of this layer, then converts it back to RGB.
 
 ## Add or Remove Layers
-Layers can be added by calling the function `openspace.globebrowsing.addLayer()` or removed by calling the function `openspace.globebrowsing.deleteLayer()`.  See documentation for more info, also see [Creating a Renderable Globe]({{ site.url }}/docs/builders/globebrowsing/creating-a-renderable-globe.md) for information about how layers are defined as lua tables.
+Layers can be added by calling the function `openspace.globebrowsing.addLayer()` or removed by calling the function `openspace.globebrowsing.deleteLayer()`.  See documentation for more info, also see [Creating a Renderable Globe]({{ site.url }}/docs/builders/globebrowsing/creating-a-renderableglobe) for information about how layers are defined as lua tables.
