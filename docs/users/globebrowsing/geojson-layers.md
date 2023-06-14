@@ -8,7 +8,7 @@ nav_order: 2
 ---
 
 # Globe Geometry Features from GeoJson Files
-As of version 0.19.0, OpenSpace includes support for drawing geometry features on a globe based on files in the [GeoJson](https://geojson.org/) file format. GeoJson is a format for encoding geographic data structures based on 2D or 3D geographic coordinates, with latitude, longitude and an optional altitude. It supports shapes like points, lines and polygons. See the GeoJson specification for more details.
+As of version 0.19.0, OpenSpace includes support for drawing geometry features on a globe based on files in the [GeoJson](https://geojson.org/) file format. GeoJson is a format for encoding geographic data structures based on 2D or 3D geographic coordinates, with latitude, longitude and an optional altitude. It supports shapes like points, lines and polygons.
 
 Some examples of features are shown below (polygons, points with textures, and lines).
 
