@@ -30,6 +30,11 @@ If the current focus node is a globe, you can also drag and drop a GeoJson file 
 ## Automatic flying to a feature
 It is possible to fly to a GeoJson feature using the Scene menu. Each component, and the individual Features in a component, has a "Fly to feature" button that will trigger a camera path to that feature, framing it based on its latitude and longitude coordinates.
 
+## Deleting a loaded GeoJson layer
+If you want to delete a loaded GeoJson layer from a globe, this is done by clicking the "Delete" button in the UI, under the "Deletion" dropdown. The more geojson layers are drawn, the worse the performance may be. In cases of bad performance, deleting, or simply disabling, some GeoJson layers may improve the situation. 
+
+Note that after deleting a GeoJson component, the user interface has to be reloaded for the change to be reflected in the interface. The default keybinding for doing this is F5. 
+
 ## Known issues
 The GeoJson support implemented in 0.19.0 is a first iteration and may be subject to changes in the future. It also includes some known issues that we intend to fix down the line. Here is a summary of those issues:
 
