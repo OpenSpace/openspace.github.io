@@ -34,6 +34,10 @@ This video covers downloading OpenSpace from our [website](https://www.openspace
 ## Windows installation "VCRUNTIME140_1.dll" error
 When you run OpenSpace for the first time, if you experience the error "VCRUNTIME140_1.dll was not found" you must first install the Microsoft Visual C++ Redistributable for Visual Studio 2019. This can be downloaded from Microsoft here: [https://aka.ms/vs/16/release/vc_redist.x64.exe](https://aka.ms/vs/16/release/vc_redist.x64.exe)
 
+## Windows frame rate issue
+If your frame rate is low (the FPS number in the top left corner), please ensure that OpenSpace is using your NVIDIA graphics card. This can be adjusted in settings under the graphics.
+
+
 ## OpenSpace for MacOS
 
 This video covers downloading OpenSpace from our website, running the installer package, and launching OpenSpace for the first time.
