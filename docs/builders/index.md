@@ -31,3 +31,4 @@ nav_order: 4
   - [Model Scale](models/model-scale)
   - [Animated Models](models/model-animation)
 - [Events](events/index)
+- [Joystick Customization](joystick-customization)
