@@ -79,14 +79,14 @@ Please note: The following release notes are incomplete and will be updated as t
  - Update Juno kernels
  - Voyager assets now respects asset.enabled argument when it's passed in asset.require(). Added tags to Voyager models in assets
  - Add option to specify an offset distance for RenderableNodeLine (#2483)
- -  Issue/2408: Moving actions from profiles into assets #2491 
- -  Add actions for minor moons #2476 
+ -  Issue/2408: Moving actions from profiles into assets #2491
+ -  Add actions for minor moons #2476
  - Extended EndTime for Voyager 1 & 2 until 2300 so that trails are visible for longer.
  - Issue/1486: Create labels for all moons
  - Add lighthour grid to DU, and lightminute and lightsecond grids to Earth (closes #2439)
  - Move the Milky Way Image and arm labels from /Universe/Galaxies to /Milky Way
  - Remove luastatemachine example asset, closes #2193
- - Rename ISS scene graph node #2245 
+ - Rename ISS scene graph node #2245
  - Adds labels to the grids (fixes #1244
  - Add trail that co-revolves with L2 around the Sun. Also tweaking the trail colors and speeds in the timelapse script (#2220)
  - Update the Ipac example asset
@@ -155,7 +155,7 @@ Please note: The following release notes are incomplete and will be updated as t
  - No longer trigger an assert when binding a key to an action that does not exist (closes #2485)
  - Properly report an error when an .info file is missing the identifier, preventing the addition of a layer without one (closes #2490)
  - Remove unintentional default value for skybrowser/exoplanet module enabled property (closes #2464)
- -  GUI allows, and crash, when input field has NaN value #2452 
+ -  GUI allows, and crash, when input field has NaN value #2452
  - Fix issue with some action folder sin the Action panel not being clickable #2467
  - Also apply the RenderableTravelSpeed changes to the fadeLength parameter
  - Add special case to the string tokenizer for "Keypad +" (closes #2358)
@@ -186,11 +186,11 @@ Please note: The following release notes are incomplete and will be updated as t
    - Fix bug that channels in cluster don't set the field of view to the same value after animating in SkyBrowser (#2425)
    - Fix bug for screenspace sky browser scale crash (#2280)
    - Skybrowsing: Fix bug when master has no rendering
-   -  SkyBrowser scale sometimes doesn't update the border radius in time #2266 
+   -  SkyBrowser scale sometimes doesn't update the border radius in time #2266
    - SkyBrowser: Ensure browser is initialized properly before executing javascript
    - SkyBrowser: Make it harder to input wrong values
    - SkyBrowser: Fix bug of sending set radius message too early
-   - SkyBrowser: Disable hover circle per default when setting renderable and throw warning if setting to non-existing node (fixes #2153) 
+   - SkyBrowser: Disable hover circle per default when setting renderable and throw warning if setting to non-existing node (fixes #2153)
 
 # Breaking Changes
  - Make the check for whitespaces and dots in identifiers fatal also in non-Debug builds

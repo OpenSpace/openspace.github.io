@@ -1,54 +1,17 @@
 ---
-title: Releases
+title: Release Changelog
 layout: default
 
-parent: Home
-nav_order: 1
+grand_parent: Home
+parent: Releases
+nav_order: 3
 ---
 
-# Releases
-OpenSpace versions are labeled by a version number of the form `MM.mm.rr`,  where `MM` is the major version number, `mm` is the minor version number, and `rr` is the release number (see [Semantic Versioning](https://semver.org)).  In some cases there may be an additional number at the end, `MM.mm.rr.bb`, where bb is the build number, but that will only be for development and testing, not for public release.
+# Release Changelog
+This page contains detailed changelogs for each of the releases, sorted based on what are new features, new content, bug fixes, as well as breaking changes. The messages are taken straight from the commit messages on [OpenSpace GitHub](https://github.com/OpenSpace/OpenSpace).
 
 1. TOC
 {:toc}
-
-# Overview
-As development proceeds, some versions get tagged with names.  This table indicates which version numbers go with which tags, and some notes about each:
-
-| Version | _Name_ | _Date_ | _Description_ |
-| ------- | ------ | ------ | - |
-| 0.18.2 | Beta-11 | 2022-12-24 | This is a second patch release for the eleventh beta release |
-| 0.18.1 | Beta-11 | 2022-11-22 | This is a patch release for the eleventh beta release |
-| 0.18.0 | Beta-11 | 2022-05-06 | This is the eleventh beta release and the first in 2022 |
-| 0.17.2 | Beta-10 | 2021-08-27 | This is a patch release for the tenth beta that addresses an issue with Earth terrain |
-| 0.17.1 | Beta-10 | 2021-08-09 | This is a patch release for the tenth beta that addresses initial bug reports |
-| 0.17.0 | Beta-10 | 2021-07-14 | This is the tenth beta release and the second in 2021 |
-| 0.16.1 | Beta-9 | 2021-05-07 | This is the ninth beta release and the first in 2021 |
-| 0.16.0 | Beta-8 | 2020-12-09 | This is the eigth beta release for the end of 2020 |
-| 0.15.2 | Beta-7 | 2020-06-26 | This is the seventh beta release for OpenSpace for the summer of 2020 |
-| 0.15.1 | Beta-6 | 2020-02-17 | This is the sixth beta release for OpenSpace in conjunction with the 4th annual developer's meeting |
-| 0.15.0 | Beta-5 | 2019-09-17 | This is the fifth beta release for OpenSpace released on September, 17th, 2019 for the ASTC conference |
-| 0.14.1 | Beta-4 | 2019-06-04 | This is the first patch release for the fourth beta |
-| 0.14.0 | Beta-4 | 2019-05-20 | This is the fourth beta release for OpenSpace released on the 20th of May, 2019 |
-| 0.13.0 | Beta-3 | 2018-11-05 | This is the third beta release for OpenSpace released on the 5th of November, 2018 |
-| 0.12.0 | Beta-2 | 2018-07-11 | This is the second beta release for OpenSpace released on the 11th July 2018 in the aftermath of IPS in Toulouse, France. |
-| 0.11.1 | Beta-1 | 2018-02-13 | This is a patch release for the beta-1 version released on January 1st, 2018. It mainly fixes bugs and issues that have come up for users with the beta-1 release of OpenSpace. |
-| 0.11.0 | Beta-1 | 2018-01-01 | This is the first beta release for OpenSpace released on January 1st, 2018. It contains all of the previously released features + new content and feature updates. |
-| 0.10.0 | Prerelease-15 | 2017-10-24 | This prerelease is a collection of features that have been developed since the last public prerelease version for release at the Association of Science – Technology Centers (ASTC) conference. |
-| 0.9.0 | Prerelease-14 | 2017-07-21 | This prerelease is a collection of features that have been developed since the last public prerelease version. |
-| 0.8.0 | Prerelease-13 | 2017-04-18 | Prerelease for the Earth Day 2017 |
-| 0.7.0 | Prerelease-12 | 2016-02-19 | NAOJ presentation |
-| 0.6.0 | Prerelease-11 | 2016-12-14 | AGU presentation |
-| 0.5.0 | Prerelease-10 | 2016-09-25 | Norrköping's Kulturnatten presentation |
-| 0.4.0 | Prerelease-9 | 2016-07-11 | This pre-release version was prepared for a meeting at the AMNH of the ISI User Network. |
-| 0.3.4 | Prerelease-8 | 2016-06-22 | IPS exhibition |
-| 0.3.3 | Prerelease-8 | 2016-06-07 | EuroVis presentation |
-| 0.3.2 | Prerelease-8 | 2016-04-15 | CCMC Show |
-| 0.3.1 | Prerelease-8 | 2016-03-03 | New Horizons Show |
-| 0.3.0 | Prerelease-8 | 2015-07-16 | |
-| 0.2.1 | Prerelease-7 | 2015-07-15 | New Horizons Show |
-| 0.2.0 | Prerelease-7 | 2015-07-08 | This prerelease was published for a global, networked event in celebration of New Horizon’s closest approach to Pluto. |
-| 0.1.0 | Prerelease-5 | 2015-05-14 | This prerelease was published for the Pluto-Palooza event held at the AMNH in New York. |
 
 ***
 
@@ -80,7 +43,7 @@ As development proceeds, some versions get tagged with names.  This table indica
  - Fix the Mars profile so that Perseverance and Insight do not land inside Mars anymore and stay there as well (#2049)
  - Update OsirisREx kernels to include a missing kernel file that would prevent the profile from loading correctly (#2177)
  - Reorganized the assets for the NASA Treks values to make it less likely to end up with too long file paths on Windows when installing OpenSpace in a nested folder (#2311)
- - Fixed issue with Show All Trails / Hide all Trails when executed in a profile that did not have `*trail` and `*Trail` scene graph nodes 
+ - Fixed issue with Show All Trails / Hide all Trails when executed in a profile that did not have `*trail` and `*Trail` scene graph nodes
  - Updated the bounding spheres for Vesta and the Orion Nebula to make it possible to use the Fly-To feature with these objects (#2259)
  - Fixed a typo in the reset_loop_action.asset that prevented the asset from being able to be included
  - Fixed spelling mistakes in the Andromeda constellation image (#2129)
@@ -122,7 +85,7 @@ As development proceeds, some versions get tagged with names.  This table indica
 - Version: 0.18.0
 - Date: 2022-05-06
 - Finished: [5877112103cdcb894695c214c21c15d2625fbe0b](https://github.com/OpenSpace/OpenSpace/commit/5877112103cdcb894695c214c21c15d2625fbe0b)
-- See [Release Notes](http://wiki.openspaceproject.com/docs/users/release-notes/v0180.html) for user-focused highlights.
+- See [Release Notes](../releases/release-notes/v0180) for user-focused highlights.
 
 ## Features
 ### SkyBrowser
@@ -169,30 +132,30 @@ Various user interface improvements in the launcher and the in-game interface
   - Add preliminary support for multiple simultaneous joysticks (#1787)
   - Automatically use 66% of the monitor size by default instead of 1280x720 (#1883)
   - Pass information about the operating system to the version reporter script (#1865)
-  - Add a new environment variable OPENSPACE_GLOBEBROWSING that is queried for the extra download files for offline planetary surface images 
+  - Add a new environment variable OPENSPACE_GLOBEBROWSING that is queried for the extra download files for offline planetary surface images
   - Update CEF version which improves the responsiveness of the user interface (#1114)
   - Add the ability to define and use custom properties using the `openspace.addCustomProperty` Lua function (#2064)
   - Backwards incompatible change to the Astrocasting protocol that reduces the amount of data that is transferred while connected to an Astrocasting session (#1985)
   - Improve support for the handling of SpaceMouse input devices and XBox controllers (#1989)
   - Add error message when trying to access Gaia module on Mac (#843)
-  - Add two properties to control the font color of the Rotation, Zoom, and Roll toggles (#1726) [Thanks BlueVista] 
+  - Add two properties to control the font color of the Rotation, Zoom, and Roll toggles (#1726) [Thanks BlueVista]
   - Added SpoutFlatProjection type [Thanks Marco @ Elumenati]
   - Clean up the remainders of the native GUI to harmonize its organization with the WebGUI (#2060)
   - Make the font size of the Lua console dependent on the DPI scaling for increased readability
-  
+
 ## Content
 ### New Assets
   - Add most of the image sequences available from NOAA’s Science-on-a-Sphere (#1863)
   - Add new assets provided access to a large number of NASA TREKs Moon, Mars, and Mercury layers layers (#888)
   - Add a new profile and assets that show the solar activity in July 2012, a time in which a few coronal mass ejections were ejected into the solar system
-  - Add new asset containing the Starlink satellites (#1818) 
+  - Add new asset containing the Starlink satellites (#1818)
   - Add new asset showing the active satellites (#1805)
   - Add model-based representations of the Mars moons Phobos and Deimos (#1963)
   - Add a model for the Eiffel tower with an accompanying action to place the model underneath the camera location to be used for scale references
   - Add a large number of new actions that are useful in their own right, but also serve as examples for implementing new user-defined actions (#2077)
   - Add trails for the planets barycenters which are disabled by default
 
-### Fixes to existing assets 
+### Fixes to existing assets
   - Update the general planetary spice kernel to a new version that extending the range of planetary positions to covering 1550-2650 (#2061)
   - Removed the Orion nebula model from the default profile
   - Updates to JWST profile
@@ -388,8 +351,8 @@ Various user interface improvements in the launcher and the in-game interface
 # Beta-10 [0.17.0]
  - Version: 0.17.0
  - Date: 2021-07-16
- - Finished: [3025fbc200ffdd8cf80f95c5f251d0daf793fbdf](https://github.com/OpenSpace/OpenSpace/commit/3025fbc200ffdd8cf80f95c5f251d0daf793fbdf) 
- - See [Release Notes](http://wiki.openspaceproject.com/docs/users/release-notes/v0170.html) for user-focused highlights.
+ - Finished: [3025fbc200ffdd8cf80f95c5f251d0daf793fbdf](https://github.com/OpenSpace/OpenSpace/commit/3025fbc200ffdd8cf80f95c5f251d0daf793fbdf)
+ - See [Release Notes](../releases/release-notes/v0170) for user-focused highlights.
 
 ### Features
  - Added drag and drop support for images and assets (#1497)
@@ -429,7 +392,7 @@ Various user interface improvements in the launcher and the in-game interface
     - Added view frustrum for JWST
     - Added Hubble Deep Field image
     - Added other Lagrange points
-  - Updated osirisrex profile (#1623) 
+  - Updated osirisrex profile (#1623)
     - Updated files for OSIRIS-REx return
     - Changed osirisrex assets to bring mission events up to date
     - Added hi-res 75cm Bennu model from asteroidmission.org
@@ -449,8 +412,8 @@ Various user interface improvements in the launcher and the in-game interface
    - Added IntListProperty, DoubleListProperty
  - Added GlobeTranslation Documentation to exported documentations (closes #1566)
  - Removed unused parameters and document the remaining properties of RenderableGlobe (closes #1470)
- - Enabled Screenspace renderable to have a multiplicative color 
- - Fixed missing documentation for time.interpolateTime 
+ - Enabled Screenspace renderable to have a multiplicative color
+ - Fixed missing documentation for time.interpolateTime
  - Added fixed time for spice translations and rotations
  - Added simple animation example asset
 
@@ -497,7 +460,7 @@ Various user interface improvements in the launcher and the in-game interface
  - Fixed interpolation problem with playback of session recording in HD (#1373)
  - Fixed session recording needs initial simulation time rate to be saved in file (#1506)
  - Fix for Voyager 2 trail (#1582)
- - Fixed side by side rendering (PR #1613) 
+ - Fixed side by side rendering (PR #1613)
  - Fixed an issue with syncing Gaia profile
  - Fixed misaligned surface textures for Callisto, Europa, Jupiter, Titan, and Saturn
  - Mostly eliminated an issue where planets disappear when changing focus (#1455)
@@ -509,10 +472,10 @@ Various user interface improvements in the launcher and the in-game interface
  - Read Horizons file with double precision
  - Fixed some small issues with trail identifiers
  - Comment out FOV for REXIS as it has an unsupported shape (closes #1650)
- - Prevent NaN values in StaticTranslation by limiting min and max size 
+ - Prevent NaN values in StaticTranslation by limiting min and max size
  - Added exponent to GlobeTranslation altitude slider
  - Correctly pass in the irradianceFactor into the inscatter radiance for atmosphere (closes #1660)
- - Avoid non-supported ranges for exponential slider (#1672) 
+ - Avoid non-supported ranges for exponential slider (#1672)
  - Fixed issue with interrupted fisheye rendering between cube maps (closes #1275)
  - Fixes to fullscreen1080 and spoutOutput config files
  - Adapt addFocusNodes for GlobeTranslation
@@ -564,7 +527,7 @@ Various user interface improvements in the launcher and the in-game interface
  - Version: 0.16.1
  - Date: 2021-05-07
  - Finished: [452d4e9626c58629709c7ed061fedc7141964727](https://github.com/OpenSpace/OpenSpace/commit/452d4e9626c58629709c7ed061fedc7141964727)
- - See [Release Notes](http://wiki.openspaceproject.com/docs/users/release-notes/v0161.html) for user-focused highlights.
+ - See [Release Notes](../releases/release-notes/v0161) for user-focused highlights.
 
 ### Features
  - Added Drag and Drop support for images and assets (#1497)
@@ -601,9 +564,9 @@ Various user interface improvements in the launcher and the in-game interface
  - Version: 0.16.0
  - Date: 2020-12-10
  - Finished: [c13b211add7b1bc4336de34ee6cb4f6064420242](https://github.com/OpenSpace/OpenSpace/commit/c13b211add7b1bc4336de34ee6cb4f6064420242)
- 
+
 ## Changelog
-See [Release notes](http://wiki.openspaceproject.com/docs/users/release-notes/v0160.html) for user-focused highlights.
+See [Release notes](../releases/release-notes/v0160) for user-focused highlights.
 
 ### Features
 - Add new 'Profiles' feature that replaces the `*.scene` files with a more descriptive format that enables editing with a graphical user interface
@@ -704,13 +667,13 @@ The team has been working hard on providing a tool to start OpenSpace in distrib
  - Version: 0.15.2
  - Date: 2020-06-22
  - Finished: [076a96e651a59cc9f330ef94c09259db2dbd41de](https://github.com/OpenSpace/OpenSpace/commit/076a96e651a59cc9f330ef94c09259db2dbd41de)
- 
+
 ## Changelog
 ### Features
  - Added new meta information to the assets that is automatically collected into the documentation/index.html to provide direct information about the license state of the current scene
  - Added a new version of SGCT that should improve performance and future extensibility
    - Added support for cylindrical and equirectangular output methods
- - Added a feature for touch interface to enable a continous pinch gesture to continue to zoom in without the need to repeat the pinch gesture 
+ - Added a feature for touch interface to enable a continous pinch gesture to continue to zoom in without the need to repeat the pinch gesture
  - Added the ability to change the line width of wire-type meshes (#1153)
  - Added the ability to invert mouse buttons (#697)
  - Added the ability for a vertical offset for a screen log
@@ -725,7 +688,7 @@ The team has been working hard on providing a tool to start OpenSpace in distrib
  - Added the C/2019 Y4 (ATLAS) comet (thanks to Dan Tell)
  - Added time range to Voyager rotations to make that scene more useful
  - Fixed spelling errors with Uranus label and the CTX surface layer
- 
+
 ### Content Creation
  - Added the ability to load images for planes lazily
  - Added suport for non-uniform static scaling of objects (#1151)
@@ -766,7 +729,7 @@ The team has been working hard on providing a tool to start OpenSpace in distrib
  - Improved the automatic generation of unique names for screen space renderables
  - Added a bookmarks file that will automatically create scene graph nodes to be able to focus on interesting locations
  - Added a new property that makes it possible to disable all mouse input
- 
+
 ### API
  - Fixed retrieval of navigation state from the `openspace.navigation.getNavigationState` function and make this function usable again
  - Added a script that enables to directly add a layder from GIBS `openspace.globebrowsing.addGibsLayer`
@@ -784,7 +747,7 @@ The team has been working hard on providing a tool to start OpenSpace in distrib
  - Added an atmosphere to Venus
  - Added the ability to display procedurally generated text labels and added labels for planetary bodies in the solar system.  The default binding to toggle their visibility is `L`
  - Added the ability to fade satellite trails
- - Added a feature to render stars with a fixed color to make interoperability with Glue easier 
+ - Added a feature to render stars with a fixed color to make interoperability with Glue easier
  - Fixes spelling of layer name for Sea Ice concentration
  - Fixed the milky way by using a static translation to offset it, rather than doing it in the shader code
  - Added missingSun marker in the Osiris-REx scene
@@ -802,7 +765,7 @@ The team has been working hard on providing a tool to start OpenSpace in distrib
  - No longer assume that the GuiName for a DashboardItem is provided
  - Fixed a bug with the Dawn scene
  - Fixed duplicate keybinds in the rosetta scene
- - Fixed issue with the Mercury magnetosphere 
+ - Fixed issue with the Mercury magnetosphere
  - Added a fix where it was not possible to use a group name in the `getProperty` Lua function
  - Fixed bug in which OpenSpace would crash when an asset includes itself
  - Fixed error when loading some Linux-generated speck files on Windows
@@ -881,8 +844,8 @@ The team has been working hard on providing a tool to start OpenSpace in distrib
  - Replaced Multisampling Antialiasing (MSAA) for a faster Fast Approximate Antialiasing (FXAA) which improves performance and reduced the graphics memory footprint of the application
  - Drastically improved the performance and timing consistency of the Globebrowsing image loading
  - Used the more optimal `setPropertyValueSingle` instead of `setPropertyValue` Lua function in the `propertyHelper.invert` functions, which no longer causes unnecessary RegExp to be compiled
- 
- 
+
+
 # Beta-4 (Patch 1) [0.14.1]
  - Version: 0.14.1
  - Date: 2019-06-04
@@ -998,8 +961,8 @@ The team has been working hard on providing a tool to start OpenSpace in distrib
  - Correctly sort scene items in the Web UI
  - Fixed issues preventing multiple properties from being set simultaneously from a Lua script
  - Fix for bug where the global black-out would not work correctly
- - Only show screenspace renderables on non-UI windows 
- 
+ - Only show screenspace renderables on non-UI windows
+
 ### Optimizations
  - Increased rendering speed of Web UI
  - Slightly improved the rendering speed of globerendering
@@ -1106,12 +1069,12 @@ The team has been working hard on providing a tool to start OpenSpace in distrib
  - Automatically compute a reasonable aspect ratio for custom window sizes
  - Fix issue with commandline arguments not being parsed
  - Fixed rendering issue where the stars would not show up if they are the only Digital Universe object included in the scene
- 
+
 
 # Beta-1 [0.11.0]
   - Version: 0.11.0
   - Date: 2018-01-01
-  - Finished: [6e969794638d7e4761180dc97ca01fb35f356e46](https://github.com/OpenSpace/OpenSpace/commit/6e969794638d7e4761180dc97ca01fb35f356e46) 
+  - Finished: [6e969794638d7e4761180dc97ca01fb35f356e46](https://github.com/OpenSpace/OpenSpace/commit/6e969794638d7e4761180dc97ca01fb35f356e46)
 
 ## Changelog
 ### Content

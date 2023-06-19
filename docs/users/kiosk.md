@@ -3,7 +3,7 @@ title: Kiosk Touch-Screen Version
 layout: default
 
 parent: Users
-nav_order: 6
+nav_order: 5
 ---
 
 # Story Selection

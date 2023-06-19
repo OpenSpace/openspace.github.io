@@ -4,7 +4,7 @@ layout: default
 
 parent: Users
 has_children: true
-nav_order: 5
+nav_order: 4
 ---
 
 Globes are commonly used within OpenSpace to represent planets and other celestial bodies. They include several special features related to globes in space, such as showing eclipses or displaying maps or other information on planetary surfaces.
