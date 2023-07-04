@@ -26,8 +26,9 @@ nav_order: 3
   - [Globebrowsing](content/globebrowsing)
   - [Gaia](content/gaia)
   - [Session Recording](content/session-recording)
-- Using GlobeBrowsing
+- [Globes](globebrowsing)
   - [Working with Layers](globebrowsing/working-with-layers.md)
+  - [Geometry on Globes with GeoJson](globebrowsing/geojson-layers.md)
 - Tutorials
   - [OpenSpace as a Flexible Presentation Tool](tutorials/flexible-presentation)
 - [OpenSpace Kiosk Touch-Screen Version](kiosk)
