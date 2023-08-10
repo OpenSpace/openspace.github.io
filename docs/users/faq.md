@@ -36,5 +36,6 @@ If you’re new to Slack and want a quick overview, start here!
 - What is Slack? https://www.youtube.com/watch?v=q19RtuCHt1Q
 - Quick Start Guide: https://slack.com/resources/using-slack/your-quick-start-guide-to-slack
 - Want to see it in action as you scroll? Check out https://slackdemo.com/
+
 ## What if I have other questions that should be in this FAQ?
 Great! Please [email](openspace@amnh.org) us the question and we'll work with you!
