@@ -19,19 +19,22 @@ Please see our Users [Getting Started](http://wiki.openspaceproject.com/docs/use
 
 ### Developers
 Please join our [OpenSpace Slack Channel](https://openspacesupport.slack.com/). We have several subchannels to get you started.
--#general is the space for community wide announcements.
--#help-questions is the place to ask questions and receive help from our developers.
--#bugs-and-breaks is the channel to report bugs or errors you are experiencing in the software.
--#linux, #macos, #windows are channels related to discussions on specific operating systems.
--#events is the space to share your upcoming or previous programs/events that used OpenSpace.
--#sharespace is a dedicated space for cool screenshots, videos, or anything that you’d like to share related to OpenSpace.
--#users-planetariums, #users-at-museums-and-science-centers, #users-at-elementary-and-middle-school, #users-at-higher-education-institutions, #users-at-community-orgs are channels for users at specific types of institutions to connect on how they’re using OpenSpace.
+ - #general is the space for community wide announcements.
+ - #help-questions is the place to ask questions and receive help from our developers.
+ - #bugs-and-breaks is the channel to report bugs or errors you are experiencing in the 
+ software.
+ - #linux, #macos, #windows are channels related to discussions on specific operating systems.
+ - #events is the space to share your upcoming or previous programs/events that used OpenSpace.
+ - #sharespace is a dedicated space for cool screenshots, videos, or anything that you’d like 
+ to share related to OpenSpace.
+ - #users-planetariums, #users-at-museums-and-science-centers, 
+ - #users-at-elementary-and-middle- school, #users-at-higher-education-institutions, #users-at-community-orgs are channels for users at specific types of institutions to connect on how they’re using OpenSpace.
 
 ### But I've never used Slack before!
 No problem!
 If you’re new to Slack and want a quick overview, start here!
--What is Slack? https://www.youtube.com/watch?v=q19RtuCHt1Q
--Quick Start Guide: https://slack.com/resources/using-slack/your-quick-start-guide-to-slack
--Want to see it in action as you scroll? Check out https://slackdemo.com/
+- What is Slack? https://www.youtube.com/watch?v=q19RtuCHt1Q
+- Quick Start Guide: https://slack.com/resources/using-slack/your-quick-start-guide-to-slack
+- Want to see it in action as you scroll? Check out https://slackdemo.com/
 ## What if I have other questions that should be in this FAQ?
-Great! Please [email](openspace@amnh.org)us the question and we'll work with you!
+Great! Please [email](openspace@amnh.org) us the question and we'll work with you!
