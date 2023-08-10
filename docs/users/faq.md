@@ -15,7 +15,7 @@ Founded in 2014, OpenSpace started as a collaboration between Sweden's Linköpin
 
 ## How do I get started?
 ### Users
-Please see our Users [Getting Started](http://wiki.openspaceproject.com/docs/users/getting-started/general.html)section.
+Please see our Users [Getting Started](http://wiki.openspaceproject.com/docs/users/getting-started/general.html) section.
 
 ### Developers
 Please join our [OpenSpace Slack Channel](https://openspacesupport.slack.com/). We have several subchannels to get you started.
