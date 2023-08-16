@@ -1,5 +1,5 @@
 ---
-title: Overlaying Video of Solar Activity Onto Sun Position
+title: Solar Video Overlay
 layout: default
 
 parent: Builders
