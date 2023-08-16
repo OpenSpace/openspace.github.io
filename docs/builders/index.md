@@ -32,3 +32,4 @@ nav_order: 4
   - [Animated Models](models/model-animation)
 - [Events](events/index)
 - [Joystick Customization](joystick-customization)
+- [Solar Video Overlay Example](solar-video-overlay)
