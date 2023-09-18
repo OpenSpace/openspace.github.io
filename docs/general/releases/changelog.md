@@ -10,6 +10,7 @@ nav_order: 3
 # Release Changelog
 This page contains detailed changelogs for each of the releases, sorted based on what are new features, new content, bug fixes, as well as breaking changes. The messages are taken straight from the commit messages on [OpenSpace GitHub](https://github.com/OpenSpace/OpenSpace).
 
+ - [0.19.1 (Beta-12)](changelog/0.19.md)
  - [0.19.0 (Beta-12)](changelog/0.19.md)
  - [0.18.2 (Beta-11 Patch-2)](changelog/0.18.md)
  - [0.18.1 (Beta-11 Patch-1)](changelog/0.18.md)
