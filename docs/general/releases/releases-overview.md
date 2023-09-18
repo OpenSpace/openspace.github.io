@@ -14,6 +14,8 @@ As development proceeds, some versions get tagged with names.  This table indica
 
 | Version | _Name_ | _Date_ | _Description_ |
 | ------- | ------ | ------ | - |
+| 0.19.1 | Beta-12 | 2023-09-18 | This is a patch release for the twelfth beta release and includes new eclipse updates |
+| 0.19.0 | Beta-12 | 2023-06-27 | This is the twelfth beta release and the firest in 2023 | 
 | 0.18.2 | Beta-11 | 2022-12-24 | This is a second patch release for the eleventh beta release |
 | 0.18.1 | Beta-11 | 2022-11-22 | This is a patch release for the eleventh beta release |
 | 0.18.0 | Beta-11 | 2022-05-06 | This is the eleventh beta release and the first in 2022 |
